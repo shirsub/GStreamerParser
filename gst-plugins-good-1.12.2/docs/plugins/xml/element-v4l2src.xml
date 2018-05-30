@@ -1,0 +1,253 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-v4l2src">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-v4l2src.top_of_page" role="top_of_page">v4l2src</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>v4l2src</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-v4l2src.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstV4l2Src--device">device</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstV4l2Src--device-name">device-name</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstV4l2DeviceTypeFlags"><type>GstV4l2DeviceTypeFlags</type></link></entry><entry role="property_name"><link linkend="GstV4l2Src--flags">flags</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Src--device-fd">device-fd</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Src--brightness">brightness</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Src--contrast">contrast</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Src--hue">hue</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Src--saturation">saturation</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="V4L2-TV-norms"><type>V4L2_TV_norms</type></link></entry><entry role="property_name"><link linkend="GstV4l2Src--norm">norm</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstV4l2IOMode"><type>GstV4l2IOMode</type></link></entry><entry role="property_name"><link linkend="GstV4l2Src--io-mode">io-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstV4l2Src--extra-controls">extra-controls</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstV4l2Src--force-aspect-ratio">force-aspect-ratio</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstV4l2Src--pixel-aspect-ratio">pixel-aspect-ratio</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2src.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstV4l2Src-prepare-format">prepare-format</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstV4l2Src"/><refsect1 id="gst-plugins-good-plugins-v4l2src.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstV4l2Src-struct">GstV4l2Src</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2src.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                        <phrase role="lineart">╰──</phrase> GstV4l2Src
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2src.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstV4l2Src implements
+ <link linkend="GstURIHandler">GstURIHandler</link>,  <link linkend="GstTuner">GstTuner</link>,  <link linkend="GstColorBalance">GstColorBalance</link> and  <link linkend="GstVideoOrientation">GstVideoOrientation</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-v4l2src.description" role="desc">
+<title role="desc.title">Description</title>
+<para>v4l2src can be used to capture video from v4l2 devices, like webcams and tv
+cards.</para>
+<refsect2>
+<title>Example launch lines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 v4l2src ! xvimagesink
+]]></programlisting></informalexample> This pipeline shows the video captured from /dev/video0 tv card and for
+webcams.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 v4l2src ! jpegdec ! xvimagesink
+]]></programlisting></informalexample> This pipeline shows the video captured from a webcam that delivers jpeg
+images.
+</refsect2>
+
+<include href="element-v4l2src-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2src.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2src.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstV4l2Src-struct" role="struct">
+<title>struct GstV4l2Src</title>
+<indexterm zone="GstV4l2Src-struct"><primary>GstV4l2Src</primary></indexterm>
+<programlisting language="C">struct GstV4l2Src;</programlisting>
+<para>Opaque object.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2src.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstV4l2Src--device" role="property"><title>The <literal>“device”</literal> property</title>
+<indexterm zone="GstV4l2Src--device"><primary>GstV4l2Src:device</primary></indexterm>
+<programlisting>  “device”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Device location.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;/dev/video0&quot;</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--device-name" role="property"><title>The <literal>“device-name”</literal> property</title>
+<indexterm zone="GstV4l2Src--device-name"><primary>GstV4l2Src:device-name</primary></indexterm>
+<programlisting>  “device-name”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Name of the device.</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--flags" role="property"><title>The <literal>“flags”</literal> property</title>
+<indexterm zone="GstV4l2Src--flags"><primary>GstV4l2Src:flags</primary></indexterm>
+<programlisting>  “flags”                    <link linkend="GstV4l2DeviceTypeFlags"><type>GstV4l2DeviceTypeFlags</type></link></programlisting>
+<para>Device type flags.</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--device-fd" role="property"><title>The <literal>“device-fd”</literal> property</title>
+<indexterm zone="GstV4l2Src--device-fd"><primary>GstV4l2Src:device-fd</primary></indexterm>
+<programlisting>  “device-fd”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>File descriptor of the device.</para><para>Flags: Read</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--brightness" role="property"><title>The <literal>“brightness”</literal> property</title>
+<indexterm zone="GstV4l2Src--brightness"><primary>GstV4l2Src:brightness</primary></indexterm>
+<programlisting>  “brightness”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Picture brightness, or more precisely, the black level</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--contrast" role="property"><title>The <literal>“contrast”</literal> property</title>
+<indexterm zone="GstV4l2Src--contrast"><primary>GstV4l2Src:contrast</primary></indexterm>
+<programlisting>  “contrast”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Picture contrast or luma gain</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--hue" role="property"><title>The <literal>“hue”</literal> property</title>
+<indexterm zone="GstV4l2Src--hue"><primary>GstV4l2Src:hue</primary></indexterm>
+<programlisting>  “hue”                      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Hue or color balance</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--saturation" role="property"><title>The <literal>“saturation”</literal> property</title>
+<indexterm zone="GstV4l2Src--saturation"><primary>GstV4l2Src:saturation</primary></indexterm>
+<programlisting>  “saturation”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Picture color saturation or chroma gain</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--norm" role="property"><title>The <literal>“norm”</literal> property</title>
+<indexterm zone="GstV4l2Src--norm"><primary>GstV4l2Src:norm</primary></indexterm>
+<programlisting>  “norm”                     <link linkend="V4L2-TV-norms"><type>V4L2_TV_norms</type></link></programlisting>
+<para>TV norm</para>
+<para>Flags: Read / Write</para>
+<para>Default value: none</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--io-mode" role="property"><title>The <literal>“io-mode”</literal> property</title>
+<indexterm zone="GstV4l2Src--io-mode"><primary>GstV4l2Src:io-mode</primary></indexterm>
+<programlisting>  “io-mode”                  <link linkend="GstV4l2IOMode"><type>GstV4l2IOMode</type></link></programlisting>
+<para>IO Mode</para>
+<para>Flags: Read / Write</para>
+<para>Default value: GST_V4L2_IO_AUTO</para>
+</refsect2>
+<refsect2 id="GstV4l2Src--extra-controls" role="property"><title>The <literal>“extra-controls”</literal> property</title>
+<indexterm role="1.2" zone="GstV4l2Src--extra-controls"><primary>GstV4l2Src:extra-controls</primary></indexterm>
+<programlisting>  “extra-controls”           <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>Additional v4l2 controls for the device. The controls are identified
+by the control name (lowercase with '_' for any non-alphanumeric
+characters).</para>
+<para>Flags: Read / Write</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstV4l2Src--force-aspect-ratio" role="property"><title>The <literal>“force-aspect-ratio”</literal> property</title>
+<indexterm role="1.2" zone="GstV4l2Src--force-aspect-ratio"><primary>GstV4l2Src:force-aspect-ratio</primary></indexterm>
+<programlisting>  “force-aspect-ratio”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>When enabled, the pixel aspect ratio queried from the device or set
+with the pixel-aspect-ratio property will be enforced.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstV4l2Src--pixel-aspect-ratio" role="property"><title>The <literal>“pixel-aspect-ratio”</literal> property</title>
+<indexterm role="1.2" zone="GstV4l2Src--pixel-aspect-ratio"><primary>GstV4l2Src:pixel-aspect-ratio</primary></indexterm>
+<programlisting>  “pixel-aspect-ratio”       <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The pixel aspect ratio of the device. This overwrites the pixel aspect
+ratio queried from the device.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: &quot;1/1&quot;</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2src.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstV4l2Src-prepare-format" role="signal"><title>The <literal>“prepare-format”</literal> signal</title>
+<indexterm role="0.10.32" zone="GstV4l2Src-prepare-format"><primary>GstV4l2Src::prepare-format</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstV4l2Src"><type>GstV4l2Src</type></link> *v4l2src,
+               <link linkend="gint"><type>gint</type></link>        fd,
+               <link linkend="GstCaps"><type>GstCaps</type></link>    *caps,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>This signal gets emitted before calling the v4l2 VIDIOC_S_FMT ioctl
+(set format). This allows for any custom configuration of the device to
+happen prior to the format being set.
+This is mostly useful for UVC H264 encoding cameras which need the H264
+Probe &amp; Commit to happen prior to the normal Probe &amp; Commit.</para>
+<refsect3 id="GstV4l2Src-prepare-format.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>v4l2src</para></entry>
+<entry role="parameter_description"><para>the v4l2src instance</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>fd</para></entry>
+<entry role="parameter_description"><para>the file descriptor of the current device</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>the caps of the format being set</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+<para role="since">Since: <link linkend="api-index-0.10.32">0.10.32</link></para></refsect2>
+</refsect1>
+
+</refentry>

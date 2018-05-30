@@ -1,0 +1,266 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-udpsrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-udpsrc.top_of_page" role="top_of_page">udpsrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>udpsrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-udpsrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstCaps"><type>GstCaps</type></link> *</entry><entry role="property_name"><link linkend="GstUDPSrc--caps">caps</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstUDPSrc--multicast-group">multicast-group</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstUDPSrc--port">port</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstUDPSrc--uri">uri</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstUDPSrc--buffer-size">buffer-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstUDPSrc--timeout">timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstUDPSrc--skip-first-bytes">skip-first-bytes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstUDPSrc--auto-multicast">auto-multicast</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstUDPSrc--multicast-iface">multicast-iface</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstUDPSrc--reuse">reuse</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstUDPSrc--close-socket">close-socket</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GSocket"><type>GSocket</type></link> *</entry><entry role="property_name"><link linkend="GstUDPSrc--socket">socket</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GSocket"><type>GSocket</type></link> *</entry><entry role="property_name"><link linkend="GstUDPSrc--used-socket">used-socket</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstUDPSrc--address">address</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstUDPSrc--loop">loop</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstUDPSrc--retrieve-sender-address">retrieve-sender-address</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstUDPSrc"/><refsect1 id="gst-plugins-good-plugins-udpsrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstUDPSrc-struct">GstUDPSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                        <phrase role="lineart">╰──</phrase> GstUDPSrc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstUDPSrc implements
+ <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-udpsrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>udpsrc is a network source that reads UDP packets from the network.
+It can be combined with RTP depayloaders to implement RTP streaming.</para>
+<para>The udpsrc element supports automatic port allocation by setting the
+<link linkend="GstUDPSrc--port"><type>“port”</type></link> property to 0. After setting the udpsrc to PAUSED, the
+allocated port can be obtained by reading the port property.</para>
+<para>udpsrc can read from multicast groups by setting the <link linkend="GstUDPSrc--multicast-group"><type>“multicast-group”</type></link>
+property to the IP address of the multicast group.</para>
+<para>Alternatively one can provide a custom socket to udpsrc with the <link linkend="GstUDPSrc--socket"><type>“socket”</type></link>
+property, udpsrc will then not allocate a socket itself but use the provided
+one.</para>
+<para>The <link linkend="GstUDPSrc--caps"><type>“caps”</type></link> property is mainly used to give a type to the UDP packet
+so that they can be autoplugged in GStreamer pipelines. This is very useful
+for RTP implementations where the contents of the UDP packets is transfered
+out-of-bounds using SDP or other means.</para>
+<para>The <link linkend="GstUDPSrc--buffer-size"><type>“buffer-size”</type></link> property is used to change the default kernel
+buffersizes used for receiving packets. The buffer size may be increased for
+high-volume connections, or may be decreased to limit the possible backlog of
+incoming data. The system places an absolute limit on these values, on Linux,
+for example, the default buffer size is typically 50K and can be increased to
+maximally 100K.</para>
+<para>The <link linkend="GstUDPSrc--skip-first-bytes"><type>“skip-first-bytes”</type></link> property is used to strip off an arbitrary
+number of bytes from the start of the raw udp packet and can be used to strip
+off proprietary header, for example.</para>
+<para>The udpsrc is always a live source. It does however not provide a <link linkend="GstClock"><type>GstClock</type></link>,
+this is left for upstream elements such as an RTP session manager or demuxer
+(such as an MPEG demuxer). As with all live sources, the captured buffers
+will have their timestamp set to the current running time of the pipeline.</para>
+<para>udpsrc implements a <link linkend="GstURIHandler"><type>GstURIHandler</type></link> interface that handles udp://host:port
+type URIs.</para>
+<para>If the <link linkend="GstUDPSrc--timeout"><type>“timeout”</type></link> property is set to a value bigger than 0, udpsrc
+will generate an element message named</para>
+<classname>&quot;GstUDPSrcTimeout&quot;</classname>
+<para>if no data was recieved in the given timeout.
+The message's structure contains one field:</para>
+<itemizedlist>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;timeout&quot;</classname>: the timeout in microseconds that
+  expired when waiting for data.
+  </para>
+</listitem>
+</itemizedlist>
+<para>The message is typically used to detect that no UDP arrives in the receiver
+because it is blocked by a firewall.</para>
+<para>A custom file descriptor can be configured with the
+<link linkend="GstUDPSrc--socket"><type>“socket”</type></link> property. The socket will be closed when setting
+the element to READY by default. This behaviour can be overriden
+with the <link linkend="GstUDPSrc--close-socket"><type>“close-socket”</type></link> property, in which case the
+application is responsible for closing the file descriptor.</para>
+<refsect2>
+<title>Examples</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v udpsrc ! fakesink dump=1
+]]></programlisting></informalexample> A pipeline to read from the default port and dump the udp packets.
+To actually generate udp packets on the default port one can use the
+udpsink element. When running the following pipeline in another terminal, the
+above mentioned pipeline should dump data packets to the console.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v audiotestsrc ! udpsink
+]]></programlisting></informalexample>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v udpsrc port=0 ! fakesink
+]]></programlisting></informalexample> read udp packets from a free port.
+</refsect2>
+
+<include href="element-udpsrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstUDPSrc-struct" role="struct">
+<title>struct GstUDPSrc</title>
+<indexterm zone="GstUDPSrc-struct"><primary>GstUDPSrc</primary></indexterm>
+<programlisting language="C">struct GstUDPSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstUDPSrc--caps" role="property"><title>The <literal>“caps”</literal> property</title>
+<indexterm zone="GstUDPSrc--caps"><primary>GstUDPSrc:caps</primary></indexterm>
+<programlisting>  “caps”                     <link linkend="GstCaps"><type>GstCaps</type></link> *</programlisting>
+<para>The caps of the source pad.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--multicast-group" role="property"><title>The <literal>“multicast-group”</literal> property</title>
+<indexterm zone="GstUDPSrc--multicast-group"><primary>GstUDPSrc:multicast-group</primary></indexterm>
+<programlisting>  “multicast-group”          <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The Address of multicast group to join. (DEPRECATED: Use address property instead).</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;0.0.0.0&quot;</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--port" role="property"><title>The <literal>“port”</literal> property</title>
+<indexterm zone="GstUDPSrc--port"><primary>GstUDPSrc:port</primary></indexterm>
+<programlisting>  “port”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The port to receive the packets from, 0=allocate.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,65535]</para>
+<para>Default value: 5004</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--uri" role="property"><title>The <literal>“uri”</literal> property</title>
+<indexterm zone="GstUDPSrc--uri"><primary>GstUDPSrc:uri</primary></indexterm>
+<programlisting>  “uri”                      <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>URI in the form of udp://multicast_group:port.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;udp://0.0.0.0:5004&quot;</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--buffer-size" role="property"><title>The <literal>“buffer-size”</literal> property</title>
+<indexterm zone="GstUDPSrc--buffer-size"><primary>GstUDPSrc:buffer-size</primary></indexterm>
+<programlisting>  “buffer-size”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Size of the kernel receive buffer in bytes, 0=default.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--timeout" role="property"><title>The <literal>“timeout”</literal> property</title>
+<indexterm zone="GstUDPSrc--timeout"><primary>GstUDPSrc:timeout</primary></indexterm>
+<programlisting>  “timeout”                  <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Post a message after timeout nanoseconds (0 = disabled).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--skip-first-bytes" role="property"><title>The <literal>“skip-first-bytes”</literal> property</title>
+<indexterm zone="GstUDPSrc--skip-first-bytes"><primary>GstUDPSrc:skip-first-bytes</primary></indexterm>
+<programlisting>  “skip-first-bytes”         <link linkend="gint"><type>gint</type></link></programlisting>
+<para>number of bytes to skip for each udp packet.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--auto-multicast" role="property"><title>The <literal>“auto-multicast”</literal> property</title>
+<indexterm zone="GstUDPSrc--auto-multicast"><primary>GstUDPSrc:auto-multicast</primary></indexterm>
+<programlisting>  “auto-multicast”           <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Automatically join/leave multicast groups.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--multicast-iface" role="property"><title>The <literal>“multicast-iface”</literal> property</title>
+<indexterm zone="GstUDPSrc--multicast-iface"><primary>GstUDPSrc:multicast-iface</primary></indexterm>
+<programlisting>  “multicast-iface”          <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The network interface on which to join the multicast group.This allows multiple interfaces seperated by comma. (&quot;eth0,eth1&quot;).</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--reuse" role="property"><title>The <literal>“reuse”</literal> property</title>
+<indexterm zone="GstUDPSrc--reuse"><primary>GstUDPSrc:reuse</primary></indexterm>
+<programlisting>  “reuse”                    <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable reuse of the port.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--close-socket" role="property"><title>The <literal>“close-socket”</literal> property</title>
+<indexterm zone="GstUDPSrc--close-socket"><primary>GstUDPSrc:close-socket</primary></indexterm>
+<programlisting>  “close-socket”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Close socket if passed as property on state change.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--socket" role="property"><title>The <literal>“socket”</literal> property</title>
+<indexterm zone="GstUDPSrc--socket"><primary>GstUDPSrc:socket</primary></indexterm>
+<programlisting>  “socket”                   <link linkend="GSocket"><type>GSocket</type></link> *</programlisting>
+<para>Socket to use for UDP reception. (NULL == allocate).</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--used-socket" role="property"><title>The <literal>“used-socket”</literal> property</title>
+<indexterm zone="GstUDPSrc--used-socket"><primary>GstUDPSrc:used-socket</primary></indexterm>
+<programlisting>  “used-socket”              <link linkend="GSocket"><type>GSocket</type></link> *</programlisting>
+<para>Socket currently in use for UDP reception. (NULL = no socket).</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--address" role="property"><title>The <literal>“address”</literal> property</title>
+<indexterm zone="GstUDPSrc--address"><primary>GstUDPSrc:address</primary></indexterm>
+<programlisting>  “address”                  <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Address to receive packets for. This is equivalent to the multicast-group property for now.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;0.0.0.0&quot;</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--loop" role="property"><title>The <literal>“loop”</literal> property</title>
+<indexterm zone="GstUDPSrc--loop"><primary>GstUDPSrc:loop</primary></indexterm>
+<programlisting>  “loop”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Used for setting the multicast loop parameter. TRUE = enable, FALSE = disable.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstUDPSrc--retrieve-sender-address" role="property"><title>The <literal>“retrieve-sender-address”</literal> property</title>
+<indexterm zone="GstUDPSrc--retrieve-sender-address"><primary>GstUDPSrc:retrieve-sender-address</primary></indexterm>
+<programlisting>  “retrieve-sender-address”  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether to retrieve the sender address and add it to buffers as meta. Disabling this might result in minor performance improvements in certain scenarios.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsrc.see-also">
+<title>See Also</title>
+<para>udpsink, multifdsink</para>
+
+</refsect1>
+
+</refentry>

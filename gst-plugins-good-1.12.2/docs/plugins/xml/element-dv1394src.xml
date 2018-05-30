@@ -1,0 +1,177 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-dv1394src">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-dv1394src.top_of_page" role="top_of_page">dv1394src</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>dv1394src</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-dv1394src.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstDV1394Src--channel">channel</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstDV1394Src--consecutive">consecutive</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDV1394Src--drop-incomplete">drop-incomplete</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstDV1394Src--guid">guid</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstDV1394Src--port">port</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstDV1394Src--skip">skip</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDV1394Src--use-avc">use-avc</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstDV1394Src--device-name">device-name</link></entry><entry role="property_flags">Read</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dv1394src.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstDV1394Src-frame-dropped">frame-dropped</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstDV1394Src"/><refsect1 id="gst-plugins-good-plugins-dv1394src.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDV1394Src-struct">GstDV1394Src</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dv1394src.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                        <phrase role="lineart">╰──</phrase> GstDV1394Src
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dv1394src.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstDV1394Src implements
+ <link linkend="GstURIHandler">GstURIHandler</link> and  <link linkend="GstPropertyProbe">GstPropertyProbe</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-dv1394src.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Read DV (digital video) data from firewire port.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 dv1394src ! queue ! dvdemux name=d ! queue ! dvdec ! xvimagesink d. ! queue ! alsasink
+]]></programlisting></informalexample> This pipeline captures from the firewire port and displays it (might need
+format converters for audio/video).
+</refsect2>
+
+<include href="element-dv1394src-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-dv1394src.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dv1394src.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDV1394Src-struct" role="struct">
+<title>struct GstDV1394Src</title>
+<indexterm zone="GstDV1394Src-struct"><primary>GstDV1394Src</primary></indexterm>
+<programlisting language="C">struct GstDV1394Src;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dv1394src.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstDV1394Src--channel" role="property"><title>The <literal>“channel”</literal> property</title>
+<indexterm zone="GstDV1394Src--channel"><primary>GstDV1394Src:channel</primary></indexterm>
+<programlisting>  “channel”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Channel number for listening.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,64]</para>
+<para>Default value: 63</para>
+</refsect2>
+<refsect2 id="GstDV1394Src--consecutive" role="property"><title>The <literal>“consecutive”</literal> property</title>
+<indexterm zone="GstDV1394Src--consecutive"><primary>GstDV1394Src:consecutive</primary></indexterm>
+<programlisting>  “consecutive”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>send n consecutive frames after skipping.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 1</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstDV1394Src--drop-incomplete" role="property"><title>The <literal>“drop-incomplete”</literal> property</title>
+<indexterm zone="GstDV1394Src--drop-incomplete"><primary>GstDV1394Src:drop-incomplete</primary></indexterm>
+<programlisting>  “drop-incomplete”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>drop incomplete frames.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstDV1394Src--guid" role="property"><title>The <literal>“guid”</literal> property</title>
+<indexterm zone="GstDV1394Src--guid"><primary>GstDV1394Src:guid</primary></indexterm>
+<programlisting>  “guid”                     <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>select one of multiple DV devices by its GUID. use a hexadecimal like 0xhhhhhhhhhhhhhhhh. (0 = no guid).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstDV1394Src--port" role="property"><title>The <literal>“port”</literal> property</title>
+<indexterm zone="GstDV1394Src--port"><primary>GstDV1394Src:port</primary></indexterm>
+<programlisting>  “port”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Port number (-1 automatic).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [G_MAXULONG,16]</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstDV1394Src--skip" role="property"><title>The <literal>“skip”</literal> property</title>
+<indexterm zone="GstDV1394Src--skip"><primary>GstDV1394Src:skip</primary></indexterm>
+<programlisting>  “skip”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>skip n frames.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstDV1394Src--use-avc" role="property"><title>The <literal>“use-avc”</literal> property</title>
+<indexterm zone="GstDV1394Src--use-avc"><primary>GstDV1394Src:use-avc</primary></indexterm>
+<programlisting>  “use-avc”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use AV/C VTR control.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstDV1394Src--device-name" role="property"><title>The <literal>“device-name”</literal> property</title>
+<indexterm zone="GstDV1394Src--device-name"><primary>GstDV1394Src:device-name</primary></indexterm>
+<programlisting>  “device-name”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Descriptive name of the currently opened device</para>
+<para>Flags: Read</para>
+<para>Default value: &quot;Default&quot;</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dv1394src.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstDV1394Src-frame-dropped" role="signal"><title>The <literal>“frame-dropped”</literal> signal</title>
+<indexterm zone="GstDV1394Src-frame-dropped"><primary>GstDV1394Src::frame-dropped</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstDV1394Src"><type>GstDV1394Src</type></link> *gstdv1394src,
+               <link linkend="gpointer"><type>gpointer</type></link>      user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

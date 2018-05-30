@@ -1,0 +1,191 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-level">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-level.top_of_page" role="top_of_page">level</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>level</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-level.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstLevel--interval">interval</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstLevel--message">message</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstLevel--peak-falloff">peak-falloff</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstLevel--peak-ttl">peak-ttl</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstLevel--post-messages">post-messages</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstLevel"/><refsect1 id="gst-plugins-good-plugins-level.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstLevel-struct">GstLevel</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-level.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> GstLevel
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-level.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Level analyses incoming audio buffers and, if the <link linkend="GstLevel--message"><type>“message”</type></link> property
+is <link linkend="TRUE:CAPS"><type>TRUE</type></link>, generates an element message named</para>
+<classname>&quot;level&quot;</classname>:
+<para>after each interval of time given by the <link linkend="GstLevel--interval"><type>“interval”</type></link> property.
+The message's structure contains these fields:</para>
+<itemizedlist>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;timestamp&quot;</classname>:
+  the timestamp of the buffer that triggered the message.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;stream-time&quot;</classname>:
+  the stream time of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;running-time&quot;</classname>:
+  the running_time of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;duration&quot;</classname>:
+  the duration of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;endtime&quot;</classname>:
+  the end time of the buffer that triggered the message as stream time (this
+  is deprecated, as it can be calculated from stream-time + duration)
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GValueArray"><type>GValueArray</type></link> of <link linkend="gdouble"><type>gdouble</type></link>
+  <classname>&quot;peak&quot;</classname>:
+  the peak power level in dB for each channel
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GValueArray"><type>GValueArray</type></link> of <link linkend="gdouble"><type>gdouble</type></link>
+  <classname>&quot;decay&quot;</classname>:
+  the decaying peak power level in dB for each channel
+  The decaying peak level follows the peak level, but starts dropping if no
+  new peak is reached after the time given by the <link linkend="GstLevel--peak-ttl"><type>“peak-ttl”</type></link>.
+  When the decaying peak level drops, it does so at the decay rate as
+  specified by the <link linkend="GstLevel--peak-falloff"><type>“peak-falloff”</type></link>.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GValueArray"><type>GValueArray</type></link> of <link linkend="gdouble"><type>gdouble</type></link>
+  <classname>&quot;rms&quot;</classname>:
+  the Root Mean Square (or average power) level in dB for each channel
+  </para>
+</listitem>
+</itemizedlist>
+<refsect2>
+<title>Example application</title>
+<informalexample><programlisting language="C">
+<xi:include href="../../../../tests/examples/level/level-example.c" parse="text" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+</programlisting></informalexample>
+</refsect2>
+
+<include href="element-level-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-level.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-level.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstLevel-struct" role="struct">
+<title>struct GstLevel</title>
+<indexterm zone="GstLevel-struct"><primary>GstLevel</primary></indexterm>
+<programlisting language="C">struct GstLevel;</programlisting>
+<para>Opaque data structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-level.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstLevel--interval" role="property"><title>The <literal>“interval”</literal> property</title>
+<indexterm zone="GstLevel--interval"><primary>GstLevel:interval</primary></indexterm>
+<programlisting>  “interval”                 <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Interval of time between message posts (in nanoseconds).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 1</para>
+<para>Default value: 100000000</para>
+</refsect2>
+<refsect2 id="GstLevel--message" role="property"><title>The <literal>“message”</literal> property</title>
+<indexterm zone="GstLevel--message"><primary>GstLevel:message</primary></indexterm>
+<programlisting>  “message”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Post a 'level' message for each passed interval (deprecated, use the post-messages property instead).</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstLevel--peak-falloff" role="property"><title>The <literal>“peak-falloff”</literal> property</title>
+<indexterm zone="GstLevel--peak-falloff"><primary>GstLevel:peak-falloff</primary></indexterm>
+<programlisting>  “peak-falloff”             <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Decay rate of decay peak after TTL (in dB/sec).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 10</para>
+</refsect2>
+<refsect2 id="GstLevel--peak-ttl" role="property"><title>The <literal>“peak-ttl”</literal> property</title>
+<indexterm zone="GstLevel--peak-ttl"><primary>GstLevel:peak-ttl</primary></indexterm>
+<programlisting>  “peak-ttl”                 <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Time To Live of decay peak before it falls back (in nanoseconds).</para><para>Flags: Read / Write</para>
+<para>Default value: 300000000</para>
+</refsect2>
+<refsect2 id="GstLevel--post-messages" role="property"><title>The <literal>“post-messages”</literal> property</title>
+<indexterm role="deprecated" zone="GstLevel--post-messages"><primary>GstLevel:post-messages</primary></indexterm><indexterm role="1.1.0" zone="GstLevel--post-messages"><primary>GstLevel:post-messages</primary></indexterm>
+<programlisting>  “post-messages”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Post messages on the bus with level information.</para>
+<warning><para><literal>GstLevel:post-messages</literal> is deprecated and should not be used in newly-written code.</para> <para>use the <link linkend="GstLevel--post-messages"><type>“post-messages”</type></link> property</para>
+</warning>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+<para role="since">Since: <link linkend="api-index-1.1.0">1.1.0</link></para></refsect2>
+
+</refsect1>
+
+</refentry>

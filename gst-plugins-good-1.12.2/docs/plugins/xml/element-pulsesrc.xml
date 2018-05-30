@@ -1,0 +1,177 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-pulsesrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-pulsesrc.top_of_page" role="top_of_page">pulsesrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>pulsesrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-pulsesrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstPulseSrc--device">device</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstPulseSrc--server">server</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstPulseSrc--device-name">device-name</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstPulseSrc--stream-properties">stream-properties</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstPulseSrc--mute">mute</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstPulseSrc--source-output-index">source-output-index</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstPulseSrc--volume">volume</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstPulseSrc--client-name">client-name</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstPulseSrc--current-device">current-device</link></entry><entry role="property_flags">Read</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstPulseSrc"/><refsect1 id="gst-plugins-good-plugins-pulsesrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstPulseSrc-struct">GstPulseSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pulsesrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                        <phrase role="lineart">╰──</phrase> <link linkend="GstAudioBaseSrc">GstAudioBaseSrc</link>
+                            <phrase role="lineart">╰──</phrase> <link linkend="GstAudioSrc">GstAudioSrc</link>
+                                <phrase role="lineart">╰──</phrase> GstPulseSrc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pulsesrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstPulseSrc implements
+ <link linkend="GstStreamVolume">GstStreamVolume</link>,  <link linkend="GstImplementsInterface">GstImplementsInterface</link>,  <link linkend="GstMixer">GstMixer</link> and  <link linkend="GstPropertyProbe">GstPropertyProbe</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-pulsesrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element captures audio from a</para>
+<ulink href="http://www.pulseaudio.org">PulseAudio sound server</ulink>.
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v pulsesrc ! audioconvert ! vorbisenc ! oggmux ! filesink location=alsasrc.ogg
+]]></programlisting></informalexample> Record from a sound card using pulseaudio and encode to Ogg/Vorbis.
+</refsect2>
+
+<include href="element-pulsesrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-pulsesrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pulsesrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstPulseSrc-struct" role="struct">
+<title>struct GstPulseSrc</title>
+<indexterm zone="GstPulseSrc-struct"><primary>GstPulseSrc</primary></indexterm>
+<programlisting language="C">struct GstPulseSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pulsesrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstPulseSrc--device" role="property"><title>The <literal>“device”</literal> property</title>
+<indexterm zone="GstPulseSrc--device"><primary>GstPulseSrc:device</primary></indexterm>
+<programlisting>  “device”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The PulseAudio source device to connect to.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstPulseSrc--server" role="property"><title>The <literal>“server”</literal> property</title>
+<indexterm zone="GstPulseSrc--server"><primary>GstPulseSrc:server</primary></indexterm>
+<programlisting>  “server”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The PulseAudio server to connect to.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstPulseSrc--device-name" role="property"><title>The <literal>“device-name”</literal> property</title>
+<indexterm zone="GstPulseSrc--device-name"><primary>GstPulseSrc:device-name</primary></indexterm>
+<programlisting>  “device-name”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Human-readable name of the sound device.</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstPulseSrc--stream-properties" role="property"><title>The <literal>“stream-properties”</literal> property</title>
+<indexterm zone="GstPulseSrc--stream-properties"><primary>GstPulseSrc:stream-properties</primary></indexterm>
+<programlisting>  “stream-properties”        <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>List of pulseaudio stream properties. A list of defined properties can be
+found in the <ulink href="http://0pointer.de/lennart/projects/pulseaudio/doxygen/proplist_8h.html">pulseaudio api docs</ulink>.</para>
+<para>Below is an example for registering as a music application to pulseaudio.</para>
+<informalexample><programlisting><![CDATA[
+GstStructure *props;
+
+props = gst_structure_from_string ("props,media.role=music", NULL);
+g_object_set (pulse, "stream-properties", props, NULL);
+gst_structure_free (props);
+]]></programlisting></informalexample>
+<para/>
+<para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstPulseSrc--mute" role="property"><title>The <literal>“mute”</literal> property</title>
+<indexterm zone="GstPulseSrc--mute"><primary>GstPulseSrc:mute</primary></indexterm>
+<programlisting>  “mute”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether the stream is muted or not.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstPulseSrc--source-output-index" role="property"><title>The <literal>“source-output-index”</literal> property</title>
+<indexterm zone="GstPulseSrc--source-output-index"><primary>GstPulseSrc:source-output-index</primary></indexterm>
+<programlisting>  “source-output-index”      <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The index of the PulseAudio source output corresponding to this element.</para>
+<para>Flags: Read</para>
+<para>Default value: 4294967295</para>
+</refsect2>
+<refsect2 id="GstPulseSrc--volume" role="property"><title>The <literal>“volume”</literal> property</title>
+<indexterm zone="GstPulseSrc--volume"><primary>GstPulseSrc:volume</primary></indexterm>
+<programlisting>  “volume”                   <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>The volume of the record stream.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: [0,10]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstPulseSrc--client-name" role="property"><title>The <literal>“client-name”</literal> property</title>
+<indexterm zone="GstPulseSrc--client-name"><primary>GstPulseSrc:client-name</primary></indexterm>
+<programlisting>  “client-name”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The PulseAudio client name to use.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: &quot;gst-plugins-good-plugins-scan&quot;</para>
+</refsect2>
+<refsect2 id="GstPulseSrc--current-device" role="property"><title>The <literal>“current-device”</literal> property</title>
+<indexterm zone="GstPulseSrc--current-device"><primary>GstPulseSrc:current-device</primary></indexterm>
+<programlisting>  “current-device”           <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The current PulseAudio source device.</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pulsesrc.see-also">
+<title>See Also</title>
+<para>pulsesink</para>
+
+</refsect1>
+
+</refentry>

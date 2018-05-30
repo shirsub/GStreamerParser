@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<refsynopsisdiv>
+  <refsect2>
+    <title>Element Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>plugin</term>
+        <listitem>
+          <simpara>
+            <link linkend="plugin-video4linux2">video4linux2</link>
+          </simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>author</term>
+        <listitem>
+          <simpara>Edgard Lima &lt;edgard.lima@gmail.com&gt;, Stefan Kost &lt;ensonic@users.sf.net&gt;</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>class</term>
+        <listitem>
+          <simpara>Source/Video</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect2>
+  <refsect2>
+    <title>Element Pads</title>
+    <variablelist>
+      <varlistentry>
+        <term>name</term>
+        <listitem>
+          <simpara>src</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>direction</term>
+        <listitem>
+          <simpara>source</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>presence</term>
+        <listitem>
+          <simpara>always</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>details</term>
+        <listitem>
+          <simpara>image/jpeg</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/mpeg, mpegversion=(int)4, systemstream=(boolean)false</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/mpeg, mpegversion=(int)2</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/mpegts, systemstream=(boolean)true</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-bayer, format=(string){ bggr, gbrg, grbg, rggb }, width=(int)[ 1, 32768 ], height=(int)[ 1, 32768 ], framerate=(fraction)[ 0/1, 2147483647/1 ]</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-dv, systemstream=(boolean)true</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-h263, variant=(string)itu</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-h264, stream-format=(string){ byte-stream, avc }, alignment=(string)au</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-pwc1, width=(int)[ 1, 32768 ], height=(int)[ 1, 32768 ], framerate=(fraction)[ 0/1, 2147483647/1 ]</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-pwc2, width=(int)[ 1, 32768 ], height=(int)[ 1, 32768 ], framerate=(fraction)[ 0/1, 2147483647/1 ]</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-raw, format=(string){ RGB16, BGR, RGB, GRAY8, GRAY16_LE, GRAY16_BE, YVU9, YV12, YUY2, YVYU, UYVY, Y42B, Y41B, YUV9, NV12_64Z32, NV24, NV61, NV16, NV21, NV12, I420, BGRA, BGRx, ARGB, xRGB, BGR15, RGB15 }, width=(int)[ 1, 32768 ], height=(int)[ 1, 32768 ], framerate=(fraction)[ 0/1, 2147483647/1 ]</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-sonix, width=(int)[ 1, 32768 ], height=(int)[ 1, 32768 ], framerate=(fraction)[ 0/1, 2147483647/1 ]</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-vp8</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <simpara> video/x-wmv, wmvversion=(int)3, format=(string)WVC1</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect2>
+</refsynopsisdiv>

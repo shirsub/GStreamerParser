@@ -1,0 +1,73 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-goom2k1">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-goom2k1.top_of_page" role="top_of_page">goom2k1</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>goom2k1</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstGoom2k1"/><refsect1 id="gst-plugins-good-plugins-goom2k1.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstGoom2k1-struct">GstGoom2k1</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-goom2k1.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstAudioVisualizer">GstAudioVisualizer</link>
+                    <phrase role="lineart">╰──</phrase> GstGoom2k1
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-goom2k1.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Goom2k1 is an audio visualisation element. It creates warping structures
+based on the incomming audio signal. Goom2k1 is the older version of the
+visualisation. Also available is goom2k4, with a different look.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v audiotestsrc ! goom2k1 ! videoconvert ! xvimagesink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-goom2k1-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-goom2k1.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-goom2k1.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstGoom2k1-struct" role="struct">
+<title>struct GstGoom2k1</title>
+<indexterm zone="GstGoom2k1-struct"><primary>GstGoom2k1</primary></indexterm>
+<programlisting language="C">struct GstGoom2k1;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-goom2k1.see-also">
+<title>See Also</title>
+<para>goom, synaesthesia</para>
+
+</refsect1>
+
+</refentry>

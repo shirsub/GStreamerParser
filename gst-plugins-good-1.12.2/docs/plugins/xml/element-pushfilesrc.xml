@@ -1,0 +1,154 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-pushfilesrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-pushfilesrc.top_of_page" role="top_of_page">pushfilesrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>pushfilesrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-pushfilesrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstPushFileSrc--applied-rate">applied-rate</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstPushFileSrc--initial-timestamp">initial-timestamp</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstPushFileSrc--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstPushFileSrc--rate">rate</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint64"><type>gint64</type></link></entry><entry role="property_name"><link linkend="GstPushFileSrc--start-time">start-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint64"><type>gint64</type></link></entry><entry role="property_name"><link linkend="GstPushFileSrc--stream-time">stream-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstPushFileSrc--time-segment">time-segment</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstPushFileSrc"/><refsect1 id="gst-plugins-good-plugins-pushfilesrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstPushFileSrc-struct">GstPushFileSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pushfilesrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBin">GstBin</link>
+                    <phrase role="lineart">╰──</phrase> GstPushFileSrc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pushfilesrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstPushFileSrc implements
+ <link linkend="GstChildProxy">GstChildProxy</link> and  <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-pushfilesrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element is only useful for debugging purposes. It implements an URI
+protocol handler for the 'pushfile' protocol and behaves like a file source
+element that cannot be activated in pull-mode. This makes it very easy to
+debug demuxers or decoders that can operate both pull and push-based in
+connection with the playbin element (which creates a source based on the
+URI passed).</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -m playbin uri=pushfile:///home/you/some/file.ogg
+]]></programlisting></informalexample> This plays back the given file using playbin, with the demuxer operating
+push-based.
+</refsect2>
+
+<include href="element-pushfilesrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-pushfilesrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pushfilesrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstPushFileSrc-struct" role="struct">
+<title>struct GstPushFileSrc</title>
+<indexterm zone="GstPushFileSrc-struct"><primary>GstPushFileSrc</primary></indexterm>
+<programlisting language="C">struct GstPushFileSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pushfilesrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstPushFileSrc--applied-rate" role="property"><title>The <literal>“applied-rate”</literal> property</title>
+<indexterm zone="GstPushFileSrc--applied-rate"><primary>GstPushFileSrc:applied-rate</primary></indexterm>
+<programlisting>  “applied-rate”             <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Applied rate to use in TIME SEGMENT.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MINDOUBLE</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstPushFileSrc--initial-timestamp" role="property"><title>The <literal>“initial-timestamp”</literal> property</title>
+<indexterm zone="GstPushFileSrc--initial-timestamp"><primary>GstPushFileSrc:initial-timestamp</primary></indexterm>
+<programlisting>  “initial-timestamp”        <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Initial Buffer Timestamp (if time-segment TRUE).</para><para>Flags: Read / Write</para>
+<para>Default value: 18446744073709551615</para>
+</refsect2>
+<refsect2 id="GstPushFileSrc--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstPushFileSrc--location"><primary>GstPushFileSrc:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location of the file to read.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstPushFileSrc--rate" role="property"><title>The <literal>“rate”</literal> property</title>
+<indexterm zone="GstPushFileSrc--rate"><primary>GstPushFileSrc:rate</primary></indexterm>
+<programlisting>  “rate”                     <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Rate to use in TIME SEGMENT.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MINDOUBLE</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstPushFileSrc--start-time" role="property"><title>The <literal>“start-time”</literal> property</title>
+<indexterm zone="GstPushFileSrc--start-time"><primary>GstPushFileSrc:start-time</primary></indexterm>
+<programlisting>  “start-time”               <link linkend="gint64"><type>gint64</type></link></programlisting>
+<para>Initial Start Time (if time-segment TRUE).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstPushFileSrc--stream-time" role="property"><title>The <literal>“stream-time”</literal> property</title>
+<indexterm zone="GstPushFileSrc--stream-time"><primary>GstPushFileSrc:stream-time</primary></indexterm>
+<programlisting>  “stream-time”              <link linkend="gint64"><type>gint64</type></link></programlisting>
+<para>Initial Stream Time (if time-segment TRUE).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstPushFileSrc--time-segment" role="property"><title>The <literal>“time-segment”</literal> property</title>
+<indexterm zone="GstPushFileSrc--time-segment"><primary>GstPushFileSrc:time-segment</primary></indexterm>
+<programlisting>  “time-segment”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Emit TIME SEGMENTS.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-pushfilesrc.see-also">
+<title>See Also</title>
+<para>filesrc</para>
+
+</refsect1>
+
+</refentry>

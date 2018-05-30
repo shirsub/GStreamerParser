@@ -1,0 +1,80 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-y4menc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-y4menc.top_of_page" role="top_of_page">y4menc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>y4menc</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstY4mEncode"/><refsect1 id="gst-plugins-good-plugins-y4menc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstY4mEncode-struct">GstY4mEncode</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-y4menc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstVideoEncoder">GstVideoEncoder</link>
+                    <phrase role="lineart">╰──</phrase> GstY4mEncode
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-y4menc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstY4mEncode implements
+ <link linkend="GstPreset">GstPreset</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-y4menc.description" role="desc">
+<title role="desc.title">Description</title>
+<refsect2>
+<para>
+Creates a YU4MPEG2 raw video stream as defined by the mjpegtools project.
+</para>
+<title>Example launch line</title>
+<para>
+(write everything in one line, without the backslash characters)
+<programlisting>
+gst-launch-1.0 videotestsrc num-buffers=250 \
+! 'video/x-raw,format=(string)I420,width=320,height=240,framerate=(fraction)25/1' \
+! y4menc ! filesink location=test.yuv
+</programlisting>
+</para>
+</refsect2>
+
+<include href="element-y4menc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-y4menc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-y4menc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstY4mEncode-struct" role="struct">
+<title>struct GstY4mEncode</title>
+<indexterm zone="GstY4mEncode-struct"><primary>GstY4mEncode</primary></indexterm>
+<programlisting language="C">struct GstY4mEncode;</programlisting>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,547 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpjitterbuffer">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpjitterbuffer.top_of_page" role="top_of_page">rtpjitterbuffer</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpjitterbuffer</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtpjitterbuffer.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--do-lost">do-lost</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--drop-on-latency">drop-on-latency</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--latency">latency</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint64"><type>gint64</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--ts-offset">ts-offset</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="RTPJitterBufferMode"><type>RTPJitterBufferMode</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--mode">mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--percent">percent</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--do-retransmission">do-retransmission</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-delay">rtx-delay</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-delay-reorder">rtx-delay-reorder</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-retry-period">rtx-retry-period</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-retry-timeout">rtx-retry-timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--stats">stats</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-min-delay">rtx-min-delay</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-min-retry-timeout">rtx-min-retry-timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-max-retries">rtx-max-retries</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-next-seqnum">rtx-next-seqnum</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--max-dropout-time">max-dropout-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--max-misorder-time">max-misorder-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--max-rtcp-rtp-time-diff">max-rtcp-rtp-time-diff</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rfc7273-sync">rfc7273-sync</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-deadline">rtx-deadline</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpJitterBuffer--rtx-stats-timeout">rtx-stats-timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpjitterbuffer.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpJitterBuffer-clear-pt-map">clear-pt-map</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpJitterBuffer-handle-sync">handle-sync</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpJitterBuffer-on-npt-stop">on-npt-stop</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*</entry><entry role="signal_name"><link linkend="GstRtpJitterBuffer-request-pt-map">request-pt-map</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpJitterBuffer-set-active">set-active</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRtpJitterBuffer"/><refsect1 id="gst-plugins-good-plugins-rtpjitterbuffer.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpJitterBuffer-struct">GstRtpJitterBuffer</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpjitterbuffer.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstRtpJitterBuffer
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpjitterbuffer.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element reorders and removes duplicate RTP packets as they are received
+from a network source.</para>
+<para>The element needs the clock-rate of the RTP payload in order to estimate the
+delay. This information is obtained either from the caps on the sink pad or,
+when no caps are present, from the <link linkend="GstRtpJitterBuffer-request-pt-map"><type>“request-pt-map”</type></link> signal.
+To clear the previous pt-map use the <link linkend="GstRtpJitterBuffer-clear-pt-map"><type>“clear-pt-map”</type></link> signal.</para>
+<para>The rtpjitterbuffer will wait for missing packets up to a configurable time
+limit using the <link linkend="GstRtpJitterBuffer--latency"><type>“latency”</type></link> property. Packets arriving too
+late are considered to be lost packets. If the <link linkend="GstRtpJitterBuffer--do-lost"><type>“do-lost”</type></link>
+property is set, lost packets will result in a custom serialized downstream
+event of name GstRTPPacketLost. The lost packet events are usually used by a
+depayloader or other element to create concealment data or some other logic
+to gracefully handle the missing packets.</para>
+<para>The jitterbuffer will use the DTS (or PTS if no DTS is set) of the incomming
+buffer and the rtptime inside the RTP packet to create a PTS on the outgoing
+buffer.</para>
+<para>The jitterbuffer can also be configured to send early retransmission events
+upstream by setting the <link linkend="GstRtpJitterBuffer--do-retransmission"><type>“do-retransmission”</type></link> property. In
+this mode, the jitterbuffer tries to estimate when a packet should arrive and
+sends a custom upstream event named GstRTPRetransmissionRequest when the
+packet is considered late. The initial expected packet arrival time is
+calculated as follows:</para>
+<itemizedlist>
+<listitem>
+<para>If seqnum N arrived at time T, seqnum N+1 is expected to arrive at
+T + packet-spacing + <link linkend="GstRtpJitterBuffer--rtx-delay"><type>“rtx-delay”</type></link>. The packet spacing is
+calculated from the DTS (or PTS is no DTS) of two consecutive RTP
+packets with different rtptime.</para>
+</listitem>
+<listitem>
+<para>If seqnum N0 arrived at time T0 and seqnum Nm arrived at time Tm,
+seqnum Ni is expected at time Ti = T0 + i*(Tm - T0)/(Nm - N0). Any
+previously scheduled timeout is overwritten.</para>
+</listitem>
+<listitem>
+<para>If seqnum N arrived, all seqnum older than
+N - <link linkend="GstRtpJitterBuffer--rtx-delay-reorder"><type>“rtx-delay-reorder”</type></link> are considered late
+immediately. This is to request fast feedback for abonormally reorder
+packets before any of the previous timeouts is triggered.</para>
+</listitem>
+</itemizedlist>
+<para>A late packet triggers the GstRTPRetransmissionRequest custom upstream
+event. After the initial timeout expires and the retransmission event is
+sent, the timeout is scheduled for
+T + <link linkend="GstRtpJitterBuffer--rtx-retry-timeout"><type>“rtx-retry-timeout”</type></link>. If the missing packet did not
+arrive after <link linkend="GstRtpJitterBuffer--rtx-retry-timeout"><type>“rtx-retry-timeout”</type></link>, a new
+GstRTPRetransmissionRequest is sent upstream and the timeout is rescheduled
+again for T + <link linkend="GstRtpJitterBuffer--rtx-retry-timeout"><type>“rtx-retry-timeout”</type></link>. This repeats until
+<link linkend="GstRtpJitterBuffer--rtx-retry-period"><type>“rtx-retry-period”</type></link> elapsed, at which point no further
+retransmission requests are sent and the regular logic is performed to
+schedule a lost packet as discussed above.</para>
+<para>This element acts as a live element and so adds <link linkend="GstRtpJitterBuffer--latency"><type>“latency”</type></link>
+to the pipeline.</para>
+<para>This element will automatically be used inside rtpbin.</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 rtspsrc location=rtsp://192.168.1.133:8554/mpeg1or2AudioVideoTest ! rtpjitterbuffer ! rtpmpvdepay ! mpeg2dec ! xvimagesink
+]]></programlisting></informalexample> Connect to a streaming server and decode the MPEG video. The jitterbuffer is
+inserted into the pipeline to smooth out network jitter and to reorder the
+out-of-order RTP packets.
+</refsect2>
+
+<include href="element-rtpjitterbuffer-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpjitterbuffer.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpjitterbuffer.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpJitterBuffer-struct" role="struct">
+<title>struct GstRtpJitterBuffer</title>
+<indexterm zone="GstRtpJitterBuffer-struct"><primary>GstRtpJitterBuffer</primary></indexterm>
+<programlisting language="C">struct GstRtpJitterBuffer;</programlisting>
+<para>Opaque jitterbuffer structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpjitterbuffer.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRtpJitterBuffer--do-lost" role="property"><title>The <literal>“do-lost”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--do-lost"><primary>GstRtpJitterBuffer:do-lost</primary></indexterm>
+<programlisting>  “do-lost”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Send out a GstRTPPacketLost event downstream when a packet is considered
+lost.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--drop-on-latency" role="property"><title>The <literal>“drop-on-latency”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--drop-on-latency"><primary>GstRtpJitterBuffer:drop-on-latency</primary></indexterm>
+<programlisting>  “drop-on-latency”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Drop oldest buffers when the queue is completely filled.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--latency" role="property"><title>The <literal>“latency”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--latency"><primary>GstRtpJitterBuffer:latency</primary></indexterm>
+<programlisting>  “latency”                  <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The maximum latency of the jitterbuffer. Packets will be kept in the buffer
+for at most this time.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 200</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--ts-offset" role="property"><title>The <literal>“ts-offset”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--ts-offset"><primary>GstRtpJitterBuffer:ts-offset</primary></indexterm>
+<programlisting>  “ts-offset”                <link linkend="gint64"><type>gint64</type></link></programlisting>
+<para>Adjust GStreamer output buffer timestamps in the jitterbuffer with offset.
+This is mainly used to ensure interstream synchronisation.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--mode" role="property"><title>The <literal>“mode”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--mode"><primary>GstRtpJitterBuffer:mode</primary></indexterm>
+<programlisting>  “mode”                     <link linkend="RTPJitterBufferMode"><type>RTPJitterBufferMode</type></link></programlisting>
+<para>Control the buffering and timestamping mode used by the jitterbuffer.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: Slave receiver to sender clock</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--percent" role="property"><title>The <literal>“percent”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--percent"><primary>GstRtpJitterBuffer:percent</primary></indexterm>
+<programlisting>  “percent”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The percent of the jitterbuffer that is filled.</para>
+<para>Flags: Read</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--do-retransmission" role="property"><title>The <literal>“do-retransmission”</literal> property</title>
+<indexterm role="1.2" zone="GstRtpJitterBuffer--do-retransmission"><primary>GstRtpJitterBuffer:do-retransmission</primary></indexterm>
+<programlisting>  “do-retransmission”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Send out a GstRTPRetransmission event upstream when a packet is considered
+late and should be retransmitted.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-delay" role="property"><title>The <literal>“rtx-delay”</literal> property</title>
+<indexterm role="1.2" zone="GstRtpJitterBuffer--rtx-delay"><primary>GstRtpJitterBuffer:rtx-delay</primary></indexterm>
+<programlisting>  “rtx-delay”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>When a packet did not arrive at the expected time, wait this extra amount
+of time before sending a retransmission event.</para>
+<para>When -1 is used, the max jitter will be used as extra delay.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-delay-reorder" role="property"><title>The <literal>“rtx-delay-reorder”</literal> property</title>
+<indexterm role="1.2" zone="GstRtpJitterBuffer--rtx-delay-reorder"><primary>GstRtpJitterBuffer:rtx-delay-reorder</primary></indexterm>
+<programlisting>  “rtx-delay-reorder”        <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Assume that a retransmission event should be sent when we see
+this much packet reordering.</para>
+<para>When -1 is used, the value will be estimated based on observed packet
+reordering. When 0 is used packet reordering alone will not cause a
+retransmission event (Since 1.10).</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 3</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-retry-period" role="property"><title>The <literal>“rtx-retry-period”</literal> property</title>
+<indexterm role="1.2" zone="GstRtpJitterBuffer--rtx-retry-period"><primary>GstRtpJitterBuffer:rtx-retry-period</primary></indexterm>
+<programlisting>  “rtx-retry-period”         <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The amount of time to try to get a retransmission.</para>
+<para>When -1 is used, the value will be estimated based on the jitterbuffer
+latency and the observed round trip time.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-retry-timeout" role="property"><title>The <literal>“rtx-retry-timeout”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--rtx-retry-timeout"><primary>GstRtpJitterBuffer:rtx-retry-timeout</primary></indexterm>
+<programlisting>  “rtx-retry-timeout”        <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Retry sending a transmission event after this timeout in ms (-1 automatic).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--stats" role="property"><title>The <literal>“stats”</literal> property</title>
+<indexterm role="1.4" zone="GstRtpJitterBuffer--stats"><primary>GstRtpJitterBuffer:stats</primary></indexterm>
+<programlisting>  “stats”                    <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>Various jitterbuffer statistics. This property returns a GstStructure
+with name application/x-rtp-jitterbuffer-stats with the following fields:</para>
+<itemizedlist>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;num-pushed&quot;</classname>:
+  the number of packets pushed out.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;num-lost&quot;</classname>:
+  the number of packets considered lost.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;num-late&quot;</classname>:
+  the number of packets arriving too late.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;num-duplicates&quot;</classname>:
+  the number of duplicate packets.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;rtx-count&quot;</classname>:
+  the number of retransmissions requested.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;rtx-success-count&quot;</classname>:
+  the number of successful retransmissions.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="gdouble"><type>gdouble</type></link>
+  <classname>&quot;rtx-per-packet&quot;</classname>:
+  average number of RTX per packet.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;rtx-rtt&quot;</classname>:
+  average round trip time per RTX.
+  </para>
+</listitem>
+</itemizedlist>
+<para>Flags: Read</para>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-min-delay" role="property"><title>The <literal>“rtx-min-delay”</literal> property</title>
+<indexterm role="1.6" zone="GstRtpJitterBuffer--rtx-min-delay"><primary>GstRtpJitterBuffer:rtx-min-delay</primary></indexterm>
+<programlisting>  “rtx-min-delay”            <link linkend="guint"><type>guint</type></link></programlisting>
+<para>When a packet did not arrive at the expected time, wait at least this extra amount
+of time before sending a retransmission event.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-min-retry-timeout" role="property"><title>The <literal>“rtx-min-retry-timeout”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--rtx-min-retry-timeout"><primary>GstRtpJitterBuffer:rtx-min-retry-timeout</primary></indexterm>
+<programlisting>  “rtx-min-retry-timeout”    <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Minimum timeout between sending a transmission event in ms (-1 automatic).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-max-retries" role="property"><title>The <literal>“rtx-max-retries”</literal> property</title>
+<indexterm role="1.6" zone="GstRtpJitterBuffer--rtx-max-retries"><primary>GstRtpJitterBuffer:rtx-max-retries</primary></indexterm>
+<programlisting>  “rtx-max-retries”          <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The maximum number of retries to request a retransmission.</para>
+<para>This implies that as maximum (rtx-max-retries + 1) retransmissions will be requested.
+When -1 is used, the number of retransmission request will not be limited.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-next-seqnum" role="property"><title>The <literal>“rtx-next-seqnum”</literal> property</title>
+<indexterm role="1.6" zone="GstRtpJitterBuffer--rtx-next-seqnum"><primary>GstRtpJitterBuffer:rtx-next-seqnum</primary></indexterm>
+<programlisting>  “rtx-next-seqnum”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Estimate when the next packet should arrive and schedule a retransmission
+request for it.
+This is, when packet N arrives, a GstRTPRetransmission event is schedule
+for packet N+1. So it will be requested if it does not arrive at the expected time.
+The expected time is calculated using the dts of N and the packet spacing.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--max-dropout-time" role="property"><title>The <literal>“max-dropout-time”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--max-dropout-time"><primary>GstRtpJitterBuffer:max-dropout-time</primary></indexterm>
+<programlisting>  “max-dropout-time”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The maximum time (milliseconds) of missing packets tolerated.</para><para>Flags: Read / Write</para>
+<para>Default value: 60000</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--max-misorder-time" role="property"><title>The <literal>“max-misorder-time”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--max-misorder-time"><primary>GstRtpJitterBuffer:max-misorder-time</primary></indexterm>
+<programlisting>  “max-misorder-time”        <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The maximum time (milliseconds) of misordered packets tolerated.</para><para>Flags: Read / Write</para>
+<para>Default value: 2000</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--max-rtcp-rtp-time-diff" role="property"><title>The <literal>“max-rtcp-rtp-time-diff”</literal> property</title>
+<indexterm role="1.8" zone="GstRtpJitterBuffer--max-rtcp-rtp-time-diff"><primary>GstRtpJitterBuffer:max-rtcp-rtp-time-diff</primary></indexterm>
+<programlisting>  “max-rtcp-rtp-time-diff”   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The maximum amount of time in ms that the RTP time in the RTCP SRs
+is allowed to be ahead of the last RTP packet we received. Use
+-1 to disable ignoring of RTCP packets.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 1000</para>
+<para role="since">Since: <link linkend="api-index-1.8">1.8</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--rfc7273-sync" role="property"><title>The <literal>“rfc7273-sync”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--rfc7273-sync"><primary>GstRtpJitterBuffer:rfc7273-sync</primary></indexterm>
+<programlisting>  “rfc7273-sync”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Synchronize received streams to the RFC7273 clock (requires clock and offset to be provided).</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-deadline" role="property"><title>The <literal>“rtx-deadline”</literal> property</title>
+<indexterm role="1.10" zone="GstRtpJitterBuffer--rtx-deadline"><primary>GstRtpJitterBuffer:rtx-deadline</primary></indexterm>
+<programlisting>  “rtx-deadline”             <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The deadline for a valid RTX request in ms.</para>
+<para>How long the RTX RTCP will be valid for.
+When -1 is used, the size of the jitterbuffer will be used.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+<para role="since">Since: <link linkend="api-index-1.10">1.10</link></para></refsect2>
+<refsect2 id="GstRtpJitterBuffer--rtx-stats-timeout" role="property"><title>The <literal>“rtx-stats-timeout”</literal> property</title>
+<indexterm zone="GstRtpJitterBuffer--rtx-stats-timeout"><primary>GstRtpJitterBuffer:rtx-stats-timeout</primary></indexterm>
+<programlisting>  “rtx-stats-timeout”        <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The time to wait for a retransmitted packet after it has been considered lost in order to collect statistics (ms).</para><para>Flags: Read / Write</para>
+<para>Default value: 1000</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpjitterbuffer.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRtpJitterBuffer-clear-pt-map" role="signal"><title>The <literal>“clear-pt-map”</literal> signal</title>
+<indexterm zone="GstRtpJitterBuffer-clear-pt-map"><primary>GstRtpJitterBuffer::clear-pt-map</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpJitterBuffer"><type>GstRtpJitterBuffer</type></link> *buffer,
+               <link linkend="gpointer"><type>gpointer</type></link>            user_data)</programlisting>
+<para>Invalidate the clock-rate as obtained with the
+<link linkend="GstRtpJitterBuffer-request-pt-map"><type>“request-pt-map”</type></link> signal.</para>
+<refsect3 id="GstRtpJitterBuffer-clear-pt-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2><refsect2 id="GstRtpJitterBuffer-handle-sync" role="signal"><title>The <literal>“handle-sync”</literal> signal</title>
+<indexterm zone="GstRtpJitterBuffer-handle-sync"><primary>GstRtpJitterBuffer::handle-sync</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpJitterBuffer"><type>GstRtpJitterBuffer</type></link> *buffer,
+               <link linkend="GstStructure"><type>GstStructure</type></link>       *struct,
+               <link linkend="gpointer"><type>gpointer</type></link>            user_data)</programlisting>
+<para>Be notified of new sync values.</para>
+<refsect3 id="GstRtpJitterBuffer-handle-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>struct</para></entry>
+<entry role="parameter_description"><para>a GstStructure containing sync values.</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpJitterBuffer-on-npt-stop" role="signal"><title>The <literal>“on-npt-stop”</literal> signal</title>
+<indexterm zone="GstRtpJitterBuffer-on-npt-stop"><primary>GstRtpJitterBuffer::on-npt-stop</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpJitterBuffer"><type>GstRtpJitterBuffer</type></link> *buffer,
+               <link linkend="gpointer"><type>gpointer</type></link>            user_data)</programlisting>
+<para>Signal that the jitterbufer has pushed the RTP packet that corresponds to
+the npt-stop position.</para>
+<refsect3 id="GstRtpJitterBuffer-on-npt-stop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpJitterBuffer-request-pt-map" role="signal"><title>The <literal>“request-pt-map”</literal> signal</title>
+<indexterm zone="GstRtpJitterBuffer-request-pt-map"><primary>GstRtpJitterBuffer::request-pt-map</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*
+user_function (<link linkend="GstRtpJitterBuffer"><type>GstRtpJitterBuffer</type></link> *buffer,
+               <link linkend="guint"><type>guint</type></link>               pt,
+               <link linkend="gpointer"><type>gpointer</type></link>            user_data)</programlisting>
+<para>Request the payload type as <link linkend="GstCaps"><type>GstCaps</type></link> for <parameter>pt</parameter>
+.</para>
+<refsect3 id="GstRtpJitterBuffer-request-pt-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pt</para></entry>
+<entry role="parameter_description"><para>the pt</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpJitterBuffer-set-active" role="signal"><title>The <literal>“set-active”</literal> signal</title>
+<indexterm zone="GstRtpJitterBuffer-set-active"><primary>GstRtpJitterBuffer::set-active</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+user_function (<link linkend="GstRtpJitterBuffer"><type>GstRtpJitterBuffer</type></link> *buffer,
+               <link linkend="gboolean"><type>gboolean</type></link>            Returns,
+               <link linkend="guint64"><type>guint64</type></link>             arg2,
+               <link linkend="gpointer"><type>gpointer</type></link>            user_data)</programlisting>
+<para>Start pushing out packets with the given base time. This signal is only
+useful in buffering mode.</para>
+<refsect3 id="GstRtpJitterBuffer-set-active.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstRtpJitterBuffer-set-active.returns" role="returns">
+<title>Returns</title>
+<para> the time of the last pushed packet.</para>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

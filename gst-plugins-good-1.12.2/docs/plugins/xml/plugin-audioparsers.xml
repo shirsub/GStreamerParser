@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="gst-plugins-good-plugins-plugin-audioparsers">
+  <refmeta>
+    <refentrytitle>audioparsers</refentrytitle>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo>FIXME Library</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>audioparsers</refname>
+    <refpurpose><anchor id="plugin-audioparsers"/>Parsers for various audio formats</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <title>Plugin Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>filename</term>
+        <listitem>
+          <simpara>libgstaudioparsers.so</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>version</term>
+        <listitem>
+          <simpara>1.12.2</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>run-time license</term>
+        <listitem>
+          <simpara>LGPL</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>package</term>
+        <listitem>
+          <simpara>GStreamer Good Plug-ins source release</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>origin</term>
+        <listitem>
+          <simpara>Unknown package origin</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>Elements</title>
+    <variablelist>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-aacparse">aacparse</link></term><listitem><simpara>Advanced Audio Coding parser</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-ac3parse">ac3parse</link></term><listitem><simpara>AC3 parser</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-amrparse">amrparse</link></term><listitem><simpara>Adaptive Multi-Rate audio parser</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-dcaparse">dcaparse</link></term><listitem><simpara>DCA parser</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-flacparse">flacparse</link></term><listitem><simpara>Parses audio with the FLAC lossless audio codec</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-mpegaudioparse">mpegaudioparse</link></term><listitem><simpara>Parses and frames mpeg1 audio streams (levels 1-3), provides seek</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-sbcparse">sbcparse</link></term><listitem><simpara>Parses an SBC bluetooth audio stream</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-wavpackparse">wavpackparse</link></term><listitem><simpara>Wavpack parser</simpara></listitem></varlistentry>
+  </variablelist>
+  </refsect1>
+</refentry>

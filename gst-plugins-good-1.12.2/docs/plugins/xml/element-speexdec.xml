@@ -1,0 +1,99 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-speexdec">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-speexdec.top_of_page" role="top_of_page">speexdec</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>speexdec</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-speexdec.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSpeexDec--enh">enh</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstSpeexDec"/><refsect1 id="gst-plugins-good-plugins-speexdec.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSpeexDec-struct">GstSpeexDec</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexdec.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstAudioDecoder">GstAudioDecoder</link>
+                    <phrase role="lineart">╰──</phrase> GstSpeexDec
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-speexdec.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element decodes a Speex stream to raw integer audio.</para>
+<ulink url="http://www.speex.org/">Speex</ulink> is a royalty-free
+<para>audio codec maintained by the <ulink url="http://www.xiph.org/">Xiph.org
+Foundation</ulink>.</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v filesrc location=speex.ogg ! oggdemux ! speexdec ! audioconvert ! audioresample ! alsasink
+]]></programlisting></informalexample> Decode an Ogg/Speex file. To create an Ogg/Speex file refer to the
+documentation of speexenc.
+</refsect2>
+
+<include href="element-speexdec-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexdec.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexdec.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSpeexDec-struct" role="struct">
+<title>struct GstSpeexDec</title>
+<indexterm zone="GstSpeexDec-struct"><primary>GstSpeexDec</primary></indexterm>
+<programlisting language="C">struct GstSpeexDec;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexdec.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSpeexDec--enh" role="property"><title>The <literal>“enh”</literal> property</title>
+<indexterm zone="GstSpeexDec--enh"><primary>GstSpeexDec:enh</primary></indexterm>
+<programlisting>  “enh”                      <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable perceptual enhancement.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexdec.see-also">
+<title>See Also</title>
+<para>speexenc, oggdemux</para>
+
+</refsect1>
+
+</refentry>

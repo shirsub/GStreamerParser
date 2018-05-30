@@ -1,0 +1,203 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-alpha">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-alpha.top_of_page" role="top_of_page">alpha</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>alpha</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-alpha.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstAlpha--alpha">alpha</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAlpha--angle">angle</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstAlphaMethod"><type>GstAlphaMethod</type></link></entry><entry role="property_name"><link linkend="GstAlpha--method">method</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAlpha--noise-level">noise-level</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstAlpha--target-b">target-b</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstAlpha--target-g">target-g</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstAlpha--target-r">target-r</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstAlpha--black-sensitivity">black-sensitivity</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstAlpha--white-sensitivity">white-sensitivity</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstAlpha--prefer-passthrough">prefer-passthrough</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAlpha"/><refsect1 id="gst-plugins-good-plugins-alpha.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAlpha-struct">GstAlpha</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstAlphaMethod">GstAlphaMethod</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-alpha.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstAlpha
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-alpha.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The alpha element adds an alpha channel to a video stream. The values
+of the alpha channel can be either be set to a constant or can be
+dynamically calculated via chroma keying, e.g. blue can be set as
+the transparent color.</para>
+<para>Sample pipeline:</para>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc pattern=snow ! mixer.sink_0 \
+  videotestsrc pattern=smpte75 ! alpha method=green ! mixer.sink_1 \
+  videomixer name=mixer sink_0::zorder=0 sink_1::zorder=1 ! \
+  videoconvert ! autovideosink
+]]></programlisting></informalexample>
+<para> This pipeline adds a alpha channel to the SMPTE color bars
+with green as the transparent color and overlays the output on
+top of a snow video stream.</para>
+
+<include href="element-alpha-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-alpha.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-alpha.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAlpha-struct" role="struct">
+<title>struct GstAlpha</title>
+<indexterm zone="GstAlpha-struct"><primary>GstAlpha</primary></indexterm>
+<programlisting language="C">struct GstAlpha;</programlisting>
+</refsect2>
+<refsect2 id="GstAlphaMethod" role="enum">
+<title>enum GstAlphaMethod</title>
+<indexterm zone="GstAlphaMethod"><primary>GstAlphaMethod</primary></indexterm>
+<refsect3 id="GstAlphaMethod.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="ALPHA-METHOD-SET:CAPS">ALPHA_METHOD_SET</para></entry>
+<entry role="enum_member_description"><para>Set/adjust alpha channel</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="ALPHA-METHOD-GREEN:CAPS">ALPHA_METHOD_GREEN</para></entry>
+<entry role="enum_member_description"><para>Chroma Key green</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="ALPHA-METHOD-BLUE:CAPS">ALPHA_METHOD_BLUE</para></entry>
+<entry role="enum_member_description"><para>Chroma Key blue</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="ALPHA-METHOD-CUSTOM:CAPS">ALPHA_METHOD_CUSTOM</para></entry>
+<entry role="enum_member_description"><para>Chroma Key on target_r/g/b</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-alpha.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAlpha--alpha" role="property"><title>The <literal>“alpha”</literal> property</title>
+<indexterm zone="GstAlpha--alpha"><primary>GstAlpha:alpha</primary></indexterm>
+<programlisting>  “alpha”                    <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>The value for the alpha channel.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstAlpha--angle" role="property"><title>The <literal>“angle”</literal> property</title>
+<indexterm zone="GstAlpha--angle"><primary>GstAlpha:angle</primary></indexterm>
+<programlisting>  “angle”                    <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Size of the colorcube to change.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,90]</para>
+<para>Default value: 20</para>
+</refsect2>
+<refsect2 id="GstAlpha--method" role="property"><title>The <literal>“method”</literal> property</title>
+<indexterm zone="GstAlpha--method"><primary>GstAlpha:method</primary></indexterm>
+<programlisting>  “method”                   <link linkend="GstAlphaMethod"><type>GstAlphaMethod</type></link></programlisting>
+<para>How the alpha channels should be created.</para><para>Flags: Read / Write</para>
+<para>Default value: Set/adjust alpha channel</para>
+</refsect2>
+<refsect2 id="GstAlpha--noise-level" role="property"><title>The <literal>“noise-level”</literal> property</title>
+<indexterm zone="GstAlpha--noise-level"><primary>GstAlpha:noise-level</primary></indexterm>
+<programlisting>  “noise-level”              <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Size of noise radius.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,64]</para>
+<para>Default value: 2</para>
+</refsect2>
+<refsect2 id="GstAlpha--target-b" role="property"><title>The <literal>“target-b”</literal> property</title>
+<indexterm zone="GstAlpha--target-b"><primary>GstAlpha:target-b</primary></indexterm>
+<programlisting>  “target-b”                 <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The blue color value for custom RGB chroma keying.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 255</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAlpha--target-g" role="property"><title>The <literal>“target-g”</literal> property</title>
+<indexterm zone="GstAlpha--target-g"><primary>GstAlpha:target-g</primary></indexterm>
+<programlisting>  “target-g”                 <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The green color value for custom RGB chroma keying.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 255</para>
+<para>Default value: 255</para>
+</refsect2>
+<refsect2 id="GstAlpha--target-r" role="property"><title>The <literal>“target-r”</literal> property</title>
+<indexterm zone="GstAlpha--target-r"><primary>GstAlpha:target-r</primary></indexterm>
+<programlisting>  “target-r”                 <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The red color value for custom RGB chroma keying.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 255</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAlpha--black-sensitivity" role="property"><title>The <literal>“black-sensitivity”</literal> property</title>
+<indexterm zone="GstAlpha--black-sensitivity"><primary>GstAlpha:black-sensitivity</primary></indexterm>
+<programlisting>  “black-sensitivity”        <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Sensitivity to dark colors.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 128</para>
+<para>Default value: 100</para>
+</refsect2>
+<refsect2 id="GstAlpha--white-sensitivity" role="property"><title>The <literal>“white-sensitivity”</literal> property</title>
+<indexterm zone="GstAlpha--white-sensitivity"><primary>GstAlpha:white-sensitivity</primary></indexterm>
+<programlisting>  “white-sensitivity”        <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Sensitivity to bright colors.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 128</para>
+<para>Default value: 100</para>
+</refsect2>
+<refsect2 id="GstAlpha--prefer-passthrough" role="property"><title>The <literal>“prefer-passthrough”</literal> property</title>
+<indexterm zone="GstAlpha--prefer-passthrough"><primary>GstAlpha:prefer-passthrough</primary></indexterm>
+<programlisting>  “prefer-passthrough”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Don't do any processing for alpha=1.0 if possible.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

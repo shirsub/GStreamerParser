@@ -1,0 +1,125 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-audiopanorama">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-audiopanorama.top_of_page" role="top_of_page">audiopanorama</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>audiopanorama</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-audiopanorama.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAudioPanorama--panorama">panorama</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstAudioPanoramaMethod"><type>GstAudioPanoramaMethod</type></link></entry><entry role="property_name"><link linkend="GstAudioPanorama--method">method</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAudioPanorama"/><refsect1 id="gst-plugins-good-plugins-audiopanorama.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAudioPanorama-struct">GstAudioPanorama</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstAudioPanoramaMethod">GstAudioPanoramaMethod</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiopanorama.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> GstAudioPanorama
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-audiopanorama.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Stereo panorama effect with controllable pan position. One can choose between the default psychoacoustic panning method,
+which keeps the same perceived loudness, and a simple panning method that just controls the volume on one channel.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc wave=saw ! audiopanorama panorama=-1.00 ! alsasink
+gst-launch-1.0 filesrc location="melo1.ogg" ! oggdemux ! vorbisdec ! audioconvert ! audiopanorama panorama=-1.00 ! alsasink
+gst-launch-1.0 audiotestsrc wave=saw ! audioconvert ! audiopanorama panorama=-1.00 ! audioconvert ! alsasink
+gst-launch-1.0 audiotestsrc wave=saw ! audioconvert ! audiopanorama method=simple panorama=-0.50 ! audioconvert ! alsasink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-audiopanorama-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiopanorama.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiopanorama.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAudioPanorama-struct" role="struct">
+<title>struct GstAudioPanorama</title>
+<indexterm zone="GstAudioPanorama-struct"><primary>GstAudioPanorama</primary></indexterm>
+<programlisting language="C">struct GstAudioPanorama;</programlisting>
+</refsect2>
+<refsect2 id="GstAudioPanoramaMethod" role="enum">
+<title>enum GstAudioPanoramaMethod</title>
+<indexterm zone="GstAudioPanoramaMethod"><primary>GstAudioPanoramaMethod</primary></indexterm>
+<refsect3 id="GstAudioPanoramaMethod.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="METHOD-PSYCHOACOUSTIC:CAPS">METHOD_PSYCHOACOUSTIC</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="METHOD-SIMPLE:CAPS">METHOD_SIMPLE</para></entry>
+<entry/><entry/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiopanorama.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAudioPanorama--panorama" role="property"><title>The <literal>“panorama”</literal> property</title>
+<indexterm zone="GstAudioPanorama--panorama"><primary>GstAudioPanorama:panorama</primary></indexterm>
+<programlisting>  “panorama”                 <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Position in stereo panorama (-1.0 left -&gt; 1.0 right).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [-1,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAudioPanorama--method" role="property"><title>The <literal>“method”</literal> property</title>
+<indexterm zone="GstAudioPanorama--method"><primary>GstAudioPanorama:method</primary></indexterm>
+<programlisting>  “method”                   <link linkend="GstAudioPanoramaMethod"><type>GstAudioPanoramaMethod</type></link></programlisting>
+<para>Panning method: psychoacoustic mode keeps the same perceived loudness,
+while simple mode just controls the volume of one channel. It's merely
+a matter of taste which method should be chosen.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: Psychoacoustic Panning (default)</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

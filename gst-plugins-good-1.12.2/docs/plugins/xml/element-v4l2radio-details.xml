@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<refsynopsisdiv>
+  <refsect2>
+    <title>Element Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>plugin</term>
+        <listitem>
+          <simpara>
+            <link linkend="plugin-video4linux2">video4linux2</link>
+          </simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>author</term>
+        <listitem>
+          <simpara>Alexey Chernov &lt;4ernov@gmail.com&gt;</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>class</term>
+        <listitem>
+          <simpara>Tuner</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect2>
+  <refsect2>
+    <title>Element Pads</title>
+  </refsect2>
+</refsynopsisdiv>

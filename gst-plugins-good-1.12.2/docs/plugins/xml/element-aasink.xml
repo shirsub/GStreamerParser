@@ -1,0 +1,170 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-aasink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-aasink.top_of_page" role="top_of_page">aasink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>aasink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-aasink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstAASink--brightness">brightness</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstAASink--contrast">contrast</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstAASinkDitherers"><type>GstAASinkDitherers</type></link></entry><entry role="property_name"><link linkend="GstAASink--dither">dither</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstAASinkDrivers"><type>GstAASinkDrivers</type></link></entry><entry role="property_name"><link linkend="GstAASink--driver">driver</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstAASink--frame-time">frame-time</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstAASink--frames-displayed">frames-displayed</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAASink--gamma">gamma</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstAASink--height">height</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstAASink--inversion">inversion</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstAASink--randomval">randomval</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstAASink--width">width</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAASink"/><refsect1 id="gst-plugins-good-plugins-aasink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAASink-struct">GstAASink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-aasink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoSink">GstVideoSink</link>
+                        <phrase role="lineart">╰──</phrase> GstAASink
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-aasink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Displays video as b/w ascii art.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=test.avi ! decodebin ! videoconvert ! aasink
+]]></programlisting></informalexample> This pipeline renders a video to ascii art into a separate window.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=test.avi ! decodebin ! videoconvert ! aasink driver=curses
+]]></programlisting></informalexample> This pipeline renders a video to ascii art into the current terminal.
+</refsect2>
+
+<include href="element-aasink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-aasink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-aasink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAASink-struct" role="struct">
+<title>struct GstAASink</title>
+<indexterm zone="GstAASink-struct"><primary>GstAASink</primary></indexterm>
+<programlisting language="C">struct GstAASink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-aasink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAASink--brightness" role="property"><title>The <literal>“brightness”</literal> property</title>
+<indexterm zone="GstAASink--brightness"><primary>GstAASink:brightness</primary></indexterm>
+<programlisting>  “brightness”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>brightness.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAASink--contrast" role="property"><title>The <literal>“contrast”</literal> property</title>
+<indexterm zone="GstAASink--contrast"><primary>GstAASink:contrast</primary></indexterm>
+<programlisting>  “contrast”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>contrast.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAASink--dither" role="property"><title>The <literal>“dither”</literal> property</title>
+<indexterm zone="GstAASink--dither"><primary>GstAASink:dither</primary></indexterm>
+<programlisting>  “dither”                   <link linkend="GstAASinkDitherers"><type>GstAASinkDitherers</type></link></programlisting>
+<para>dither.</para><para>Flags: Read / Write</para>
+<para>Default value: no dithering</para>
+</refsect2>
+<refsect2 id="GstAASink--driver" role="property"><title>The <literal>“driver”</literal> property</title>
+<indexterm zone="GstAASink--driver"><primary>GstAASink:driver</primary></indexterm>
+<programlisting>  “driver”                   <link linkend="GstAASinkDrivers"><type>GstAASinkDrivers</type></link></programlisting>
+<para>driver.</para><para>Flags: Read / Write</para>
+<para>Default value: X11 driver 1.1</para>
+</refsect2>
+<refsect2 id="GstAASink--frame-time" role="property"><title>The <literal>“frame-time”</literal> property</title>
+<indexterm zone="GstAASink--frame-time"><primary>GstAASink:frame-time</primary></indexterm>
+<programlisting>  “frame-time”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>frame time.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAASink--frames-displayed" role="property"><title>The <literal>“frames-displayed”</literal> property</title>
+<indexterm zone="GstAASink--frames-displayed"><primary>GstAASink:frames-displayed</primary></indexterm>
+<programlisting>  “frames-displayed”         <link linkend="gint"><type>gint</type></link></programlisting>
+<para>frames displayed.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAASink--gamma" role="property"><title>The <literal>“gamma”</literal> property</title>
+<indexterm zone="GstAASink--gamma"><primary>GstAASink:gamma</primary></indexterm>
+<programlisting>  “gamma”                    <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>gamma.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,5]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstAASink--height" role="property"><title>The <literal>“height”</literal> property</title>
+<indexterm zone="GstAASink--height"><primary>GstAASink:height</primary></indexterm>
+<programlisting>  “height”                   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>height.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAASink--inversion" role="property"><title>The <literal>“inversion”</literal> property</title>
+<indexterm zone="GstAASink--inversion"><primary>GstAASink:inversion</primary></indexterm>
+<programlisting>  “inversion”                <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>inversion.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstAASink--randomval" role="property"><title>The <literal>“randomval”</literal> property</title>
+<indexterm zone="GstAASink--randomval"><primary>GstAASink:randomval</primary></indexterm>
+<programlisting>  “randomval”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>randomval.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAASink--width" role="property"><title>The <literal>“width”</literal> property</title>
+<indexterm zone="GstAASink--width"><primary>GstAASink:width</primary></indexterm>
+<programlisting>  “width”                    <link linkend="gint"><type>gint</type></link></programlisting>
+<para>width.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-aasink.see-also">
+<title>See Also</title>
+<para><link linkend="GstCACASink"><type>GstCACASink</type></link></para>
+
+</refsect1>
+
+</refentry>

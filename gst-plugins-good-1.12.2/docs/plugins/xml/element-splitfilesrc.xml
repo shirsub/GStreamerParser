@@ -1,0 +1,111 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-splitfilesrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-splitfilesrc.top_of_page" role="top_of_page">splitfilesrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>splitfilesrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-splitfilesrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSplitFileSrc--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstSplitFileSrc"/><refsect1 id="gst-plugins-good-plugins-splitfilesrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSplitFileSrc-struct">GstSplitFileSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitfilesrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> GstSplitFileSrc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitfilesrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstSplitFileSrc implements
+ <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-splitfilesrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Reads data from multiple files, presenting those files as one continuous
+file to downstream elements. This is useful for reading a large file that
+had to be split into multiple parts due to filesystem file size limitations,
+for example.</para>
+<para>The files to select are chosen via the location property, which supports
+(and expects) shell-style wildcards (but only for the filename, not for
+directories). The results will be sorted.</para>
+<refsect2>
+<title>Example launch lines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 splitfilesrc location="/path/to/part-*.mpg" ! decodebin ! ...
+]]></programlisting></informalexample> Plays the different parts as if they were one single MPEG file.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 playbin uri="splitfile://path/to/foo.avi.*"
+]]></programlisting></informalexample> Plays the different parts as if they were one single AVI file.
+</refsect2>
+
+<include href="element-splitfilesrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitfilesrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitfilesrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSplitFileSrc-struct" role="struct">
+<title>struct GstSplitFileSrc</title>
+<indexterm zone="GstSplitFileSrc-struct"><primary>GstSplitFileSrc</primary></indexterm>
+<programlisting language="C">struct GstSplitFileSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitfilesrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSplitFileSrc--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstSplitFileSrc--location"><primary>GstSplitFileSrc:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Wildcard pattern to match file names of the input files. If the location is an absolute path or contains directory components, only the base file name part will be considered for pattern matching. The results will be sorted.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitfilesrc.see-also">
+<title>See Also</title>
+<para><link linkend="GstFileSrc"><type>GstFileSrc</type></link>, <link linkend="GstMultiFileSrc"><type>GstMultiFileSrc</type></link></para>
+
+</refsect1>
+
+</refentry>

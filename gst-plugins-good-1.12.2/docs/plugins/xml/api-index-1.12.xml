@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<indexdiv id="api-index-1.12">
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="GstGdkPixbufOverlay--coef-x"><link linkend="GstGdkPixbufOverlay--coef-x">GstGdkPixbufOverlay:coef-x</link>, object property in <link linkend="gst-plugins-good-plugins-gdkpixbufoverlay">gdkpixbufoverlay</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstGdkPixbufOverlay--coef-y"><link linkend="GstGdkPixbufOverlay--coef-y">GstGdkPixbufOverlay:coef-y</link>, object property in <link linkend="gst-plugins-good-plugins-gdkpixbufoverlay">gdkpixbufoverlay</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpBin-on-bundled-ssrc"><link linkend="GstRtpBin-on-bundled-ssrc">GstRtpBin::on-bundled-ssrc</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

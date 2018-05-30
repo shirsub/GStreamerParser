@@ -1,0 +1,99 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rippletv">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rippletv.top_of_page" role="top_of_page">rippletv</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rippletv</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rippletv.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstRippleTVMode"><type>GstRippleTVMode</type></link></entry><entry role="property_name"><link linkend="GstRippleTV--mode">mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRippleTV--reset">reset</link></entry><entry role="property_flags">Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRippleTV"/><refsect1 id="gst-plugins-good-plugins-rippletv.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRippleTV-struct">GstRippleTV</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rippletv.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstRippleTV
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rippletv.description" role="desc">
+<title role="desc.title">Description</title>
+<para>RippleTV does ripple mark effect on the video input. The ripple is caused
+by motion or random rain drops.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc ! rippletv ! videoconvert ! autovideosink
+]]></programlisting></informalexample> This pipeline shows the effect of rippletv on a test stream.
+</refsect2>
+
+<include href="element-rippletv-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rippletv.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rippletv.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRippleTV-struct" role="struct">
+<title>struct GstRippleTV</title>
+<indexterm zone="GstRippleTV-struct"><primary>GstRippleTV</primary></indexterm>
+<programlisting language="C">struct GstRippleTV;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rippletv.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRippleTV--mode" role="property"><title>The <literal>“mode”</literal> property</title>
+<indexterm zone="GstRippleTV--mode"><primary>GstRippleTV:mode</primary></indexterm>
+<programlisting>  “mode”                     <link linkend="GstRippleTVMode"><type>GstRippleTVMode</type></link></programlisting>
+<para>Mode.</para><para>Flags: Read / Write</para>
+<para>Default value: Motion Detection</para>
+</refsect2>
+<refsect2 id="GstRippleTV--reset" role="property"><title>The <literal>“reset”</literal> property</title>
+<indexterm zone="GstRippleTV--reset"><primary>GstRippleTV:reset</primary></indexterm>
+<programlisting>  “reset”                    <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Reset all current ripples.</para><para>Flags: Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

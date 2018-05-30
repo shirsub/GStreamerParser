@@ -1,0 +1,141 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-multifilesrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-multifilesrc.top_of_page" role="top_of_page">multifilesrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>multifilesrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-multifilesrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstCaps"><type>GstCaps</type></link> *</entry><entry role="property_name"><link linkend="GstMultiFileSrc--caps">caps</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSrc--index">index</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstMultiFileSrc--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSrc--loop">loop</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSrc--start-index">start-index</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSrc--stop-index">stop-index</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstMultiFileSrc"/><refsect1 id="gst-plugins-good-plugins-multifilesrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstMultiFileSrc-struct">GstMultiFileSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                        <phrase role="lineart">╰──</phrase> GstMultiFileSrc
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-multifilesrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Reads buffers from sequentially named files. If used together with an image
+decoder, one needs to use the <link linkend="GstMultiFileSrc--caps"><type>“caps”</type></link> property or a capsfilter
+to force to caps containing a framerate. Otherwise image decoders send EOS
+after the first picture. We also need a videorate element to set timestamps
+on all buffers after the first one in accordance with the framerate.</para>
+<para>File names are created by replacing &quot;%d&quot; with the index using <link linkend="printf"><function>printf()</function></link>.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 multifilesrc location="img.%04d.png" index=0 caps="image/png,framerate=\(fraction\)12/1" ! \
+    pngdec ! videoconvert ! videorate ! theoraenc ! oggmux ! \
+    filesink location="images.ogg"
+]]></programlisting></informalexample> This pipeline creates a video file &quot;images.ogg&quot; by joining multiple PNG
+files named img.0000.png, img.0001.png, etc.
+</refsect2>
+
+<include href="element-multifilesrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstMultiFileSrc-struct" role="struct">
+<title>struct GstMultiFileSrc</title>
+<indexterm zone="GstMultiFileSrc-struct"><primary>GstMultiFileSrc</primary></indexterm>
+<programlisting language="C">struct GstMultiFileSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstMultiFileSrc--caps" role="property"><title>The <literal>“caps”</literal> property</title>
+<indexterm zone="GstMultiFileSrc--caps"><primary>GstMultiFileSrc:caps</primary></indexterm>
+<programlisting>  “caps”                     <link linkend="GstCaps"><type>GstCaps</type></link> *</programlisting>
+<para>Caps describing the format of the data.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstMultiFileSrc--index" role="property"><title>The <literal>“index”</literal> property</title>
+<indexterm zone="GstMultiFileSrc--index"><primary>GstMultiFileSrc:index</primary></indexterm>
+<programlisting>  “index”                    <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Index to use with location property to create file names.  The index is incremented by one for each buffer read.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstMultiFileSrc--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstMultiFileSrc--location"><primary>GstMultiFileSrc:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Pattern to create file names of input files.  File names are created by calling sprintf() with the pattern and the current index.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;%05d&quot;</para>
+</refsect2>
+<refsect2 id="GstMultiFileSrc--loop" role="property"><title>The <literal>“loop”</literal> property</title>
+<indexterm zone="GstMultiFileSrc--loop"><primary>GstMultiFileSrc:loop</primary></indexterm>
+<programlisting>  “loop”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether to repeat from the beginning when all files have been read.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstMultiFileSrc--start-index" role="property"><title>The <literal>“start-index”</literal> property</title>
+<indexterm zone="GstMultiFileSrc--start-index"><primary>GstMultiFileSrc:start-index</primary></indexterm>
+<programlisting>  “start-index”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Start value of index.  The initial value of index can be set either by setting index or start-index.  When the end of the loop is reached, the index will be set to the value start-index.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstMultiFileSrc--stop-index" role="property"><title>The <literal>“stop-index”</literal> property</title>
+<indexterm zone="GstMultiFileSrc--stop-index"><primary>GstMultiFileSrc:stop-index</primary></indexterm>
+<programlisting>  “stop-index”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Stop value of index.  The special value -1 means no stop.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesrc.see-also">
+<title>See Also</title>
+<para><link linkend="GstFileSrc"><type>GstFileSrc</type></link></para>
+
+</refsect1>
+
+</refentry>

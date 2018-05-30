@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<refsynopsisdiv>
+  <refsect2>
+    <title>Element Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>plugin</term>
+        <listitem>
+          <simpara>
+            <link linkend="plugin-osxvideo">osxvideo</link>
+          </simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>author</term>
+        <listitem>
+          <simpara>Zaheer Abbas Merali &lt;zaheerabas at merali dot org&gt;</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>class</term>
+        <listitem>
+          <simpara>Sink/Video</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect2>
+  <refsect2>
+    <title>Element Pads</title>
+  </refsect2>
+</refsynopsisdiv>

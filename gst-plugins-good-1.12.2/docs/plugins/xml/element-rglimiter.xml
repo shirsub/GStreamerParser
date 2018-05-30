@@ -1,0 +1,100 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rglimiter">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rglimiter.top_of_page" role="top_of_page">rglimiter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rglimiter</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rglimiter.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRgLimiter--enabled">enabled</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRgLimiter"/><refsect1 id="gst-plugins-good-plugins-rglimiter.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRgLimiter-struct">GstRgLimiter</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rglimiter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> GstRgLimiter
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rglimiter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element applies signal compression/limiting to raw audio data.  It
+performs strict hard limiting with soft-knee characteristics, using a
+threshold of -6 dB.  This type of filter is mentioned in the proposed <ulink url="http://replaygain.org">ReplayGain standard</ulink>.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=filename.ext ! decodebin ! audioconvert \
+           ! rgvolume pre-amp=6.0 headroom=10.0 ! rglimiter \
+           ! audioconvert ! audioresample ! alsasink
+]]></programlisting></informalexample>Playback of a file
+</refsect2>
+
+<include href="element-rglimiter-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rglimiter.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rglimiter.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRgLimiter-struct" role="struct">
+<title>struct GstRgLimiter</title>
+<indexterm zone="GstRgLimiter-struct"><primary>GstRgLimiter</primary></indexterm>
+<programlisting language="C">struct GstRgLimiter;</programlisting>
+<para>Opaque data structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rglimiter.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRgLimiter--enabled" role="property"><title>The <literal>“enabled”</literal> property</title>
+<indexterm zone="GstRgLimiter--enabled"><primary>GstRgLimiter:enabled</primary></indexterm>
+<programlisting>  “enabled”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable processing.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rglimiter.see-also">
+<title>See Also</title>
+<para><link linkend="GstRgVolume"><type>GstRgVolume</type></link></para>
+
+</refsect1>
+
+</refentry>

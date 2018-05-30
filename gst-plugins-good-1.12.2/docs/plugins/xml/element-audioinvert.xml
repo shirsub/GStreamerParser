@@ -1,0 +1,96 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-audioinvert">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-audioinvert.top_of_page" role="top_of_page">audioinvert</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>audioinvert</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-audioinvert.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAudioInvert--degree">degree</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAudioInvert"/><refsect1 id="gst-plugins-good-plugins-audioinvert.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAudioInvert-struct">GstAudioInvert</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioinvert.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFilter">GstAudioFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstAudioInvert
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-audioinvert.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Swaps upper and lower half of audio samples. Mixing an inverted sample on top of
+the original with a slight delay can produce effects that sound like resonance.
+Creating a stereo sample from a mono source, with one channel inverted produces wide-stereo sounds.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc wave=saw ! audioinvert degree=0.4 ! alsasink
+gst-launch-1.0 filesrc location="melo1.ogg" ! oggdemux ! vorbisdec ! audioconvert ! audioinvert degree=0.4 ! alsasink
+gst-launch-1.0 audiotestsrc wave=saw ! audioconvert ! audioinvert degree=0.4 ! audioconvert ! alsasink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-audioinvert-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioinvert.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioinvert.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAudioInvert-struct" role="struct">
+<title>struct GstAudioInvert</title>
+<indexterm zone="GstAudioInvert-struct"><primary>GstAudioInvert</primary></indexterm>
+<programlisting language="C">struct GstAudioInvert;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioinvert.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAudioInvert--degree" role="property"><title>The <literal>“degree”</literal> property</title>
+<indexterm zone="GstAudioInvert--degree"><primary>GstAudioInvert:degree</primary></indexterm>
+<programlisting>  “degree”                   <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Degree of inversion.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

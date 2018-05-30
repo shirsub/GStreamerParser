@@ -1,0 +1,167 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-souphttpclientsink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-souphttpclientsink.top_of_page" role="top_of_page">souphttpclientsink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>souphttpclientsink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-souphttpclientsink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--automatic-redirect">automatic-redirect</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GStrv"><type>GStrv</type></link></entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--cookies">cookies</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--proxy">proxy</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--proxy-id">proxy-id</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--proxy-pw">proxy-pw</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="SoupSession"><type>SoupSession</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--session">session</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--user-agent">user-agent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--user-id">user-id</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--user-pw">user-pw</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="SoupLoggerLogLevel"><type>SoupLoggerLogLevel</type></link></entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--http-log-level">http-log-level</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--retries">retries</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSoupHttpClientSink--retry-delay">retry-delay</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstSoupHttpClientSink"/><refsect1 id="gst-plugins-good-plugins-souphttpclientsink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSoupHttpClientSink-struct">GstSoupHttpClientSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-souphttpclientsink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> GstSoupHttpClientSink
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-souphttpclientsink.description" role="desc">
+<title role="desc.title">Description</title>
+
+<include href="element-souphttpclientsink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-souphttpclientsink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-souphttpclientsink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSoupHttpClientSink-struct" role="struct">
+<title>struct GstSoupHttpClientSink</title>
+<indexterm zone="GstSoupHttpClientSink-struct"><primary>GstSoupHttpClientSink</primary></indexterm>
+<programlisting language="C">struct GstSoupHttpClientSink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-souphttpclientsink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSoupHttpClientSink--automatic-redirect" role="property"><title>The <literal>“automatic-redirect”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--automatic-redirect"><primary>GstSoupHttpClientSink:automatic-redirect</primary></indexterm>
+<programlisting>  “automatic-redirect”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Automatically follow HTTP redirects (HTTP Status Code 3xx).</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--cookies" role="property"><title>The <literal>“cookies”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--cookies"><primary>GstSoupHttpClientSink:cookies</primary></indexterm>
+<programlisting>  “cookies”                  <link linkend="GStrv"><type>GStrv</type></link></programlisting>
+<para>HTTP request cookies.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--location"><primary>GstSoupHttpClientSink:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>URI to send to.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--proxy" role="property"><title>The <literal>“proxy”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--proxy"><primary>GstSoupHttpClientSink:proxy</primary></indexterm>
+<programlisting>  “proxy”                    <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>HTTP proxy server URI.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--proxy-id" role="property"><title>The <literal>“proxy-id”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--proxy-id"><primary>GstSoupHttpClientSink:proxy-id</primary></indexterm>
+<programlisting>  “proxy-id”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>user id for proxy authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--proxy-pw" role="property"><title>The <literal>“proxy-pw”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--proxy-pw"><primary>GstSoupHttpClientSink:proxy-pw</primary></indexterm>
+<programlisting>  “proxy-pw”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>user password for proxy authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--session" role="property"><title>The <literal>“session”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--session"><primary>GstSoupHttpClientSink:session</primary></indexterm>
+<programlisting>  “session”                  <link linkend="SoupSession"><type>SoupSession</type></link> *</programlisting>
+<para>SoupSession object to use for communication.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--user-agent" role="property"><title>The <literal>“user-agent”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--user-agent"><primary>GstSoupHttpClientSink:user-agent</primary></indexterm>
+<programlisting>  “user-agent”               <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Value of the User-Agent HTTP request header field.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;GStreamer souphttpclientsink &quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--user-id" role="property"><title>The <literal>“user-id”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--user-id"><primary>GstSoupHttpClientSink:user-id</primary></indexterm>
+<programlisting>  “user-id”                  <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>user id for authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--user-pw" role="property"><title>The <literal>“user-pw”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--user-pw"><primary>GstSoupHttpClientSink:user-pw</primary></indexterm>
+<programlisting>  “user-pw”                  <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>user password for authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--http-log-level" role="property"><title>The <literal>“http-log-level”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--http-log-level"><primary>GstSoupHttpClientSink:http-log-level</primary></indexterm>
+<programlisting>  “http-log-level”           <link linkend="SoupLoggerLogLevel"><type>SoupLoggerLogLevel</type></link></programlisting>
+<para>Set log level for soup's HTTP session log.</para><para>Flags: Read / Write</para>
+<para>Default value: SOUP_LOGGER_LOG_NONE</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--retries" role="property"><title>The <literal>“retries”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--retries"><primary>GstSoupHttpClientSink:retries</primary></indexterm>
+<programlisting>  “retries”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Maximum number of retries, zero to disable, -1 to retry forever.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstSoupHttpClientSink--retry-delay" role="property"><title>The <literal>“retry-delay”</literal> property</title>
+<indexterm zone="GstSoupHttpClientSink--retry-delay"><primary>GstSoupHttpClientSink:retry-delay</primary></indexterm>
+<programlisting>  “retry-delay”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Delay in seconds between retries after a failure.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 1</para>
+<para>Default value: 5</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

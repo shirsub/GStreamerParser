@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="gst-plugins-good-plugins-plugin-audiofx">
+  <refmeta>
+    <refentrytitle>audiofx</refentrytitle>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo>FIXME Library</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>audiofx</refname>
+    <refpurpose><anchor id="plugin-audiofx"/>Audio effects plugin</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <title>Plugin Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>filename</term>
+        <listitem>
+          <simpara>libgstaudiofx.so</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>version</term>
+        <listitem>
+          <simpara>1.12.2</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>run-time license</term>
+        <listitem>
+          <simpara>LGPL</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>package</term>
+        <listitem>
+          <simpara>GStreamer Good Plug-ins source release</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>origin</term>
+        <listitem>
+          <simpara>Unknown package origin</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>Elements</title>
+    <variablelist>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audioamplify">audioamplify</link></term><listitem><simpara>Amplifies an audio stream by a given factor</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audiochebband">audiochebband</link></term><listitem><simpara>Chebyshev band pass and band reject filter</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audiocheblimit">audiocheblimit</link></term><listitem><simpara>Chebyshev low pass and high pass filter</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audiodynamic">audiodynamic</link></term><listitem><simpara>Compressor and Expander</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audioecho">audioecho</link></term><listitem><simpara>Adds an echo or reverb effect to an audio stream</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audiofirfilter">audiofirfilter</link></term><listitem><simpara>Generic audio FIR filter with custom filter kernel</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audioiirfilter">audioiirfilter</link></term><listitem><simpara>Generic audio IIR filter with custom filter kernel</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audioinvert">audioinvert</link></term><listitem><simpara>Swaps upper and lower half of audio samples</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audiokaraoke">audiokaraoke</link></term><listitem><simpara>Removes voice from sound</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audiopanorama">audiopanorama</link></term><listitem><simpara>Positions audio streams in the stereo panorama</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audiowsincband">audiowsincband</link></term><listitem><simpara>Band pass and band reject windowed sinc filter</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-audiowsinclimit">audiowsinclimit</link></term><listitem><simpara>Low pass and high pass windowed sinc filter</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-scaletempo">scaletempo</link></term><listitem><simpara>Sync audio tempo with playback rate</simpara></listitem></varlistentry>
+  </variablelist>
+  </refsect1>
+</refentry>

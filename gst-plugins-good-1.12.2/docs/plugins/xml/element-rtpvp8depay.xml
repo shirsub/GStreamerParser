@@ -1,0 +1,59 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpvp8depay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpvp8depay.top_of_page" role="top_of_page">rtpvp8depay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpvp8depay</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstRtpVP8Depay"/><refsect1 id="gst-plugins-good-plugins-rtpvp8depay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpVP8Depay-struct">GstRtpVP8Depay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpvp8depay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstRTPBaseDepayload">GstRTPBaseDepayload</link>
+                    <phrase role="lineart">╰──</phrase> GstRtpVP8Depay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpvp8depay.description" role="desc">
+<title role="desc.title">Description</title>
+
+<include href="element-rtpvp8depay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpvp8depay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpvp8depay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpVP8Depay-struct" role="struct">
+<title>struct GstRtpVP8Depay</title>
+<indexterm zone="GstRtpVP8Depay-struct"><primary>GstRtpVP8Depay</primary></indexterm>
+<programlisting language="C">struct GstRtpVP8Depay;</programlisting>
+</refsect2>
+
+</refsect1>
+
+</refentry>

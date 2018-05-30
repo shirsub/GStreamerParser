@@ -1,0 +1,149 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-splitmuxsrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-splitmuxsrc.top_of_page" role="top_of_page">splitmuxsrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>splitmuxsrc</refname>
+<refpurpose>Split Demuxer bin that recombines files created by
+the splitmuxsink element.</refpurpose>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-splitmuxsrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSplitMuxSrc--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsrc.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="GStrv"><returnvalue>GStrv</returnvalue></link></entry><entry role="signal_name"><link linkend="GstSplitMuxSrc-format-location">format-location</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstSplitMuxSrc"/><refsect1 id="gst-plugins-good-plugins-splitmuxsrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSplitMuxSrc-struct">GstSplitMuxSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBin">GstBin</link>
+                    <phrase role="lineart">╰──</phrase> GstSplitMuxSrc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstSplitMuxSrc implements
+ <link linkend="GstChildProxy">GstChildProxy</link> and  <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-splitmuxsrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element reads a set of input files created by the splitmuxsink element
+containing contiguous elementary streams split across multiple files.</para>
+<para>This element is similar to splitfilesrc, except that it recombines the
+streams in each file part at the demuxed elementary level, rather than
+as a single larger bytestream.</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 splitmuxsrc location=video*.mov ! decodebin ! xvimagesink
+]]></programlisting></informalexample> Demux each file part and output the video stream as one continuous stream
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 playbin uri="splitmux://path/to/foo.mp4.*"
+]]></programlisting></informalexample> Play back a set of files created by splitmuxsink
+</refsect2>
+
+<include href="element-splitmuxsrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSplitMuxSrc-struct" role="struct">
+<title>struct GstSplitMuxSrc</title>
+<indexterm zone="GstSplitMuxSrc-struct"><primary>GstSplitMuxSrc</primary></indexterm>
+<programlisting language="C">struct GstSplitMuxSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSplitMuxSrc--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstSplitMuxSrc--location"><primary>GstSplitMuxSrc:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Glob pattern for the location of the files to read.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsrc.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstSplitMuxSrc-format-location" role="signal"><title>The <literal>“format-location”</literal> signal</title>
+<indexterm role="1.8" zone="GstSplitMuxSrc-format-location"><primary>GstSplitMuxSrc::format-location</primary></indexterm>
+<programlisting language="C"><link linkend="GStrv"><returnvalue>GStrv</returnvalue></link>
+user_function (<link linkend="GstSplitMuxSrc"><type>GstSplitMuxSrc</type></link> *splitmux,
+               <link linkend="gpointer"><type>gpointer</type></link>        user_data)</programlisting>
+<refsect3 id="GstSplitMuxSrc-format-location.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>splitmux</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstSplitMuxSrc"><type>GstSplitMuxSrc</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstSplitMuxSrc-format-location.returns" role="returns">
+<title>Returns</title>
+<para> A NULL-terminated sorted array of strings containing the
+filenames of the input files. The array will be freed internally
+using <link linkend="g-strfreev"><function>g_strfreev()</function></link></para>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+<para role="since">Since: <link linkend="api-index-1.8">1.8</link></para></refsect2>
+</refsect1>
+
+</refentry>

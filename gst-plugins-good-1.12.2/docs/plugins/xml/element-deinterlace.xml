@@ -1,0 +1,338 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-deinterlace">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-deinterlace.top_of_page" role="top_of_page">deinterlace</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>deinterlace</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-deinterlace.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstDeinterlaceFields"><type>GstDeinterlaceFields</type></link></entry><entry role="property_name"><link linkend="GstDeinterlace--fields">fields</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstDeinterlaceMethods"><type>GstDeinterlaceMethods</type></link></entry><entry role="property_name"><link linkend="GstDeinterlace--method">method</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstDeinterlaceModes"><type>GstDeinterlaceModes</type></link></entry><entry role="property_name"><link linkend="GstDeinterlace--mode">mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstDeinterlaceFieldLayout"><type>GstDeinterlaceFieldLayout</type></link></entry><entry role="property_name"><link linkend="GstDeinterlace--tff">tff</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDeinterlace--drop-orphans">drop-orphans</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDeinterlace--ignore-obscure">ignore-obscure</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstDeinterlaceLocking"><type>GstDeinterlaceLocking</type></link></entry><entry role="property_name"><link linkend="GstDeinterlace--locking">locking</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstDeinterlace"/><refsect1 id="gst-plugins-good-plugins-deinterlace.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDeinterlace-struct">GstDeinterlace</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstDeinterlaceFields">GstDeinterlaceFields</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstDeinterlaceLocking">GstDeinterlaceLocking</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstDeinterlaceMethods">GstDeinterlaceMethods</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstDeinterlaceFieldLayout">GstDeinterlaceFieldLayout</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterlace.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstDeinterlace
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterlace.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstDeinterlace implements
+ <link linkend="GstChildProxy">GstChildProxy</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-deinterlace.description" role="desc">
+<title role="desc.title">Description</title>
+<para>deinterlace deinterlaces interlaced video frames to progressive video frames.
+For this different algorithms can be selected which will be described later.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v filesrc location=/path/to/file ! decodebin ! videoconvert ! deinterlace ! videoconvert ! autovideosink
+]]></programlisting></informalexample> This pipeline deinterlaces a video file with the default deinterlacing options.
+</refsect2>
+
+<include href="element-deinterlace-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterlace.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterlace.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDeinterlace-struct" role="struct">
+<title>struct GstDeinterlace</title>
+<indexterm zone="GstDeinterlace-struct"><primary>GstDeinterlace</primary></indexterm>
+<programlisting language="C">struct GstDeinterlace;</programlisting>
+</refsect2>
+<refsect2 id="GstDeinterlaceFields" role="enum">
+<title>enum GstDeinterlaceFields</title>
+<indexterm zone="GstDeinterlaceFields"><primary>GstDeinterlaceFields</primary></indexterm>
+<refsect3 id="GstDeinterlaceFields.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-ALL:CAPS">GST_DEINTERLACE_ALL</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-TF:CAPS">GST_DEINTERLACE_TF</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-BF:CAPS">GST_DEINTERLACE_BF</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-FIELDS-AUTO:CAPS">GST_DEINTERLACE_FIELDS_AUTO</para></entry>
+<entry/><entry/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstDeinterlaceLocking" role="enum">
+<title>enum GstDeinterlaceLocking</title>
+<indexterm zone="GstDeinterlaceLocking"><primary>GstDeinterlaceLocking</primary></indexterm>
+<refsect3 id="GstDeinterlaceLocking.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-LOCKING-NONE:CAPS">GST_DEINTERLACE_LOCKING_NONE</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-LOCKING-AUTO:CAPS">GST_DEINTERLACE_LOCKING_AUTO</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-LOCKING-ACTIVE:CAPS">GST_DEINTERLACE_LOCKING_ACTIVE</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-LOCKING-PASSIVE:CAPS">GST_DEINTERLACE_LOCKING_PASSIVE</para></entry>
+<entry/><entry/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstDeinterlaceMethods" role="enum">
+<title>enum GstDeinterlaceMethods</title>
+<indexterm zone="GstDeinterlaceMethods"><primary>GstDeinterlaceMethods</primary></indexterm>
+<refsect3 id="GstDeinterlaceMethods.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-TOMSMOCOMP:CAPS">GST_DEINTERLACE_TOMSMOCOMP</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-GREEDY-H:CAPS">GST_DEINTERLACE_GREEDY_H</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-GREEDY-L:CAPS">GST_DEINTERLACE_GREEDY_L</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-VFIR:CAPS">GST_DEINTERLACE_VFIR</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-LINEAR:CAPS">GST_DEINTERLACE_LINEAR</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-LINEAR-BLEND:CAPS">GST_DEINTERLACE_LINEAR_BLEND</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-SCALER-BOB:CAPS">GST_DEINTERLACE_SCALER_BOB</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-WEAVE:CAPS">GST_DEINTERLACE_WEAVE</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-WEAVE-TFF:CAPS">GST_DEINTERLACE_WEAVE_TFF</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-WEAVE-BFF:CAPS">GST_DEINTERLACE_WEAVE_BFF</para></entry>
+<entry/><entry/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstDeinterlaceFieldLayout" role="enum">
+<title>enum GstDeinterlaceFieldLayout</title>
+<indexterm zone="GstDeinterlaceFieldLayout"><primary>GstDeinterlaceFieldLayout</primary></indexterm>
+<refsect3 id="GstDeinterlaceFieldLayout.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-LAYOUT-AUTO:CAPS">GST_DEINTERLACE_LAYOUT_AUTO</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-LAYOUT-TFF:CAPS">GST_DEINTERLACE_LAYOUT_TFF</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-DEINTERLACE-LAYOUT-BFF:CAPS">GST_DEINTERLACE_LAYOUT_BFF</para></entry>
+<entry/><entry/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterlace.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstDeinterlace--fields" role="property"><title>The <literal>“fields”</literal> property</title>
+<indexterm zone="GstDeinterlace--fields"><primary>GstDeinterlace:fields</primary></indexterm>
+<programlisting>  “fields”                   <link linkend="GstDeinterlaceFields"><type>GstDeinterlaceFields</type></link></programlisting>
+<para>This selects which fields should be output. If &quot;all&quot; is selected
+the output framerate will be double.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: All fields</para>
+</refsect2>
+<refsect2 id="GstDeinterlace--method" role="property"><title>The <literal>“method”</literal> property</title>
+<indexterm zone="GstDeinterlace--method"><primary>GstDeinterlace:method</primary></indexterm>
+<programlisting>  “method”                   <link linkend="GstDeinterlaceMethods"><type>GstDeinterlaceMethods</type></link></programlisting>
+<para>Selects the different deinterlacing algorithms that can be used.
+These provide different quality and CPU usage.</para>
+<para>Some methods provide parameters which can be set by getting
+the &quot;method&quot; child via the <link linkend="GstChildProxy"><type>GstChildProxy</type></link> interface and
+setting the appropiate properties on it.</para>
+<itemizedlist>
+<listitem>
+<para>
+tomsmocomp
+Motion Adaptive: Motion Search
+</para>
+</listitem>
+<listitem>
+<para>
+greedyh
+Motion Adaptive: Advanced Detection
+</para>
+</listitem>
+<listitem>
+<para>
+greedyl
+Motion Adaptive: Simple Detection
+</para>
+</listitem>
+<listitem>
+<para>
+vfir
+Blur vertical
+</para>
+</listitem>
+<listitem>
+<para>
+linear
+Linear interpolation
+</para>
+</listitem>
+<listitem>
+<para>
+linearblend
+Linear interpolation in time domain.  Any motion causes significant
+ghosting, so this method should not be used.
+</para>
+</listitem>
+<listitem>
+<para>
+scalerbob
+Double lines
+</para>
+</listitem>
+<listitem>
+<para>
+weave
+Weave.  Bad quality, do not use.
+</para>
+</listitem>
+<listitem>
+<para>
+weavetff
+Progressive: Top Field First.  Bad quality, do not use.
+</para>
+</listitem>
+<listitem>
+<para>
+weavebff
+Progressive: Bottom Field First.  Bad quality, do not use.
+</para>
+</listitem>
+</itemizedlist>
+<para>Flags: Read / Write</para>
+<para>Default value: Linear</para>
+</refsect2>
+<refsect2 id="GstDeinterlace--mode" role="property"><title>The <literal>“mode”</literal> property</title>
+<indexterm zone="GstDeinterlace--mode"><primary>GstDeinterlace:mode</primary></indexterm>
+<programlisting>  “mode”                     <link linkend="GstDeinterlaceModes"><type>GstDeinterlaceModes</type></link></programlisting>
+<para>This selects whether the deinterlacing methods should
+always be applied or if they should only be applied
+on content that has the &quot;interlaced&quot; flag on the caps.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: Auto detection (best effort)</para>
+</refsect2>
+<refsect2 id="GstDeinterlace--tff" role="property"><title>The <literal>“tff”</literal> property</title>
+<indexterm zone="GstDeinterlace--tff"><primary>GstDeinterlace:tff</primary></indexterm>
+<programlisting>  “tff”                      <link linkend="GstDeinterlaceFieldLayout"><type>GstDeinterlaceFieldLayout</type></link></programlisting>
+<para>Deinterlace top field first.</para><para>Flags: Read / Write</para>
+<para>Default value: Auto detection</para>
+</refsect2>
+<refsect2 id="GstDeinterlace--drop-orphans" role="property"><title>The <literal>“drop-orphans”</literal> property</title>
+<indexterm zone="GstDeinterlace--drop-orphans"><primary>GstDeinterlace:drop-orphans</primary></indexterm>
+<programlisting>  “drop-orphans”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>This selects whether to drop orphan fields at the beginning of telecine
+patterns in active locking mode.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstDeinterlace--ignore-obscure" role="property"><title>The <literal>“ignore-obscure”</literal> property</title>
+<indexterm zone="GstDeinterlace--ignore-obscure"><primary>GstDeinterlace:ignore-obscure</primary></indexterm>
+<programlisting>  “ignore-obscure”           <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>This selects whether to ignore obscure/rare telecine patterns.
+NTSC 2:3 pulldown variants are the only really common patterns.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstDeinterlace--locking" role="property"><title>The <literal>“locking”</literal> property</title>
+<indexterm zone="GstDeinterlace--locking"><primary>GstDeinterlace:locking</primary></indexterm>
+<programlisting>  “locking”                  <link linkend="GstDeinterlaceLocking"><type>GstDeinterlaceLocking</type></link></programlisting>
+<para>This selects which approach to pattern locking is used which affects
+processing latency and accuracy of timestamp adjustment for telecine
+streams.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: No pattern locking</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

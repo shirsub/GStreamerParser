@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<refsynopsisdiv>
+  <refsect2>
+    <title>Element Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>plugin</term>
+        <listitem>
+          <simpara>
+            <link linkend="plugin-osxaudio">osxaudio</link>
+          </simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>author</term>
+        <listitem>
+          <simpara>Zaheer Abbas Merali &lt;zaheerabbas at merali dot org&gt;</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>class</term>
+        <listitem>
+          <simpara>Sink/Audio</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect2>
+  <refsect2>
+    <title>Element Pads</title>
+  </refsect2>
+</refsynopsisdiv>

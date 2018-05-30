@@ -1,0 +1,76 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtph261depay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtph261depay.top_of_page" role="top_of_page">rtph261depay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtph261depay</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstRtpH261Depay"/><refsect1 id="gst-plugins-good-plugins-rtph261depay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpH261Depay-struct">GstRtpH261Depay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph261depay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstRTPBaseDepayload">GstRTPBaseDepayload</link>
+                    <phrase role="lineart">╰──</phrase> GstRtpH261Depay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtph261depay.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Extract encoded H.261 video frames from RTP packets according to RFC 4587.
+For detailed information see: https://www.rfc-editor.org/rfc/rfc4587.txt</para>
+<para>The depayloader takes an RTP packet and extracts its H.261 stream. It
+aggregates the extracted stream until a complete frame is received before
+it pushes it downstream.</para>
+<refsect2>
+<title>Example pipeline</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 udpsrc caps='application/x-rtp, payload=31' ! rtph261depay ! avdec_h261 ! autovideosink
+]]></programlisting></informalexample> This example pipeline will depayload and decode an RTP H.261 video stream.
+Refer to the rtph261pay example to create the RTP stream.
+</refsect2>
+
+<include href="element-rtph261depay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph261depay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph261depay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpH261Depay-struct" role="struct">
+<title>struct GstRtpH261Depay</title>
+<indexterm zone="GstRtpH261Depay-struct"><primary>GstRtpH261Depay</primary></indexterm>
+<programlisting language="C">struct GstRtpH261Depay;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph261depay.see-also">
+<title>See Also</title>
+<para>rtph261pay</para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,235 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpdtmfsrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpdtmfsrc.top_of_page" role="top_of_page">rtpdtmfsrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpdtmfsrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtpdtmfsrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPDTMFSrc--clock-rate">clock-rate</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPDTMFSrc--packet-redundancy">packet-redundancy</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPDTMFSrc--pt">pt</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPDTMFSrc--seqnum">seqnum</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRTPDTMFSrc--seqnum-offset">seqnum-offset</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPDTMFSrc--ssrc">ssrc</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPDTMFSrc--timestamp">timestamp</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRTPDTMFSrc--timestamp-offset">timestamp-offset</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRTPDTMFSrc"/><refsect1 id="gst-plugins-good-plugins-rtpdtmfsrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTPDTMFSrc-struct">GstRTPDTMFSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdtmfsrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> GstRTPDTMFSrc
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpdtmfsrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The RTPDTMFSrc element generates RTP DTMF (RFC 2833) event packets on request
+from application. The application communicates the beginning and end of a
+DTMF event using custom upstream gstreamer events. To report a DTMF event, an
+application must send an event of type GST_EVENT_CUSTOM_UPSTREAM, having a
+structure of name &quot;dtmf-event&quot; with fields set according to the following
+table:</para>
+<informaltable>
+<tgroup cols="4">
+<colspec colname="Name"/>
+<colspec colname="Type"/>
+<colspec colname="Possible values"/>
+<colspec colname="Purpose"/>
+<thead>
+<row>
+<entry>Name</entry>
+<entry>GType</entry>
+<entry>Possible values</entry>
+<entry>Purpose</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>type</entry>
+<entry>G_TYPE_INT</entry>
+<entry>0-1</entry>
+<entry>The application uses this field to specify which of the two methods
+specified in RFC 2833 to use. The value should be 0 for tones and 1 for
+named events. Tones are specified by their frequencies and events are specied
+by their number. This element can only take events as input. Do not confuse
+with &quot;method&quot; which specified the output.
+</entry>
+</row>
+<row>
+<entry>number</entry>
+<entry>G_TYPE_INT</entry>
+<entry>0-15</entry>
+<entry>The event number.</entry>
+</row>
+<row>
+<entry>volume</entry>
+<entry>G_TYPE_INT</entry>
+<entry>0-36</entry>
+<entry>This field describes the power level of the tone, expressed in dBm0
+after dropping the sign. Power levels range from 0 to -63 dBm0. The range of
+valid DTMF is from 0 to -36 dBm0. Can be omitted if start is set to FALSE.
+</entry>
+</row>
+<row>
+<entry>start</entry>
+<entry>G_TYPE_BOOLEAN</entry>
+<entry>True or False</entry>
+<entry>Whether the event is starting or ending.</entry>
+</row>
+<row>
+<entry>method</entry>
+<entry>G_TYPE_INT</entry>
+<entry>1</entry>
+<entry>The method used for sending event, this element will react if this
+field is absent or 1.
+</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+<para>For example, the following code informs the pipeline (and in turn, the
+RTPDTMFSrc element inside the pipeline) about the start of an RTP DTMF named
+event '1' of volume -25 dBm0:</para>
+<programlisting>
+structure = gst_structure_new (&quot;dtmf-event&quot;,
+                   &quot;type&quot;, G_TYPE_INT, 1,
+                   &quot;number&quot;, G_TYPE_INT, 1,
+                   &quot;volume&quot;, G_TYPE_INT, 25,
+                   &quot;start&quot;, G_TYPE_BOOLEAN, TRUE, NULL);
+
+event = gst_event_new_custom (GST_EVENT_CUSTOM_UPSTREAM, structure);
+gst_element_send_event (pipeline, event);
+</programlisting>
+<para>When a DTMF tone actually starts or stop, a &quot;dtmf-event-processed&quot;
+element <link linkend="GstMessage"><type>GstMessage</type></link> with the same fields as the &quot;dtmf-event&quot;
+<link linkend="GstEvent"><type>GstEvent</type></link> that was used to request the event. Also, if any event
+has not been processed when the element goes from the PAUSED to the
+READY state, then a &quot;dtmf-event-dropped&quot; message is posted on the
+<link linkend="GstBus"><type>GstBus</type></link> in the order that they were received.</para>
+
+<include href="element-rtpdtmfsrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdtmfsrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdtmfsrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTPDTMFSrc-struct" role="struct">
+<title>struct GstRTPDTMFSrc</title>
+<indexterm zone="GstRTPDTMFSrc-struct"><primary>GstRTPDTMFSrc</primary></indexterm>
+<programlisting language="C">struct GstRTPDTMFSrc;</programlisting>
+<para>The opaque <link linkend="GstRTPDTMFSrc"><type>GstRTPDTMFSrc</type></link> data structure.</para>
+<refsect3 id="GstRTPDTMFSrc.members" role="struct_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="struct_members_table">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdtmfsrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTPDTMFSrc--clock-rate" role="property"><title>The <literal>“clock-rate”</literal> property</title>
+<indexterm zone="GstRTPDTMFSrc--clock-rate"><primary>GstRTPDTMFSrc:clock-rate</primary></indexterm>
+<programlisting>  “clock-rate”               <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The clock-rate at which to generate the dtmf packets.</para><para>Flags: Read / Write</para>
+<para>Default value: 8000</para>
+</refsect2>
+<refsect2 id="GstRTPDTMFSrc--packet-redundancy" role="property"><title>The <literal>“packet-redundancy”</literal> property</title>
+<indexterm zone="GstRTPDTMFSrc--packet-redundancy"><primary>GstRTPDTMFSrc:packet-redundancy</primary></indexterm>
+<programlisting>  “packet-redundancy”        <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Number of packets to send to indicate start and stop dtmf events.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,5]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstRTPDTMFSrc--pt" role="property"><title>The <literal>“pt”</literal> property</title>
+<indexterm zone="GstRTPDTMFSrc--pt"><primary>GstRTPDTMFSrc:pt</primary></indexterm>
+<programlisting>  “pt”                       <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The payload type of the packets.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 128</para>
+<para>Default value: 96</para>
+</refsect2>
+<refsect2 id="GstRTPDTMFSrc--seqnum" role="property"><title>The <literal>“seqnum”</literal> property</title>
+<indexterm zone="GstRTPDTMFSrc--seqnum"><primary>GstRTPDTMFSrc:seqnum</primary></indexterm>
+<programlisting>  “seqnum”                   <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The RTP sequence number of the last processed packet.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRTPDTMFSrc--seqnum-offset" role="property"><title>The <literal>“seqnum-offset”</literal> property</title>
+<indexterm zone="GstRTPDTMFSrc--seqnum-offset"><primary>GstRTPDTMFSrc:seqnum-offset</primary></indexterm>
+<programlisting>  “seqnum-offset”            <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Offset to add to all outgoing seqnum (-1 = random).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstRTPDTMFSrc--ssrc" role="property"><title>The <literal>“ssrc”</literal> property</title>
+<indexterm zone="GstRTPDTMFSrc--ssrc"><primary>GstRTPDTMFSrc:ssrc</primary></indexterm>
+<programlisting>  “ssrc”                     <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The SSRC of the packets (-1 == random).</para><para>Flags: Read / Write</para>
+<para>Default value: 4294967295</para>
+</refsect2>
+<refsect2 id="GstRTPDTMFSrc--timestamp" role="property"><title>The <literal>“timestamp”</literal> property</title>
+<indexterm zone="GstRTPDTMFSrc--timestamp"><primary>GstRTPDTMFSrc:timestamp</primary></indexterm>
+<programlisting>  “timestamp”                <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The RTP timestamp of the last processed packet.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRTPDTMFSrc--timestamp-offset" role="property"><title>The <literal>“timestamp-offset”</literal> property</title>
+<indexterm zone="GstRTPDTMFSrc--timestamp-offset"><primary>GstRTPDTMFSrc:timestamp-offset</primary></indexterm>
+<programlisting>  “timestamp-offset”         <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Offset to add to all outgoing timestamps (-1 = random).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdtmfsrc.see-also">
+<title>See Also</title>
+<para>dtmfsrc, rtpdtmfdepay, rtpdtmfmux</para>
+
+</refsect1>
+
+</refentry>

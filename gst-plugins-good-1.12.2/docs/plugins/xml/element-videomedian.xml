@@ -1,0 +1,111 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-videomedian">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-videomedian.top_of_page" role="top_of_page">videomedian</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>videomedian</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-videomedian.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstVideoMedianSize"><type>GstVideoMedianSize</type></link></entry><entry role="property_name"><link linkend="GstVideoMedian--filtersize">filtersize</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstVideoMedian--lum-only">lum-only</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstVideoMedian"/><refsect1 id="gst-plugins-good-plugins-videomedian.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstVideoMedian-struct">GstVideoMedian</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstVideoMedianSize">GstVideoMedianSize</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videomedian.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstVideoMedian
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-videomedian.description" role="desc">
+<title role="desc.title">Description</title>
+
+<include href="element-videomedian-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-videomedian.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videomedian.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstVideoMedian-struct" role="struct">
+<title>struct GstVideoMedian</title>
+<indexterm zone="GstVideoMedian-struct"><primary>GstVideoMedian</primary></indexterm>
+<programlisting language="C">struct GstVideoMedian;</programlisting>
+</refsect2>
+<refsect2 id="GstVideoMedianSize" role="enum">
+<title>enum GstVideoMedianSize</title>
+<indexterm zone="GstVideoMedianSize"><primary>GstVideoMedianSize</primary></indexterm>
+<refsect3 id="GstVideoMedianSize.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-MEDIAN-SIZE-5:CAPS">GST_VIDEO_MEDIAN_SIZE_5</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-MEDIAN-SIZE-9:CAPS">GST_VIDEO_MEDIAN_SIZE_9</para></entry>
+<entry/><entry/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videomedian.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstVideoMedian--filtersize" role="property"><title>The <literal>“filtersize”</literal> property</title>
+<indexterm zone="GstVideoMedian--filtersize"><primary>GstVideoMedian:filtersize</primary></indexterm>
+<programlisting>  “filtersize”               <link linkend="GstVideoMedianSize"><type>GstVideoMedianSize</type></link></programlisting>
+<para>The size of the filter.</para><para>Flags: Read / Write</para>
+<para>Default value: Median of 5 neighbour pixels</para>
+</refsect2>
+<refsect2 id="GstVideoMedian--lum-only" role="property"><title>The <literal>“lum-only”</literal> property</title>
+<indexterm zone="GstVideoMedian--lum-only"><primary>GstVideoMedian:lum-only</primary></indexterm>
+<programlisting>  “lum-only”                 <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Only apply filter on luminance.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

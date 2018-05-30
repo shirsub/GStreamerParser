@@ -1,0 +1,104 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-shapewipe">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-shapewipe.top_of_page" role="top_of_page">shapewipe</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>shapewipe</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-shapewipe.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstShapeWipe--border">border</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstShapeWipe--position">position</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstShapeWipe"/><refsect1 id="gst-plugins-good-plugins-shapewipe.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstShapeWipe-struct">GstShapeWipe</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-shapewipe.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstShapeWipe
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-shapewipe.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The shapewipe element provides custom transitions on video streams
+based on a grayscale bitmap. The state of the transition can be
+controlled by the position property and an optional blended border
+can be added by the border property.</para>
+<para>Transition bitmaps can be downloaded from the</para>
+<ulink url="http://cinelerra.org/transitions.php">Cinelerra transition</ulink>
+<para>page.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc ! video/x-raw,format=AYUV,width=640,height=480 ! shapewipe position=0.5 name=shape ! videomixer name=mixer ! videoconvert ! autovideosink     filesrc location=mask.png ! typefind ! decodebin ! videoconvert ! videoscale ! queue ! shape.mask_sink    videotestsrc pattern=snow ! video/x-raw,format=AYUV,width=640,height=480 ! queue ! mixer.
+]]></programlisting></informalexample> This pipeline adds the transition from mask.png with position 0.5 to an SMPTE test screen and snow.
+</refsect2>
+
+<include href="element-shapewipe-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-shapewipe.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-shapewipe.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstShapeWipe-struct" role="struct">
+<title>struct GstShapeWipe</title>
+<indexterm zone="GstShapeWipe-struct"><primary>GstShapeWipe</primary></indexterm>
+<programlisting language="C">struct GstShapeWipe;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-shapewipe.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstShapeWipe--border" role="property"><title>The <literal>“border”</literal> property</title>
+<indexterm zone="GstShapeWipe--border"><primary>GstShapeWipe:border</primary></indexterm>
+<programlisting>  “border”                   <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Border of the mask.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstShapeWipe--position" role="property"><title>The <literal>“position”</literal> property</title>
+<indexterm zone="GstShapeWipe--position"><primary>GstShapeWipe:position</primary></indexterm>
+<programlisting>  “position”                 <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Position of the mask.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

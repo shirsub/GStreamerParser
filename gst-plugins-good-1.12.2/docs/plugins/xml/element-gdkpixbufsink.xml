@@ -1,0 +1,156 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-gdkpixbufsink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-gdkpixbufsink.top_of_page" role="top_of_page">gdkpixbufsink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>gdkpixbufsink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufsink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> *</entry><entry role="property_name"><link linkend="GstGdkPixbufSink--last-pixbuf">last-pixbuf</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufSink--post-messages">post-messages</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstGdkPixbufSink"/><refsect1 id="gst-plugins-good-plugins-gdkpixbufsink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstGdkPixbufSink-struct">GstGdkPixbufSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufsink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoSink">GstVideoSink</link>
+                        <phrase role="lineart">╰──</phrase> GstGdkPixbufSink
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufsink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This sink element takes RGB or RGBA images as input and wraps them into
+<link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> objects, for easy saving to file via the
+GdkPixbuf library API or displaying in Gtk+ applications (e.g. using
+the <link linkend="GtkImage"><type>GtkImage</type></link> widget).</para>
+<para>There are two ways to use this element and obtain the <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> objects
+created:</para>
+<itemizedlist>
+<listitem>
+Watching for element messages named <classname>&quot;preroll-pixbuf&quot;
+</classname> or <classname>&quot;pixbuf&quot;</classname> on the bus, which
+will be posted whenever an image would usually be rendered. See below for
+more details on these messages and how to extract the pixbuf object
+contained in them.
+</listitem>
+<listitem>
+Retrieving the current pixbuf via the <link linkend="GstGdkPixbufSink--last-pixbuf"><type>“last-pixbuf”</type></link> property
+when needed. This is the easiest way to get at pixbufs for snapshotting
+purposes - just wait until the pipeline is prerolled (ASYNC_DONE message
+on the bus), then read the property. If you use this method, you may want
+to disable message posting by setting the <link linkend="GstGdkPixbufSink--post-messages"><type>“post-messages”</type></link>
+property to <link linkend="FALSE:CAPS"><type>FALSE</type></link>. This avoids unnecessary memory overhead.
+</listitem>
+</itemizedlist>
+<para>The primary purpose of this element is to abstract away the <link linkend="GstBuffer"><type>GstBuffer</type></link> to
+<link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> conversion. Other than that it's very similar to the fakesink
+element.</para>
+<para>This element is meant for easy no-hassle video snapshotting. It is not
+suitable for video playback or video display at high framerates. Use
+ximagesink, xvimagesink or some other suitable video sink in connection
+with the <link linkend="GstXOverlay"><type>GstXOverlay</type></link> interface instead if you want to do video playback.</para>
+<refsect2>
+<title>Message details</title>
+As mentioned above, this element will by default post element messages
+containing structures named <classname>&quot;preroll-pixbuf&quot;
+</classname> or <classname>&quot;pixbuf&quot;</classname> on the bus (this
+can be disabled by setting the <link linkend="GstGdkPixbufSink--post-messages"><type>“post-messages”</type></link> property
+to <link linkend="FALSE:CAPS"><type>FALSE</type></link> though). The element message structure has the following fields:
+<itemizedlist>
+<listitem>
+  <classname>&quot;pixbuf&quot;</classname>: the <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> object
+</listitem>
+<listitem>
+  <classname>&quot;pixel-aspect-ratio&quot;</classname>: the pixel aspect
+  ratio (PAR) of the input image (this field contains a <link linkend="GstFraction"><type>GstFraction</type></link>); the
+  PAR is usually 1:1 for images, but is often something non-1:1 in the case
+  of video input. In this case the image may be distorted and you may need
+  to rescale it accordingly before saving it to file or displaying it. This
+  can easily be done using <link linkend="gdk-pixbuf-scale"><function>gdk_pixbuf_scale()</function></link> (the reason this is not done
+  automatically is that the application will often scale the image anyway
+  according to the size of the output window, in which case it is much more
+  efficient to only scale once rather than twice). You can put a videoscale
+  element and a capsfilter element with
+  <literal>video/x-raw-rgb,pixel-aspect-ratio=(fraction)1/1</literal> caps
+  in front of this element to make sure the pixbufs always have a 1:1 PAR.
+</listitem>
+</itemizedlist>
+</refsect2>
+<refsect2>
+<title>Example pipeline</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -m -v videotestsrc num-buffers=1 ! gdkpixbufsink
+]]></programlisting></informalexample> Process one single test image as pixbuf (note that the output you see will
+be slightly misleading. The message structure does contain a valid pixbuf
+object even if the structure string says '(NULL)').
+</refsect2>
+
+<include href="element-gdkpixbufsink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufsink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufsink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstGdkPixbufSink-struct" role="struct">
+<title>struct GstGdkPixbufSink</title>
+<indexterm zone="GstGdkPixbufSink-struct"><primary>GstGdkPixbufSink</primary></indexterm>
+<programlisting language="C">struct GstGdkPixbufSink;</programlisting>
+<para>Opaque element structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufsink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstGdkPixbufSink--last-pixbuf" role="property"><title>The <literal>“last-pixbuf”</literal> property</title>
+<indexterm zone="GstGdkPixbufSink--last-pixbuf"><primary>GstGdkPixbufSink:last-pixbuf</primary></indexterm>
+<programlisting>  “last-pixbuf”              <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> *</programlisting>
+<para>Last GdkPixbuf object rendered.</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstGdkPixbufSink--post-messages" role="property"><title>The <literal>“post-messages”</literal> property</title>
+<indexterm zone="GstGdkPixbufSink--post-messages"><primary>GstGdkPixbufSink:post-messages</primary></indexterm>
+<programlisting>  “post-messages”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether to post messages containing pixbufs on the bus.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<indexdiv id="api-index-1.4">
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="GstRtpBin-new-jitterbuffer"><link linkend="GstRtpBin-new-jitterbuffer">GstRtpBin::new-jitterbuffer</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpBin-request-aux-receiver"><link linkend="GstRtpBin-request-aux-receiver">GstRtpBin::request-aux-receiver</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpBin-request-aux-sender"><link linkend="GstRtpBin-request-aux-sender">GstRtpBin::request-aux-sender</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpBin-request-rtcp-decoder"><link linkend="GstRtpBin-request-rtcp-decoder">GstRtpBin::request-rtcp-decoder</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpBin-request-rtcp-encoder"><link linkend="GstRtpBin-request-rtcp-encoder">GstRtpBin::request-rtcp-encoder</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpBin-request-rtp-decoder"><link linkend="GstRtpBin-request-rtp-decoder">GstRtpBin::request-rtp-decoder</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpBin-request-rtp-encoder"><link linkend="GstRtpBin-request-rtp-encoder">GstRtpBin::request-rtp-encoder</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpJitterBuffer--stats"><link linkend="GstRtpJitterBuffer--stats">GstRtpJitterBuffer:stats</link>, object property in <link linkend="gst-plugins-good-plugins-rtpjitterbuffer">rtpjitterbuffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPSrc-new-manager"><link linkend="GstRTSPSrc-new-manager">GstRTSPSrc::new-manager</link>, object signal in <link linkend="gst-plugins-good-plugins-rtspsrc">rtspsrc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPSrc-request-rtcp-key"><link linkend="GstRTSPSrc-request-rtcp-key">GstRTSPSrc::request-rtcp-key</link>, object signal in <link linkend="gst-plugins-good-plugins-rtspsrc">rtspsrc</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

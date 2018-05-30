@@ -1,0 +1,117 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-equalizer-3bands">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-equalizer-3bands.top_of_page" role="top_of_page">equalizer-3bands</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>equalizer-3bands</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-equalizer-3bands.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstIirEqualizer3Bands--band0">band0</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstIirEqualizer3Bands--band1">band1</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstIirEqualizer3Bands--band2">band2</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstIirEqualizer3Bands"/><refsect1 id="gst-plugins-good-plugins-equalizer-3bands.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstIirEqualizer3Bands-struct">GstIirEqualizer3Bands</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-3bands.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFilter">GstAudioFilter</link>
+                        <phrase role="lineart">╰──</phrase> <link linkend="GstIirEqualizer">GstIirEqualizer</link>
+                            <phrase role="lineart">╰──</phrase> GstIirEqualizer3Bands
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-3bands.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstIirEqualizer3Bands implements
+ <link linkend="GstChildProxy">GstChildProxy</link> and  <link linkend="GstPreset">GstPreset</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-equalizer-3bands.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The 3-band equalizer element allows to change the gain of a low frequency,
+medium frequency and high frequency band.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=song.ogg ! oggdemux ! vorbisdec ! audioconvert ! equalizer-3bands band1=6.0 ! alsasink
+]]></programlisting></informalexample> This raises the volume of the 2nd band, which is at 1110 Hz, by 6 db.
+</refsect2>
+
+<include href="element-equalizer-3bands-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-3bands.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-3bands.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstIirEqualizer3Bands-struct" role="struct">
+<title>struct GstIirEqualizer3Bands</title>
+<indexterm zone="GstIirEqualizer3Bands-struct"><primary>GstIirEqualizer3Bands</primary></indexterm>
+<programlisting language="C">struct GstIirEqualizer3Bands;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-3bands.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstIirEqualizer3Bands--band0" role="property"><title>The <literal>“band0”</literal> property</title>
+<indexterm zone="GstIirEqualizer3Bands--band0"><primary>GstIirEqualizer3Bands:band0</primary></indexterm>
+<programlisting>  “band0”                    <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>gain for the frequency band 100 Hz, ranging from -24.0 to +12.0.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [-24,12]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstIirEqualizer3Bands--band1" role="property"><title>The <literal>“band1”</literal> property</title>
+<indexterm zone="GstIirEqualizer3Bands--band1"><primary>GstIirEqualizer3Bands:band1</primary></indexterm>
+<programlisting>  “band1”                    <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>gain for the frequency band 1100 Hz, ranging from -24.0 to +12.0.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [-24,12]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstIirEqualizer3Bands--band2" role="property"><title>The <literal>“band2”</literal> property</title>
+<indexterm zone="GstIirEqualizer3Bands--band2"><primary>GstIirEqualizer3Bands:band2</primary></indexterm>
+<programlisting>  “band2”                    <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>gain for the frequency band 11 kHz, ranging from -24.0 to +12.0.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [-24,12]</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

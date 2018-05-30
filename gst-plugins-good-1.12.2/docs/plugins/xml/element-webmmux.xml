@@ -1,0 +1,81 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-webmmux">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-webmmux.top_of_page" role="top_of_page">webmmux</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>webmmux</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstWebMMux"/><refsect1 id="gst-plugins-good-plugins-webmmux.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstWebMMux-struct">GstWebMMux</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-webmmux.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstMatroskaMux">GstMatroskaMux</link>
+                    <phrase role="lineart">╰──</phrase> GstWebMMux
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-webmmux.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstWebMMux implements
+ <link linkend="GstTagSetter">GstTagSetter</link> and  <link linkend="GstTocSetter">GstTocSetter</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-webmmux.description" role="desc">
+<title role="desc.title">Description</title>
+<para>webmmux muxes VP8 video and Vorbis audio streams into a WebM file.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 webmmux name=mux ! filesink location=newfile.webm         \
+  uridecodebin uri=file:///path/to/somefile.ogv name=demux                \
+  demux. ! videoconvert ! vp8enc ! queue ! mux.video_0    \
+  demux. ! progressreport ! audioconvert ! audiorate ! vorbisenc ! queue ! mux.audio_0
+]]></programlisting></informalexample> This pipeline re-encodes a video file of any format into a WebM file.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 webmmux name=mux ! filesink location=test.webm            \
+  videotestsrc num-buffers=250 ! video/x-raw,framerate=25/1 ! videoconvert ! vp8enc ! queue ! mux.video_0 \
+  audiotestsrc samplesperbuffer=44100 num-buffers=10 ! audio/x-raw,rate=44100 ! vorbisenc ! queue ! mux.audio_0
+]]></programlisting></informalexample> This pipeline muxes a test video and a sine wave into a WebM file.
+</refsect2>
+
+<include href="element-webmmux-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-webmmux.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-webmmux.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstWebMMux-struct" role="struct">
+<title>struct GstWebMMux</title>
+<indexterm zone="GstWebMMux-struct"><primary>GstWebMMux</primary></indexterm>
+<programlisting language="C">struct GstWebMMux;</programlisting>
+</refsect2>
+
+</refsect1>
+
+</refentry>

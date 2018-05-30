@@ -1,0 +1,91 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtph265pay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtph265pay.top_of_page" role="top_of_page">rtph265pay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtph265pay</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtph265pay.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpH265Pay--config-interval">config-interval</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRtpH265Pay--sprop-parameter-sets">sprop-parameter-sets</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRtpH265Pay"/><refsect1 id="gst-plugins-good-plugins-rtph265pay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpH265Pay-struct">GstRtpH265Pay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph265pay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstRTPBasePayload">GstRTPBasePayload</link>
+                    <phrase role="lineart">╰──</phrase> GstRtpH265Pay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtph265pay.description" role="desc">
+<title role="desc.title">Description</title>
+
+<include href="element-rtph265pay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph265pay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph265pay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpH265Pay-struct" role="struct">
+<title>struct GstRtpH265Pay</title>
+<indexterm zone="GstRtpH265Pay-struct"><primary>GstRtpH265Pay</primary></indexterm>
+<programlisting language="C">struct GstRtpH265Pay;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph265pay.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRtpH265Pay--config-interval" role="property"><title>The <literal>“config-interval”</literal> property</title>
+<indexterm zone="GstRtpH265Pay--config-interval"><primary>GstRtpH265Pay:config-interval</primary></indexterm>
+<programlisting>  “config-interval”          <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Send VPS, SPS and PPS Insertion Interval in seconds (sprop parameter sets will be multiplexed in the data stream when detected.) (0 = disabled, -1 = send with every IDR frame).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [G_MAXULONG,3600]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpH265Pay--sprop-parameter-sets" role="property"><title>The <literal>“sprop-parameter-sets”</literal> property</title>
+<indexterm zone="GstRtpH265Pay--sprop-parameter-sets"><primary>GstRtpH265Pay:sprop-parameter-sets</primary></indexterm>
+<programlisting>  “sprop-parameter-sets”     <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The base64 sprop-parameter-sets to set in out caps (set to NULL to extract from stream).</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

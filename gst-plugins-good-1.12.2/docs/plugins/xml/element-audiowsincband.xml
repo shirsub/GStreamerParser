@@ -1,0 +1,132 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-audiowsincband">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-audiowsincband.top_of_page" role="top_of_page">audiowsincband</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>audiowsincband</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-audiowsincband.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAudioWSincBand--lower-frequency">lower-frequency</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAudioWSincBand--upper-frequency">upper-frequency</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstAudioWSincBandMode"><type>GstAudioWSincBandMode</type></link></entry><entry role="property_name"><link linkend="GstAudioWSincBand--mode">mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstAudioWSincBandWindow"><type>GstAudioWSincBandWindow</type></link></entry><entry role="property_name"><link linkend="GstAudioWSincBand--window">window</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstAudioWSincBand--length">length</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAudioWSincBand"/><refsect1 id="gst-plugins-good-plugins-audiowsincband.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAudioWSincBand-struct">GstAudioWSincBand</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiowsincband.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFilter">GstAudioFilter</link>
+                        <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFXBaseFIRFilter">GstAudioFXBaseFIRFilter</link>
+                            <phrase role="lineart">╰──</phrase> GstAudioWSincBand
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-audiowsincband.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Attenuates all frequencies outside (bandpass) or inside (bandreject) of a frequency
+band. The length parameter controls the rolloff, the window parameter
+controls rolloff and stopband attenuation. The Hamming window provides a faster rolloff but a bit
+worse stopband attenuation, the other way around for the Blackman window.</para>
+<para>This element has the advantage over the Chebyshev bandpass and bandreject filter that it has
+a much better rolloff when using a larger kernel size and almost linear phase. The only
+disadvantage is the much slower execution time with larger kernels.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc freq=1500 ! audioconvert ! audiowsincband mode=band-pass lower-frequency=3000 upper-frequency=10000 length=501 window=blackman ! audioconvert ! alsasink
+gst-launch-1.0 filesrc location="melo1.ogg" ! oggdemux ! vorbisdec ! audioconvert ! audiowsincband mode=band-reject lower-frequency=59 upper-frequency=61 length=10001 window=hamming ! audioconvert ! alsasink
+gst-launch-1.0 audiotestsrc wave=white-noise ! audioconvert ! audiowsincband mode=band-pass lower-frequency=1000 upper-frequency=2000 length=31 ! audioconvert ! alsasink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-audiowsincband-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiowsincband.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiowsincband.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAudioWSincBand-struct" role="struct">
+<title>struct GstAudioWSincBand</title>
+<indexterm zone="GstAudioWSincBand-struct"><primary>GstAudioWSincBand</primary></indexterm>
+<programlisting language="C">struct GstAudioWSincBand;</programlisting>
+<para>Opaque data structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiowsincband.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAudioWSincBand--lower-frequency" role="property"><title>The <literal>“lower-frequency”</literal> property</title>
+<indexterm zone="GstAudioWSincBand--lower-frequency"><primary>GstAudioWSincBand:lower-frequency</primary></indexterm>
+<programlisting>  “lower-frequency”          <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Cut-off lower frequency (Hz).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100000]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAudioWSincBand--upper-frequency" role="property"><title>The <literal>“upper-frequency”</literal> property</title>
+<indexterm zone="GstAudioWSincBand--upper-frequency"><primary>GstAudioWSincBand:upper-frequency</primary></indexterm>
+<programlisting>  “upper-frequency”          <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Cut-off upper frequency (Hz).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100000]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAudioWSincBand--mode" role="property"><title>The <literal>“mode”</literal> property</title>
+<indexterm zone="GstAudioWSincBand--mode"><primary>GstAudioWSincBand:mode</primary></indexterm>
+<programlisting>  “mode”                     <link linkend="GstAudioWSincBandMode"><type>GstAudioWSincBandMode</type></link></programlisting>
+<para>Band pass or band reject mode.</para><para>Flags: Read / Write</para>
+<para>Default value: Band pass (default)</para>
+</refsect2>
+<refsect2 id="GstAudioWSincBand--window" role="property"><title>The <literal>“window”</literal> property</title>
+<indexterm zone="GstAudioWSincBand--window"><primary>GstAudioWSincBand:window</primary></indexterm>
+<programlisting>  “window”                   <link linkend="GstAudioWSincBandWindow"><type>GstAudioWSincBandWindow</type></link></programlisting>
+<para>Window function to use.</para><para>Flags: Read / Write</para>
+<para>Default value: Hamming window (default)</para>
+</refsect2>
+<refsect2 id="GstAudioWSincBand--length" role="property"><title>The <literal>“length”</literal> property</title>
+<indexterm zone="GstAudioWSincBand--length"><primary>GstAudioWSincBand:length</primary></indexterm>
+<programlisting>  “length”                   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Filter kernel length, will be rounded to the next odd number.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [3,256000]</para>
+<para>Default value: 101</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

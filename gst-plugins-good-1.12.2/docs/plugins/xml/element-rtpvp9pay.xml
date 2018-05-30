@@ -1,0 +1,83 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpvp9pay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpvp9pay.top_of_page" role="top_of_page">rtpvp9pay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpvp9pay</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtpvp9pay.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstVP9RTPPayMode"><type>GstVP9RTPPayMode</type></link></entry><entry role="property_name"><link linkend="GstRtpVP9Pay--picture-id-mode">picture-id-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRtpVP9Pay"/><refsect1 id="gst-plugins-good-plugins-rtpvp9pay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpVP9Pay-struct">GstRtpVP9Pay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpvp9pay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstRTPBasePayload">GstRTPBasePayload</link>
+                    <phrase role="lineart">╰──</phrase> GstRtpVP9Pay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpvp9pay.description" role="desc">
+<title role="desc.title">Description</title>
+
+<include href="element-rtpvp9pay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpvp9pay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpvp9pay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpVP9Pay-struct" role="struct">
+<title>struct GstRtpVP9Pay</title>
+<indexterm zone="GstRtpVP9Pay-struct"><primary>GstRtpVP9Pay</primary></indexterm>
+<programlisting language="C">struct GstRtpVP9Pay;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpvp9pay.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRtpVP9Pay--picture-id-mode" role="property"><title>The <literal>“picture-id-mode”</literal> property</title>
+<indexterm zone="GstRtpVP9Pay--picture-id-mode"><primary>GstRtpVP9Pay:picture-id-mode</primary></indexterm>
+<programlisting>  “picture-id-mode”          <link linkend="GstVP9RTPPayMode"><type>GstVP9RTPPayMode</type></link></programlisting>
+<para>The picture ID mode for payloading.</para><para>Flags: Read / Write</para>
+<para>Default value: No Picture ID</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

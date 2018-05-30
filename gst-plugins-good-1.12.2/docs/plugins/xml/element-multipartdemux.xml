@@ -1,0 +1,115 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-multipartdemux">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-multipartdemux.top_of_page" role="top_of_page">multipartdemux</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>multipartdemux</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-multipartdemux.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstMultipartDemux--boundary">boundary</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultipartDemux--single-stream">single-stream</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstMultipartDemux"/><refsect1 id="gst-plugins-good-plugins-multipartdemux.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstMultipartDemux-struct">GstMultipartDemux</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multipartdemux.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstMultipartDemux
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-multipartdemux.description" role="desc">
+<title role="desc.title">Description</title>
+<para>MultipartDemux uses the Content-type field of incoming buffers to demux and 
+push data to dynamic source pads. Most of the time multipart streams are 
+sequential JPEG frames generated from a live source such as a network source
+or a camera.</para>
+<para>The output buffers of the multipartdemux typically have no timestamps and are
+usually played as fast as possible (at the rate that the source provides the
+data).</para>
+<para>the content in multipart files is separated with a boundary string that can
+be configured specifically with the <link linkend="GstMultipartDemux--boundary"><type>“boundary”</type></link> property
+otherwise it will be autodetected.</para>
+<refsect2>
+<title>Sample pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=/tmp/test.multipart ! multipartdemux ! image/jpeg,framerate=\(fraction\)5/1 ! jpegparse ! jpegdec ! videoconvert ! autovideosink
+]]></programlisting></informalexample> a simple pipeline to demux a multipart file muxed with <link linkend="GstMultipartMux"><type>GstMultipartMux</type></link>
+containing JPEG frames.
+</refsect2>
+
+<include href="element-multipartdemux-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-multipartdemux.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multipartdemux.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstMultipartDemux-struct" role="struct">
+<title>struct GstMultipartDemux</title>
+<indexterm zone="GstMultipartDemux-struct"><primary>GstMultipartDemux</primary></indexterm>
+<programlisting language="C">struct GstMultipartDemux;</programlisting>
+<para>The opaque <link linkend="GstMultipartDemux"><type>GstMultipartDemux</type></link> structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multipartdemux.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstMultipartDemux--boundary" role="property"><title>The <literal>“boundary”</literal> property</title>
+<indexterm zone="GstMultipartDemux--boundary"><primary>GstMultipartDemux:boundary</primary></indexterm>
+<programlisting>  “boundary”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The boundary string separating data, automatic if NULL.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstMultipartDemux--single-stream" role="property"><title>The <literal>“single-stream”</literal> property</title>
+<indexterm zone="GstMultipartDemux--single-stream"><primary>GstMultipartDemux:single-stream</primary></indexterm>
+<programlisting>  “single-stream”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Assume that there is only one stream whose content-type will
+not change and emit no-more-pads as soon as the first boundary
+content is parsed, decoded, and pads are linked.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multipartdemux.see-also">
+<title>See Also</title>
+<para><link linkend="GstMultipartMux"><type>GstMultipartMux</type></link></para>
+
+</refsect1>
+
+</refentry>

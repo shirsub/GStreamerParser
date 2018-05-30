@@ -1,0 +1,95 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-taginject">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-taginject.top_of_page" role="top_of_page">taginject</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>taginject</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-taginject.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstTagInject--tags">tags</link></entry><entry role="property_flags">Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstTagInject"/><refsect1 id="gst-plugins-good-plugins-taginject.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstTagInject-struct">GstTagInject</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-taginject.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> GstTagInject
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-taginject.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Element that injects new metadata tags, but passes incomming data through
+unmodified.</para>
+<refsect2>
+<title>Example launch lines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc num-buffers=100 ! taginject tags="title=testsrc,artist=gstreamer" ! vorbisenc ! oggmux ! filesink location=test.ogg
+]]></programlisting></informalexample> set title and artist
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc num-buffers=100 ! taginject tags="keywords=\{\"testone\",\"audio\"\},title=\"audio\ testtone\"" ! vorbisenc ! oggmux ! filesink location=test.ogg
+]]></programlisting></informalexample> set keywords and title demonstrating quoting of special chars and handling lists
+</refsect2>
+
+<include href="element-taginject-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-taginject.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-taginject.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstTagInject-struct" role="struct">
+<title>struct GstTagInject</title>
+<indexterm zone="GstTagInject-struct"><primary>GstTagInject</primary></indexterm>
+<programlisting language="C">struct GstTagInject;</programlisting>
+<para>Opaque <link linkend="GstTagInject"><type>GstTagInject</type></link> data structure</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-taginject.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstTagInject--tags" role="property"><title>The <literal>“tags”</literal> property</title>
+<indexterm zone="GstTagInject--tags"><primary>GstTagInject:tags</primary></indexterm>
+<programlisting>  “tags”                     <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>List of tags to inject into the target file.</para><para>Flags: Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

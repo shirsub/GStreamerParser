@@ -1,0 +1,200 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-cairooverlay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-cairooverlay.top_of_page" role="top_of_page">cairooverlay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>cairooverlay</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-cairooverlay.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstCairoOverlay-caps-changed">caps-changed</link></entry><entry role="signal_flags"/></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstCairoOverlay-draw">draw</link></entry><entry role="signal_flags"/></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstCairoOverlay"/><refsect1 id="gst-plugins-good-plugins-cairooverlay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstCairoOverlay-struct">GstCairoOverlay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cairooverlay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstCairoOverlay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-cairooverlay.description" role="desc">
+<title role="desc.title">Description</title>
+<para>cairooverlay renders an overlay using a application provided render function.</para>
+<para>The full example can be found in tests/examples/cairo/cairo_overlay.c</para>
+<refsect2>
+<title>Example code</title>
+<informalexample><programlisting><![CDATA[
+
+#include <gst/gst.h>
+#include <gst/video/video.h>
+
+...
+
+typedef struct {
+  gboolean valid;
+  int width;
+  int height;
+} CairoOverlayState;
+
+...
+
+static void
+prepare_overlay (GstElement * overlay, GstCaps * caps, gpointer user_data)
+{
+  CairoOverlayState *state = (CairoOverlayState *)user_data;
+
+  gst_video_format_parse_caps (caps, NULL, &state->width, &state->height);
+  state->valid = TRUE;
+}
+
+static void
+draw_overlay (GstElement * overlay, cairo_t * cr, guint64 timestamp, 
+  guint64 duration, gpointer user_data)
+{
+  CairoOverlayState *s = (CairoOverlayState *)user_data;
+  double scale;
+
+  if (!s->valid)
+    return;
+
+  scale = 2*(((timestamp/(int)1e7) % 70)+30)/100.0;
+  cairo_translate(cr, s->width/2, (s->height/2)-30);
+  cairo_scale (cr, scale, scale);
+
+  cairo_move_to (cr, 0, 0);
+  cairo_curve_to (cr, 0,-30, -50,-30, -50,0);
+  cairo_curve_to (cr, -50,30, 0,35, 0,60 );
+  cairo_curve_to (cr, 0,35, 50,30, 50,0 ); *  
+  cairo_curve_to (cr, 50,-30, 0,-30, 0,0 );
+  cairo_set_source_rgba (cr, 0.9, 0.0, 0.1, 0.7);
+  cairo_fill (cr);
+}
+
+...
+
+cairo_overlay = gst_element_factory_make ("cairooverlay", "overlay");
+
+g_signal_connect (cairo_overlay, "draw", G_CALLBACK (draw_overlay),
+  overlay_state);
+g_signal_connect (cairo_overlay, "caps-changed", 
+  G_CALLBACK (prepare_overlay), overlay_state);
+...
+
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-cairooverlay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-cairooverlay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cairooverlay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstCairoOverlay-struct" role="struct">
+<title>struct GstCairoOverlay</title>
+<indexterm zone="GstCairoOverlay-struct"><primary>GstCairoOverlay</primary></indexterm>
+<programlisting language="C">struct GstCairoOverlay;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cairooverlay.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstCairoOverlay-caps-changed" role="signal"><title>The <literal>“caps-changed”</literal> signal</title>
+<indexterm zone="GstCairoOverlay-caps-changed"><primary>GstCairoOverlay::caps-changed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstCairoOverlay"><type>GstCairoOverlay</type></link> *overlay,
+               <link linkend="GstCaps"><type>GstCaps</type></link>         *caps,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>This signal is emitted when the caps of the element has changed.</para>
+<refsect3 id="GstCairoOverlay-caps-changed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>overlay</para></entry>
+<entry role="parameter_description"><para>Overlay element emitting the signal.</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstCaps"><type>GstCaps</type></link> of the element.</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2><refsect2 id="GstCairoOverlay-draw" role="signal"><title>The <literal>“draw”</literal> signal</title>
+<indexterm zone="GstCairoOverlay-draw"><primary>GstCairoOverlay::draw</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstCairoOverlay"><type>GstCairoOverlay</type></link> *overlay,
+               <link linkend="CairoContext"><type>CairoContext</type></link>    *cr,
+               <link linkend="guint64"><type>guint64</type></link>          timestamp,
+               <link linkend="guint64"><type>guint64</type></link>          duration,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>This signal is emitted when the overlay should be drawn.</para>
+<refsect3 id="GstCairoOverlay-draw.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>overlay</para></entry>
+<entry role="parameter_description"><para>Overlay element emitting the signal.</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>cr</para></entry>
+<entry role="parameter_description"><para>Cairo context to draw to.</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>timestamp</para></entry>
+<entry role="parameter_description"><para>Timestamp (see <link linkend="GstClockTime"><type>GstClockTime</type></link>) of the current buffer.</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>duration</para></entry>
+<entry role="parameter_description"><para>Duration (see <link linkend="GstClockTime"><type>GstClockTime</type></link>) of the current buffer.</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,173 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-speexenc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-speexenc.top_of_page" role="top_of_page">speexenc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>speexenc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-speexenc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSpeexEnc--abr">abr</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSpeexEnc--bitrate">bitrate</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSpeexEnc--complexity">complexity</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSpeexEnc--dtx">dtx</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSpeexEnc--last-message">last-message</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSpeexEnc--nframes">nframes</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstSpeexEnc--quality">quality</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSpeexEnc--vad">vad</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSpeexEnc--vbr">vbr</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="GstSpeexEncMode"><type>GstSpeexEncMode</type></link></entry><entry role="property_name"><link linkend="GstSpeexEnc--mode">mode</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstSpeexEnc"/><refsect1 id="gst-plugins-good-plugins-speexenc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSpeexEnc-struct">GstSpeexEnc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexenc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstAudioEncoder">GstAudioEncoder</link>
+                    <phrase role="lineart">╰──</phrase> GstSpeexEnc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexenc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstSpeexEnc implements
+ <link linkend="GstTagSetter">GstTagSetter</link> and  <link linkend="GstPreset">GstPreset</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-speexenc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element encodes audio as a Speex stream.</para>
+<ulink url="http://www.speex.org/">Speex</ulink> is a royalty-free
+<para>audio codec maintained by the <ulink url="http://www.xiph.org/">Xiph.org
+Foundation</ulink>.</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc num-buffers=100 ! speexenc ! oggmux ! filesink location=beep.ogg
+]]></programlisting></informalexample> Encode an Ogg/Speex file.
+</refsect2>
+
+<include href="element-speexenc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexenc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexenc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSpeexEnc-struct" role="struct">
+<title>struct GstSpeexEnc</title>
+<indexterm zone="GstSpeexEnc-struct"><primary>GstSpeexEnc</primary></indexterm>
+<programlisting language="C">struct GstSpeexEnc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexenc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSpeexEnc--abr" role="property"><title>The <literal>“abr”</literal> property</title>
+<indexterm zone="GstSpeexEnc--abr"><primary>GstSpeexEnc:abr</primary></indexterm>
+<programlisting>  “abr”                      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Enable average bit-rate (0 = disabled).</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstSpeexEnc--bitrate" role="property"><title>The <literal>“bitrate”</literal> property</title>
+<indexterm zone="GstSpeexEnc--bitrate"><primary>GstSpeexEnc:bitrate</primary></indexterm>
+<programlisting>  “bitrate”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Specify an encoding bit-rate (in bps). (0 = automatic).</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstSpeexEnc--complexity" role="property"><title>The <literal>“complexity”</literal> property</title>
+<indexterm zone="GstSpeexEnc--complexity"><primary>GstSpeexEnc:complexity</primary></indexterm>
+<programlisting>  “complexity”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Set encoding complexity.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 3</para>
+</refsect2>
+<refsect2 id="GstSpeexEnc--dtx" role="property"><title>The <literal>“dtx”</literal> property</title>
+<indexterm zone="GstSpeexEnc--dtx"><primary>GstSpeexEnc:dtx</primary></indexterm>
+<programlisting>  “dtx”                      <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable discontinuous transmission.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstSpeexEnc--last-message" role="property"><title>The <literal>“last-message”</literal> property</title>
+<indexterm zone="GstSpeexEnc--last-message"><primary>GstSpeexEnc:last-message</primary></indexterm>
+<programlisting>  “last-message”             <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The last status message.</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstSpeexEnc--nframes" role="property"><title>The <literal>“nframes”</literal> property</title>
+<indexterm zone="GstSpeexEnc--nframes"><primary>GstSpeexEnc:nframes</primary></indexterm>
+<programlisting>  “nframes”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Number of frames per buffer.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstSpeexEnc--quality" role="property"><title>The <literal>“quality”</literal> property</title>
+<indexterm zone="GstSpeexEnc--quality"><primary>GstSpeexEnc:quality</primary></indexterm>
+<programlisting>  “quality”                  <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Encoding quality.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: [0,10]</para>
+<para>Default value: 8</para>
+</refsect2>
+<refsect2 id="GstSpeexEnc--vad" role="property"><title>The <literal>“vad”</literal> property</title>
+<indexterm zone="GstSpeexEnc--vad"><primary>GstSpeexEnc:vad</primary></indexterm>
+<programlisting>  “vad”                      <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable voice activity detection.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstSpeexEnc--vbr" role="property"><title>The <literal>“vbr”</literal> property</title>
+<indexterm zone="GstSpeexEnc--vbr"><primary>GstSpeexEnc:vbr</primary></indexterm>
+<programlisting>  “vbr”                      <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable variable bit-rate.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstSpeexEnc--mode" role="property"><title>The <literal>“mode”</literal> property</title>
+<indexterm zone="GstSpeexEnc--mode"><primary>GstSpeexEnc:mode</primary></indexterm>
+<programlisting>  “mode”                     <link linkend="GstSpeexEncMode"><type>GstSpeexEncMode</type></link></programlisting>
+<para>The encoding mode.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: Auto</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-speexenc.see-also">
+<title>See Also</title>
+<para>speexdec, oggmux</para>
+
+</refsect1>
+
+</refentry>

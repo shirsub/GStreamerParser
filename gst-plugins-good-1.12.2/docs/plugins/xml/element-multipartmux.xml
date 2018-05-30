@@ -1,0 +1,93 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-multipartmux">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-multipartmux.top_of_page" role="top_of_page">multipartmux</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>multipartmux</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-multipartmux.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstMultipartMux--boundary">boundary</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstMultipartMux"/><refsect1 id="gst-plugins-good-plugins-multipartmux.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstMultipartMux-struct">GstMultipartMux</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multipartmux.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstMultipartMux
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-multipartmux.description" role="desc">
+<title role="desc.title">Description</title>
+<para>MultipartMux uses the <link linkend="GstCaps"><type>GstCaps</type></link> of the sink pad as the Content-type field for
+incoming buffers when muxing them to a multipart stream. Most of the time 
+multipart streams are sequential JPEG frames.</para>
+<refsect2>
+<title>Sample pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc ! video/x-raw, framerate='(fraction)'5/1 ! jpegenc ! multipartmux ! filesink location=/tmp/test.multipart
+]]></programlisting></informalexample> a pipeline to mux 5 JPEG frames per second into a multipart stream
+stored to a file.
+</refsect2>
+
+<include href="element-multipartmux-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-multipartmux.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multipartmux.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstMultipartMux-struct" role="struct">
+<title>struct GstMultipartMux</title>
+<indexterm zone="GstMultipartMux-struct"><primary>GstMultipartMux</primary></indexterm>
+<programlisting language="C">struct GstMultipartMux;</programlisting>
+<para>The opaque <link linkend="GstMultipartMux"><type>GstMultipartMux</type></link> structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multipartmux.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstMultipartMux--boundary" role="property"><title>The <literal>“boundary”</literal> property</title>
+<indexterm zone="GstMultipartMux--boundary"><primary>GstMultipartMux:boundary</primary></indexterm>
+<programlisting>  “boundary”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Boundary string.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;ThisRandomString&quot;</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

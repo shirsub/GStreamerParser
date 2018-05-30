@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="gst-plugins-good-plugins-plugin-effectv">
+  <refmeta>
+    <refentrytitle>effectv</refentrytitle>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo>FIXME Library</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>effectv</refname>
+    <refpurpose><anchor id="plugin-effectv"/>effect plugins from the effectv project</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <title>Plugin Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>filename</term>
+        <listitem>
+          <simpara>libgsteffectv.so</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>version</term>
+        <listitem>
+          <simpara>1.12.2</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>run-time license</term>
+        <listitem>
+          <simpara>LGPL</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>package</term>
+        <listitem>
+          <simpara>GStreamer Good Plug-ins source release</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>origin</term>
+        <listitem>
+          <simpara>Unknown package origin</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>Elements</title>
+    <variablelist>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-agingtv">agingtv</link></term><listitem><simpara>AgingTV adds age to video input using scratches and dust</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-dicetv">dicetv</link></term><listitem><simpara>'Dices' the screen up into many small squares</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-edgetv">edgetv</link></term><listitem><simpara>Apply edge detect on video</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-optv">optv</link></term><listitem><simpara>Optical art meets real-time video effect</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-quarktv">quarktv</link></term><listitem><simpara>Motion dissolver</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-radioactv">radioactv</link></term><listitem><simpara>motion-enlightment effect</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-revtv">revtv</link></term><listitem><simpara>A video waveform monitor for each line of video processed</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rippletv">rippletv</link></term><listitem><simpara>RippleTV does ripple mark effect on the video input</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-shagadelictv">shagadelictv</link></term><listitem><simpara>Oh behave, ShagedelicTV makes images shagadelic!</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-streaktv">streaktv</link></term><listitem><simpara>StreakTV makes after images of moving objects</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-vertigotv">vertigotv</link></term><listitem><simpara>A loopback alpha blending effector with rotating and scaling</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-warptv">warptv</link></term><listitem><simpara>WarpTV does realtime goo'ing of the video input</simpara></listitem></varlistentry>
+  </variablelist>
+  </refsect1>
+</refentry>

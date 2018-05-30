@@ -1,0 +1,89 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-id3v2mux">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-id3v2mux.top_of_page" role="top_of_page">id3v2mux</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>id3v2mux</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstId3v2Mux"/><refsect1 id="gst-plugins-good-plugins-id3v2mux.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstId3v2Mux-struct">GstId3v2Mux</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-id3v2mux.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstTagMux">GstTagMux</link>
+                    <phrase role="lineart">╰──</phrase> GstId3v2Mux
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-id3v2mux.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstId3v2Mux implements
+ <link linkend="GstTagSetter">GstTagSetter</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-id3v2mux.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element adds ID3v2 tags to the beginning of a stream using the taglib
+library. More precisely, the tags written are ID3 version 2.4.0 tags (which
+means in practice that some hardware players or outdated programs might not
+be able to read them properly).</para>
+<para>Applications can set the tags to write using the <link linkend="GstTagSetter"><type>GstTagSetter</type></link> interface.
+Tags sent by upstream elements will be picked up automatically (and merged
+according to the merge mode set via the tag setter interface).</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v filesrc location=foo.ogg ! decodebin ! audioconvert ! lame ! id3v2mux ! filesink location=foo.mp3
+]]></programlisting></informalexample> A pipeline that transcodes a file from Ogg/Vorbis to mp3 format with an
+ID3v2 that contains the same as the the Ogg/Vorbis file. Make sure the
+Ogg/Vorbis file actually has comments to preserve.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -m filesrc location=foo.mp3 ! id3demux ! fakesink silent=TRUE 2> /dev/null | grep taglist
+]]></programlisting></informalexample> Verify that tags have been written.
+</refsect2>
+
+<include href="element-id3v2mux-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-id3v2mux.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-id3v2mux.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstId3v2Mux-struct" role="struct">
+<title>struct GstId3v2Mux</title>
+<indexterm zone="GstId3v2Mux-struct"><primary>GstId3v2Mux</primary></indexterm>
+<programlisting language="C">struct GstId3v2Mux;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-id3v2mux.see-also">
+<title>See Also</title>
+<para><link linkend="GstID3Demux"><type>GstID3Demux</type></link>, <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para>
+
+</refsect1>
+
+</refentry>

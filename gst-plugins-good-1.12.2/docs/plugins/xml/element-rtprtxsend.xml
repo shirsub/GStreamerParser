@@ -1,0 +1,124 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtprtxsend">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtprtxsend.top_of_page" role="top_of_page">rtprtxsend</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtprtxsend</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtprtxsend.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpRtxSend--max-size-time">max-size-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpRtxSend--max-size-packets">max-size-packets</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpRtxSend--num-rtx-requests">num-rtx-requests</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpRtxSend--num-rtx-packets">num-rtx-packets</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstRtpRtxSend--payload-type-map">payload-type-map</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstRtpRtxSend--ssrc-map">ssrc-map</link></entry><entry role="property_flags">Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRtpRtxSend"/><refsect1 id="gst-plugins-good-plugins-rtprtxsend.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpRtxSend-struct">GstRtpRtxSend</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxsend.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstRtpRtxSend
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtprtxsend.description" role="desc">
+<title role="desc.title">Description</title>
+<para>See <link linkend="GstRtpRtxReceive"><type>GstRtpRtxReceive</type></link> for examples</para>
+<para>The purpose of the sender RTX object is to keep a history of RTP packets up
+to a configurable limit (max-size-time or max-size-packets). It will listen
+for upstream custom retransmission events (GstRTPRetransmissionRequest) that
+comes from downstream (<link linkend="GstRtpSession"><type>GstRtpSession</type></link>). When receiving a request it will
+look up the requested seqnum in its list of stored packets. If the packet
+is available, it will create a RTX packet according to RFC 4588 and send
+this as an auxiliary stream. RTX is SSRC-multiplexed</para>
+
+<include href="element-rtprtxsend-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxsend.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxsend.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpRtxSend-struct" role="struct">
+<title>struct GstRtpRtxSend</title>
+<indexterm zone="GstRtpRtxSend-struct"><primary>GstRtpRtxSend</primary></indexterm>
+<programlisting language="C">struct GstRtpRtxSend;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxsend.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRtpRtxSend--max-size-time" role="property"><title>The <literal>“max-size-time”</literal> property</title>
+<indexterm zone="GstRtpRtxSend--max-size-time"><primary>GstRtpRtxSend:max-size-time</primary></indexterm>
+<programlisting>  “max-size-time”            <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Amount of ms to queue (0 = unlimited).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpRtxSend--max-size-packets" role="property"><title>The <literal>“max-size-packets”</literal> property</title>
+<indexterm zone="GstRtpRtxSend--max-size-packets"><primary>GstRtpRtxSend:max-size-packets</primary></indexterm>
+<programlisting>  “max-size-packets”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Amount of packets to queue (0 = unlimited).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 32767</para>
+<para>Default value: 100</para>
+</refsect2>
+<refsect2 id="GstRtpRtxSend--num-rtx-requests" role="property"><title>The <literal>“num-rtx-requests”</literal> property</title>
+<indexterm zone="GstRtpRtxSend--num-rtx-requests"><primary>GstRtpRtxSend:num-rtx-requests</primary></indexterm>
+<programlisting>  “num-rtx-requests”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Number of retransmission events received.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpRtxSend--num-rtx-packets" role="property"><title>The <literal>“num-rtx-packets”</literal> property</title>
+<indexterm zone="GstRtpRtxSend--num-rtx-packets"><primary>GstRtpRtxSend:num-rtx-packets</primary></indexterm>
+<programlisting>  “num-rtx-packets”          <link linkend="guint"><type>guint</type></link></programlisting>
+<para> Number of retransmission packets sent.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpRtxSend--payload-type-map" role="property"><title>The <literal>“payload-type-map”</literal> property</title>
+<indexterm zone="GstRtpRtxSend--payload-type-map"><primary>GstRtpRtxSend:payload-type-map</primary></indexterm>
+<programlisting>  “payload-type-map”         <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>Map of original payload types to their retransmission payload types.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstRtpRtxSend--ssrc-map" role="property"><title>The <literal>“ssrc-map”</literal> property</title>
+<indexterm zone="GstRtpRtxSend--ssrc-map"><primary>GstRtpRtxSend:ssrc-map</primary></indexterm>
+<programlisting>  “ssrc-map”                 <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>Map of SSRCs to their retransmission SSRCs for SSRC-multiplexed mode (default = random).</para><para>Flags: Write</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

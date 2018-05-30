@@ -1,0 +1,145 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-audioecho">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-audioecho.top_of_page" role="top_of_page">audioecho</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>audioecho</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-audioecho.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstAudioEcho--delay">delay</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAudioEcho--feedback">feedback</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAudioEcho--intensity">intensity</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstAudioEcho--max-delay">max-delay</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstAudioEcho--surround-delay">surround-delay</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstAudioEcho--surround-mask">surround-mask</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAudioEcho"/><refsect1 id="gst-plugins-good-plugins-audioecho.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAudioEcho-struct">GstAudioEcho</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioecho.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFilter">GstAudioFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstAudioEcho
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-audioecho.description" role="desc">
+<title role="desc.title">Description</title>
+<para>audioecho adds an echo or (simple) reverb effect to an audio stream. The echo
+delay, intensity and the percentage of feedback can be configured.</para>
+<para>For getting an echo effect you have to set the delay to a larger value,
+for example 200ms and more. Everything below will result in a simple
+reverb effect, which results in a slightly metallic sound.</para>
+<para>Use the max-delay property to set the maximum amount of delay that
+will be used. This can only be set before going to the PAUSED or PLAYING
+state and will be set to the current delay by default.</para>
+<para>audioecho can also be used to apply a configurable delay to audio channels
+by setting surround-delay=true. In that mode, it just delays &quot;surround
+channels&quot; by the delay amount instead of performing an echo. The
+channels that are configured surround channels for the delay are
+selected using the surround-channels mask property.</para>
+<refsect2>
+<title>Example launch lines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 autoaudiosrc ! audioconvert ! audioecho delay=500000000 intensity=0.6 feedback=0.4 ! audioconvert ! autoaudiosink
+gst-launch-1.0 filesrc location="melo1.ogg" ! decodebin ! audioconvert ! audioecho delay=50000000 intensity=0.6 feedback=0.4 ! audioconvert ! autoaudiosink
+gst-launch-1.0 audiotestsrc ! audioconvert ! audio/x-raw,channels=4 ! audioecho surround-delay=true delay=500000000 ! audioconvert ! autoaudiosink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-audioecho-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioecho.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioecho.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAudioEcho-struct" role="struct">
+<title>struct GstAudioEcho</title>
+<indexterm zone="GstAudioEcho-struct"><primary>GstAudioEcho</primary></indexterm>
+<programlisting language="C">struct GstAudioEcho;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioecho.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAudioEcho--delay" role="property"><title>The <literal>“delay”</literal> property</title>
+<indexterm zone="GstAudioEcho--delay"><primary>GstAudioEcho:delay</primary></indexterm>
+<programlisting>  “delay”                    <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Delay of the echo in nanoseconds.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 1</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstAudioEcho--feedback" role="property"><title>The <literal>“feedback”</literal> property</title>
+<indexterm zone="GstAudioEcho--feedback"><primary>GstAudioEcho:feedback</primary></indexterm>
+<programlisting>  “feedback”                 <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Amount of feedback.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAudioEcho--intensity" role="property"><title>The <literal>“intensity”</literal> property</title>
+<indexterm zone="GstAudioEcho--intensity"><primary>GstAudioEcho:intensity</primary></indexterm>
+<programlisting>  “intensity”                <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Intensity of the echo.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAudioEcho--max-delay" role="property"><title>The <literal>“max-delay”</literal> property</title>
+<indexterm zone="GstAudioEcho--max-delay"><primary>GstAudioEcho:max-delay</primary></indexterm>
+<programlisting>  “max-delay”                <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Maximum delay of the echo in nanoseconds (can't be changed in PLAYING or PAUSED state).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 1</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstAudioEcho--surround-delay" role="property"><title>The <literal>“surround-delay”</literal> property</title>
+<indexterm zone="GstAudioEcho--surround-delay"><primary>GstAudioEcho:surround-delay</primary></indexterm>
+<programlisting>  “surround-delay”           <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Delay Surround Channels when TRUE instead of applying an echo effect.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstAudioEcho--surround-mask" role="property"><title>The <literal>“surround-mask”</literal> property</title>
+<indexterm zone="GstAudioEcho--surround-mask"><primary>GstAudioEcho:surround-mask</primary></indexterm>
+<programlisting>  “surround-mask”            <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>A bitmask of channels that are considered surround and delayed when surround-delay = TRUE.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 1</para>
+<para>Default value: 18446744073709551612</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

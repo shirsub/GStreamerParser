@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<refentry id="gst-plugins-good-plugins-iirequalizer">
+<refmeta>
+<refentrytitle role="top_of_page" id="gst-plugins-good-plugins-iirequalizer.top_of_page">iirequalizer</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>iirequalizer</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<anchor id="GstIirEqualizer"/><refsect1 id="gst-plugins-good-plugins-iirequalizer.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstIirEqualizer-struct">GstIirEqualizer</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-iirequalizer.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstAudioFilter">GstAudioFilter</link>
+                        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstIirEqualizer
+                            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstIirEqualizer10Bands">GstIirEqualizer10Bands</link>
+                            <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstIirEqualizer3Bands">GstIirEqualizer3Bands</link>
+                            <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstIirEqualizerNBands">GstIirEqualizerNBands</link>
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-iirequalizer.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstIirEqualizer implements
+ <link linkend="GstChildProxy">GstChildProxy</link> and  <link linkend="GstPreset">GstPreset</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-iirequalizer.description" role="desc">
+<title role="desc.title">Description</title>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-iirequalizer.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para />
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-iirequalizer.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstIirEqualizer-struct" role="struct">
+<title>struct GstIirEqualizer</title>
+<indexterm zone="GstIirEqualizer-struct"><primary>GstIirEqualizer</primary></indexterm>
+<programlisting language="C">struct GstIirEqualizer;</programlisting>
+</refsect2>
+
+</refsect1>
+
+</refentry>

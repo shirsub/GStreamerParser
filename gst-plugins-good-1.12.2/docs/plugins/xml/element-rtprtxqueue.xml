@@ -1,0 +1,144 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtprtxqueue">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtprtxqueue.top_of_page" role="top_of_page">rtprtxqueue</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtprtxqueue</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtprtxqueue.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPRtxQueue--max-size-packets">max-size-packets</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPRtxQueue--max-size-time">max-size-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPRtxQueue--fulfilled-requests">fulfilled-requests</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPRtxQueue--requests">requests</link></entry><entry role="property_flags">Read</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRTPRtxQueue"/><refsect1 id="gst-plugins-good-plugins-rtprtxqueue.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTPRtxQueue-struct">GstRTPRtxQueue</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxqueue.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstRTPRtxQueue
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtprtxqueue.description" role="desc">
+<title role="desc.title">Description</title>
+<para>rtprtxqueue maintains a queue of transmitted RTP packets, up to a
+configurable limit (see <link linkend="GstRTPRtxQueue-max-size-time"><type>“max-size-time”</type></link>,
+<link linkend="GstRTPRtxQueue-max-size-packets"><type>“max-size-packets”</type></link>), and retransmits them upon request
+from the downstream rtpsession (GstRTPRetransmissionRequest event).</para>
+<para>This element is similar to rtprtxsend, but it has differences:</para>
+<itemizedlist>
+<listitem><para>Retransmission from rtprtxqueue is not RFC 4588 compliant. The
+retransmitted packets have the same ssrc and payload type as the original
+stream.</para></listitem>
+<listitem><para>As a side-effect of the above, rtprtxqueue does not require the use of
+rtprtxreceive on the receiving end. rtpjitterbuffer alone is able to
+reconstruct the stream.</para></listitem>
+<listitem><para>Retransmission from rtprtxqueue happens as soon as the next regular flow
+packet is chained, while rtprtxsend retransmits as soon as the retransmission
+event is received, using a helper thread.</para></listitem>
+<listitem>
+<para>rtprtxqueue can be used with rtpbin without the need of hooking to its
+<link linkend="GstRtpBin-request-aux-sender"><type>“request-aux-sender”</type></link> signal, which means it can be used with
+rtpbin using gst-launch.</para>
+</listitem>
+</itemizedlist>
+<para>See also <link linkend="GstRtpRtxSend"><type>GstRtpRtxSend</type></link>, <link linkend="GstRtpRtxReceive"><type>GstRtpRtxReceive</type></link></para>
+<refsect2><title>Example pipelines</title><informalexample><programlisting><![CDATA[
+gst-launch-1.0 rtpbin name=b rtp-profile=avpf \
+   audiotestsrc is-live=true ! opusenc ! rtpopuspay pt=96 ! rtprtxqueue ! b.send_rtp_sink_0 \
+   b.send_rtp_src_0 ! identity drop-probability=0.01 ! udpsink host="127.0.0.1" port=5000 \
+   udpsrc port=5001 ! b.recv_rtcp_sink_0 \
+   b.send_rtcp_src_0 ! udpsink host="127.0.0.1" port=5002 sync=false async=false
+]]></programlisting></informalexample>
+<para> Sender pipeline</para>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 rtpbin name=b rtp-profile=avpf do-retransmission=true \
+   udpsrc port=5000 caps="application/x-rtp,media=(string)audio,clock-rate=(int)48000,encoding-name=(string)OPUS,payload=(int)96" ! \
+       b.recv_rtp_sink_0 \
+   b. ! rtpopusdepay ! opusdec ! audioconvert ! audioresample ! autoaudiosink \
+   udpsrc port=5002 ! b.recv_rtcp_sink_0 \
+   b.send_rtcp_src_0 ! udpsink host="127.0.0.1" port=5001 sync=false async=false
+]]></programlisting></informalexample>
+<para> Receiver pipeline</para>
+</refsect2>
+
+<include href="element-rtprtxqueue-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxqueue.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxqueue.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTPRtxQueue-struct" role="struct">
+<title>struct GstRTPRtxQueue</title>
+<indexterm zone="GstRTPRtxQueue-struct"><primary>GstRTPRtxQueue</primary></indexterm>
+<programlisting language="C">struct GstRTPRtxQueue;</programlisting>
+<para>The opaque <link linkend="GstRTPRtxQueue"><type>GstRTPRtxQueue</type></link> structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxqueue.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTPRtxQueue--max-size-packets" role="property"><title>The <literal>“max-size-packets”</literal> property</title>
+<indexterm zone="GstRTPRtxQueue--max-size-packets"><primary>GstRTPRtxQueue:max-size-packets</primary></indexterm>
+<programlisting>  “max-size-packets”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Amount of packets to queue (0 = unlimited).</para><para>Flags: Read / Write</para>
+<para>Default value: 100</para>
+</refsect2>
+<refsect2 id="GstRTPRtxQueue--max-size-time" role="property"><title>The <literal>“max-size-time”</literal> property</title>
+<indexterm zone="GstRTPRtxQueue--max-size-time"><primary>GstRTPRtxQueue:max-size-time</primary></indexterm>
+<programlisting>  “max-size-time”            <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Amount of ms to queue (0 = unlimited).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRTPRtxQueue--fulfilled-requests" role="property"><title>The <literal>“fulfilled-requests”</literal> property</title>
+<indexterm zone="GstRTPRtxQueue--fulfilled-requests"><primary>GstRTPRtxQueue:fulfilled-requests</primary></indexterm>
+<programlisting>  “fulfilled-requests”       <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Number of fulfilled retransmission requests.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRTPRtxQueue--requests" role="property"><title>The <literal>“requests”</literal> property</title>
+<indexterm zone="GstRTPRtxQueue--requests"><primary>GstRTPRtxQueue:requests</primary></indexterm>
+<programlisting>  “requests”                 <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Total number of retransmission requests.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

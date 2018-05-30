@@ -1,0 +1,503 @@
+<?xml version="1.0"?>
+<!DOCTYPE informaltable PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<informaltable pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colwidth="1*"/>
+<colspec colwidth="1*"/>
+<colspec colwidth="1*"/>
+<tbody>
+<row>
+<entry><link linkend="GInitiallyUnowned">GInitiallyUnowned</link></entry>
+<entry><link linkend="GObject">GObject</link></entry>
+<entry><link linkend="Gst3GPPMux">Gst3GPPMux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAASink">GstAASink</link></entry>
+<entry><link linkend="GstALawDec">GstALawDec</link></entry>
+<entry><link linkend="GstALawEnc">GstALawEnc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAacParse">GstAacParse</link></entry>
+<entry><link linkend="GstAc3Parse">GstAc3Parse</link></entry>
+<entry><link linkend="GstAgingTV">GstAgingTV</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAlpha">GstAlpha</link></entry>
+<entry><link linkend="GstAlphaColor">GstAlphaColor</link></entry>
+<entry><link linkend="GstAmrParse">GstAmrParse</link></entry>
+</row>
+<row>
+<entry><link linkend="GstApeDemux">GstApeDemux</link></entry>
+<entry><link linkend="GstApev2Mux">GstApev2Mux</link></entry>
+<entry><link linkend="GstAspectRatioCrop">GstAspectRatioCrop</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAsteriskh263">GstAsteriskh263</link></entry>
+<entry><link linkend="GstAuParse">GstAuParse</link></entry>
+<entry><link linkend="GstAudioAmplify">GstAudioAmplify</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAudioBaseSink">GstAudioBaseSink</link></entry>
+<entry><link linkend="GstAudioBaseSrc">GstAudioBaseSrc</link></entry>
+<entry><link linkend="GstAudioChebBand">GstAudioChebBand</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAudioChebLimit">GstAudioChebLimit</link></entry>
+<entry><link linkend="GstAudioDecoder">GstAudioDecoder</link></entry>
+<entry><link linkend="GstAudioDynamic">GstAudioDynamic</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAudioEcho">GstAudioEcho</link></entry>
+<entry><link linkend="GstAudioEncoder">GstAudioEncoder</link></entry>
+<entry><link linkend="GstAudioFIRFilter">GstAudioFIRFilter</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAudioFXBaseFIRFilter">GstAudioFXBaseFIRFilter</link></entry>
+<entry><link linkend="GstAudioFXBaseIIRFilter">GstAudioFXBaseIIRFilter</link></entry>
+<entry><link linkend="GstAudioFilter">GstAudioFilter</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAudioIIRFilter">GstAudioIIRFilter</link></entry>
+<entry><link linkend="GstAudioInvert">GstAudioInvert</link></entry>
+<entry><link linkend="GstAudioKaraoke">GstAudioKaraoke</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAudioPanorama">GstAudioPanorama</link></entry>
+<entry><link linkend="GstAudioSink">GstAudioSink</link></entry>
+<entry><link linkend="GstAudioSrc">GstAudioSrc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAudioVisualizer">GstAudioVisualizer</link></entry>
+<entry><link linkend="GstAudioWSincBand">GstAudioWSincBand</link></entry>
+<entry><link linkend="GstAudioWSincLimit">GstAudioWSincLimit</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAutoAudioSink">GstAutoAudioSink</link></entry>
+<entry><link linkend="GstAutoAudioSrc">GstAutoAudioSrc</link></entry>
+<entry><link linkend="GstAutoDetect">GstAutoDetect</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAutoVideoSink">GstAutoVideoSink</link></entry>
+<entry><link linkend="GstAutoVideoSrc">GstAutoVideoSrc</link></entry>
+<entry><link linkend="GstAviDemux">GstAviDemux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstAviMux">GstAviMux</link></entry>
+<entry><link linkend="GstAviSubtitle">GstAviSubtitle</link></entry>
+<entry><link linkend="GstBaseParse">GstBaseParse</link></entry>
+</row>
+<row>
+<entry><link linkend="GstBaseSink">GstBaseSink</link></entry>
+<entry><link linkend="GstBaseSrc">GstBaseSrc</link></entry>
+<entry><link linkend="GstBaseTransform">GstBaseTransform</link></entry>
+</row>
+<row>
+<entry><link linkend="GstBin">GstBin</link></entry>
+<entry><link linkend="GstBreakMyData">GstBreakMyData</link></entry>
+<entry><link linkend="GstCACASink">GstCACASink</link></entry>
+</row>
+<row>
+<entry><link linkend="GstCairoOverlay">GstCairoOverlay</link></entry>
+<entry><link linkend="GstCapsSetter">GstCapsSetter</link></entry>
+<entry><link linkend="GstCpuReport">GstCpuReport</link></entry>
+</row>
+<row>
+<entry><link linkend="GstCutter">GstCutter</link></entry>
+<entry><link linkend="GstDTMFSrc">GstDTMFSrc</link></entry>
+<entry><link linkend="GstDV1394Src">GstDV1394Src</link></entry>
+</row>
+<row>
+<entry><link linkend="GstDVDec">GstDVDec</link></entry>
+<entry><link linkend="GstDVDemux">GstDVDemux</link></entry>
+<entry><link linkend="GstDcaParse">GstDcaParse</link></entry>
+</row>
+<row>
+<entry><link linkend="GstDeinterlace">GstDeinterlace</link></entry>
+<entry><link linkend="GstDeinterleave">GstDeinterleave</link></entry>
+<entry><link linkend="GstDiceTV">GstDiceTV</link></entry>
+</row>
+<row>
+<entry><link linkend="GstDynUDPSink">GstDynUDPSink</link></entry>
+<entry><link linkend="GstEdgeTV">GstEdgeTV</link></entry>
+<entry><link linkend="GstElement">GstElement</link></entry>
+</row>
+<row>
+<entry><link linkend="GstFlacDec">GstFlacDec</link></entry>
+<entry><link linkend="GstFlacEnc">GstFlacEnc</link></entry>
+<entry><link linkend="GstFlacParse">GstFlacParse</link></entry>
+</row>
+<row>
+<entry><link linkend="GstFlacTag">GstFlacTag</link></entry>
+<entry><link linkend="GstFlvDemux">GstFlvDemux</link></entry>
+<entry><link linkend="GstFlvMux">GstFlvMux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstFlxDec">GstFlxDec</link></entry>
+<entry><link linkend="GstGamma">GstGamma</link></entry>
+<entry><link linkend="GstGdkPixbufDec">GstGdkPixbufDec</link></entry>
+</row>
+<row>
+<entry><link linkend="GstGdkPixbufOverlay">GstGdkPixbufOverlay</link></entry>
+<entry><link linkend="GstGdkPixbufSink">GstGdkPixbufSink</link></entry>
+<entry><link linkend="GstGoom">GstGoom</link></entry>
+</row>
+<row>
+<entry><link linkend="GstGoom2k1">GstGoom2k1</link></entry>
+<entry><link linkend="GstHDV1394Src">GstHDV1394Src</link></entry>
+<entry><link linkend="GstICYDemux">GstICYDemux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstID3Demux">GstID3Demux</link></entry>
+<entry><link linkend="GstISMLMux">GstISMLMux</link></entry>
+<entry><link linkend="GstId3v2Mux">GstId3v2Mux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstIirEqualizer">GstIirEqualizer</link></entry>
+<entry><link linkend="GstIirEqualizer10Bands">GstIirEqualizer10Bands</link></entry>
+<entry><link linkend="GstIirEqualizer3Bands">GstIirEqualizer3Bands</link></entry>
+</row>
+<row>
+<entry><link linkend="GstIirEqualizerNBands">GstIirEqualizerNBands</link></entry>
+<entry><link linkend="GstImageFreeze">GstImageFreeze</link></entry>
+<entry><link linkend="GstInterleave">GstInterleave</link></entry>
+</row>
+<row>
+<entry><link linkend="GstJackAudioSink">GstJackAudioSink</link></entry>
+<entry><link linkend="GstJackAudioSrc">GstJackAudioSrc</link></entry>
+<entry><link linkend="GstJpegDec">GstJpegDec</link></entry>
+</row>
+<row>
+<entry><link linkend="GstJpegEnc">GstJpegEnc</link></entry>
+<entry><link linkend="GstLevel">GstLevel</link></entry>
+<entry><link linkend="GstMJ2Mux">GstMJ2Mux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstMP4Mux">GstMP4Mux</link></entry>
+<entry><link linkend="GstMatroskaDemux">GstMatroskaDemux</link></entry>
+<entry><link linkend="GstMatroskaMux">GstMatroskaMux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstMatroskaParse">GstMatroskaParse</link></entry>
+<entry><link linkend="GstMpegAudioParse">GstMpegAudioParse</link></entry>
+<entry><link linkend="GstMuLawDec">GstMuLawDec</link></entry>
+</row>
+<row>
+<entry><link linkend="GstMuLawEnc">GstMuLawEnc</link></entry>
+<entry><link linkend="GstMultiFileSink">GstMultiFileSink</link></entry>
+<entry><link linkend="GstMultiFileSrc">GstMultiFileSrc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstMultiUDPSink">GstMultiUDPSink</link></entry>
+<entry><link linkend="GstMultipartDemux">GstMultipartDemux</link></entry>
+<entry><link linkend="GstMultipartMux">GstMultipartMux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstNavSeek">GstNavSeek</link></entry>
+<entry><link linkend="GstNavigationtest">GstNavigationtest</link></entry>
+<entry><link linkend="GstObject">GstObject</link></entry>
+</row>
+<row>
+<entry><link linkend="GstOpTV">GstOpTV</link></entry>
+<entry><link linkend="GstOss4Sink">GstOss4Sink</link></entry>
+<entry><link linkend="GstOss4Source">GstOss4Source</link></entry>
+</row>
+<row>
+<entry><link linkend="GstOssSink">GstOssSink</link></entry>
+<entry><link linkend="GstOssSrc">GstOssSrc</link></entry>
+<entry><link linkend="GstPipeline">GstPipeline</link></entry>
+</row>
+<row>
+<entry><link linkend="GstPngDec">GstPngDec</link></entry>
+<entry><link linkend="GstPngEnc">GstPngEnc</link></entry>
+<entry><link linkend="GstProgressReport">GstProgressReport</link></entry>
+</row>
+<row>
+<entry><link linkend="GstPulseSink">GstPulseSink</link></entry>
+<entry><link linkend="GstPulseSrc">GstPulseSrc</link></entry>
+<entry><link linkend="GstPushFileSrc">GstPushFileSrc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstPushSrc">GstPushSrc</link></entry>
+<entry><link linkend="GstQTDemux">GstQTDemux</link></entry>
+<entry><link linkend="GstQTMoovRecover">GstQTMoovRecover</link></entry>
+</row>
+<row>
+<entry><link linkend="GstQTMux">GstQTMux</link></entry>
+<entry><link linkend="GstQuarkTV">GstQuarkTV</link></entry>
+<entry><link linkend="GstRTPBVDepay">GstRTPBVDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRTPBVPay">GstRTPBVPay</link></entry>
+<entry><link linkend="GstRTPBaseAudioPayload">GstRTPBaseAudioPayload</link></entry>
+<entry><link linkend="GstRTPBaseDepayload">GstRTPBaseDepayload</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRTPBasePayload">GstRTPBasePayload</link></entry>
+<entry><link linkend="GstRTPDTMFMux">GstRTPDTMFMux</link></entry>
+<entry><link linkend="GstRTPDTMFSrc">GstRTPDTMFSrc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRTPDVDepay">GstRTPDVDepay</link></entry>
+<entry><link linkend="GstRTPDVPay">GstRTPDVPay</link></entry>
+<entry><link linkend="GstRTPDec">GstRTPDec</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRTPG723Pay">GstRTPG723Pay</link></entry>
+<entry><link linkend="GstRTPG729Pay">GstRTPG729Pay</link></entry>
+<entry><link linkend="GstRTPGSMDepay">GstRTPGSMDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRTPGSMPay">GstRTPGSMPay</link></entry>
+<entry><link linkend="GstRTPILBCPay">GstRTPILBCPay</link></entry>
+<entry><link linkend="GstRTPMP2TPay">GstRTPMP2TPay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRTPMPVPay">GstRTPMPVPay</link></entry>
+<entry><link linkend="GstRTPMux">GstRTPMux</link></entry>
+<entry><link linkend="GstRTPOpusDepay">GstRTPOpusDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRTPRtxQueue">GstRTPRtxQueue</link></entry>
+<entry><link linkend="GstRTPSirenDepay">GstRTPSirenDepay</link></entry>
+<entry><link linkend="GstRTPSirenPay">GstRTPSirenPay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRTPiLBCDepay">GstRTPiLBCDepay</link></entry>
+<entry><link linkend="GstRTSPSrc">GstRTSPSrc</link></entry>
+<entry><link linkend="GstRadioacTV">GstRadioacTV</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRevTV">GstRevTV</link></entry>
+<entry><link linkend="GstRgAnalysis">GstRgAnalysis</link></entry>
+<entry><link linkend="GstRgLimiter">GstRgLimiter</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRgVolume">GstRgVolume</link></entry>
+<entry><link linkend="GstRippleTV">GstRippleTV</link></entry>
+<entry><link linkend="GstRndBufferSize">GstRndBufferSize</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpAC3Depay">GstRtpAC3Depay</link></entry>
+<entry><link linkend="GstRtpAC3Pay">GstRtpAC3Pay</link></entry>
+<entry><link linkend="GstRtpAMRDepay">GstRtpAMRDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpAMRPay">GstRtpAMRPay</link></entry>
+<entry><link linkend="GstRtpBin">GstRtpBin</link></entry>
+<entry><link linkend="GstRtpCELTDepay">GstRtpCELTDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpCELTPay">GstRtpCELTPay</link></entry>
+<entry><link linkend="GstRtpDTMFDepay">GstRtpDTMFDepay</link></entry>
+<entry><link linkend="GstRtpG722Depay">GstRtpG722Depay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpG722Pay">GstRtpG722Pay</link></entry>
+<entry><link linkend="GstRtpG723Depay">GstRtpG723Depay</link></entry>
+<entry><link linkend="GstRtpG726Depay">GstRtpG726Depay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpG726Pay">GstRtpG726Pay</link></entry>
+<entry><link linkend="GstRtpG729Depay">GstRtpG729Depay</link></entry>
+<entry><link linkend="GstRtpGSTDepay">GstRtpGSTDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpGSTPay">GstRtpGSTPay</link></entry>
+<entry><link linkend="GstRtpH261Depay">GstRtpH261Depay</link></entry>
+<entry><link linkend="GstRtpH261Pay">GstRtpH261Pay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpH263Depay">GstRtpH263Depay</link></entry>
+<entry><link linkend="GstRtpH263PDepay">GstRtpH263PDepay</link></entry>
+<entry><link linkend="GstRtpH263PPay">GstRtpH263PPay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpH263Pay">GstRtpH263Pay</link></entry>
+<entry><link linkend="GstRtpH264Depay">GstRtpH264Depay</link></entry>
+<entry><link linkend="GstRtpH264Pay">GstRtpH264Pay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpH265Depay">GstRtpH265Depay</link></entry>
+<entry><link linkend="GstRtpH265Pay">GstRtpH265Pay</link></entry>
+<entry><link linkend="GstRtpJ2KDepay">GstRtpJ2KDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpJ2KPay">GstRtpJ2KPay</link></entry>
+<entry><link linkend="GstRtpJPEGDepay">GstRtpJPEGDepay</link></entry>
+<entry><link linkend="GstRtpJPEGPay">GstRtpJPEGPay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpJitterBuffer">GstRtpJitterBuffer</link></entry>
+<entry><link linkend="GstRtpKlvDepay">GstRtpKlvDepay</link></entry>
+<entry><link linkend="GstRtpKlvPay">GstRtpKlvPay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpL16Depay">GstRtpL16Depay</link></entry>
+<entry><link linkend="GstRtpL16Pay">GstRtpL16Pay</link></entry>
+<entry><link linkend="GstRtpL24Depay">GstRtpL24Depay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpL24Pay">GstRtpL24Pay</link></entry>
+<entry><link linkend="GstRtpMP1SDepay">GstRtpMP1SDepay</link></entry>
+<entry><link linkend="GstRtpMP2TDepay">GstRtpMP2TDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpMP4ADepay">GstRtpMP4ADepay</link></entry>
+<entry><link linkend="GstRtpMP4APay">GstRtpMP4APay</link></entry>
+<entry><link linkend="GstRtpMP4GDepay">GstRtpMP4GDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpMP4GPay">GstRtpMP4GPay</link></entry>
+<entry><link linkend="GstRtpMP4VDepay">GstRtpMP4VDepay</link></entry>
+<entry><link linkend="GstRtpMP4VPay">GstRtpMP4VPay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpMPADepay">GstRtpMPADepay</link></entry>
+<entry><link linkend="GstRtpMPAPay">GstRtpMPAPay</link></entry>
+<entry><link linkend="GstRtpMPARobustDepay">GstRtpMPARobustDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpMPVDepay">GstRtpMPVDepay</link></entry>
+<entry><link linkend="GstRtpOPUSPay">GstRtpOPUSPay</link></entry>
+<entry><link linkend="GstRtpPcmaDepay">GstRtpPcmaDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpPcmaPay">GstRtpPcmaPay</link></entry>
+<entry><link linkend="GstRtpPcmuDepay">GstRtpPcmuDepay</link></entry>
+<entry><link linkend="GstRtpPcmuPay">GstRtpPcmuPay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpPtDemux">GstRtpPtDemux</link></entry>
+<entry><link linkend="GstRtpQCELPDepay">GstRtpQCELPDepay</link></entry>
+<entry><link linkend="GstRtpQDM2Depay">GstRtpQDM2Depay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpRtxReceive">GstRtpRtxReceive</link></entry>
+<entry><link linkend="GstRtpRtxSend">GstRtpRtxSend</link></entry>
+<entry><link linkend="GstRtpSBCPay">GstRtpSBCPay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpSPEEXDepay">GstRtpSPEEXDepay</link></entry>
+<entry><link linkend="GstRtpSPEEXPay">GstRtpSPEEXPay</link></entry>
+<entry><link linkend="GstRtpSV3VDepay">GstRtpSV3VDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpSbcDepay">GstRtpSbcDepay</link></entry>
+<entry><link linkend="GstRtpSession">GstRtpSession</link></entry>
+<entry><link linkend="GstRtpSsrcDemux">GstRtpSsrcDemux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpStreamDepay">GstRtpStreamDepay</link></entry>
+<entry><link linkend="GstRtpStreamPay">GstRtpStreamPay</link></entry>
+<entry><link linkend="GstRtpTheoraDepay">GstRtpTheoraDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpTheoraPay">GstRtpTheoraPay</link></entry>
+<entry><link linkend="GstRtpVP8Depay">GstRtpVP8Depay</link></entry>
+<entry><link linkend="GstRtpVP8Pay">GstRtpVP8Pay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpVP9Depay">GstRtpVP9Depay</link></entry>
+<entry><link linkend="GstRtpVP9Pay">GstRtpVP9Pay</link></entry>
+<entry><link linkend="GstRtpVRawDepay">GstRtpVRawDepay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpVRawPay">GstRtpVRawPay</link></entry>
+<entry><link linkend="GstRtpVorbisDepay">GstRtpVorbisDepay</link></entry>
+<entry><link linkend="GstRtpVorbisPay">GstRtpVorbisPay</link></entry>
+</row>
+<row>
+<entry><link linkend="GstRtpXQTDepay">GstRtpXQTDepay</link></entry>
+<entry><link linkend="GstSMPTE">GstSMPTE</link></entry>
+<entry><link linkend="GstSMPTEAlpha">GstSMPTEAlpha</link></entry>
+</row>
+<row>
+<entry><link linkend="GstSbcParse">GstSbcParse</link></entry>
+<entry><link linkend="GstScaletempo">GstScaletempo</link></entry>
+<entry><link linkend="GstShagadelicTV">GstShagadelicTV</link></entry>
+</row>
+<row>
+<entry><link linkend="GstShapeWipe">GstShapeWipe</link></entry>
+<entry><link linkend="GstShout2send">GstShout2send</link></entry>
+<entry><link linkend="GstSoupHTTPSrc">GstSoupHTTPSrc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstSoupHttpClientSink">GstSoupHttpClientSink</link></entry>
+<entry><link linkend="GstSpectrum">GstSpectrum</link></entry>
+<entry><link linkend="GstSpeexDec">GstSpeexDec</link></entry>
+</row>
+<row>
+<entry><link linkend="GstSpeexEnc">GstSpeexEnc</link></entry>
+<entry><link linkend="GstSplitFileSrc">GstSplitFileSrc</link></entry>
+<entry><link linkend="GstSplitMuxSink">GstSplitMuxSink</link></entry>
+</row>
+<row>
+<entry><link linkend="GstSplitMuxSrc">GstSplitMuxSrc</link></entry>
+<entry><link linkend="GstStreakTV">GstStreakTV</link></entry>
+<entry><link linkend="GstTagDemux">GstTagDemux</link></entry>
+</row>
+<row>
+<entry><link linkend="GstTagInject">GstTagInject</link></entry>
+<entry><link linkend="GstTagMux">GstTagMux</link></entry>
+<entry><link linkend="GstTest">GstTest</link></entry>
+</row>
+<row>
+<entry><link linkend="GstUDPSink">GstUDPSink</link></entry>
+<entry><link linkend="GstUDPSrc">GstUDPSrc</link></entry>
+<entry><link linkend="GstV4l2Radio">GstV4l2Radio</link></entry>
+</row>
+<row>
+<entry><link linkend="GstV4l2Sink">GstV4l2Sink</link></entry>
+<entry><link linkend="GstV4l2Src">GstV4l2Src</link></entry>
+<entry><link linkend="GstVP8Dec">GstVP8Dec</link></entry>
+</row>
+<row>
+<entry><link linkend="GstVP8Enc">GstVP8Enc</link></entry>
+<entry><link linkend="GstVP9Dec">GstVP9Dec</link></entry>
+<entry><link linkend="GstVP9Enc">GstVP9Enc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstVPXDec">GstVPXDec</link></entry>
+<entry><link linkend="GstVPXEnc">GstVPXEnc</link></entry>
+<entry><link linkend="GstVertigoTV">GstVertigoTV</link></entry>
+</row>
+<row>
+<entry><link linkend="GstVideoBalance">GstVideoBalance</link></entry>
+<entry><link linkend="GstVideoBox">GstVideoBox</link></entry>
+<entry><link linkend="GstVideoCrop">GstVideoCrop</link></entry>
+</row>
+<row>
+<entry><link linkend="GstVideoDecoder">GstVideoDecoder</link></entry>
+<entry><link linkend="GstVideoEncoder">GstVideoEncoder</link></entry>
+<entry><link linkend="GstVideoFilter">GstVideoFilter</link></entry>
+</row>
+<row>
+<entry><link linkend="GstVideoFlip">GstVideoFlip</link></entry>
+<entry><link linkend="GstVideoMedian">GstVideoMedian</link></entry>
+<entry><link linkend="GstVideoMixer2">GstVideoMixer2</link></entry>
+</row>
+<row>
+<entry><link linkend="GstVideoSink">GstVideoSink</link></entry>
+<entry><link linkend="GstWarpTV">GstWarpTV</link></entry>
+<entry><link linkend="GstWavEnc">GstWavEnc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstWavParse">GstWavParse</link></entry>
+<entry><link linkend="GstWavpackDec">GstWavpackDec</link></entry>
+<entry><link linkend="GstWavpackEnc">GstWavpackEnc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstWavpackParse">GstWavpackParse</link></entry>
+<entry><link linkend="GstWebMMux">GstWebMMux</link></entry>
+<entry><link linkend="GstXImageSrc">GstXImageSrc</link></entry>
+</row>
+<row>
+<entry><link linkend="GstY4mEncode">GstY4mEncode</link></entry>
+</row>
+</tbody></tgroup></informaltable>

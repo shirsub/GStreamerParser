@@ -1,0 +1,203 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-videobox">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-videobox.top_of_page" role="top_of_page">videobox</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>videobox</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-videobox.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstVideoBox--alpha">alpha</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstVideoBox--border-alpha">border-alpha</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVideoBox--bottom">bottom</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVideoBoxFill"><type>GstVideoBoxFill</type></link></entry><entry role="property_name"><link linkend="GstVideoBox--fill">fill</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVideoBox--left">left</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVideoBox--right">right</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVideoBox--top">top</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstVideoBox--autocrop">autocrop</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstVideoBox"/><refsect1 id="gst-plugins-good-plugins-videobox.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstVideoBox-struct">GstVideoBox</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstVideoBoxFill">GstVideoBoxFill</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videobox.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstVideoBox
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-videobox.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This plugin crops or enlarges the image. It takes 4 values as input, a
+top, bottom, left and right offset. Positive values will crop that much
+pixels from the respective border of the image, negative values will add
+that much pixels. When pixels are added, you can specify their color. 
+Some predefined colors are usable with an enum property.</para>
+<para>The plugin is alpha channel aware and will try to negotiate with a format
+that supports alpha channels first. When alpha channel is active two
+other properties, alpha and border_alpha can be used to set the alpha
+values of the inner picture and the border respectively. an alpha value of
+0.0 means total transparency, 1.0 is opaque.</para>
+<para>The videobox plugin has many uses such as doing a mosaic of pictures, 
+letterboxing video, cutting out pieces of video, picture in picture, etc..</para>
+<para>Setting autocrop to true changes the behavior of the plugin so that
+caps determine crop properties rather than the other way around: given
+input and output dimensions, the crop values are selected so that the
+smaller frame is effectively centered in the larger frame.  This
+involves either cropping or padding.</para>
+<para>If you use autocrop there is little point in setting the other
+properties manually because they will be overriden if the caps change,
+but nothing stops you from doing so.</para>
+<para>Sample pipeline:</para>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc ! videobox autocrop=true ! \
+  "video/x-raw, width=600, height=400" ! videoconvert ! ximagesink
+]]></programlisting></informalexample>
+<para/>
+
+<include href="element-videobox-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-videobox.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videobox.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstVideoBox-struct" role="struct">
+<title>struct GstVideoBox</title>
+<indexterm zone="GstVideoBox-struct"><primary>GstVideoBox</primary></indexterm>
+<programlisting language="C">struct GstVideoBox;</programlisting>
+</refsect2>
+<refsect2 id="GstVideoBoxFill" role="enum">
+<title>enum GstVideoBoxFill</title>
+<indexterm zone="GstVideoBoxFill"><primary>GstVideoBoxFill</primary></indexterm>
+<refsect3 id="GstVideoBoxFill.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="VIDEO-BOX-FILL-BLACK:CAPS">VIDEO_BOX_FILL_BLACK</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="VIDEO-BOX-FILL-GREEN:CAPS">VIDEO_BOX_FILL_GREEN</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="VIDEO-BOX-FILL-BLUE:CAPS">VIDEO_BOX_FILL_BLUE</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="VIDEO-BOX-FILL-RED:CAPS">VIDEO_BOX_FILL_RED</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="VIDEO-BOX-FILL-YELLOW:CAPS">VIDEO_BOX_FILL_YELLOW</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="VIDEO-BOX-FILL-WHITE:CAPS">VIDEO_BOX_FILL_WHITE</para></entry>
+<entry/><entry/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="VIDEO-BOX-FILL-LAST:CAPS">VIDEO_BOX_FILL_LAST</para></entry>
+<entry/><entry/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videobox.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstVideoBox--alpha" role="property"><title>The <literal>“alpha”</literal> property</title>
+<indexterm zone="GstVideoBox--alpha"><primary>GstVideoBox:alpha</primary></indexterm>
+<programlisting>  “alpha”                    <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Alpha value picture.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstVideoBox--border-alpha" role="property"><title>The <literal>“border-alpha”</literal> property</title>
+<indexterm zone="GstVideoBox--border-alpha"><primary>GstVideoBox:border-alpha</primary></indexterm>
+<programlisting>  “border-alpha”             <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Alpha value of the border.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstVideoBox--bottom" role="property"><title>The <literal>“bottom”</literal> property</title>
+<indexterm zone="GstVideoBox--bottom"><primary>GstVideoBox:bottom</primary></indexterm>
+<programlisting>  “bottom”                   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Pixels to box at bottom (&lt;0 = add a border).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVideoBox--fill" role="property"><title>The <literal>“fill”</literal> property</title>
+<indexterm zone="GstVideoBox--fill"><primary>GstVideoBox:fill</primary></indexterm>
+<programlisting>  “fill”                     <link linkend="GstVideoBoxFill"><type>GstVideoBoxFill</type></link></programlisting>
+<para>How to fill the borders.</para><para>Flags: Read / Write</para>
+<para>Default value: Black</para>
+</refsect2>
+<refsect2 id="GstVideoBox--left" role="property"><title>The <literal>“left”</literal> property</title>
+<indexterm zone="GstVideoBox--left"><primary>GstVideoBox:left</primary></indexterm>
+<programlisting>  “left”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Pixels to box at left (&lt;0  = add a border).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVideoBox--right" role="property"><title>The <literal>“right”</literal> property</title>
+<indexterm zone="GstVideoBox--right"><primary>GstVideoBox:right</primary></indexterm>
+<programlisting>  “right”                    <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Pixels to box at right (&lt;0 = add a border).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVideoBox--top" role="property"><title>The <literal>“top”</literal> property</title>
+<indexterm zone="GstVideoBox--top"><primary>GstVideoBox:top</primary></indexterm>
+<programlisting>  “top”                      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Pixels to box at top (&lt;0 = add a border).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVideoBox--autocrop" role="property"><title>The <literal>“autocrop”</literal> property</title>
+<indexterm zone="GstVideoBox--autocrop"><primary>GstVideoBox:autocrop</primary></indexterm>
+<programlisting>  “autocrop”                 <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> videobox will automatically crop/pad the input
+video to be centered in the output.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videobox.see-also">
+<title>See Also</title>
+<para><link linkend="GstVideoCrop"><type>GstVideoCrop</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,176 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpssrcdemux">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpssrcdemux.top_of_page" role="top_of_page">rtpssrcdemux</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpssrcdemux</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtpssrcdemux.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSsrcDemux-clear-ssrc">clear-ssrc</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSsrcDemux-new-ssrc-pad">new-ssrc-pad</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSsrcDemux-removed-ssrc-pad">removed-ssrc-pad</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRtpSsrcDemux"/><refsect1 id="gst-plugins-good-plugins-rtpssrcdemux.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpSsrcDemux-struct">GstRtpSsrcDemux</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpssrcdemux.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstRtpSsrcDemux
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpssrcdemux.description" role="desc">
+<title role="desc.title">Description</title>
+<para>rtpssrcdemux acts as a demuxer for RTP packets based on the SSRC of the
+packets. Its main purpose is to allow an application to easily receive and
+decode an RTP stream with multiple SSRCs.</para>
+<para>For each SSRC that is detected, a new pad will be created and the
+<link linkend="GstRtpSsrcDemux-new-ssrc-pad"><type>“new-ssrc-pad”</type></link> signal will be emitted. </para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 udpsrc caps="application/x-rtp" ! rtpssrcdemux ! fakesink
+]]></programlisting></informalexample> Takes an RTP stream and send the RTP packets with the first detected SSRC
+to fakesink, discarding the other SSRCs.
+</refsect2>
+
+<include href="element-rtpssrcdemux-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpssrcdemux.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpssrcdemux.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpSsrcDemux-struct" role="struct">
+<title>struct GstRtpSsrcDemux</title>
+<indexterm zone="GstRtpSsrcDemux-struct"><primary>GstRtpSsrcDemux</primary></indexterm>
+<programlisting language="C">struct GstRtpSsrcDemux;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpssrcdemux.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRtpSsrcDemux-clear-ssrc" role="signal"><title>The <literal>“clear-ssrc”</literal> signal</title>
+<indexterm zone="GstRtpSsrcDemux-clear-ssrc"><primary>GstRtpSsrcDemux::clear-ssrc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSsrcDemux"><type>GstRtpSsrcDemux</type></link> *demux,
+               <link linkend="guint"><type>guint</type></link>            ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>Action signal to remove the pad for SSRC.</para>
+<refsect3 id="GstRtpSsrcDemux-clear-ssrc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>demux</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC of the pad</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2><refsect2 id="GstRtpSsrcDemux-new-ssrc-pad" role="signal"><title>The <literal>“new-ssrc-pad”</literal> signal</title>
+<indexterm zone="GstRtpSsrcDemux-new-ssrc-pad"><primary>GstRtpSsrcDemux::new-ssrc-pad</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSsrcDemux"><type>GstRtpSsrcDemux</type></link> *demux,
+               <link linkend="guint"><type>guint</type></link>            ssrc,
+               <link linkend="GstPad"><type>GstPad</type></link>          *pad,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>Emited when a new SSRC pad has been created.</para>
+<refsect3 id="GstRtpSsrcDemux-new-ssrc-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>demux</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC of the pad</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the new pad.</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSsrcDemux-removed-ssrc-pad" role="signal"><title>The <literal>“removed-ssrc-pad”</literal> signal</title>
+<indexterm zone="GstRtpSsrcDemux-removed-ssrc-pad"><primary>GstRtpSsrcDemux::removed-ssrc-pad</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSsrcDemux"><type>GstRtpSsrcDemux</type></link> *demux,
+               <link linkend="guint"><type>guint</type></link>            ssrc,
+               <link linkend="GstPad"><type>GstPad</type></link>          *pad,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>Emited when a SSRC pad has been removed.</para>
+<refsect3 id="GstRtpSsrcDemux-removed-ssrc-pad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>demux</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC of the pad</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the removed pad.</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,100 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-osssink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-osssink.top_of_page" role="top_of_page">osssink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>osssink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-osssink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstOssSink--device">device</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstOssSink"/><refsect1 id="gst-plugins-good-plugins-osssink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstOssSink-struct">GstOssSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-osssink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioBaseSink">GstAudioBaseSink</link>
+                        <phrase role="lineart">╰──</phrase> <link linkend="GstAudioSink">GstAudioSink</link>
+                            <phrase role="lineart">╰──</phrase> GstOssSink
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-osssink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element lets you output sound using the Open Sound System (OSS).</para>
+<para>Note that you should almost always use generic audio conversion elements
+like audioconvert and audioresample in front of an audiosink to make sure
+your pipeline works under all circumstances (those conversion elements will
+act in passthrough-mode if no conversion is necessary).</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! osssink
+]]></programlisting></informalexample> will output a sine wave (continuous beep sound) to your sound card (with
+a very low volume as precaution).
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v filesrc location=music.ogg ! decodebin ! audioconvert ! audioresample ! osssink
+]]></programlisting></informalexample> will play an Ogg/Vorbis audio file and output it using the Open Sound System.
+</refsect2>
+
+<include href="element-osssink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-osssink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-osssink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstOssSink-struct" role="struct">
+<title>struct GstOssSink</title>
+<indexterm zone="GstOssSink-struct"><primary>GstOssSink</primary></indexterm>
+<programlisting language="C">struct GstOssSink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-osssink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstOssSink--device" role="property"><title>The <literal>“device”</literal> property</title>
+<indexterm zone="GstOssSink--device"><primary>GstOssSink:device</primary></indexterm>
+<programlisting>  “device”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>OSS device (usually /dev/dspN).</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;/dev/dsp&quot;</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,145 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-equalizer-nbands">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-equalizer-nbands.top_of_page" role="top_of_page">equalizer-nbands</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>equalizer-nbands</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-equalizer-nbands.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstIirEqualizerNBands--num-bands">num-bands</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstIirEqualizerNBands"/><refsect1 id="gst-plugins-good-plugins-equalizer-nbands.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstIirEqualizerNBands-struct">GstIirEqualizerNBands</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-nbands.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFilter">GstAudioFilter</link>
+                        <phrase role="lineart">╰──</phrase> <link linkend="GstIirEqualizer">GstIirEqualizer</link>
+                            <phrase role="lineart">╰──</phrase> GstIirEqualizerNBands
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-nbands.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstIirEqualizerNBands implements
+ <link linkend="GstChildProxy">GstChildProxy</link> and  <link linkend="GstPreset">GstPreset</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-equalizer-nbands.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The n-band equalizer element is a fully parametric equalizer. It allows to
+select between 1 and 64 bands and has properties on each band to change
+the center frequency, band width and gain.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=song.ogg ! oggdemux ! vorbisdec ! audioconvert ! equalizer-nbands num-bands=15 band5::gain=6.0 ! alsasink
+]]></programlisting></informalexample> This make the equalizer use 15 bands and raises the volume of the 5th band by 6 db.
+</refsect2>
+<refsect2>
+<title>Example code</title>
+<informalexample><programlisting><![CDATA[
+#include <gst/gst.h>
+
+...
+typedef struct {
+  gfloat freq;
+  gfloat width;
+  gfloat gain;
+} GstEqualizerBandState;
+
+...
+
+  GstElement *equalizer;
+  GObject *band;
+  gint i;
+  GstEqualizerBandState state[] = {
+    { 120.0,   50.0, - 3.0},
+    { 500.0,   20.0,  12.0},
+    {1503.0,    2.0, -20.0},
+    {6000.0, 1000.0,   6.0},
+    {3000.0,  120.0,   2.0}
+  };
+
+...
+
+  equalizer = gst_element_factory_make ("equalizer-nbands", "equalizer");
+  g_object_set (G_OBJECT (equalizer), "num-bands", 5, NULL);
+
+...
+
+  for (i = 0; i < 5; i++) {
+    band = gst_child_proxy_get_child_by_index (GST_CHILD_PROXY (equalizer), i);
+    g_object_set (G_OBJECT (band), "freq", state[i].freq,
+        "bandwidth", state[i].width,
+	"gain", state[i].gain);
+    g_object_unref (G_OBJECT (band));
+  }
+
+...
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-equalizer-nbands-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-nbands.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-nbands.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstIirEqualizerNBands-struct" role="struct">
+<title>struct GstIirEqualizerNBands</title>
+<indexterm zone="GstIirEqualizerNBands-struct"><primary>GstIirEqualizerNBands</primary></indexterm>
+<programlisting language="C">struct GstIirEqualizerNBands;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-equalizer-nbands.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstIirEqualizerNBands--num-bands" role="property"><title>The <literal>“num-bands”</literal> property</title>
+<indexterm zone="GstIirEqualizerNBands--num-bands"><primary>GstIirEqualizerNBands:num-bands</primary></indexterm>
+<programlisting>  “num-bands”                <link linkend="guint"><type>guint</type></link></programlisting>
+<para>number of different bands to use.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: [1,64]</para>
+<para>Default value: 10</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

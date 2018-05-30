@@ -1,0 +1,136 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-dynudpsink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-dynudpsink.top_of_page" role="top_of_page">dynudpsink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>dynudpsink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-dynudpsink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDynUDPSink--close-socket">close-socket</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GSocket"><type>GSocket</type></link> *</entry><entry role="property_name"><link linkend="GstDynUDPSink--socket">socket</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstDynUDPSink--bind-address">bind-address</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstDynUDPSink--bind-port">bind-port</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GSocket"><type>GSocket</type></link> *</entry><entry role="property_name"><link linkend="GstDynUDPSink--socket-v6">socket-v6</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dynudpsink.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>*</entry><entry role="signal_name"><link linkend="GstDynUDPSink-get-stats">get-stats</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstDynUDPSink"/><refsect1 id="gst-plugins-good-plugins-dynudpsink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDynUDPSink-struct">GstDynUDPSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dynudpsink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> GstDynUDPSink
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-dynudpsink.description" role="desc">
+<title role="desc.title">Description</title>
+
+<include href="element-dynudpsink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-dynudpsink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dynudpsink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDynUDPSink-struct" role="struct">
+<title>struct GstDynUDPSink</title>
+<indexterm zone="GstDynUDPSink-struct"><primary>GstDynUDPSink</primary></indexterm>
+<programlisting language="C">struct GstDynUDPSink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dynudpsink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstDynUDPSink--close-socket" role="property"><title>The <literal>“close-socket”</literal> property</title>
+<indexterm zone="GstDynUDPSink--close-socket"><primary>GstDynUDPSink:close-socket</primary></indexterm>
+<programlisting>  “close-socket”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Close socket if passed as property on state change.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstDynUDPSink--socket" role="property"><title>The <literal>“socket”</literal> property</title>
+<indexterm zone="GstDynUDPSink--socket"><primary>GstDynUDPSink:socket</primary></indexterm>
+<programlisting>  “socket”                   <link linkend="GSocket"><type>GSocket</type></link> *</programlisting>
+<para>Socket to use for UDP sending. (NULL == allocate).</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstDynUDPSink--bind-address" role="property"><title>The <literal>“bind-address”</literal> property</title>
+<indexterm zone="GstDynUDPSink--bind-address"><primary>GstDynUDPSink:bind-address</primary></indexterm>
+<programlisting>  “bind-address”             <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Address to bind the socket to.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstDynUDPSink--bind-port" role="property"><title>The <literal>“bind-port”</literal> property</title>
+<indexterm zone="GstDynUDPSink--bind-port"><primary>GstDynUDPSink:bind-port</primary></indexterm>
+<programlisting>  “bind-port”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Port to bind the socket to.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,65535]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstDynUDPSink--socket-v6" role="property"><title>The <literal>“socket-v6”</literal> property</title>
+<indexterm zone="GstDynUDPSink--socket-v6"><primary>GstDynUDPSink:socket-v6</primary></indexterm>
+<programlisting>  “socket-v6”                <link linkend="GSocket"><type>GSocket</type></link> *</programlisting>
+<para>Socket to use for UDPv6 sending. (NULL == allocate).</para><para>Flags: Read / Write</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dynudpsink.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstDynUDPSink-get-stats" role="signal"><title>The <literal>“get-stats”</literal> signal</title>
+<indexterm zone="GstDynUDPSink-get-stats"><primary>GstDynUDPSink::get-stats</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>*
+user_function (<link linkend="GstDynUDPSink"><type>GstDynUDPSink</type></link> *gstdynudpsink,
+               <link linkend="gchar"><type>gchar</type></link>         *arg1,
+               <link linkend="gint"><type>gint</type></link>           arg2,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

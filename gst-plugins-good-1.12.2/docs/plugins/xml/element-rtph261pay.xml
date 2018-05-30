@@ -1,0 +1,82 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtph261pay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtph261pay.top_of_page" role="top_of_page">rtph261pay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtph261pay</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstRtpH261Pay"/><refsect1 id="gst-plugins-good-plugins-rtph261pay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpH261Pay-struct">GstRtpH261Pay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph261pay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstRTPBasePayload">GstRTPBasePayload</link>
+                    <phrase role="lineart">╰──</phrase> GstRtpH261Pay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtph261pay.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Payload encoded H.261 video frames into RTP packets according to RFC 4587.
+For detailed information see: https://www.rfc-editor.org/rfc/rfc4587.txt</para>
+<para>The payloader takes a H.261 frame, parses it and splits it into fragments
+on MB boundaries in order to match configured MTU size. For each fragment
+an RTP packet is constructed with an RTP packet header followed by the
+fragment. In addition the payloader will make sure the packetized H.261
+stream appears as a continuous bit-stream after depacketization by shifting
+the encoded bit-stream of a frame to align with the last significant bit of
+the previous frame. This helps interoperability in the case where the
+encoder does not produce a continuous bit-stream but the decoder requires
+it.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc ! avenc_h261 ! rtph261pay ! udpsink
+]]></programlisting></informalexample> This will encode a test video and payload it. Refer to the rtph261depay
+example to depayload and play the RTP stream.
+</refsect2>
+
+<include href="element-rtph261pay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph261pay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph261pay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpH261Pay-struct" role="struct">
+<title>struct GstRtpH261Pay</title>
+<indexterm zone="GstRtpH261Pay-struct"><primary>GstRtpH261Pay</primary></indexterm>
+<programlisting language="C">struct GstRtpH261Pay;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph261pay.see-also">
+<title>See Also</title>
+<para>rtph261depay</para>
+
+</refsect1>
+
+</refentry>

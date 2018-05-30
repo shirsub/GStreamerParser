@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="gst-plugins-good-plugins-plugin-debug">
+  <refmeta>
+    <refentrytitle>debug</refentrytitle>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo>FIXME Library</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>debug</refname>
+    <refpurpose><anchor id="plugin-debug"/>elements for testing and debugging</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <title>Plugin Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>filename</term>
+        <listitem>
+          <simpara>libgstdebug.so</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>version</term>
+        <listitem>
+          <simpara>1.12.2</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>run-time license</term>
+        <listitem>
+          <simpara>LGPL</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>package</term>
+        <listitem>
+          <simpara>GStreamer Good Plug-ins source release</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>origin</term>
+        <listitem>
+          <simpara>Unknown package origin</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>Elements</title>
+    <variablelist>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-breakmydata">breakmydata</link></term><listitem><simpara>randomly change data in the stream</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-capssetter">capssetter</link></term><listitem><simpara>Set/merge caps on stream</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-cpureport">cpureport</link></term><listitem><simpara>Post cpu usage information every buffer</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-navseek">navseek</link></term><listitem><simpara>Seek based on navigation keys left-right</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-progressreport">progressreport</link></term><listitem><simpara>Periodically query and report on processing progress</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-pushfilesrc">pushfilesrc</link></term><listitem><simpara>Implements pushfile:// URI-handler for push-based file access</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rndbuffersize">rndbuffersize</link></term><listitem><simpara>pull random sized buffers</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-taginject">taginject</link></term><listitem><simpara>inject metadata tags</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-testsink">testsink</link></term><listitem><simpara>perform a number of tests</simpara></listitem></varlistentry>
+  </variablelist>
+  </refsect1>
+</refentry>

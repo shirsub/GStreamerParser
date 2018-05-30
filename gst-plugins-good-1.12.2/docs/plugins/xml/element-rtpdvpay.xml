@@ -1,0 +1,83 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpdvpay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpdvpay.top_of_page" role="top_of_page">rtpdvpay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpdvpay</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtpdvpay.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstDVPayMode"><type>GstDVPayMode</type></link></entry><entry role="property_name"><link linkend="GstRTPDVPay--mode">mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRTPDVPay"/><refsect1 id="gst-plugins-good-plugins-rtpdvpay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTPDVPay-struct">GstRTPDVPay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdvpay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstRTPBasePayload">GstRTPBasePayload</link>
+                    <phrase role="lineart">╰──</phrase> GstRTPDVPay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpdvpay.description" role="desc">
+<title role="desc.title">Description</title>
+
+<include href="element-rtpdvpay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdvpay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdvpay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTPDVPay-struct" role="struct">
+<title>struct GstRTPDVPay</title>
+<indexterm zone="GstRTPDVPay-struct"><primary>GstRTPDVPay</primary></indexterm>
+<programlisting language="C">struct GstRTPDVPay;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdvpay.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTPDVPay--mode" role="property"><title>The <literal>“mode”</literal> property</title>
+<indexterm zone="GstRTPDVPay--mode"><primary>GstRTPDVPay:mode</primary></indexterm>
+<programlisting>  “mode”                     <link linkend="GstDVPayMode"><type>GstDVPayMode</type></link></programlisting>
+<para>The payload mode of payloading.</para><para>Flags: Read / Write</para>
+<para>Default value: Video only</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

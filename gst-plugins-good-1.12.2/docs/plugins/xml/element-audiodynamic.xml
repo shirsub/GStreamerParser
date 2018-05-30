@@ -1,0 +1,119 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-audiodynamic">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-audiodynamic.top_of_page" role="top_of_page">audiodynamic</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>audiodynamic</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-audiodynamic.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstAudioDynamicCharacteristics"><type>GstAudioDynamicCharacteristics</type></link></entry><entry role="property_name"><link linkend="GstAudioDynamic--characteristics">characteristics</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstAudioDynamicMode"><type>GstAudioDynamicMode</type></link></entry><entry role="property_name"><link linkend="GstAudioDynamic--mode">mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAudioDynamic--ratio">ratio</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gfloat"><type>gfloat</type></link></entry><entry role="property_name"><link linkend="GstAudioDynamic--threshold">threshold</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAudioDynamic"/><refsect1 id="gst-plugins-good-plugins-audiodynamic.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAudioDynamic-struct">GstAudioDynamic</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiodynamic.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFilter">GstAudioFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstAudioDynamic
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-audiodynamic.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element can act as a compressor or expander. A compressor changes the
+amplitude of all samples above a specific threshold with a specific ratio,
+a expander does the same for all samples below a specific threshold. If
+soft-knee mode is selected the ratio is applied smoothly.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc wave=saw ! audiodynamic characteristics=soft-knee mode=compressor threshold=0.5 ratio=0.5 ! alsasink
+gst-launch-1.0 filesrc location="melo1.ogg" ! oggdemux ! vorbisdec ! audioconvert ! audiodynamic characteristics=hard-knee mode=expander threshold=0.2 ratio=4.0 ! alsasink
+gst-launch-1.0 audiotestsrc wave=saw ! audioconvert ! audiodynamic ! audioconvert ! alsasink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-audiodynamic-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiodynamic.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiodynamic.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAudioDynamic-struct" role="struct">
+<title>struct GstAudioDynamic</title>
+<indexterm zone="GstAudioDynamic-struct"><primary>GstAudioDynamic</primary></indexterm>
+<programlisting language="C">struct GstAudioDynamic;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audiodynamic.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAudioDynamic--characteristics" role="property"><title>The <literal>“characteristics”</literal> property</title>
+<indexterm zone="GstAudioDynamic--characteristics"><primary>GstAudioDynamic:characteristics</primary></indexterm>
+<programlisting>  “characteristics”          <link linkend="GstAudioDynamicCharacteristics"><type>GstAudioDynamicCharacteristics</type></link></programlisting>
+<para>Selects whether the ratio should be applied smooth (soft-knee) or hard (hard-knee).</para><para>Flags: Read / Write</para>
+<para>Default value: Hard Knee (default)</para>
+</refsect2>
+<refsect2 id="GstAudioDynamic--mode" role="property"><title>The <literal>“mode”</literal> property</title>
+<indexterm zone="GstAudioDynamic--mode"><primary>GstAudioDynamic:mode</primary></indexterm>
+<programlisting>  “mode”                     <link linkend="GstAudioDynamicMode"><type>GstAudioDynamicMode</type></link></programlisting>
+<para>Selects whether the filter should work on loud samples (compressor) orquiet samples (expander).</para><para>Flags: Read / Write</para>
+<para>Default value: Compressor (default)</para>
+</refsect2>
+<refsect2 id="GstAudioDynamic--ratio" role="property"><title>The <literal>“ratio”</literal> property</title>
+<indexterm zone="GstAudioDynamic--ratio"><primary>GstAudioDynamic:ratio</primary></indexterm>
+<programlisting>  “ratio”                    <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Ratio that should be applied.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstAudioDynamic--threshold" role="property"><title>The <literal>“threshold”</literal> property</title>
+<indexterm zone="GstAudioDynamic--threshold"><primary>GstAudioDynamic:threshold</primary></indexterm>
+<programlisting>  “threshold”                <link linkend="gfloat"><type>gfloat</type></link></programlisting>
+<para>Threshold until the filter is activated.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

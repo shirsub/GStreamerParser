@@ -1,0 +1,247 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-splitmuxsink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-splitmuxsink.top_of_page" role="top_of_page">splitmuxsink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>splitmuxsink</refname>
+<refpurpose>Muxer wrapper for splitting output stream by size or time</refpurpose>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-splitmuxsink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSplitMuxSink--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstSplitMuxSink--max-size-bytes">max-size-bytes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstSplitMuxSink--max-size-time">max-size-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstSplitMuxSink--mux-overhead">mux-overhead</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstElement"><type>GstElement</type></link> *</entry><entry role="property_name"><link linkend="GstSplitMuxSink--muxer">muxer</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstElement"><type>GstElement</type></link> *</entry><entry role="property_name"><link linkend="GstSplitMuxSink--sink">sink</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstSplitMuxSink--max-files">max-files</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSplitMuxSink--send-keyframe-requests">send-keyframe-requests</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSplitMuxSink--max-size-timecode">max-size-timecode</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsink.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>*</entry><entry role="signal_name"><link linkend="GstSplitMuxSink-format-location">format-location</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>*</entry><entry role="signal_name"><link linkend="GstSplitMuxSink-format-location-full">format-location-full</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstSplitMuxSink"/><refsect1 id="gst-plugins-good-plugins-splitmuxsink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSplitMuxSink-struct">GstSplitMuxSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBin">GstBin</link>
+                    <phrase role="lineart">╰──</phrase> GstSplitMuxSink
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsink.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstSplitMuxSink implements
+ <link linkend="GstChildProxy">GstChildProxy</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-splitmuxsink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element wraps a muxer and a sink, and starts a new file when the mux
+contents are about to cross a threshold of maximum size of maximum time,
+splitting at video keyframe boundaries. Exactly one input video stream
+can be muxed, with as many accompanying audio and subtitle streams as
+desired.</para>
+<para>By default, it uses mp4mux and filesink, but they can be changed via
+the 'muxer' and 'sink' properties.</para>
+<para>The minimum file size is 1 GOP, however - so limits may be overrun if the
+distance between any 2 keyframes is larger than the limits.</para>
+<para>If a video stream is available, the splitting process is driven by the video
+stream contents, and the video stream must contain closed GOPs for the output
+file parts to be played individually correctly. In the absence of a video
+stream, the first available stream is used as reference for synchronization.</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -e v4l2src num-buffers=500 ! video/x-raw,width=320,height=240 ! videoconvert ! queue ! timeoverlay ! x264enc key-int-max=10 ! h264parse ! splitmuxsink location=video%02d.mov max-size-time=10000000000 max-size-bytes=1000000
+]]></programlisting></informalexample>
+Records a video stream captured from a v4l2 device and muxes it into
+ISO mp4 files, splitting as needed to limit size/duration to 10 seconds
+and 1MB maximum size.
+</refsect2>
+
+<include href="element-splitmuxsink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSplitMuxSink-struct" role="struct">
+<title>struct GstSplitMuxSink</title>
+<indexterm zone="GstSplitMuxSink-struct"><primary>GstSplitMuxSink</primary></indexterm>
+<programlisting language="C">struct GstSplitMuxSink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSplitMuxSink--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstSplitMuxSink--location"><primary>GstSplitMuxSink:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Format string pattern for the location of the files to write (e.g. video%05d.mp4).</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstSplitMuxSink--max-size-bytes" role="property"><title>The <literal>“max-size-bytes”</literal> property</title>
+<indexterm zone="GstSplitMuxSink--max-size-bytes"><primary>GstSplitMuxSink:max-size-bytes</primary></indexterm>
+<programlisting>  “max-size-bytes”           <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Max. amount of data per file (in bytes, 0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstSplitMuxSink--max-size-time" role="property"><title>The <literal>“max-size-time”</literal> property</title>
+<indexterm zone="GstSplitMuxSink--max-size-time"><primary>GstSplitMuxSink:max-size-time</primary></indexterm>
+<programlisting>  “max-size-time”            <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Max. amount of time per file (in ns, 0=disable).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstSplitMuxSink--mux-overhead" role="property"><title>The <literal>“mux-overhead”</literal> property</title>
+<indexterm zone="GstSplitMuxSink--mux-overhead"><primary>GstSplitMuxSink:mux-overhead</primary></indexterm>
+<programlisting>  “mux-overhead”             <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Extra size overhead of muxing (0.02 = 2%).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 0.02</para>
+</refsect2>
+<refsect2 id="GstSplitMuxSink--muxer" role="property"><title>The <literal>“muxer”</literal> property</title>
+<indexterm zone="GstSplitMuxSink--muxer"><primary>GstSplitMuxSink:muxer</primary></indexterm>
+<programlisting>  “muxer”                    <link linkend="GstElement"><type>GstElement</type></link> *</programlisting>
+<para>The muxer element to use (NULL = default mp4mux).</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstSplitMuxSink--sink" role="property"><title>The <literal>“sink”</literal> property</title>
+<indexterm zone="GstSplitMuxSink--sink"><primary>GstSplitMuxSink:sink</primary></indexterm>
+<programlisting>  “sink”                     <link linkend="GstElement"><type>GstElement</type></link> *</programlisting>
+<para>The sink element (or element chain) to use (NULL = default filesink).</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstSplitMuxSink--max-files" role="property"><title>The <literal>“max-files”</literal> property</title>
+<indexterm zone="GstSplitMuxSink--max-files"><primary>GstSplitMuxSink:max-files</primary></indexterm>
+<programlisting>  “max-files”                <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Maximum number of files to keep on disk. Once the maximum is reached,old files start to be deleted to make room for new ones.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstSplitMuxSink--send-keyframe-requests" role="property"><title>The <literal>“send-keyframe-requests”</literal> property</title>
+<indexterm zone="GstSplitMuxSink--send-keyframe-requests"><primary>GstSplitMuxSink:send-keyframe-requests</primary></indexterm>
+<programlisting>  “send-keyframe-requests”   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Request a keyframe every max-size-time ns to try splitting at that point. Needs max-size-bytes to be 0 in order to be effective.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstSplitMuxSink--max-size-timecode" role="property"><title>The <literal>“max-size-timecode”</literal> property</title>
+<indexterm zone="GstSplitMuxSink--max-size-timecode"><primary>GstSplitMuxSink:max-size-timecode</primary></indexterm>
+<programlisting>  “max-size-timecode”        <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Maximum difference in timecode between first and last frame. Separator is assumed to be &quot;:&quot; everywhere (e.g. 01:00:00:00). Will only be effective if a timecode track is present.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-splitmuxsink.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstSplitMuxSink-format-location" role="signal"><title>The <literal>“format-location”</literal> signal</title>
+<indexterm zone="GstSplitMuxSink-format-location"><primary>GstSplitMuxSink::format-location</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>*
+user_function (<link linkend="GstSplitMuxSink"><type>GstSplitMuxSink</type></link> *splitmux,
+               <link linkend="guint"><type>guint</type></link>            fragment_id,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<refsect3 id="GstSplitMuxSink-format-location.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>splitmux</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstSplitMuxSink"><type>GstSplitMuxSink</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>fragment_id</para></entry>
+<entry role="parameter_description"><para>the sequence number of the file to be created</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstSplitMuxSink-format-location.returns" role="returns">
+<title>Returns</title>
+<para> the location to be used for the next output file</para>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstSplitMuxSink-format-location-full" role="signal"><title>The <literal>“format-location-full”</literal> signal</title>
+<indexterm zone="GstSplitMuxSink-format-location-full"><primary>GstSplitMuxSink::format-location-full</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>*
+user_function (<link linkend="GstSplitMuxSink"><type>GstSplitMuxSink</type></link> *splitmux,
+               <link linkend="guint"><type>guint</type></link>            fragment_id,
+               <link linkend="GstSample"><type>GstSample</type></link>       *first_sample,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<refsect3 id="GstSplitMuxSink-format-location-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>splitmux</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstSplitMuxSink"><type>GstSplitMuxSink</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>fragment_id</para></entry>
+<entry role="parameter_description"><para>the sequence number of the file to be created</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>first_sample</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GstSample"><type>GstSample</type></link> containing the first buffer
+from the reference stream in the new file</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstSplitMuxSink-format-location-full.returns" role="returns">
+<title>Returns</title>
+<para> the location to be used for the next output file</para>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

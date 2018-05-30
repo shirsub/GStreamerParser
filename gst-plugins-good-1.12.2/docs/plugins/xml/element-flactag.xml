@@ -1,0 +1,85 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-flactag">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-flactag.top_of_page" role="top_of_page">flactag</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>flactag</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstFlacTag"/><refsect1 id="gst-plugins-good-plugins-flactag.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstFlacTag-struct">GstFlacTag</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flactag.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstFlacTag
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flactag.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstFlacTag implements
+ <link linkend="GstTagSetter">GstTagSetter</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-flactag.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The flactag element can change the tag contained within a raw
+FLAC stream. Specifically, it modifies the comments header packet
+of the FLAC stream.</para>
+<para>Applications can set the tags to write using the <link linkend="GstTagSetter"><type>GstTagSetter</type></link> interface.
+Tags contained withing the FLAC bitstream will be picked up
+automatically (and merged according to the merge mode set via the tag
+setter interface).</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v filesrc location=foo.flac ! flactag ! filesink location=bar.flac
+]]></programlisting></informalexample> This element is not useful with gst-launch, because it does not support
+setting the tags on a <link linkend="GstTagSetter"><type>GstTagSetter</type></link> interface. Conceptually, the element
+will usually be used in this order though.
+</refsect2>
+
+<include href="element-flactag-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-flactag.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flactag.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFlacTag-struct" role="struct">
+<title>struct GstFlacTag</title>
+<indexterm zone="GstFlacTag-struct"><primary>GstFlacTag</primary></indexterm>
+<programlisting language="C">struct GstFlacTag;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flactag.see-also">
+<title>See Also</title>
+<para><link linkend="flacenc"><type>flacenc</type></link>, <link linkend="flacdec"><type>flacdec</type></link>, <link linkend="GstTagSetter"><type>GstTagSetter</type></link></para>
+
+</refsect1>
+
+</refentry>

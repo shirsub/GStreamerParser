@@ -1,0 +1,72 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-ac3parse">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-ac3parse.top_of_page" role="top_of_page">ac3parse</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>ac3parse</refname>
+<refpurpose>AC3 parser</refpurpose>
+</refnamediv>
+
+<anchor id="GstAc3Parse"/><refsect1 id="gst-plugins-good-plugins-ac3parse.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAc3Parse-struct">GstAc3Parse</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-ac3parse.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseParse">GstBaseParse</link>
+                    <phrase role="lineart">╰──</phrase> GstAc3Parse
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-ac3parse.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This is an AC3 parser.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=abc.ac3 ! ac3parse ! a52dec ! audioresample ! audioconvert ! autoaudiosink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-ac3parse-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-ac3parse.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-ac3parse.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAc3Parse-struct" role="struct">
+<title>struct GstAc3Parse</title>
+<indexterm zone="GstAc3Parse-struct"><primary>GstAc3Parse</primary></indexterm>
+<programlisting language="C">struct GstAc3Parse;</programlisting>
+<para>The opaque GstAc3Parse object</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-ac3parse.see-also">
+<title>See Also</title>
+<para><link linkend="GstAmrParse"><type>GstAmrParse</type></link>, <link linkend="GstAACParse"><type>GstAACParse</type></link></para>
+
+</refsect1>
+
+</refentry>

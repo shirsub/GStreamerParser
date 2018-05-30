@@ -1,0 +1,112 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-udpsink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-udpsink.top_of_page" role="top_of_page">udpsink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>udpsink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-udpsink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstUDPSink--host">host</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstUDPSink--port">port</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstUDPSink"/><refsect1 id="gst-plugins-good-plugins-udpsink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstUDPSink-struct">GstUDPSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstMultiUDPSink">GstMultiUDPSink</link>
+                        <phrase role="lineart">╰──</phrase> GstUDPSink
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsink.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstUDPSink implements
+ <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-udpsink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>udpsink is a network sink that sends UDP packets to the network.
+It can be combined with RTP payloaders to implement RTP streaming.</para>
+<refsect2>
+<title>Examples</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v audiotestsrc ! udpsink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-udpsink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstUDPSink-struct" role="struct">
+<title>struct GstUDPSink</title>
+<indexterm zone="GstUDPSink-struct"><primary>GstUDPSink</primary></indexterm>
+<programlisting language="C">struct GstUDPSink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstUDPSink--host" role="property"><title>The <literal>“host”</literal> property</title>
+<indexterm zone="GstUDPSink--host"><primary>GstUDPSink:host</primary></indexterm>
+<programlisting>  “host”                     <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The host/IP/Multicast group to send the packets to.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;localhost&quot;</para>
+</refsect2>
+<refsect2 id="GstUDPSink--port" role="property"><title>The <literal>“port”</literal> property</title>
+<indexterm zone="GstUDPSink--port"><primary>GstUDPSink:port</primary></indexterm>
+<programlisting>  “port”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The port to send the packets to.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,65535]</para>
+<para>Default value: 5004</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-udpsink.see-also">
+<title>See Also</title>
+<para>udpsrc, multifdsink</para>
+
+</refsect1>
+
+</refentry>

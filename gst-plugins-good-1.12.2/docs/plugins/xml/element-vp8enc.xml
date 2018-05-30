@@ -1,0 +1,440 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-vp8enc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-vp8enc.top_of_page" role="top_of_page">vp8enc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>vp8enc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-vp8enc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--arnr-maxframes">arnr-maxframes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--arnr-strength">arnr-strength</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--arnr-type">arnr-type</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--auto-alt-ref">auto-alt-ref</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--buffer-initial-size">buffer-initial-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--buffer-optimal-size">buffer-optimal-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--buffer-size">buffer-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--cpu-used">cpu-used</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--cq-level">cq-level</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint64"><type>gint64</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--deadline">deadline</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--dropframe-threshold">dropframe-threshold</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVP8EncEndUsage"><type>GstVP8EncEndUsage</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--end-usage">end-usage</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVP8EncErFlags"><type>GstVP8EncErFlags</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--error-resilient">error-resilient</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--lag-in-frames">lag-in-frames</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--max-quantizer">max-quantizer</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--min-quantizer">min-quantizer</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstVP8Enc--multipass-cache-file">multipass-cache-file</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVP8EncMultipassMode"><type>GstVP8EncMultipassMode</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--multipass-mode">multipass-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--noise-sensitivity">noise-sensitivity</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--resize-allowed">resize-allowed</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--resize-down-threshold">resize-down-threshold</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--resize-up-threshold">resize-up-threshold</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--sharpness">sharpness</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--static-threshold">static-threshold</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--target-bitrate">target-bitrate</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--threads">threads</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVP8EncTokenPartitions"><type>GstVP8EncTokenPartitions</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--token-partitions">token-partitions</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVP8EncTuning"><type>GstVP8EncTuning</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--tuning">tuning</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVP8EncScalingMode"><type>GstVP8EncScalingMode</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--horizontal-scaling-mode">horizontal-scaling-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--keyframe-max-dist">keyframe-max-dist</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVP8EncKfMode"><type>GstVP8EncKfMode</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--keyframe-mode">keyframe-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--max-intra-bitrate">max-intra-bitrate</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--overshoot">overshoot</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GValueArray"><type>GValueArray</type></link> *</entry><entry role="property_name"><link linkend="GstVP8Enc--temporal-scalability-layer-id">temporal-scalability-layer-id</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--temporal-scalability-number-layers">temporal-scalability-number-layers</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--temporal-scalability-periodicity">temporal-scalability-periodicity</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GValueArray"><type>GValueArray</type></link> *</entry><entry role="property_name"><link linkend="GstVP8Enc--temporal-scalability-rate-decimator">temporal-scalability-rate-decimator</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GValueArray"><type>GValueArray</type></link> *</entry><entry role="property_name"><link linkend="GstVP8Enc--temporal-scalability-target-bitrate">temporal-scalability-target-bitrate</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--twopass-vbr-bias">twopass-vbr-bias</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--twopass-vbr-maxsection">twopass-vbr-maxsection</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--twopass-vbr-minsection">twopass-vbr-minsection</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--undershoot">undershoot</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVP8EncScalingMode"><type>GstVP8EncScalingMode</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--vertical-scaling-mode">vertical-scaling-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstFraction"><type>GstFraction</type></link></entry><entry role="property_name"><link linkend="GstVP8Enc--timebase">timebase</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstVP8Enc"/><refsect1 id="gst-plugins-good-plugins-vp8enc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstVP8Enc-struct">GstVP8Enc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp8enc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstVideoEncoder">GstVideoEncoder</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVPXEnc">GstVPXEnc</link>
+                        <phrase role="lineart">╰──</phrase> GstVP8Enc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp8enc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstVP8Enc implements
+ <link linkend="GstPreset">GstPreset</link> and  <link linkend="GstTagSetter">GstTagSetter</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-vp8enc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element encodes raw video into a VP8 stream.</para>
+<ulink url="http://www.webmproject.org">VP8</ulink> is a royalty-free
+<para>video codec maintained by <ulink url="http://www.google.com/">Google
+</ulink>. It's the successor of On2 VP3, which was the base of the
+Theora video codec.</para>
+<para>To control the quality of the encoding, the <link linkend="GstVP8Enc-target-bitrate"><type>“target-bitrate”</type></link>,
+<link linkend="GstVP8Enc-min-quantizer"><type>“min-quantizer”</type></link>, <link linkend="GstVP8Enc-max-quantizer"><type>“max-quantizer”</type></link> or <link linkend="GstVP8Enc-cq-level"><type>“cq-level”</type></link>
+properties can be used. Which one is used depends on the mode selected by
+the <link linkend="GstVP8Enc-end-usage"><type>“end-usage”</type></link> property.
+See <ulink url="http://www.webmproject.org/docs/encoder-parameters/">Encoder Parameters</ulink>
+for explanation, examples for useful encoding parameters and more details
+on the encoding parameters.</para>
+<refsect2>
+<title>Example pipeline</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc num-buffers=1000 ! vp8enc ! webmmux ! filesink location=videotestsrc.webm
+]]></programlisting></informalexample> This example pipeline will encode a test video source to VP8 muxed in an
+WebM container.
+</refsect2>
+
+<include href="element-vp8enc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp8enc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp8enc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstVP8Enc-struct" role="struct">
+<title>struct GstVP8Enc</title>
+<indexterm zone="GstVP8Enc-struct"><primary>GstVP8Enc</primary></indexterm>
+<programlisting language="C">struct GstVP8Enc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp8enc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstVP8Enc--arnr-maxframes" role="property"><title>The <literal>“arnr-maxframes”</literal> property</title>
+<indexterm zone="GstVP8Enc--arnr-maxframes"><primary>GstVP8Enc:arnr-maxframes</primary></indexterm>
+<programlisting>  “arnr-maxframes”           <link linkend="gint"><type>gint</type></link></programlisting>
+<para>AltRef maximum number of frames.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,15]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--arnr-strength" role="property"><title>The <literal>“arnr-strength”</literal> property</title>
+<indexterm zone="GstVP8Enc--arnr-strength"><primary>GstVP8Enc:arnr-strength</primary></indexterm>
+<programlisting>  “arnr-strength”            <link linkend="gint"><type>gint</type></link></programlisting>
+<para>AltRef strength.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,6]</para>
+<para>Default value: 3</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--arnr-type" role="property"><title>The <literal>“arnr-type”</literal> property</title>
+<indexterm zone="GstVP8Enc--arnr-type"><primary>GstVP8Enc:arnr-type</primary></indexterm>
+<programlisting>  “arnr-type”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>AltRef type.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,3]</para>
+<para>Default value: 3</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--auto-alt-ref" role="property"><title>The <literal>“auto-alt-ref”</literal> property</title>
+<indexterm zone="GstVP8Enc--auto-alt-ref"><primary>GstVP8Enc:auto-alt-ref</primary></indexterm>
+<programlisting>  “auto-alt-ref”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Automatically generate AltRef frames.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--buffer-initial-size" role="property"><title>The <literal>“buffer-initial-size”</literal> property</title>
+<indexterm zone="GstVP8Enc--buffer-initial-size"><primary>GstVP8Enc:buffer-initial-size</primary></indexterm>
+<programlisting>  “buffer-initial-size”      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Initial client buffer size (ms).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 4000</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--buffer-optimal-size" role="property"><title>The <literal>“buffer-optimal-size”</literal> property</title>
+<indexterm zone="GstVP8Enc--buffer-optimal-size"><primary>GstVP8Enc:buffer-optimal-size</primary></indexterm>
+<programlisting>  “buffer-optimal-size”      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Optimal client buffer size (ms).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 5000</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--buffer-size" role="property"><title>The <literal>“buffer-size”</literal> property</title>
+<indexterm zone="GstVP8Enc--buffer-size"><primary>GstVP8Enc:buffer-size</primary></indexterm>
+<programlisting>  “buffer-size”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Client buffer size (ms).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 6000</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--cpu-used" role="property"><title>The <literal>“cpu-used”</literal> property</title>
+<indexterm zone="GstVP8Enc--cpu-used"><primary>GstVP8Enc:cpu-used</primary></indexterm>
+<programlisting>  “cpu-used”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>CPU used.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [-16,16]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--cq-level" role="property"><title>The <literal>“cq-level”</literal> property</title>
+<indexterm zone="GstVP8Enc--cq-level"><primary>GstVP8Enc:cq-level</primary></indexterm>
+<programlisting>  “cq-level”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Constrained quality level.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,63]</para>
+<para>Default value: 10</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--deadline" role="property"><title>The <literal>“deadline”</literal> property</title>
+<indexterm zone="GstVP8Enc--deadline"><primary>GstVP8Enc:deadline</primary></indexterm>
+<programlisting>  “deadline”                 <link linkend="gint64"><type>gint64</type></link></programlisting>
+<para>Deadline per frame (usec, 0=disabled).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--dropframe-threshold" role="property"><title>The <literal>“dropframe-threshold”</literal> property</title>
+<indexterm zone="GstVP8Enc--dropframe-threshold"><primary>GstVP8Enc:dropframe-threshold</primary></indexterm>
+<programlisting>  “dropframe-threshold”      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Temporal resampling threshold (buf %).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--end-usage" role="property"><title>The <literal>“end-usage”</literal> property</title>
+<indexterm zone="GstVP8Enc--end-usage"><primary>GstVP8Enc:end-usage</primary></indexterm>
+<programlisting>  “end-usage”                <link linkend="GstVP8EncEndUsage"><type>GstVP8EncEndUsage</type></link></programlisting>
+<para>Rate control mode.</para><para>Flags: Read / Write</para>
+<para>Default value: Variable Bit Rate (VBR) mode</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--error-resilient" role="property"><title>The <literal>“error-resilient”</literal> property</title>
+<indexterm zone="GstVP8Enc--error-resilient"><primary>GstVP8Enc:error-resilient</primary></indexterm>
+<programlisting>  “error-resilient”          <link linkend="GstVP8EncErFlags"><type>GstVP8EncErFlags</type></link></programlisting>
+<para>Error resilience flags.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--lag-in-frames" role="property"><title>The <literal>“lag-in-frames”</literal> property</title>
+<indexterm zone="GstVP8Enc--lag-in-frames"><primary>GstVP8Enc:lag-in-frames</primary></indexterm>
+<programlisting>  “lag-in-frames”            <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Maximum number of frames to lag.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,25]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--max-quantizer" role="property"><title>The <literal>“max-quantizer”</literal> property</title>
+<indexterm zone="GstVP8Enc--max-quantizer"><primary>GstVP8Enc:max-quantizer</primary></indexterm>
+<programlisting>  “max-quantizer”            <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Maximum Quantizer (worst).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,63]</para>
+<para>Default value: 63</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--min-quantizer" role="property"><title>The <literal>“min-quantizer”</literal> property</title>
+<indexterm zone="GstVP8Enc--min-quantizer"><primary>GstVP8Enc:min-quantizer</primary></indexterm>
+<programlisting>  “min-quantizer”            <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Minimum Quantizer (best).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,63]</para>
+<para>Default value: 4</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--multipass-cache-file" role="property"><title>The <literal>“multipass-cache-file”</literal> property</title>
+<indexterm zone="GstVP8Enc--multipass-cache-file"><primary>GstVP8Enc:multipass-cache-file</primary></indexterm>
+<programlisting>  “multipass-cache-file”     <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Multipass cache file. If stream caps reinited, multiple files will be created: file, file.1, file.2, ... and so on.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;multipass.cache&quot;</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--multipass-mode" role="property"><title>The <literal>“multipass-mode”</literal> property</title>
+<indexterm zone="GstVP8Enc--multipass-mode"><primary>GstVP8Enc:multipass-mode</primary></indexterm>
+<programlisting>  “multipass-mode”           <link linkend="GstVP8EncMultipassMode"><type>GstVP8EncMultipassMode</type></link></programlisting>
+<para>Multipass encode mode.</para><para>Flags: Read / Write</para>
+<para>Default value: One pass encoding (default)</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--noise-sensitivity" role="property"><title>The <literal>“noise-sensitivity”</literal> property</title>
+<indexterm zone="GstVP8Enc--noise-sensitivity"><primary>GstVP8Enc:noise-sensitivity</primary></indexterm>
+<programlisting>  “noise-sensitivity”        <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Noise sensisivity (frames to blur).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,6]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--resize-allowed" role="property"><title>The <literal>“resize-allowed”</literal> property</title>
+<indexterm zone="GstVP8Enc--resize-allowed"><primary>GstVP8Enc:resize-allowed</primary></indexterm>
+<programlisting>  “resize-allowed”           <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Allow spatial resampling.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--resize-down-threshold" role="property"><title>The <literal>“resize-down-threshold”</literal> property</title>
+<indexterm zone="GstVP8Enc--resize-down-threshold"><primary>GstVP8Enc:resize-down-threshold</primary></indexterm>
+<programlisting>  “resize-down-threshold”    <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Downscale threshold (buf %).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 60</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--resize-up-threshold" role="property"><title>The <literal>“resize-up-threshold”</literal> property</title>
+<indexterm zone="GstVP8Enc--resize-up-threshold"><primary>GstVP8Enc:resize-up-threshold</primary></indexterm>
+<programlisting>  “resize-up-threshold”      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Upscale threshold (buf %).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 30</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--sharpness" role="property"><title>The <literal>“sharpness”</literal> property</title>
+<indexterm zone="GstVP8Enc--sharpness"><primary>GstVP8Enc:sharpness</primary></indexterm>
+<programlisting>  “sharpness”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Filter sharpness.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,7]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--static-threshold" role="property"><title>The <literal>“static-threshold”</literal> property</title>
+<indexterm zone="GstVP8Enc--static-threshold"><primary>GstVP8Enc:static-threshold</primary></indexterm>
+<programlisting>  “static-threshold”         <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Motion detection threshold.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--target-bitrate" role="property"><title>The <literal>“target-bitrate”</literal> property</title>
+<indexterm zone="GstVP8Enc--target-bitrate"><primary>GstVP8Enc:target-bitrate</primary></indexterm>
+<programlisting>  “target-bitrate”           <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Target bitrate (in bits/sec).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 256000</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--threads" role="property"><title>The <literal>“threads”</literal> property</title>
+<indexterm zone="GstVP8Enc--threads"><primary>GstVP8Enc:threads</primary></indexterm>
+<programlisting>  “threads”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Number of threads to use.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,64]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--token-partitions" role="property"><title>The <literal>“token-partitions”</literal> property</title>
+<indexterm zone="GstVP8Enc--token-partitions"><primary>GstVP8Enc:token-partitions</primary></indexterm>
+<programlisting>  “token-partitions”         <link linkend="GstVP8EncTokenPartitions"><type>GstVP8EncTokenPartitions</type></link></programlisting>
+<para>Number of token partitions.</para><para>Flags: Read / Write</para>
+<para>Default value: One token partition</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--tuning" role="property"><title>The <literal>“tuning”</literal> property</title>
+<indexterm zone="GstVP8Enc--tuning"><primary>GstVP8Enc:tuning</primary></indexterm>
+<programlisting>  “tuning”                   <link linkend="GstVP8EncTuning"><type>GstVP8EncTuning</type></link></programlisting>
+<para>Tuning.</para><para>Flags: Read / Write</para>
+<para>Default value: Tune for PSNR</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--horizontal-scaling-mode" role="property"><title>The <literal>“horizontal-scaling-mode”</literal> property</title>
+<indexterm zone="GstVP8Enc--horizontal-scaling-mode"><primary>GstVP8Enc:horizontal-scaling-mode</primary></indexterm>
+<programlisting>  “horizontal-scaling-mode”  <link linkend="GstVP8EncScalingMode"><type>GstVP8EncScalingMode</type></link></programlisting>
+<para>Horizontal scaling mode.</para><para>Flags: Read / Write</para>
+<para>Default value: Normal</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--keyframe-max-dist" role="property"><title>The <literal>“keyframe-max-dist”</literal> property</title>
+<indexterm zone="GstVP8Enc--keyframe-max-dist"><primary>GstVP8Enc:keyframe-max-dist</primary></indexterm>
+<programlisting>  “keyframe-max-dist”        <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Maximum distance between keyframes (number of frames).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 128</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--keyframe-mode" role="property"><title>The <literal>“keyframe-mode”</literal> property</title>
+<indexterm zone="GstVP8Enc--keyframe-mode"><primary>GstVP8Enc:keyframe-mode</primary></indexterm>
+<programlisting>  “keyframe-mode”            <link linkend="GstVP8EncKfMode"><type>GstVP8EncKfMode</type></link></programlisting>
+<para>Keyframe placement.</para><para>Flags: Read / Write</para>
+<para>Default value: Determine optimal placement automatically</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--max-intra-bitrate" role="property"><title>The <literal>“max-intra-bitrate”</literal> property</title>
+<indexterm zone="GstVP8Enc--max-intra-bitrate"><primary>GstVP8Enc:max-intra-bitrate</primary></indexterm>
+<programlisting>  “max-intra-bitrate”        <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Maximum Intra frame bitrate.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--overshoot" role="property"><title>The <literal>“overshoot”</literal> property</title>
+<indexterm zone="GstVP8Enc--overshoot"><primary>GstVP8Enc:overshoot</primary></indexterm>
+<programlisting>  “overshoot”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Datarate overshoot (max) target (%).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1000]</para>
+<para>Default value: 100</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--temporal-scalability-layer-id" role="property"><title>The <literal>“temporal-scalability-layer-id”</literal> property</title>
+<indexterm zone="GstVP8Enc--temporal-scalability-layer-id"><primary>GstVP8Enc:temporal-scalability-layer-id</primary></indexterm>
+<programlisting>  “temporal-scalability-layer-id” <link linkend="GValueArray"><type>GValueArray</type></link> *</programlisting>
+<para>Sequence defining coding layer membership.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--temporal-scalability-number-layers" role="property"><title>The <literal>“temporal-scalability-number-layers”</literal> property</title>
+<indexterm zone="GstVP8Enc--temporal-scalability-number-layers"><primary>GstVP8Enc:temporal-scalability-number-layers</primary></indexterm>
+<programlisting>  “temporal-scalability-number-layers” <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Number of coding layers to use.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,5]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--temporal-scalability-periodicity" role="property"><title>The <literal>“temporal-scalability-periodicity”</literal> property</title>
+<indexterm zone="GstVP8Enc--temporal-scalability-periodicity"><primary>GstVP8Enc:temporal-scalability-periodicity</primary></indexterm>
+<programlisting>  “temporal-scalability-periodicity” <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Length of sequence that defines layer membership periodicity.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,16]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--temporal-scalability-rate-decimator" role="property"><title>The <literal>“temporal-scalability-rate-decimator”</literal> property</title>
+<indexterm zone="GstVP8Enc--temporal-scalability-rate-decimator"><primary>GstVP8Enc:temporal-scalability-rate-decimator</primary></indexterm>
+<programlisting>  “temporal-scalability-rate-decimator” <link linkend="GValueArray"><type>GValueArray</type></link> *</programlisting>
+<para>Rate decimation factors for each layer.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--temporal-scalability-target-bitrate" role="property"><title>The <literal>“temporal-scalability-target-bitrate”</literal> property</title>
+<indexterm zone="GstVP8Enc--temporal-scalability-target-bitrate"><primary>GstVP8Enc:temporal-scalability-target-bitrate</primary></indexterm>
+<programlisting>  “temporal-scalability-target-bitrate” <link linkend="GValueArray"><type>GValueArray</type></link> *</programlisting>
+<para>Target bitrates for coding layers (one per layer, decreasing).</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--twopass-vbr-bias" role="property"><title>The <literal>“twopass-vbr-bias”</literal> property</title>
+<indexterm zone="GstVP8Enc--twopass-vbr-bias"><primary>GstVP8Enc:twopass-vbr-bias</primary></indexterm>
+<programlisting>  “twopass-vbr-bias”         <link linkend="gint"><type>gint</type></link></programlisting>
+<para>CBR/VBR bias (0=CBR, 100=VBR).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,100]</para>
+<para>Default value: 50</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--twopass-vbr-maxsection" role="property"><title>The <literal>“twopass-vbr-maxsection”</literal> property</title>
+<indexterm zone="GstVP8Enc--twopass-vbr-maxsection"><primary>GstVP8Enc:twopass-vbr-maxsection</primary></indexterm>
+<programlisting>  “twopass-vbr-maxsection”   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>GOP maximum bitrate (% target).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--twopass-vbr-minsection" role="property"><title>The <literal>“twopass-vbr-minsection”</literal> property</title>
+<indexterm zone="GstVP8Enc--twopass-vbr-minsection"><primary>GstVP8Enc:twopass-vbr-minsection</primary></indexterm>
+<programlisting>  “twopass-vbr-minsection”   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>GOP minimum bitrate (% target).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--undershoot" role="property"><title>The <literal>“undershoot”</literal> property</title>
+<indexterm zone="GstVP8Enc--undershoot"><primary>GstVP8Enc:undershoot</primary></indexterm>
+<programlisting>  “undershoot”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Datarate undershoot (min) target (%).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1000]</para>
+<para>Default value: 100</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--vertical-scaling-mode" role="property"><title>The <literal>“vertical-scaling-mode”</literal> property</title>
+<indexterm zone="GstVP8Enc--vertical-scaling-mode"><primary>GstVP8Enc:vertical-scaling-mode</primary></indexterm>
+<programlisting>  “vertical-scaling-mode”    <link linkend="GstVP8EncScalingMode"><type>GstVP8EncScalingMode</type></link></programlisting>
+<para>Vertical scaling mode.</para><para>Flags: Read / Write</para>
+<para>Default value: Normal</para>
+</refsect2>
+<refsect2 id="GstVP8Enc--timebase" role="property"><title>The <literal>“timebase”</literal> property</title>
+<indexterm zone="GstVP8Enc--timebase"><primary>GstVP8Enc:timebase</primary></indexterm>
+<programlisting>  “timebase”                 <link linkend="GstFraction"><type>GstFraction</type></link></programlisting>
+<para>Fraction of one second that is the shortest interframe time - normally left as zero which will default to the framerate.</para><para>Flags: Read / Write</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp8enc.see-also">
+<title>See Also</title>
+<para>vp8dec, webmmux, oggmux</para>
+
+</refsect1>
+
+</refentry>

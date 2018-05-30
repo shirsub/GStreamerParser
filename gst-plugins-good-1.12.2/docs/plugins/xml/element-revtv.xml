@@ -1,0 +1,110 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-revtv">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-revtv.top_of_page" role="top_of_page">revtv</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>revtv</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-revtv.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRevTV--delay">delay</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRevTV--gain">gain</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRevTV--linespace">linespace</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRevTV"/><refsect1 id="gst-plugins-good-plugins-revtv.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRevTV-struct">GstRevTV</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-revtv.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstRevTV
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-revtv.description" role="desc">
+<title role="desc.title">Description</title>
+<para>RevTV acts like a video waveform monitor for each line of video
+processed. This creates a pseudo 3D effect based on the brightness
+of the video along each line.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc ! revtv ! videoconvert ! autovideosink
+]]></programlisting></informalexample> This pipeline shows the effect of revtv on a test stream.
+</refsect2>
+
+<include href="element-revtv-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-revtv.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-revtv.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRevTV-struct" role="struct">
+<title>struct GstRevTV</title>
+<indexterm zone="GstRevTV-struct"><primary>GstRevTV</primary></indexterm>
+<programlisting language="C">struct GstRevTV;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-revtv.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRevTV--delay" role="property"><title>The <literal>“delay”</literal> property</title>
+<indexterm zone="GstRevTV--delay"><primary>GstRevTV:delay</primary></indexterm>
+<programlisting>  “delay”                    <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Delay in frames between updates.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,100]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstRevTV--gain" role="property"><title>The <literal>“gain”</literal> property</title>
+<indexterm zone="GstRevTV--gain"><primary>GstRevTV:gain</primary></indexterm>
+<programlisting>  “gain”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Control gain.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,200]</para>
+<para>Default value: 50</para>
+</refsect2>
+<refsect2 id="GstRevTV--linespace" role="property"><title>The <literal>“linespace”</literal> property</title>
+<indexterm zone="GstRevTV--linespace"><primary>GstRevTV:linespace</primary></indexterm>
+<programlisting>  “linespace”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Control line spacing.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,100]</para>
+<para>Default value: 6</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

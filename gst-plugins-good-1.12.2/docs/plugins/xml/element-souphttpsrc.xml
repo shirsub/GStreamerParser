@@ -1,0 +1,290 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-souphttpsrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-souphttpsrc.top_of_page" role="top_of_page">souphttpsrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>souphttpsrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-souphttpsrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--automatic-redirect">automatic-redirect</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GStrv"><type>GStrv</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--cookies">cookies</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--iradio-mode">iradio-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--proxy">proxy</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--user-agent">user-agent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--is-live">is-live</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--proxy-id">proxy-id</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--proxy-pw">proxy-pw</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--user-id">user-id</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--user-pw">user-pw</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--extra-headers">extra-headers</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--timeout">timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--compress">compress</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="SoupLoggerLogLevel"><type>SoupLoggerLogLevel</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--http-log-level">http-log-level</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--keep-alive">keep-alive</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--retries">retries</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--ssl-ca-file">ssl-ca-file</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--ssl-strict">ssl-strict</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--ssl-use-system-ca-file">ssl-use-system-ca-file</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GTlsDatabase"><type>GTlsDatabase</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--tls-database">tls-database</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--method">method</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GTlsInteraction"><type>GTlsInteraction</type></link> *</entry><entry role="property_name"><link linkend="GstSoupHTTPSrc--tls-interaction">tls-interaction</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstSoupHTTPSrc"/><refsect1 id="gst-plugins-good-plugins-souphttpsrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSoupHTTPSrc-struct">GstSoupHTTPSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-souphttpsrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                        <phrase role="lineart">╰──</phrase> GstSoupHTTPSrc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-souphttpsrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstSoupHTTPSrc implements
+ <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-souphttpsrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This plugin reads data from a remote location specified by a URI.
+Supported protocols are 'http', 'https'.</para>
+<para>An HTTP proxy must be specified by its URL.
+If the &quot;http_proxy&quot; environment variable is set, its value is used.
+If built with libsoup's GNOME integration features, the GNOME proxy
+configuration will be used, or failing that, proxy autodetection.
+The <link linkend="GstSoupHTTPSrc--proxy"><type>“proxy”</type></link> property can be used to override the default.</para>
+<para>In case the <link linkend="GstSoupHTTPSrc--iradio-mode"><type>“iradio-mode”</type></link> property is set and the location is
+an HTTP resource, souphttpsrc will send special Icecast HTTP headers to the
+server to request additional Icecast meta-information.
+If the server is not an Icecast server, it will behave as if the
+<link linkend="GstSoupHTTPSrc--iradio-mode"><type>“iradio-mode”</type></link> property were not set. If it is, souphttpsrc will
+output data with a media type of application/x-icy, in which case you will
+need to use the <link linkend="ICYDemux"><type>ICYDemux</type></link> element as follow-up element to extract the Icecast
+metadata and to determine the underlying media type.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v souphttpsrc location=https://some.server.org/index.html
+    ! filesink location=/home/joe/server.html
+]]></programlisting></informalexample> The above pipeline reads a web page from a server using the HTTPS protocol
+and writes it to a local file.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v souphttpsrc user-agent="FooPlayer 0.99 beta"
+    automatic-redirect=false proxy=http://proxy.intranet.local:8080
+    location=http://music.foobar.com/demo.mp3 ! mpgaudioparse
+    ! mpg123audiodec ! audioconvert ! audioresample ! autoaudiosink
+]]></programlisting></informalexample> The above pipeline will read and decode and play an mp3 file from a
+web server using the HTTP protocol. If the server sends redirects,
+the request fails instead of following the redirect. The specified
+HTTP proxy server is used. The User-Agent HTTP request header
+is set to a custom string instead of &quot;GStreamer souphttpsrc.&quot;
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v souphttpsrc location=http://10.11.12.13/mjpeg
+    do-timestamp=true ! multipartdemux
+    ! image/jpeg,width=640,height=480 ! matroskamux
+    ! filesink location=mjpeg.mkv
+]]></programlisting></informalexample> The above pipeline reads a motion JPEG stream from an IP camera
+using the HTTP protocol, encoded as mime/multipart image/jpeg
+parts, and writes a Matroska motion JPEG file. The width and
+height properties are set in the caps to provide the Matroska
+multiplexer with the information to set this in the header.
+Timestamps are set on the buffers as they arrive from the camera.
+These are used by the mime/multipart demultiplexer to emit timestamps
+on the JPEG-encoded video frame buffers. This allows the Matroska
+multiplexer to timestamp the frames in the resulting file.
+</refsect2>
+
+<include href="element-souphttpsrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-souphttpsrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-souphttpsrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSoupHTTPSrc-struct" role="struct">
+<title>struct GstSoupHTTPSrc</title>
+<indexterm zone="GstSoupHTTPSrc-struct"><primary>GstSoupHTTPSrc</primary></indexterm>
+<programlisting language="C">struct GstSoupHTTPSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-souphttpsrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSoupHTTPSrc--automatic-redirect" role="property"><title>The <literal>“automatic-redirect”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--automatic-redirect"><primary>GstSoupHTTPSrc:automatic-redirect</primary></indexterm>
+<programlisting>  “automatic-redirect”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Automatically follow HTTP redirects (HTTP Status Code 3xx).</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--cookies" role="property"><title>The <literal>“cookies”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--cookies"><primary>GstSoupHTTPSrc:cookies</primary></indexterm>
+<programlisting>  “cookies”                  <link linkend="GStrv"><type>GStrv</type></link></programlisting>
+<para>HTTP request cookies.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--iradio-mode" role="property"><title>The <literal>“iradio-mode”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--iradio-mode"><primary>GstSoupHTTPSrc:iradio-mode</primary></indexterm>
+<programlisting>  “iradio-mode”              <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable internet radio mode (ask server to send shoutcast/icecast metadata interleaved with the actual stream data).</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--location"><primary>GstSoupHTTPSrc:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location to read from.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--proxy" role="property"><title>The <literal>“proxy”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--proxy"><primary>GstSoupHTTPSrc:proxy</primary></indexterm>
+<programlisting>  “proxy”                    <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>HTTP proxy server URI.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--user-agent" role="property"><title>The <literal>“user-agent”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--user-agent"><primary>GstSoupHTTPSrc:user-agent</primary></indexterm>
+<programlisting>  “user-agent”               <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Value of the User-Agent HTTP request header field.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;GStreamer souphttpsrc 1.12.2 &quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--is-live" role="property"><title>The <literal>“is-live”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--is-live"><primary>GstSoupHTTPSrc:is-live</primary></indexterm>
+<programlisting>  “is-live”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Act like a live source.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--proxy-id" role="property"><title>The <literal>“proxy-id”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--proxy-id"><primary>GstSoupHTTPSrc:proxy-id</primary></indexterm>
+<programlisting>  “proxy-id”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>HTTP proxy URI user id for authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--proxy-pw" role="property"><title>The <literal>“proxy-pw”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--proxy-pw"><primary>GstSoupHTTPSrc:proxy-pw</primary></indexterm>
+<programlisting>  “proxy-pw”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>HTTP proxy URI user password for authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--user-id" role="property"><title>The <literal>“user-id”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--user-id"><primary>GstSoupHTTPSrc:user-id</primary></indexterm>
+<programlisting>  “user-id”                  <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>HTTP location URI user id for authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--user-pw" role="property"><title>The <literal>“user-pw”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--user-pw"><primary>GstSoupHTTPSrc:user-pw</primary></indexterm>
+<programlisting>  “user-pw”                  <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>HTTP location URI user password for authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--extra-headers" role="property"><title>The <literal>“extra-headers”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--extra-headers"><primary>GstSoupHTTPSrc:extra-headers</primary></indexterm>
+<programlisting>  “extra-headers”            <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>Extra headers to append to the HTTP request.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--timeout" role="property"><title>The <literal>“timeout”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--timeout"><primary>GstSoupHTTPSrc:timeout</primary></indexterm>
+<programlisting>  “timeout”                  <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Value in seconds to timeout a blocking I/O (0 = No timeout).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 3600</para>
+<para>Default value: 15</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--compress" role="property"><title>The <literal>“compress”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--compress"><primary>GstSoupHTTPSrc:compress</primary></indexterm>
+<programlisting>  “compress”                 <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Allow compressed content encodings.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--http-log-level" role="property"><title>The <literal>“http-log-level”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--http-log-level"><primary>GstSoupHTTPSrc:http-log-level</primary></indexterm>
+<programlisting>  “http-log-level”           <link linkend="SoupLoggerLogLevel"><type>SoupLoggerLogLevel</type></link></programlisting>
+<para>Set log level for soup's HTTP session log.</para><para>Flags: Read / Write</para>
+<para>Default value: SOUP_LOGGER_LOG_HEADERS</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--keep-alive" role="property"><title>The <literal>“keep-alive”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--keep-alive"><primary>GstSoupHTTPSrc:keep-alive</primary></indexterm>
+<programlisting>  “keep-alive”               <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use HTTP persistent connections.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--retries" role="property"><title>The <literal>“retries”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--retries"><primary>GstSoupHTTPSrc:retries</primary></indexterm>
+<programlisting>  “retries”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Maximum number of retries until giving up (-1=infinite).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 3</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--ssl-ca-file" role="property"><title>The <literal>“ssl-ca-file”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--ssl-ca-file"><primary>GstSoupHTTPSrc:ssl-ca-file</primary></indexterm>
+<programlisting>  “ssl-ca-file”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location of a SSL anchor CA file to use.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--ssl-strict" role="property"><title>The <literal>“ssl-strict”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--ssl-strict"><primary>GstSoupHTTPSrc:ssl-strict</primary></indexterm>
+<programlisting>  “ssl-strict”               <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Strict SSL certificate checking.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--ssl-use-system-ca-file" role="property"><title>The <literal>“ssl-use-system-ca-file”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--ssl-use-system-ca-file"><primary>GstSoupHTTPSrc:ssl-use-system-ca-file</primary></indexterm>
+<programlisting>  “ssl-use-system-ca-file”   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use system CA file.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--tls-database" role="property"><title>The <literal>“tls-database”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--tls-database"><primary>GstSoupHTTPSrc:tls-database</primary></indexterm>
+<programlisting>  “tls-database”             <link linkend="GTlsDatabase"><type>GTlsDatabase</type></link> *</programlisting>
+<para>TLS database with anchor certificate authorities used to validate the server certificate.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--method" role="property"><title>The <literal>“method”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--method"><primary>GstSoupHTTPSrc:method</primary></indexterm>
+<programlisting>  “method”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The HTTP method to use (GET, HEAD, OPTIONS, etc).</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstSoupHTTPSrc--tls-interaction" role="property"><title>The <literal>“tls-interaction”</literal> property</title>
+<indexterm zone="GstSoupHTTPSrc--tls-interaction"><primary>GstSoupHTTPSrc:tls-interaction</primary></indexterm>
+<programlisting>  “tls-interaction”          <link linkend="GTlsInteraction"><type>GTlsInteraction</type></link> *</programlisting>
+<para>A GTlsInteraction object to be used when the connection or certificate database need to interact with the user.</para><para>Flags: Read / Write</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

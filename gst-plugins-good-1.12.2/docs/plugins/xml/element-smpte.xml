@@ -1,0 +1,127 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-smpte">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-smpte.top_of_page" role="top_of_page">smpte</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>smpte</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-smpte.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSMPTE--border">border</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSMPTE--depth">depth</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstSMPTETransitionType"><type>GstSMPTETransitionType</type></link></entry><entry role="property_name"><link linkend="GstSMPTE--type">type</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstSMPTE--duration">duration</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSMPTE--invert">invert</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstSMPTE"/><refsect1 id="gst-plugins-good-plugins-smpte.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSMPTE-struct">GstSMPTE</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-smpte.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstSMPTE
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-smpte.description" role="desc">
+<title role="desc.title">Description</title>
+<para>smpte can accept I420 video streams with the same width, height and
+framerate. The two incomming buffers are blended together using an effect
+specific alpha mask. </para>
+<para>The <link linkend="GstSmpte--depth"><type>“depth”</type></link> property defines the presision in bits of the mask. A
+higher presision will create a mask with smoother gradients in order to avoid
+banding.</para>
+<refsect2>
+<title>Sample pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc pattern=1 ! smpte name=s border=20000 type=234 duration=2000000000 ! videoconvert ! ximagesink videotestsrc ! s.
+]]></programlisting></informalexample> A pipeline to demonstrate the smpte transition.
+It shows a pinwheel transition a from a snow videotestsrc to an smpte
+pattern videotestsrc. The transition will take 2 seconds to complete. The
+edges of the transition are smoothed with a 20000 big border.
+</refsect2>
+
+<include href="element-smpte-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-smpte.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-smpte.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSMPTE-struct" role="struct">
+<title>struct GstSMPTE</title>
+<indexterm zone="GstSMPTE-struct"><primary>GstSMPTE</primary></indexterm>
+<programlisting language="C">struct GstSMPTE;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-smpte.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSMPTE--border" role="property"><title>The <literal>“border”</literal> property</title>
+<indexterm zone="GstSMPTE--border"><primary>GstSMPTE:border</primary></indexterm>
+<programlisting>  “border”                   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The border width of the transition.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstSMPTE--depth" role="property"><title>The <literal>“depth”</literal> property</title>
+<indexterm zone="GstSMPTE--depth"><primary>GstSMPTE:depth</primary></indexterm>
+<programlisting>  “depth”                    <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Depth of the mask in bits.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,24]</para>
+<para>Default value: 16</para>
+</refsect2>
+<refsect2 id="GstSMPTE--type" role="property"><title>The <literal>“type”</literal> property</title>
+<indexterm zone="GstSMPTE--type"><primary>GstSMPTE:type</primary></indexterm>
+<programlisting>  “type”                     <link linkend="GstSMPTETransitionType"><type>GstSMPTETransitionType</type></link></programlisting>
+<para>The type of transition to use.</para><para>Flags: Read / Write</para>
+<para>Default value: A bar moves from left to right</para>
+</refsect2>
+<refsect2 id="GstSMPTE--duration" role="property"><title>The <literal>“duration”</literal> property</title>
+<indexterm zone="GstSMPTE--duration"><primary>GstSMPTE:duration</primary></indexterm>
+<programlisting>  “duration”                 <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Duration of the transition effect in nanoseconds.</para><para>Flags: Read / Write</para>
+<para>Default value: 1000000000</para>
+</refsect2>
+<refsect2 id="GstSMPTE--invert" role="property"><title>The <literal>“invert”</literal> property</title>
+<indexterm zone="GstSMPTE--invert"><primary>GstSMPTE:invert</primary></indexterm>
+<programlisting>  “invert”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Invert transition mask.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

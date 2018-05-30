@@ -1,0 +1,59 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpmp2tpay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpmp2tpay.top_of_page" role="top_of_page">rtpmp2tpay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpmp2tpay</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstRTPMP2TPay"/><refsect1 id="gst-plugins-good-plugins-rtpmp2tpay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTPMP2TPay-struct">GstRTPMP2TPay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpmp2tpay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstRTPBasePayload">GstRTPBasePayload</link>
+                    <phrase role="lineart">╰──</phrase> GstRTPMP2TPay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpmp2tpay.description" role="desc">
+<title role="desc.title">Description</title>
+
+<include href="element-rtpmp2tpay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpmp2tpay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpmp2tpay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTPMP2TPay-struct" role="struct">
+<title>struct GstRTPMP2TPay</title>
+<indexterm zone="GstRTPMP2TPay-struct"><primary>GstRTPMP2TPay</primary></indexterm>
+<programlisting language="C">struct GstRTPMP2TPay;</programlisting>
+</refsect2>
+
+</refsect1>
+
+</refentry>

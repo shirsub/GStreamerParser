@@ -1,0 +1,151 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-audioiirfilter">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-audioiirfilter.top_of_page" role="top_of_page">audioiirfilter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>audioiirfilter</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-audioiirfilter.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GValueArray"><type>GValueArray</type></link> *</entry><entry role="property_name"><link linkend="GstAudioIIRFilter--a">a</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GValueArray"><type>GValueArray</type></link> *</entry><entry role="property_name"><link linkend="GstAudioIIRFilter--b">b</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioiirfilter.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstAudioIIRFilter-rate-changed">rate-changed</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAudioIIRFilter"/><refsect1 id="gst-plugins-good-plugins-audioiirfilter.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAudioIIRFilter-struct">GstAudioIIRFilter</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioiirfilter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFilter">GstAudioFilter</link>
+                        <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFXBaseIIRFilter">GstAudioFXBaseIIRFilter</link>
+                            <phrase role="lineart">╰──</phrase> GstAudioIIRFilter
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-audioiirfilter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>audioiirfilter implements a generic audio <ulink url="http://en.wikipedia.org/wiki/Infinite_impulse_response">IIR filter</ulink>. Before usage the
+&quot;a&quot; and &quot;b&quot; properties have to be set to the filter coefficients that
+should be used.</para>
+<para>The filter coefficients describe the numerator and denominator of the
+transfer function.</para>
+<para>To change the filter coefficients whenever the sampling rate changes the
+&quot;rate-changed&quot; signal can be used. This should be done for most
+IIR filters as they're depending on the sampling rate.</para>
+<refsect2>
+<title>Example application</title>
+<informalexample><programlisting language="C">
+<xi:include href="../../../../tests/examples/audiofx/iirfilter-example.c" parse="text" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+</programlisting></informalexample>
+</refsect2>
+
+<include href="element-audioiirfilter-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioiirfilter.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioiirfilter.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAudioIIRFilter-struct" role="struct">
+<title>struct GstAudioIIRFilter</title>
+<indexterm zone="GstAudioIIRFilter-struct"><primary>GstAudioIIRFilter</primary></indexterm>
+<programlisting language="C">struct GstAudioIIRFilter;</programlisting>
+<para>Opaque data structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioiirfilter.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAudioIIRFilter--a" role="property"><title>The <literal>“a”</literal> property</title>
+<indexterm zone="GstAudioIIRFilter--a"><primary>GstAudioIIRFilter:a</primary></indexterm>
+<programlisting>  “a”                        <link linkend="GValueArray"><type>GValueArray</type></link> *</programlisting>
+<para>Filter coefficients (denominator of transfer function).</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstAudioIIRFilter--b" role="property"><title>The <literal>“b”</literal> property</title>
+<indexterm zone="GstAudioIIRFilter--b"><primary>GstAudioIIRFilter:b</primary></indexterm>
+<programlisting>  “b”                        <link linkend="GValueArray"><type>GValueArray</type></link> *</programlisting>
+<para>Filter coefficients (numerator of transfer function).</para><para>Flags: Read / Write</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-audioiirfilter.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstAudioIIRFilter-rate-changed" role="signal"><title>The <literal>“rate-changed”</literal> signal</title>
+<indexterm zone="GstAudioIIRFilter-rate-changed"><primary>GstAudioIIRFilter::rate-changed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstAudioIIRFilter"><type>GstAudioIIRFilter</type></link> *filter,
+               <link linkend="gint"><type>gint</type></link>               rate,
+               <link linkend="gpointer"><type>gpointer</type></link>           user_data)</programlisting>
+<para>Will be emitted when the sampling rate changes. The callbacks
+will be called from the streaming thread and processing will
+stop until the event is handled.</para>
+<refsect3 id="GstAudioIIRFilter-rate-changed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>filter</para></entry>
+<entry role="parameter_description"><para>the filter on which the signal is emitted</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>rate</para></entry>
+<entry role="parameter_description"><para>the new sampling rate</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

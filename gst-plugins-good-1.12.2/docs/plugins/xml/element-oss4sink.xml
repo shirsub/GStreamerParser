@@ -1,0 +1,131 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-oss4sink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-oss4sink.top_of_page" role="top_of_page">oss4sink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>oss4sink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-oss4sink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstOss4Sink--device">device</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstOss4Sink--device-name">device-name</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstOss4Sink--mute">mute</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstOss4Sink--volume">volume</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstOss4Sink"/><refsect1 id="gst-plugins-good-plugins-oss4sink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstOss4Sink-struct">GstOss4Sink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-oss4sink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioBaseSink">GstAudioBaseSink</link>
+                        <phrase role="lineart">╰──</phrase> <link linkend="GstAudioSink">GstAudioSink</link>
+                            <phrase role="lineart">╰──</phrase> GstOss4Sink
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-oss4sink.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstOss4Sink implements
+ <link linkend="GstStreamVolume">GstStreamVolume</link> and  <link linkend="GstPropertyProbe">GstPropertyProbe</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-oss4sink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element lets you output sound using the Open Sound System (OSS)
+version 4.</para>
+<para>Note that you should almost always use generic audio conversion elements
+like audioconvert and audioresample in front of an audiosink to make sure
+your pipeline works under all circumstances (those conversion elements will
+act in passthrough-mode if no conversion is necessary).</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! oss4sink
+]]></programlisting></informalexample> will output a sine wave (continuous beep sound) to your sound card (with
+a very low volume as precaution).
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v filesrc location=music.ogg ! decodebin ! audioconvert ! audioresample ! oss4sink
+]]></programlisting></informalexample> will play an Ogg/Vorbis audio file and output it using the Open Sound System
+version 4.
+</refsect2>
+
+<include href="element-oss4sink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-oss4sink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-oss4sink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstOss4Sink-struct" role="struct">
+<title>struct GstOss4Sink</title>
+<indexterm zone="GstOss4Sink-struct"><primary>GstOss4Sink</primary></indexterm>
+<programlisting language="C">struct GstOss4Sink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-oss4sink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstOss4Sink--device" role="property"><title>The <literal>“device”</literal> property</title>
+<indexterm zone="GstOss4Sink--device"><primary>GstOss4Sink:device</primary></indexterm>
+<programlisting>  “device”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>OSS4 device (e.g. /dev/oss/hdaudio0/pcm0 or /dev/dspN) (NULL = use first available playback device).</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstOss4Sink--device-name" role="property"><title>The <literal>“device-name”</literal> property</title>
+<indexterm zone="GstOss4Sink--device-name"><primary>GstOss4Sink:device-name</primary></indexterm>
+<programlisting>  “device-name”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Human-readable name of the sound device.</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstOss4Sink--mute" role="property"><title>The <literal>“mute”</literal> property</title>
+<indexterm zone="GstOss4Sink--mute"><primary>GstOss4Sink:mute</primary></indexterm>
+<programlisting>  “mute”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Mute state of this stream.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstOss4Sink--volume" role="property"><title>The <literal>“volume”</literal> property</title>
+<indexterm zone="GstOss4Sink--volume"><primary>GstOss4Sink:volume</primary></indexterm>
+<programlisting>  “volume”                   <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Linear volume of this stream, 1.0=100%.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,10]</para>
+<para>Default value: 1</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

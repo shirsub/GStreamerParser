@@ -1,0 +1,148 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-jackaudiosink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-jackaudiosink.top_of_page" role="top_of_page">jackaudiosink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>jackaudiosink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-jackaudiosink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="JackClient"><type>JackClient</type></link> *</entry><entry role="property_name"><link linkend="GstJackAudioSink--client">client</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstJackConnect"><type>GstJackConnect</type></link></entry><entry role="property_name"><link linkend="GstJackAudioSink--connect">connect</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstJackAudioSink--server">server</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstJackAudioSink--client-name">client-name</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstJackTransport"><type>GstJackTransport</type></link></entry><entry role="property_name"><link linkend="GstJackAudioSink--transport">transport</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstJackAudioSink--port-pattern">port-pattern</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstJackAudioSink"/><refsect1 id="gst-plugins-good-plugins-jackaudiosink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstJackAudioSink-struct">GstJackAudioSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-jackaudiosink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioBaseSink">GstAudioBaseSink</link>
+                        <phrase role="lineart">╰──</phrase> GstJackAudioSink
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-jackaudiosink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A Sink that outputs data to Jack ports.</para>
+<para>It will create N Jack ports named out_&lt;name&gt;_&lt;num&gt; where 
+&lt;name&gt; is the element name and &lt;num&gt; is starting from 1.
+Each port corresponds to a gstreamer channel.</para>
+<para>The samplerate as exposed on the caps is always the same as the samplerate of
+the jack server.</para>
+<para>When the <link linkend="GstJackAudioSink--connect"><type>“connect”</type></link> property is set to auto, this element
+will try to connect each output port to a random physical jack input pin. In
+this mode, the sink will expose the number of physical channels on its pad
+caps.</para>
+<para>When the <link linkend="GstJackAudioSink--connect"><type>“connect”</type></link> property is set to none, the element will
+accept any number of input channels and will create (but not connect) an
+output port for each channel.</para>
+<para>The element will generate an error when the Jack server is shut down when it
+was PAUSED or PLAYING. This element does not support dynamic rate and buffer
+size changes at runtime.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc ! jackaudiosink
+]]></programlisting></informalexample> Play a sine wave to using jack.
+</refsect2>
+
+<include href="element-jackaudiosink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-jackaudiosink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-jackaudiosink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstJackAudioSink-struct" role="struct">
+<title>struct GstJackAudioSink</title>
+<indexterm zone="GstJackAudioSink-struct"><primary>GstJackAudioSink</primary></indexterm>
+<programlisting language="C">struct GstJackAudioSink;</programlisting>
+<para>Opaque <link linkend="GstJackAudioSink"><type>GstJackAudioSink</type></link>.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-jackaudiosink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstJackAudioSink--client" role="property"><title>The <literal>“client”</literal> property</title>
+<indexterm zone="GstJackAudioSink--client"><primary>GstJackAudioSink:client</primary></indexterm>
+<programlisting>  “client”                   <link linkend="JackClient"><type>JackClient</type></link> *</programlisting>
+<para>Handle for jack client.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstJackAudioSink--connect" role="property"><title>The <literal>“connect”</literal> property</title>
+<indexterm zone="GstJackAudioSink--connect"><primary>GstJackAudioSink:connect</primary></indexterm>
+<programlisting>  “connect”                  <link linkend="GstJackConnect"><type>GstJackConnect</type></link></programlisting>
+<para>Specify how the output ports will be connected.</para><para>Flags: Read / Write</para>
+<para>Default value: Automatically connect ports to physical ports</para>
+</refsect2>
+<refsect2 id="GstJackAudioSink--server" role="property"><title>The <literal>“server”</literal> property</title>
+<indexterm zone="GstJackAudioSink--server"><primary>GstJackAudioSink:server</primary></indexterm>
+<programlisting>  “server”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The Jack server to connect to (NULL = default).</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstJackAudioSink--client-name" role="property"><title>The <literal>“client-name”</literal> property</title>
+<indexterm zone="GstJackAudioSink--client-name"><primary>GstJackAudioSink:client-name</primary></indexterm>
+<programlisting>  “client-name”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The client name to use.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstJackAudioSink--transport" role="property"><title>The <literal>“transport”</literal> property</title>
+<indexterm zone="GstJackAudioSink--transport"><primary>GstJackAudioSink:transport</primary></indexterm>
+<programlisting>  “transport”                <link linkend="GstJackTransport"><type>GstJackTransport</type></link></programlisting>
+<para>The jack transport behaviour for the client.</para>
+<para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstJackAudioSink--port-pattern" role="property"><title>The <literal>“port-pattern”</literal> property</title>
+<indexterm role="1.6" zone="GstJackAudioSink--port-pattern"><primary>GstJackAudioSink:port-pattern</primary></indexterm>
+<programlisting>  “port-pattern”             <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>autoconnect to ports matching pattern, when NULL connect to physical ports</para>
+<para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-jackaudiosink.see-also">
+<title>See Also</title>
+<para><link linkend="GstAudioBaseSink"><type>GstAudioBaseSink</type></link>, <link linkend="GstAudioRingBuffer"><type>GstAudioRingBuffer</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="gst-plugins-good-plugins-plugin-rtpmanager">
+  <refmeta>
+    <refentrytitle>rtpmanager</refentrytitle>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo>FIXME Library</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>rtpmanager</refname>
+    <refpurpose><anchor id="plugin-rtpmanager"/>RTP session management plugin library</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <title>Plugin Information</title>
+    <variablelist>
+      <varlistentry>
+        <term>filename</term>
+        <listitem>
+          <simpara>libgstrtpmanager.so</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>version</term>
+        <listitem>
+          <simpara>1.12.2</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>run-time license</term>
+        <listitem>
+          <simpara>LGPL</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>package</term>
+        <listitem>
+          <simpara>GStreamer Good Plug-ins source release</simpara>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>origin</term>
+        <listitem>
+          <simpara>Unknown package origin</simpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>Elements</title>
+    <variablelist>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></term><listitem><simpara>Real-Time Transport Protocol bin</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtpdtmfmux">rtpdtmfmux</link></term><listitem><simpara>mixes RTP DTMF streams into other RTP streams</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtpjitterbuffer">rtpjitterbuffer</link></term><listitem><simpara>A buffer that deals with network jitter and other transmission faults</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtpmux">rtpmux</link></term><listitem><simpara>multiplex N rtp streams into one</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtpptdemux">rtpptdemux</link></term><listitem><simpara>Parses codec streams transmitted in the same RTP session</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtprtxqueue">rtprtxqueue</link></term><listitem><simpara>Keep RTP packets in a queue for retransmission</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtprtxreceive">rtprtxreceive</link></term><listitem><simpara>Receive retransmitted RTP packets according to RFC4588</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtprtxsend">rtprtxsend</link></term><listitem><simpara>Retransmit RTP packets when needed, according to RFC4588</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtpsession">rtpsession</link></term><listitem><simpara>Implement an RTP session</simpara></listitem></varlistentry>
+    <varlistentry><term><link linkend="gst-plugins-good-plugins-rtpssrcdemux">rtpssrcdemux</link></term><listitem><simpara>Splits RTP streams based on the SSRC</simpara></listitem></varlistentry>
+  </variablelist>
+  </refsect1>
+</refentry>

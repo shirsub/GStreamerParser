@@ -1,0 +1,433 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-multiudpsink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-multiudpsink.top_of_page" role="top_of_page">multiudpsink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>multiudpsink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-multiudpsink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--bytes-served">bytes-served</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--bytes-to-serve">bytes-to-serve</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstMultiUDPSink--clients">clients</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--auto-multicast">auto-multicast</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--loop">loop</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--qos-dscp">qos-dscp</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--ttl">ttl</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--ttl-mc">ttl-mc</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--send-duplicates">send-duplicates</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--buffer-size">buffer-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--close-socket">close-socket</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GSocket"><type>GSocket</type></link> *</entry><entry role="property_name"><link linkend="GstMultiUDPSink--socket">socket</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GSocket"><type>GSocket</type></link> *</entry><entry role="property_name"><link linkend="GstMultiUDPSink--used-socket">used-socket</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--force-ipv4">force-ipv4</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstMultiUDPSink--multicast-iface">multicast-iface</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstMultiUDPSink--bind-address">bind-address</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiUDPSink--bind-port">bind-port</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GSocket"><type>GSocket</type></link> *</entry><entry role="property_name"><link linkend="GstMultiUDPSink--socket-v6">socket-v6</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GSocket"><type>GSocket</type></link> *</entry><entry role="property_name"><link linkend="GstMultiUDPSink--used-socket-v6">used-socket-v6</link></entry><entry role="property_flags">Read</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multiudpsink.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstMultiUDPSink-add">add</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstMultiUDPSink-clear">clear</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstMultiUDPSink-client-added">client-added</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstMultiUDPSink-client-removed">client-removed</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>*</entry><entry role="signal_name"><link linkend="GstMultiUDPSink-get-stats">get-stats</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstMultiUDPSink-remove">remove</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstMultiUDPSink"/><refsect1 id="gst-plugins-good-plugins-multiudpsink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstMultiUDPSink-struct">GstMultiUDPSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multiudpsink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> GstMultiUDPSink
+                        <phrase role="lineart">╰──</phrase> <link linkend="GstUDPSink">GstUDPSink</link>
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-multiudpsink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>multiudpsink is a network sink that sends UDP packets to multiple
+clients.
+It can be combined with rtp payload encoders to implement RTP streaming.</para>
+
+<include href="element-multiudpsink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-multiudpsink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multiudpsink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstMultiUDPSink-struct" role="struct">
+<title>struct GstMultiUDPSink</title>
+<indexterm zone="GstMultiUDPSink-struct"><primary>GstMultiUDPSink</primary></indexterm>
+<programlisting language="C">struct GstMultiUDPSink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multiudpsink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstMultiUDPSink--bytes-served" role="property"><title>The <literal>“bytes-served”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--bytes-served"><primary>GstMultiUDPSink:bytes-served</primary></indexterm>
+<programlisting>  “bytes-served”             <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Total number of bytes sent to all clients.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--bytes-to-serve" role="property"><title>The <literal>“bytes-to-serve”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--bytes-to-serve"><primary>GstMultiUDPSink:bytes-to-serve</primary></indexterm>
+<programlisting>  “bytes-to-serve”           <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Number of bytes received to serve to clients.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--clients" role="property"><title>The <literal>“clients”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--clients"><primary>GstMultiUDPSink:clients</primary></indexterm>
+<programlisting>  “clients”                  <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>A comma separated list of host:port pairs with destinations.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--auto-multicast" role="property"><title>The <literal>“auto-multicast”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--auto-multicast"><primary>GstMultiUDPSink:auto-multicast</primary></indexterm>
+<programlisting>  “auto-multicast”           <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Automatically join/leave the multicast groups, FALSE means user has to do it himself.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--loop" role="property"><title>The <literal>“loop”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--loop"><primary>GstMultiUDPSink:loop</primary></indexterm>
+<programlisting>  “loop”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Used for setting the multicast loop parameter. TRUE = enable, FALSE = disable.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--qos-dscp" role="property"><title>The <literal>“qos-dscp”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--qos-dscp"><primary>GstMultiUDPSink:qos-dscp</primary></indexterm>
+<programlisting>  “qos-dscp”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Quality of Service, differentiated services code point (-1 default).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [G_MAXULONG,63]</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--ttl" role="property"><title>The <literal>“ttl”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--ttl"><primary>GstMultiUDPSink:ttl</primary></indexterm>
+<programlisting>  “ttl”                      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Used for setting the unicast TTL parameter.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,255]</para>
+<para>Default value: 64</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--ttl-mc" role="property"><title>The <literal>“ttl-mc”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--ttl-mc"><primary>GstMultiUDPSink:ttl-mc</primary></indexterm>
+<programlisting>  “ttl-mc”                   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Used for setting the multicast TTL parameter.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,255]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--send-duplicates" role="property"><title>The <literal>“send-duplicates”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--send-duplicates"><primary>GstMultiUDPSink:send-duplicates</primary></indexterm>
+<programlisting>  “send-duplicates”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>When a distination/port pair is added multiple times, send packets multiple times as well.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--buffer-size" role="property"><title>The <literal>“buffer-size”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--buffer-size"><primary>GstMultiUDPSink:buffer-size</primary></indexterm>
+<programlisting>  “buffer-size”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Size of the kernel send buffer in bytes, 0=default.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--close-socket" role="property"><title>The <literal>“close-socket”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--close-socket"><primary>GstMultiUDPSink:close-socket</primary></indexterm>
+<programlisting>  “close-socket”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Close socket if passed as property on state change.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--socket" role="property"><title>The <literal>“socket”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--socket"><primary>GstMultiUDPSink:socket</primary></indexterm>
+<programlisting>  “socket”                   <link linkend="GSocket"><type>GSocket</type></link> *</programlisting>
+<para>Socket to use for UDP sending. (NULL == allocate).</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--used-socket" role="property"><title>The <literal>“used-socket”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--used-socket"><primary>GstMultiUDPSink:used-socket</primary></indexterm>
+<programlisting>  “used-socket”              <link linkend="GSocket"><type>GSocket</type></link> *</programlisting>
+<para>Socket currently in use for UDP sending. (NULL == no socket).</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--force-ipv4" role="property"><title>The <literal>“force-ipv4”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--force-ipv4"><primary>GstMultiUDPSink:force-ipv4</primary></indexterm>
+<programlisting>  “force-ipv4”               <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Forcing the use of an IPv4 socket (DEPRECATED, has no effect anymore).</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--multicast-iface" role="property"><title>The <literal>“multicast-iface”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--multicast-iface"><primary>GstMultiUDPSink:multicast-iface</primary></indexterm>
+<programlisting>  “multicast-iface”          <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The network interface on which to join the multicast group.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--bind-address" role="property"><title>The <literal>“bind-address”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--bind-address"><primary>GstMultiUDPSink:bind-address</primary></indexterm>
+<programlisting>  “bind-address”             <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Address to bind the socket to.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--bind-port" role="property"><title>The <literal>“bind-port”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--bind-port"><primary>GstMultiUDPSink:bind-port</primary></indexterm>
+<programlisting>  “bind-port”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Port to bind the socket to.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,65535]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--socket-v6" role="property"><title>The <literal>“socket-v6”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--socket-v6"><primary>GstMultiUDPSink:socket-v6</primary></indexterm>
+<programlisting>  “socket-v6”                <link linkend="GSocket"><type>GSocket</type></link> *</programlisting>
+<para>Socket to use for UDPv6 sending. (NULL == allocate).</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstMultiUDPSink--used-socket-v6" role="property"><title>The <literal>“used-socket-v6”</literal> property</title>
+<indexterm zone="GstMultiUDPSink--used-socket-v6"><primary>GstMultiUDPSink:used-socket-v6</primary></indexterm>
+<programlisting>  “used-socket-v6”           <link linkend="GSocket"><type>GSocket</type></link> *</programlisting>
+<para>Socket currently in use for UDPv6 sending. (NULL == no socket).</para><para>Flags: Read</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multiudpsink.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstMultiUDPSink-add" role="signal"><title>The <literal>“add”</literal> signal</title>
+<indexterm zone="GstMultiUDPSink-add"><primary>GstMultiUDPSink::add</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstMultiUDPSink"><type>GstMultiUDPSink</type></link> *gstmultiudpsink,
+               <link linkend="gchar"><type>gchar</type></link>           *host,
+               <link linkend="gint"><type>gint</type></link>             port,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>Add a client with destination <parameter>host</parameter>
+ and <parameter>port</parameter>
+ to the list of
+clients. When the same host/port pair is added multiple times, the
+send-duplicates property defines if the packets are sent multiple times to
+the same host/port pair or not.</para>
+<para>When a host/port pair is added multiple times, an equal amount of remove
+calls must be performed to actually remove the host/port pair from the list
+of destinations.</para>
+<refsect3 id="GstMultiUDPSink-add.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gstmultiudpsink</para></entry>
+<entry role="parameter_description"><para>the sink on which the signal is emitted</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>host</para></entry>
+<entry role="parameter_description"><para>the hostname/IP address of the client to add</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>the port of the client to add</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2><refsect2 id="GstMultiUDPSink-clear" role="signal"><title>The <literal>“clear”</literal> signal</title>
+<indexterm zone="GstMultiUDPSink-clear"><primary>GstMultiUDPSink::clear</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstMultiUDPSink"><type>GstMultiUDPSink</type></link> *gstmultiudpsink,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>Clear the list of clients.</para>
+<refsect3 id="GstMultiUDPSink-clear.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gstmultiudpsink</para></entry>
+<entry role="parameter_description"><para>the sink on which the signal is emitted</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2><refsect2 id="GstMultiUDPSink-client-added" role="signal"><title>The <literal>“client-added”</literal> signal</title>
+<indexterm zone="GstMultiUDPSink-client-added"><primary>GstMultiUDPSink::client-added</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstMultiUDPSink"><type>GstMultiUDPSink</type></link> *gstmultiudpsink,
+               <link linkend="gchar"><type>gchar</type></link>           *host,
+               <link linkend="gint"><type>gint</type></link>             port,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>Signal emited when a new client is added to the list of
+clients.</para>
+<refsect3 id="GstMultiUDPSink-client-added.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gstmultiudpsink</para></entry>
+<entry role="parameter_description"><para>the sink emitting the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>host</para></entry>
+<entry role="parameter_description"><para>the hostname/IP address of the added client</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>the port of the added client</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstMultiUDPSink-client-removed" role="signal"><title>The <literal>“client-removed”</literal> signal</title>
+<indexterm zone="GstMultiUDPSink-client-removed"><primary>GstMultiUDPSink::client-removed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstMultiUDPSink"><type>GstMultiUDPSink</type></link> *gstmultiudpsink,
+               <link linkend="gchar"><type>gchar</type></link>           *host,
+               <link linkend="gint"><type>gint</type></link>             port,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>Signal emited when a client is removed from the list of
+clients.</para>
+<refsect3 id="GstMultiUDPSink-client-removed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gstmultiudpsink</para></entry>
+<entry role="parameter_description"><para>the sink emitting the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>host</para></entry>
+<entry role="parameter_description"><para>the hostname/IP address of the removed client</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>the port of the removed client</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstMultiUDPSink-get-stats" role="signal"><title>The <literal>“get-stats”</literal> signal</title>
+<indexterm zone="GstMultiUDPSink-get-stats"><primary>GstMultiUDPSink::get-stats</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>*
+user_function (<link linkend="GstMultiUDPSink"><type>GstMultiUDPSink</type></link> *gstmultiudpsink,
+               <link linkend="gchar"><type>gchar</type></link>           *host,
+               <link linkend="gint"><type>gint</type></link>             port,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>Get the statistics of the client with destination <parameter>host</parameter>
+ and <parameter>port</parameter>
+.</para>
+<refsect3 id="GstMultiUDPSink-get-stats.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gstmultiudpsink</para></entry>
+<entry role="parameter_description"><para>the sink on which the signal is emitted</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>host</para></entry>
+<entry role="parameter_description"><para>the hostname/IP address of the client to get stats on</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>the port of the client to get stats on</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstMultiUDPSink-get-stats.returns" role="returns">
+<title>Returns</title>
+<para> a GstStructure: bytes_sent, packets_sent,
+connect_time (in epoch seconds), disconnect_time (in epoch seconds)</para>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2><refsect2 id="GstMultiUDPSink-remove" role="signal"><title>The <literal>“remove”</literal> signal</title>
+<indexterm zone="GstMultiUDPSink-remove"><primary>GstMultiUDPSink::remove</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstMultiUDPSink"><type>GstMultiUDPSink</type></link> *gstmultiudpsink,
+               <link linkend="gchar"><type>gchar</type></link>           *host,
+               <link linkend="gint"><type>gint</type></link>             port,
+               <link linkend="gpointer"><type>gpointer</type></link>         user_data)</programlisting>
+<para>Remove the client with destination <parameter>host</parameter>
+ and <parameter>port</parameter>
+ from the list of
+clients.</para>
+<refsect3 id="GstMultiUDPSink-remove.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>gstmultiudpsink</para></entry>
+<entry role="parameter_description"><para>the sink on which the signal is emitted</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>host</para></entry>
+<entry role="parameter_description"><para>the hostname/IP address of the client to remove</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>the port of the client to remove</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multiudpsink.see-also">
+<title>See Also</title>
+<para>udpsink, multifdsink</para>
+
+</refsect1>
+
+</refentry>

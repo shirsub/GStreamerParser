@@ -1,0 +1,109 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-osssrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-osssrc.top_of_page" role="top_of_page">osssrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>osssrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-osssrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstOssSrc--device">device</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstOssSrc--device-name">device-name</link></entry><entry role="property_flags">Read</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstOssSrc"/><refsect1 id="gst-plugins-good-plugins-osssrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstOssSrc-struct">GstOssSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-osssrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                        <phrase role="lineart">╰──</phrase> <link linkend="GstAudioBaseSrc">GstAudioBaseSrc</link>
+                            <phrase role="lineart">╰──</phrase> <link linkend="GstAudioSrc">GstAudioSrc</link>
+                                <phrase role="lineart">╰──</phrase> GstOssSrc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-osssrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstOssSrc implements
+ <link linkend="GstImplementsInterface">GstImplementsInterface</link> and  <link linkend="GstMixer">GstMixer</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-osssrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element lets you record sound using the Open Sound System (OSS).</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v osssrc ! audioconvert ! vorbisenc ! oggmux ! filesink location=mymusic.ogg
+]]></programlisting></informalexample> will record sound from your sound card using OSS and encode it to an
+Ogg/Vorbis file (this will only work if your mixer settings are right
+and the right inputs enabled etc.)
+</refsect2>
+
+<include href="element-osssrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-osssrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-osssrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstOssSrc-struct" role="struct">
+<title>struct GstOssSrc</title>
+<indexterm zone="GstOssSrc-struct"><primary>GstOssSrc</primary></indexterm>
+<programlisting language="C">struct GstOssSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-osssrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstOssSrc--device" role="property"><title>The <literal>“device”</literal> property</title>
+<indexterm zone="GstOssSrc--device"><primary>GstOssSrc:device</primary></indexterm>
+<programlisting>  “device”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>OSS device (usually /dev/dspN).</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;/dev/dsp&quot;</para>
+</refsect2>
+<refsect2 id="GstOssSrc--device-name" role="property"><title>The <literal>“device-name”</literal> property</title>
+<indexterm zone="GstOssSrc--device-name"><primary>GstOssSrc:device-name</primary></indexterm>
+<programlisting>  “device-name”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Human-readable name of the sound device.</para><para>Flags: Read</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,139 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-progressreport">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-progressreport.top_of_page" role="top_of_page">progressreport</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>progressreport</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-progressreport.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstProgressReport--silent">silent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstProgressReport--update-freq">update-freq</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstProgressReport--format">format</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstProgressReport--do-query">do-query</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstProgressReport"/><refsect1 id="gst-plugins-good-plugins-progressreport.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstProgressReport-struct">GstProgressReport</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-progressreport.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> GstProgressReport
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-progressreport.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The progressreport element can be put into a pipeline to report progress,
+which is done by doing upstream duration and position queries in regular
+(real-time) intervals. Both the interval and the prefered query format
+can be specified via the <link linkend="GstProgressReport--update-freq"><type>“update-freq”</type></link> and the
+<link linkend="GstProgressReport--format"><type>“format”</type></link> property.</para>
+<para>Element messages containing a &quot;progress&quot; structure are posted on the bus
+whenever progress has been queried (since gst-plugins-good 0.10.6 only).</para>
+<para>Since the element was originally designed for debugging purposes, it will
+by default also print information about the current progress to the
+terminal. This can be prevented by setting the <link linkend="GstProgressReport--silent"><type>“silent”</type></link>
+property to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+<para>This element is most useful in transcoding pipelines or other situations
+where just querying the pipeline might not lead to the wanted result. For
+progress in TIME format, the element is best placed in a 'raw stream'
+section of the pipeline (or after any demuxers/decoders/parsers).</para>
+<para>Three more things should be pointed out: firstly, the element will only
+query progress when data flow happens. If data flow is stalled for some
+reason, no progress messages will be posted. Secondly, there are other
+elements (like qtdemux, for example) that may also post &quot;progress&quot; element
+messages on the bus. Applications should check the source of any element
+messages they receive, if needed. Finally, applications should not take
+action on receiving notification of progress being 100%, they should only
+take action when they receive an EOS message (since the progress reported
+is in reference to an internal point of a pipeline and not the pipeline as
+a whole).</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -m filesrc location=foo.ogg ! decodebin ! progressreport update-freq=1 ! audioconvert ! audioresample ! autoaudiosink
+]]></programlisting></informalexample> This shows a progress query where a duration is available.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -m audiotestsrc ! progressreport update-freq=1 ! audioconvert ! autoaudiosink
+]]></programlisting></informalexample> This shows a progress query where no duration is available.
+</refsect2>
+
+<include href="element-progressreport-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-progressreport.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-progressreport.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstProgressReport-struct" role="struct">
+<title>struct GstProgressReport</title>
+<indexterm zone="GstProgressReport-struct"><primary>GstProgressReport</primary></indexterm>
+<programlisting language="C">struct GstProgressReport;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-progressreport.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstProgressReport--silent" role="property"><title>The <literal>“silent”</literal> property</title>
+<indexterm zone="GstProgressReport--silent"><primary>GstProgressReport:silent</primary></indexterm>
+<programlisting>  “silent”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Do not print output to stdout.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstProgressReport--update-freq" role="property"><title>The <literal>“update-freq”</literal> property</title>
+<indexterm zone="GstProgressReport--update-freq"><primary>GstProgressReport:update-freq</primary></indexterm>
+<programlisting>  “update-freq”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Number of seconds between reports when data is flowing.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 1</para>
+<para>Default value: 5</para>
+</refsect2>
+<refsect2 id="GstProgressReport--format" role="property"><title>The <literal>“format”</literal> property</title>
+<indexterm zone="GstProgressReport--format"><primary>GstProgressReport:format</primary></indexterm>
+<programlisting>  “format”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Format to use for the querying.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;auto&quot;</para>
+</refsect2>
+<refsect2 id="GstProgressReport--do-query" role="property"><title>The <literal>“do-query”</literal> property</title>
+<indexterm zone="GstProgressReport--do-query"><primary>GstProgressReport:do-query</primary></indexterm>
+<programlisting>  “do-query”                 <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use a query instead of buffer metadata to determine stream position.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

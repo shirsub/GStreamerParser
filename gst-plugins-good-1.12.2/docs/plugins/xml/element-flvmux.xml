@@ -1,0 +1,105 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-flvmux">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-flvmux.top_of_page" role="top_of_page">flvmux</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>flvmux</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-flvmux.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFlvMux--streamable">streamable</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstFlvMux--metadatacreator">metadatacreator</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstFlvMux"/><refsect1 id="gst-plugins-good-plugins-flvmux.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"/><entry role="function_name"><link linkend="GstFlvMux-struct">GstFlvMux</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flvmux.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstFlvMux
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flvmux.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstFlvMux implements
+ <link linkend="GstTagSetter">GstTagSetter</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-flvmux.description" role="desc">
+<title role="desc.title">Description</title>
+<para>flvmux muxes different streams into an FLV file.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v flvmux name=mux ! filesink location=test.flv  audiotestsrc samplesperbuffer=44100 num-buffers=10 ! faac ! mux.  videotestsrc num-buffers=250 ! video/x-raw,framerate=25/1 ! x264enc ! mux.
+]]></programlisting></informalexample> This pipeline encodes a test audio and video stream and muxes both into an FLV file.
+</refsect2>
+
+<include href="element-flvmux-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-flvmux.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flvmux.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFlvMux-struct" role="struct">
+<title>GstFlvMux</title>
+<indexterm zone="GstFlvMux-struct"><primary>GstFlvMux</primary></indexterm>
+<programlisting language="C">typedef struct _GstFlvMux GstFlvMux;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flvmux.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstFlvMux--streamable" role="property"><title>The <literal>“streamable”</literal> property</title>
+<indexterm zone="GstFlvMux--streamable"><primary>GstFlvMux:streamable</primary></indexterm>
+<programlisting>  “streamable”               <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If True, the output will be streaming friendly. (ie without indexes and
+duration)</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFlvMux--metadatacreator" role="property"><title>The <literal>“metadatacreator”</literal> property</title>
+<indexterm zone="GstFlvMux--metadatacreator"><primary>GstFlvMux:metadatacreator</primary></indexterm>
+<programlisting>  “metadatacreator”          <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The value of metadatacreator in the meta packet.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,110 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-deinterleave">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-deinterleave.top_of_page" role="top_of_page">deinterleave</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>deinterleave</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-deinterleave.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDeinterleave--keep-positions">keep-positions</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstDeinterleave"/><refsect1 id="gst-plugins-good-plugins-deinterleave.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDeinterleave-struct">GstDeinterleave</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterleave.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstDeinterleave
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-deinterleave.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Splits one interleaved multichannel audio stream into many mono audio streams.</para>
+<para>This element handles all raw audio formats and supports changing the input caps as long as
+all downstream elements can handle the new caps and the number of channels and the channel
+positions stay the same. This restriction will be removed in later versions by adding or
+removing some source pads as required.</para>
+<para>In most cases a queue and an audioconvert element should be added after each source pad
+before further processing of the audio data.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=/path/to/file.mp3 ! decodebin ! audioconvert ! "audio/x-raw,channels=2 ! deinterleave name=d  d.src_0 ! queue ! audioconvert ! vorbisenc ! oggmux ! filesink location=channel1.ogg  d.src_1 ! queue ! audioconvert ! vorbisenc ! oggmux ! filesink location=channel2.ogg
+]]></programlisting></informalexample> Decodes an MP3 file and encodes the left and right channel into separate
+Ogg Vorbis files.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=file.mp3 ! decodebin ! audioconvert ! "audio/x-raw,channels=2" ! deinterleave name=d  interleave name=i ! audioconvert ! wavenc ! filesink location=test.wav    d.src_0 ! queue ! audioconvert ! i.sink_1    d.src_1 ! queue ! audioconvert ! i.sink_0
+]]></programlisting></informalexample> Decodes and deinterleaves a Stereo MP3 file into separate channels and
+then interleaves the channels again to a WAV file with the channel with the
+channels exchanged.
+</refsect2>
+
+<include href="element-deinterleave-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterleave.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterleave.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDeinterleave-struct" role="struct">
+<title>struct GstDeinterleave</title>
+<indexterm zone="GstDeinterleave-struct"><primary>GstDeinterleave</primary></indexterm>
+<programlisting language="C">struct GstDeinterleave;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterleave.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstDeinterleave--keep-positions" role="property"><title>The <literal>“keep-positions”</literal> property</title>
+<indexterm zone="GstDeinterleave--keep-positions"><primary>GstDeinterleave:keep-positions</primary></indexterm>
+<programlisting>  “keep-positions”           <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Keep positions: When enable the caps on the output buffers will
+contain the original channel positions. This can be used to correctly
+interleave the output again later but can also lead to unwanted effects
+if the output should be handled as Mono.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-deinterleave.see-also">
+<title>See Also</title>
+<para>interleave</para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,131 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-vp9dec">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-vp9dec.top_of_page" role="top_of_page">vp9dec</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>vp9dec</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-vp9dec.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstVP9Dec--deblocking-level">deblocking-level</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstVP9Dec--noise-level">noise-level</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstVP9Dec--post-processing">post-processing</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstVP9DecPostProcessingFlags"><type>GstVP9DecPostProcessingFlags</type></link></entry><entry role="property_name"><link linkend="GstVP9Dec--post-processing-flags">post-processing-flags</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstVP9Dec--threads">threads</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstVP9Dec"/><refsect1 id="gst-plugins-good-plugins-vp9dec.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstVP9Dec-struct">GstVP9Dec</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp9dec.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstVideoDecoder">GstVideoDecoder</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVPXDec">GstVPXDec</link>
+                        <phrase role="lineart">╰──</phrase> GstVP9Dec
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-vp9dec.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element decodes VP9 streams into raw video.</para>
+<ulink url="http://www.webmproject.org">VP9</ulink> is a royalty-free
+<para>video codec maintained by <ulink url="http://www.google.com/">Google
+</ulink>. It's the successor of On2 VP3, which was the base of the
+Theora video codec.</para>
+<refsect2>
+<title>Example pipeline</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v filesrc location=videotestsrc.webm ! matroskademux ! vp9dec ! videoconvert ! videoscale ! autovideosink
+]]></programlisting></informalexample> This example pipeline will decode a WebM stream and decodes the VP9 video.
+</refsect2>
+
+<include href="element-vp9dec-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp9dec.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp9dec.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstVP9Dec-struct" role="struct">
+<title>struct GstVP9Dec</title>
+<indexterm zone="GstVP9Dec-struct"><primary>GstVP9Dec</primary></indexterm>
+<programlisting language="C">struct GstVP9Dec;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp9dec.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstVP9Dec--deblocking-level" role="property"><title>The <literal>“deblocking-level”</literal> property</title>
+<indexterm zone="GstVP9Dec--deblocking-level"><primary>GstVP9Dec:deblocking-level</primary></indexterm>
+<programlisting>  “deblocking-level”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Deblocking level.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 16</para>
+<para>Default value: 4</para>
+</refsect2>
+<refsect2 id="GstVP9Dec--noise-level" role="property"><title>The <literal>“noise-level”</literal> property</title>
+<indexterm zone="GstVP9Dec--noise-level"><primary>GstVP9Dec:noise-level</primary></indexterm>
+<programlisting>  “noise-level”              <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Noise level.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 16</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVP9Dec--post-processing" role="property"><title>The <literal>“post-processing”</literal> property</title>
+<indexterm zone="GstVP9Dec--post-processing"><primary>GstVP9Dec:post-processing</primary></indexterm>
+<programlisting>  “post-processing”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable post processing.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstVP9Dec--post-processing-flags" role="property"><title>The <literal>“post-processing-flags”</literal> property</title>
+<indexterm zone="GstVP9Dec--post-processing-flags"><primary>GstVP9Dec:post-processing-flags</primary></indexterm>
+<programlisting>  “post-processing-flags”    <link linkend="GstVP9DecPostProcessingFlags"><type>GstVP9DecPostProcessingFlags</type></link></programlisting>
+<para>Flags to control post processing.</para><para>Flags: Read / Write</para>
+<para>Default value: Deblock|Demacroblock</para>
+</refsect2>
+<refsect2 id="GstVP9Dec--threads" role="property"><title>The <literal>“threads”</literal> property</title>
+<indexterm zone="GstVP9Dec--threads"><primary>GstVP9Dec:threads</primary></indexterm>
+<programlisting>  “threads”                  <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Maximum number of decoding threads.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,16]</para>
+<para>Default value: 1</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-vp9dec.see-also">
+<title>See Also</title>
+<para>vp9enc, matroskademux</para>
+
+</refsect1>
+
+</refentry>

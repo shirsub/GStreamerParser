@@ -1,0 +1,115 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-dvdec">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-dvdec.top_of_page" role="top_of_page">dvdec</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>dvdec</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-dvdec.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDVDec--clamp-chroma">clamp-chroma</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstDVDec--clamp-luma">clamp-luma</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstDVDec--drop-factor">drop-factor</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstDVDecQualityEnum"><type>GstDVDecQualityEnum</type></link></entry><entry role="property_name"><link linkend="GstDVDec--quality">quality</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstDVDec"/><refsect1 id="gst-plugins-good-plugins-dvdec.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstDVDec-struct">GstDVDec</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dvdec.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstDVDec
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-dvdec.description" role="desc">
+<title role="desc.title">Description</title>
+<para>dvdec decodes DV video into raw video. The element expects a full DV frame
+as input, which is 120000 bytes for NTSC and 144000 for PAL video.</para>
+<para>This element can perform simple frame dropping with the <link linkend="GstDVDec--drop-factor"><type>“drop-factor”</type></link>
+property. Setting this property to a value N &gt; 1 will only decode every 
+Nth frame.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=test.dv ! dvdemux name=demux ! dvdec ! xvimagesink
+]]></programlisting></informalexample> This pipeline decodes and renders the raw DV stream to a videosink.
+</refsect2>
+
+<include href="element-dvdec-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-dvdec.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dvdec.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstDVDec-struct" role="struct">
+<title>struct GstDVDec</title>
+<indexterm zone="GstDVDec-struct"><primary>GstDVDec</primary></indexterm>
+<programlisting language="C">struct GstDVDec;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-dvdec.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstDVDec--clamp-chroma" role="property"><title>The <literal>“clamp-chroma”</literal> property</title>
+<indexterm zone="GstDVDec--clamp-chroma"><primary>GstDVDec:clamp-chroma</primary></indexterm>
+<programlisting>  “clamp-chroma”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Clamp chroma.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstDVDec--clamp-luma" role="property"><title>The <literal>“clamp-luma”</literal> property</title>
+<indexterm zone="GstDVDec--clamp-luma"><primary>GstDVDec:clamp-luma</primary></indexterm>
+<programlisting>  “clamp-luma”               <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Clamp luma.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstDVDec--drop-factor" role="property"><title>The <literal>“drop-factor”</literal> property</title>
+<indexterm zone="GstDVDec--drop-factor"><primary>GstDVDec:drop-factor</primary></indexterm>
+<programlisting>  “drop-factor”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Only decode Nth frame.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 1</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstDVDec--quality" role="property"><title>The <literal>“quality”</literal> property</title>
+<indexterm zone="GstDVDec--quality"><primary>GstDVDec:quality</primary></indexterm>
+<programlisting>  “quality”                  <link linkend="GstDVDecQualityEnum"><type>GstDVDecQualityEnum</type></link></programlisting>
+<para>Decoding quality.</para><para>Flags: Read / Write</para>
+<para>Default value: Highest quality colour decoding</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

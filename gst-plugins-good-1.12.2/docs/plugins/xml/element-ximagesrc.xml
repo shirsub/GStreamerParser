@@ -1,0 +1,175 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-ximagesrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-ximagesrc.top_of_page" role="top_of_page">ximagesrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>ximagesrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-ximagesrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstXImageSrc--display-name">display-name</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstXImageSrc--show-pointer">show-pointer</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstXImageSrc--endx">endx</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstXImageSrc--endy">endy</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstXImageSrc--startx">startx</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstXImageSrc--starty">starty</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstXImageSrc--use-damage">use-damage</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstXImageSrc--remote">remote</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstXImageSrc--xid">xid</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstXImageSrc--xname">xname</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstXImageSrc"/><refsect1 id="gst-plugins-good-plugins-ximagesrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstXImageSrc-struct">GstXImageSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-ximagesrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSrc">GstBaseSrc</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstPushSrc">GstPushSrc</link>
+                        <phrase role="lineart">╰──</phrase> GstXImageSrc
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-ximagesrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element captures your X Display and creates raw RGB video.  It uses
+the XDamage extension if available to only capture areas of the screen that
+have changed since the last frame.  It uses the XFixes extension if
+available to also capture your mouse pointer.  By default it will fixate to
+25 frames per second.</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 ximagesrc ! video/x-raw,framerate=5/1 ! videoconvert ! theoraenc ! oggmux ! filesink location=desktop.ogg
+]]></programlisting></informalexample> Encodes your X display to an Ogg theora video at 5 frames per second.
+</refsect2>
+
+<include href="element-ximagesrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-ximagesrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-ximagesrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstXImageSrc-struct" role="struct">
+<title>struct GstXImageSrc</title>
+<indexterm zone="GstXImageSrc-struct"><primary>GstXImageSrc</primary></indexterm>
+<programlisting language="C">struct GstXImageSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-ximagesrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstXImageSrc--display-name" role="property"><title>The <literal>“display-name”</literal> property</title>
+<indexterm zone="GstXImageSrc--display-name"><primary>GstXImageSrc:display-name</primary></indexterm>
+<programlisting>  “display-name”             <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>X Display Name.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstXImageSrc--show-pointer" role="property"><title>The <literal>“show-pointer”</literal> property</title>
+<indexterm zone="GstXImageSrc--show-pointer"><primary>GstXImageSrc:show-pointer</primary></indexterm>
+<programlisting>  “show-pointer”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Show mouse pointer (if XFixes extension enabled).</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstXImageSrc--endx" role="property"><title>The <literal>“endx”</literal> property</title>
+<indexterm zone="GstXImageSrc--endx"><primary>GstXImageSrc:endx</primary></indexterm>
+<programlisting>  “endx”                     <link linkend="guint"><type>guint</type></link></programlisting>
+<para>X coordinate of bottom right corner of area to be recorded
+(0 for bottom right of screen)</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= G_MAXINT</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstXImageSrc--endy" role="property"><title>The <literal>“endy”</literal> property</title>
+<indexterm zone="GstXImageSrc--endy"><primary>GstXImageSrc:endy</primary></indexterm>
+<programlisting>  “endy”                     <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Y coordinate of bottom right corner of area to be recorded
+(0 for bottom right of screen)</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= G_MAXINT</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstXImageSrc--startx" role="property"><title>The <literal>“startx”</literal> property</title>
+<indexterm zone="GstXImageSrc--startx"><primary>GstXImageSrc:startx</primary></indexterm>
+<programlisting>  “startx”                   <link linkend="guint"><type>guint</type></link></programlisting>
+<para>X coordinate of top left corner of area to be recorded
+(0 for top left of screen)</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= G_MAXINT</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstXImageSrc--starty" role="property"><title>The <literal>“starty”</literal> property</title>
+<indexterm zone="GstXImageSrc--starty"><primary>GstXImageSrc:starty</primary></indexterm>
+<programlisting>  “starty”                   <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Y coordinate of top left corner of area to be recorded
+(0 for top left of screen)</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= G_MAXINT</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstXImageSrc--use-damage" role="property"><title>The <literal>“use-damage”</literal> property</title>
+<indexterm zone="GstXImageSrc--use-damage"><primary>GstXImageSrc:use-damage</primary></indexterm>
+<programlisting>  “use-damage”               <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use XDamage (if the XDamage extension is enabled)</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstXImageSrc--remote" role="property"><title>The <literal>“remote”</literal> property</title>
+<indexterm zone="GstXImageSrc--remote"><primary>GstXImageSrc:remote</primary></indexterm>
+<programlisting>  “remote”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether the X display is remote. The element will try to use alternate calls
+known to work better with remote displays.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstXImageSrc--xid" role="property"><title>The <literal>“xid”</literal> property</title>
+<indexterm zone="GstXImageSrc--xid"><primary>GstXImageSrc:xid</primary></indexterm>
+<programlisting>  “xid”                      <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>The XID of the window to capture. 0 for the root window (default).</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstXImageSrc--xname" role="property"><title>The <literal>“xname”</literal> property</title>
+<indexterm zone="GstXImageSrc--xname"><primary>GstXImageSrc:xname</primary></indexterm>
+<programlisting>  “xname”                    <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The name of the window to capture, if any.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,250 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-v4l2sink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-v4l2sink.top_of_page" role="top_of_page">v4l2sink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>v4l2sink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-v4l2sink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstV4l2Sink--device">device</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--device-fd">device-fd</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstV4l2Sink--device-name">device-name</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstV4l2DeviceTypeFlags"><type>GstV4l2DeviceTypeFlags</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--flags">flags</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--overlay-height">overlay-height</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--overlay-left">overlay-left</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--overlay-top">overlay-top</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--overlay-width">overlay-width</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--brightness">brightness</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--contrast">contrast</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--hue">hue</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--saturation">saturation</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--crop-height">crop-height</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--crop-left">crop-left</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--crop-top">crop-top</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--crop-width">crop-width</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstV4l2IOMode"><type>GstV4l2IOMode</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--io-mode">io-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="V4L2-TV-norms"><type>V4L2_TV_norms</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--norm">norm</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstV4l2Sink--extra-controls">extra-controls</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstV4l2Sink--force-aspect-ratio">force-aspect-ratio</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstV4l2Sink--pixel-aspect-ratio">pixel-aspect-ratio</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstV4l2Sink"/><refsect1 id="gst-plugins-good-plugins-v4l2sink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstV4l2Sink-struct">GstV4l2Sink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2sink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoSink">GstVideoSink</link>
+                        <phrase role="lineart">╰──</phrase> GstV4l2Sink
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2sink.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstV4l2Sink implements
+ <link linkend="GstTuner">GstTuner</link>,  <link linkend="GstVideoOverlay">GstVideoOverlay</link>,  <link linkend="GstNavigation">GstNavigation</link>,  <link linkend="GstColorBalance">GstColorBalance</link> and  <link linkend="GstVideoOrientation">GstVideoOrientation</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-v4l2sink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>v4l2sink can be used to display video to v4l2 devices (screen overlays
+provided by the graphics hardware, tv-out, etc)</para>
+<refsect2>
+<title>Example launch lines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc ! v4l2sink device=/dev/video1
+]]></programlisting></informalexample> This pipeline displays a test pattern on /dev/video1
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc ! navigationtest ! v4l2sink
+]]></programlisting></informalexample> A pipeline to test navigation events.
+While moving the mouse pointer over the test signal you will see a black box
+following the mouse pointer. If you press the mouse button somewhere on the
+video and release it somewhere else a green box will appear where you pressed
+the button and a red one where you released it. (The navigationtest element
+is part of gst-plugins-good.) You can observe here that even if the images
+are scaled through hardware the pointer coordinates are converted back to the
+original video frame geometry so that the box can be drawn to the correct
+position. This also handles borders correctly, limiting coordinates to the
+image area
+</refsect2>
+
+<include href="element-v4l2sink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2sink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2sink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstV4l2Sink-struct" role="struct">
+<title>struct GstV4l2Sink</title>
+<indexterm zone="GstV4l2Sink-struct"><primary>GstV4l2Sink</primary></indexterm>
+<programlisting language="C">struct GstV4l2Sink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2sink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstV4l2Sink--device" role="property"><title>The <literal>“device”</literal> property</title>
+<indexterm zone="GstV4l2Sink--device"><primary>GstV4l2Sink:device</primary></indexterm>
+<programlisting>  “device”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Device location.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;/dev/video1&quot;</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--device-fd" role="property"><title>The <literal>“device-fd”</literal> property</title>
+<indexterm zone="GstV4l2Sink--device-fd"><primary>GstV4l2Sink:device-fd</primary></indexterm>
+<programlisting>  “device-fd”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>File descriptor of the device.</para><para>Flags: Read</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--device-name" role="property"><title>The <literal>“device-name”</literal> property</title>
+<indexterm zone="GstV4l2Sink--device-name"><primary>GstV4l2Sink:device-name</primary></indexterm>
+<programlisting>  “device-name”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Name of the device.</para><para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--flags" role="property"><title>The <literal>“flags”</literal> property</title>
+<indexterm zone="GstV4l2Sink--flags"><primary>GstV4l2Sink:flags</primary></indexterm>
+<programlisting>  “flags”                    <link linkend="GstV4l2DeviceTypeFlags"><type>GstV4l2DeviceTypeFlags</type></link></programlisting>
+<para>Device type flags.</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--overlay-height" role="property"><title>The <literal>“overlay-height”</literal> property</title>
+<indexterm zone="GstV4l2Sink--overlay-height"><primary>GstV4l2Sink:overlay-height</primary></indexterm>
+<programlisting>  “overlay-height”           <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The height of the video overlay; default is equal to negotiated image height.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--overlay-left" role="property"><title>The <literal>“overlay-left”</literal> property</title>
+<indexterm zone="GstV4l2Sink--overlay-left"><primary>GstV4l2Sink:overlay-left</primary></indexterm>
+<programlisting>  “overlay-left”             <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The leftmost (x) coordinate of the video overlay; top left corner of screen is 0,0.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--overlay-top" role="property"><title>The <literal>“overlay-top”</literal> property</title>
+<indexterm zone="GstV4l2Sink--overlay-top"><primary>GstV4l2Sink:overlay-top</primary></indexterm>
+<programlisting>  “overlay-top”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The topmost (y) coordinate of the video overlay; top left corner of screen is 0,0.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--overlay-width" role="property"><title>The <literal>“overlay-width”</literal> property</title>
+<indexterm zone="GstV4l2Sink--overlay-width"><primary>GstV4l2Sink:overlay-width</primary></indexterm>
+<programlisting>  “overlay-width”            <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The width of the video overlay; default is equal to negotiated image width.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--brightness" role="property"><title>The <literal>“brightness”</literal> property</title>
+<indexterm zone="GstV4l2Sink--brightness"><primary>GstV4l2Sink:brightness</primary></indexterm>
+<programlisting>  “brightness”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Picture brightness, or more precisely, the black level.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--contrast" role="property"><title>The <literal>“contrast”</literal> property</title>
+<indexterm zone="GstV4l2Sink--contrast"><primary>GstV4l2Sink:contrast</primary></indexterm>
+<programlisting>  “contrast”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Picture contrast or luma gain.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--hue" role="property"><title>The <literal>“hue”</literal> property</title>
+<indexterm zone="GstV4l2Sink--hue"><primary>GstV4l2Sink:hue</primary></indexterm>
+<programlisting>  “hue”                      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Hue or color balance.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--saturation" role="property"><title>The <literal>“saturation”</literal> property</title>
+<indexterm zone="GstV4l2Sink--saturation"><primary>GstV4l2Sink:saturation</primary></indexterm>
+<programlisting>  “saturation”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Picture color saturation or chroma gain.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--crop-height" role="property"><title>The <literal>“crop-height”</literal> property</title>
+<indexterm zone="GstV4l2Sink--crop-height"><primary>GstV4l2Sink:crop-height</primary></indexterm>
+<programlisting>  “crop-height”              <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The height of the video crop; default is equal to negotiated image height.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--crop-left" role="property"><title>The <literal>“crop-left”</literal> property</title>
+<indexterm zone="GstV4l2Sink--crop-left"><primary>GstV4l2Sink:crop-left</primary></indexterm>
+<programlisting>  “crop-left”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The leftmost (x) coordinate of the video crop; top left corner of image is 0,0.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--crop-top" role="property"><title>The <literal>“crop-top”</literal> property</title>
+<indexterm zone="GstV4l2Sink--crop-top"><primary>GstV4l2Sink:crop-top</primary></indexterm>
+<programlisting>  “crop-top”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The topmost (y) coordinate of the video crop; top left corner of image is 0,0.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--crop-width" role="property"><title>The <literal>“crop-width”</literal> property</title>
+<indexterm zone="GstV4l2Sink--crop-width"><primary>GstV4l2Sink:crop-width</primary></indexterm>
+<programlisting>  “crop-width”               <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The width of the video crop; default is equal to negotiated image width.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--io-mode" role="property"><title>The <literal>“io-mode”</literal> property</title>
+<indexterm zone="GstV4l2Sink--io-mode"><primary>GstV4l2Sink:io-mode</primary></indexterm>
+<programlisting>  “io-mode”                  <link linkend="GstV4l2IOMode"><type>GstV4l2IOMode</type></link></programlisting>
+<para>I/O mode.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_V4L2_IO_AUTO</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--norm" role="property"><title>The <literal>“norm”</literal> property</title>
+<indexterm zone="GstV4l2Sink--norm"><primary>GstV4l2Sink:norm</primary></indexterm>
+<programlisting>  “norm”                     <link linkend="V4L2-TV-norms"><type>V4L2_TV_norms</type></link></programlisting>
+<para>video standard.</para><para>Flags: Read / Write</para>
+<para>Default value: none</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--extra-controls" role="property"><title>The <literal>“extra-controls”</literal> property</title>
+<indexterm zone="GstV4l2Sink--extra-controls"><primary>GstV4l2Sink:extra-controls</primary></indexterm>
+<programlisting>  “extra-controls”           <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>Extra v4l2 controls (CIDs) for the device.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--force-aspect-ratio" role="property"><title>The <literal>“force-aspect-ratio”</literal> property</title>
+<indexterm zone="GstV4l2Sink--force-aspect-ratio"><primary>GstV4l2Sink:force-aspect-ratio</primary></indexterm>
+<programlisting>  “force-aspect-ratio”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>When enabled, the pixel aspect ratio will be enforced.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstV4l2Sink--pixel-aspect-ratio" role="property"><title>The <literal>“pixel-aspect-ratio”</literal> property</title>
+<indexterm zone="GstV4l2Sink--pixel-aspect-ratio"><primary>GstV4l2Sink:pixel-aspect-ratio</primary></indexterm>
+<programlisting>  “pixel-aspect-ratio”       <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Overwrite the pixel aspect ratio of the device.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;1/1&quot;</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

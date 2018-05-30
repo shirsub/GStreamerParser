@@ -1,0 +1,141 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-scaletempo">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-scaletempo.top_of_page" role="top_of_page">scaletempo</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>scaletempo</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-scaletempo.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstScaletempo--overlap">overlap</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstScaletempo--rate">rate</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstScaletempo--search">search</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstScaletempo--stride">stride</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstScaletempo"/><refsect1 id="gst-plugins-good-plugins-scaletempo.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstScaletempo-struct">GstScaletempo</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-scaletempo.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> GstScaletempo
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-scaletempo.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Scale tempo while maintaining pitch
+(WSOLA-like technique with cross correlation)
+Inspired by SoundTouch library by Olli Parviainen</para>
+<para>Use Sceletempo to apply playback rates without the chipmunk effect.</para>
+<refsect2>
+<title>Example pipelines</title>
+<para>
+<informalexample><programlisting><![CDATA[
+filesrc location=media.ext ! decodebin name=d \
+    d. ! queue ! audioconvert ! audioresample ! scaletempo ! audioconvert ! audioresample ! autoaudiosink \
+    d. ! queue ! videoconvert ! autovideosink
+]]></programlisting></informalexample>
+OR
+<informalexample><programlisting><![CDATA[
+playbin uri=... audio_sink="scaletempo ! audioconvert ! audioresample ! autoaudiosink"
+]]></programlisting></informalexample>
+When an application sends a seek event with rate != 1.0, Scaletempo applies
+the rate change by scaling the tempo without scaling the pitch.
+
+Scaletempo works by producing audio in constant sized chunks
+(<link linkend="GstScaletempo--stride"><type>“stride”</type></link>) but consuming chunks proportional to the playback
+rate.
+
+Scaletempo then smooths the output by blending the end of one stride with
+the next (<link linkend="GstScaletempo--overlap"><type>“overlap”</type></link>).
+
+Scaletempo smooths the overlap further by searching within the input buffer
+for the best overlap position.  Scaletempo uses a statistical cross
+correlation (roughly a dot-product).  Scaletempo consumes most of its CPU
+cycles here. One can use the <link linkend="GstScaletempo--search"><type>“search”</type></link> propery to tune how far
+the algoritm looks.
+</para>
+</refsect2>
+
+<include href="element-scaletempo-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-scaletempo.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-scaletempo.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstScaletempo-struct" role="struct">
+<title>struct GstScaletempo</title>
+<indexterm zone="GstScaletempo-struct"><primary>GstScaletempo</primary></indexterm>
+<programlisting language="C">struct GstScaletempo;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-scaletempo.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstScaletempo--overlap" role="property"><title>The <literal>“overlap”</literal> property</title>
+<indexterm zone="GstScaletempo--overlap"><primary>GstScaletempo:overlap</primary></indexterm>
+<programlisting>  “overlap”                  <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Percentage of stride to overlap.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 0.2</para>
+</refsect2>
+<refsect2 id="GstScaletempo--rate" role="property"><title>The <literal>“rate”</literal> property</title>
+<indexterm zone="GstScaletempo--rate"><primary>GstScaletempo:rate</primary></indexterm>
+<programlisting>  “rate”                     <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Current playback rate.</para><para>Flags: Read</para>
+<para>Allowed values: [-2.14748e+09,2.14748e+09]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstScaletempo--search" role="property"><title>The <literal>“search”</literal> property</title>
+<indexterm zone="GstScaletempo--search"><primary>GstScaletempo:search</primary></indexterm>
+<programlisting>  “search”                   <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Length in milliseconds to search for best overlap position.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 500</para>
+<para>Default value: 14</para>
+</refsect2>
+<refsect2 id="GstScaletempo--stride" role="property"><title>The <literal>“stride”</literal> property</title>
+<indexterm zone="GstScaletempo--stride"><primary>GstScaletempo:stride</primary></indexterm>
+<programlisting>  “stride”                   <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Length in milliseconds to output each stride.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,5000]</para>
+<para>Default value: 30</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

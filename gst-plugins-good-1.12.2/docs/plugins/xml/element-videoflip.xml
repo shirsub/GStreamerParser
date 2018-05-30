@@ -1,0 +1,159 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-videoflip">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-videoflip.top_of_page" role="top_of_page">videoflip</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>videoflip</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-videoflip.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstVideoFlipMethod"><type>GstVideoFlipMethod</type></link></entry><entry role="property_name"><link linkend="GstVideoFlip--method">method</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstVideoFlip"/><refsect1 id="gst-plugins-good-plugins-videoflip.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstVideoFlip-struct">GstVideoFlip</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstVideoFlipMethod">GstVideoFlipMethod</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videoflip.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstVideoFlip
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videoflip.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstVideoFlip implements
+ <link linkend="GstVideoDirection">GstVideoDirection</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-videoflip.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Flips and rotates video.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc ! videoflip method=clockwise ! videoconvert ! ximagesink
+]]></programlisting></informalexample> This pipeline flips the test image 90 degrees clockwise.
+</refsect2>
+
+<include href="element-videoflip-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-videoflip.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videoflip.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstVideoFlip-struct" role="struct">
+<title>struct GstVideoFlip</title>
+<indexterm zone="GstVideoFlip-struct"><primary>GstVideoFlip</primary></indexterm>
+<programlisting language="C">struct GstVideoFlip;</programlisting>
+<para>Opaque datastructure.</para>
+</refsect2>
+<refsect2 id="GstVideoFlipMethod" role="enum">
+<title>enum GstVideoFlipMethod</title>
+<indexterm zone="GstVideoFlipMethod"><primary>GstVideoFlipMethod</primary></indexterm>
+<para>The different flip methods.</para>
+<refsect3 id="GstVideoFlipMethod.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-FLIP-METHOD-IDENTITY:CAPS">GST_VIDEO_FLIP_METHOD_IDENTITY</para></entry>
+<entry role="enum_member_description"><para>Identity (no rotation)</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-FLIP-METHOD-90R:CAPS">GST_VIDEO_FLIP_METHOD_90R</para></entry>
+<entry role="enum_member_description"><para>Rotate clockwise 90 degrees</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-FLIP-METHOD-180:CAPS">GST_VIDEO_FLIP_METHOD_180</para></entry>
+<entry role="enum_member_description"><para>Rotate 180 degrees</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-FLIP-METHOD-90L:CAPS">GST_VIDEO_FLIP_METHOD_90L</para></entry>
+<entry role="enum_member_description"><para>Rotate counter-clockwise 90 degrees</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-FLIP-METHOD-HORIZ:CAPS">GST_VIDEO_FLIP_METHOD_HORIZ</para></entry>
+<entry role="enum_member_description"><para>Flip horizontally</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-FLIP-METHOD-VERT:CAPS">GST_VIDEO_FLIP_METHOD_VERT</para></entry>
+<entry role="enum_member_description"><para>Flip vertically</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-FLIP-METHOD-TRANS:CAPS">GST_VIDEO_FLIP_METHOD_TRANS</para></entry>
+<entry role="enum_member_description"><para>Flip across upper left/lower right diagonal</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-FLIP-METHOD-OTHER:CAPS">GST_VIDEO_FLIP_METHOD_OTHER</para></entry>
+<entry role="enum_member_description"><para>Flip across upper right/lower left diagonal</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-VIDEO-FLIP-METHOD-AUTO:CAPS">GST_VIDEO_FLIP_METHOD_AUTO</para></entry>
+<entry role="enum_member_description"><para>Select flip method based on image-orientation tag</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videoflip.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstVideoFlip--method" role="property"><title>The <literal>“method”</literal> property</title>
+<indexterm zone="GstVideoFlip--method"><primary>GstVideoFlip:method</primary></indexterm>
+<programlisting>  “method”                   <link linkend="GstVideoFlipMethod"><type>GstVideoFlipMethod</type></link></programlisting>
+<para>method (deprecated, use video-direction instead).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: Identity (no rotation)</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

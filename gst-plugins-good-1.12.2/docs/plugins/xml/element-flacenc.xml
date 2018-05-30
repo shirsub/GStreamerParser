@@ -1,0 +1,216 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-flacenc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-flacenc.top_of_page" role="top_of_page">flacenc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>flacenc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-flacenc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--blocksize">blocksize</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--escape-coding">escape-coding</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--exhaustive-model-search">exhaustive-model-search</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--loose-mid-side-stereo">loose-mid-side-stereo</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--max-lpc-order">max-lpc-order</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--max-residual-partition-order">max-residual-partition-order</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--mid-side-stereo">mid-side-stereo</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--min-residual-partition-order">min-residual-partition-order</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--qlp-coeff-prec-search">qlp-coeff-prec-search</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--qlp-coeff-precision">qlp-coeff-precision</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="GstFlacEncQuality"><type>GstFlacEncQuality</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--quality">quality</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--rice-parameter-search-dist">rice-parameter-search-dist</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--streamable-subset">streamable-subset</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--padding">padding</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstFlacEnc--seekpoints">seekpoints</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstFlacEnc"/><refsect1 id="gst-plugins-good-plugins-flacenc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstFlacEnc-struct">GstFlacEnc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flacenc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstAudioEncoder">GstAudioEncoder</link>
+                    <phrase role="lineart">╰──</phrase> GstFlacEnc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flacenc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstFlacEnc implements
+ <link linkend="GstTagSetter">GstTagSetter</link> and  <link linkend="GstPreset">GstPreset</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-flacenc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>flacenc encodes FLAC streams.</para>
+<ulink url="http://flac.sourceforge.net/">FLAC</ulink>
+<para>is a Free Lossless Audio Codec. FLAC audio can directly be written into
+a file, or embedded into containers such as oggmux or matroskamux.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc num-buffers=100 ! flacenc ! filesink location=beep.flac
+]]></programlisting></informalexample> Encode a short sine wave into FLAC
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 cdparanoiasrc mode=continuous ! queue ! audioconvert ! flacenc ! filesink location=cd.flac
+]]></programlisting></informalexample> Rip a whole audio CD into a single FLAC file, with the track table saved as a CUE sheet inside the FLAC file
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 cdparanoiasrc track=5 ! queue ! audioconvert ! flacenc ! filesink location=track5.flac
+]]></programlisting></informalexample> Rip track 5 of an audio CD and encode it losslessly to a FLAC file
+</refsect2>
+
+<include href="element-flacenc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-flacenc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flacenc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstFlacEnc-struct" role="struct">
+<title>struct GstFlacEnc</title>
+<indexterm zone="GstFlacEnc-struct"><primary>GstFlacEnc</primary></indexterm>
+<programlisting language="C">struct GstFlacEnc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flacenc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstFlacEnc--blocksize" role="property"><title>The <literal>“blocksize”</literal> property</title>
+<indexterm zone="GstFlacEnc--blocksize"><primary>GstFlacEnc:blocksize</primary></indexterm>
+<programlisting>  “blocksize”                <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Blocksize in samples.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: [16,65535]</para>
+<para>Default value: 4608</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--escape-coding" role="property"><title>The <literal>“escape-coding”</literal> property</title>
+<indexterm zone="GstFlacEnc--escape-coding"><primary>GstFlacEnc:escape-coding</primary></indexterm>
+<programlisting>  “escape-coding”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>search for escape codes in the entropy coding stage for slightly better compression.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--exhaustive-model-search" role="property"><title>The <literal>“exhaustive-model-search”</literal> property</title>
+<indexterm zone="GstFlacEnc--exhaustive-model-search"><primary>GstFlacEnc:exhaustive-model-search</primary></indexterm>
+<programlisting>  “exhaustive-model-search”  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>do exhaustive search of LP coefficient quantization (expensive!).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--loose-mid-side-stereo" role="property"><title>The <literal>“loose-mid-side-stereo”</literal> property</title>
+<indexterm zone="GstFlacEnc--loose-mid-side-stereo"><primary>GstFlacEnc:loose-mid-side-stereo</primary></indexterm>
+<programlisting>  “loose-mid-side-stereo”    <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Loose mid side stereo.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--max-lpc-order" role="property"><title>The <literal>“max-lpc-order”</literal> property</title>
+<indexterm zone="GstFlacEnc--max-lpc-order"><primary>GstFlacEnc:max-lpc-order</primary></indexterm>
+<programlisting>  “max-lpc-order”            <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Max LPC order; 0 =&gt; use only fixed predictors.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &lt;= 32</para>
+<para>Default value: 8</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--max-residual-partition-order" role="property"><title>The <literal>“max-residual-partition-order”</literal> property</title>
+<indexterm zone="GstFlacEnc--max-residual-partition-order"><primary>GstFlacEnc:max-residual-partition-order</primary></indexterm>
+<programlisting>  “max-residual-partition-order” <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Max residual partition order (above 4 doesn't usually help much).</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &lt;= 16</para>
+<para>Default value: 3</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--mid-side-stereo" role="property"><title>The <literal>“mid-side-stereo”</literal> property</title>
+<indexterm zone="GstFlacEnc--mid-side-stereo"><primary>GstFlacEnc:mid-side-stereo</primary></indexterm>
+<programlisting>  “mid-side-stereo”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Do mid side stereo (only for stereo input).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--min-residual-partition-order" role="property"><title>The <literal>“min-residual-partition-order”</literal> property</title>
+<indexterm zone="GstFlacEnc--min-residual-partition-order"><primary>GstFlacEnc:min-residual-partition-order</primary></indexterm>
+<programlisting>  “min-residual-partition-order” <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Min residual partition order (above 4 doesn't usually help much).</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &lt;= 16</para>
+<para>Default value: 3</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--qlp-coeff-prec-search" role="property"><title>The <literal>“qlp-coeff-prec-search”</literal> property</title>
+<indexterm zone="GstFlacEnc--qlp-coeff-prec-search"><primary>GstFlacEnc:qlp-coeff-prec-search</primary></indexterm>
+<programlisting>  “qlp-coeff-prec-search”    <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>false = use qlp_coeff_precision, true = search around qlp_coeff_precision, take best.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--qlp-coeff-precision" role="property"><title>The <literal>“qlp-coeff-precision”</literal> property</title>
+<indexterm zone="GstFlacEnc--qlp-coeff-precision"><primary>GstFlacEnc:qlp-coeff-precision</primary></indexterm>
+<programlisting>  “qlp-coeff-precision”      <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Precision in bits of quantized linear-predictor coefficients; 0 = automatic.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &lt;= 32</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--quality" role="property"><title>The <literal>“quality”</literal> property</title>
+<indexterm zone="GstFlacEnc--quality"><primary>GstFlacEnc:quality</primary></indexterm>
+<programlisting>  “quality”                  <link linkend="GstFlacEncQuality"><type>GstFlacEncQuality</type></link></programlisting>
+<para>Speed versus compression tradeoff.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: 5 - Default</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--rice-parameter-search-dist" role="property"><title>The <literal>“rice-parameter-search-dist”</literal> property</title>
+<indexterm zone="GstFlacEnc--rice-parameter-search-dist"><primary>GstFlacEnc:rice-parameter-search-dist</primary></indexterm>
+<programlisting>  “rice-parameter-search-dist” <link linkend="guint"><type>guint</type></link></programlisting>
+<para>0 = try only calc'd parameter k; else try all [k-dist..k+dist] parameters, use best.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &lt;= 15</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--streamable-subset" role="property"><title>The <literal>“streamable-subset”</literal> property</title>
+<indexterm zone="GstFlacEnc--streamable-subset"><primary>GstFlacEnc:streamable-subset</primary></indexterm>
+<programlisting>  “streamable-subset”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>true to limit encoder to generating a Subset stream, else false.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--padding" role="property"><title>The <literal>“padding”</literal> property</title>
+<indexterm zone="GstFlacEnc--padding"><primary>GstFlacEnc:padding</primary></indexterm>
+<programlisting>  “padding”                  <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Write a PADDING block with this length in bytes.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstFlacEnc--seekpoints" role="property"><title>The <literal>“seekpoints”</literal> property</title>
+<indexterm zone="GstFlacEnc--seekpoints"><primary>GstFlacEnc:seekpoints</primary></indexterm>
+<programlisting>  “seekpoints”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Add SEEKTABLE metadata (if &gt; 0, number of entries, if &lt; 0, interval in sec).</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &gt;= -2147483647</para>
+<para>Default value: -10</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-flacenc.see-also">
+<title>See Also</title>
+<para><link linkend="GstFlacDec"><type>GstFlacDec</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,119 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-radioactv">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-radioactv.top_of_page" role="top_of_page">radioactv</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>radioactv</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-radioactv.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstRadioacTVColor"><type>GstRadioacTVColor</type></link></entry><entry role="property_name"><link linkend="GstRadioacTV--color">color</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRadioacTV--interval">interval</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRadioacTVMode"><type>GstRadioacTVMode</type></link></entry><entry role="property_name"><link linkend="GstRadioacTV--mode">mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRadioacTV--trigger">trigger</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRadioacTV"/><refsect1 id="gst-plugins-good-plugins-radioactv.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRadioacTV-struct">GstRadioacTV</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-radioactv.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstRadioacTV
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-radioactv.description" role="desc">
+<title role="desc.title">Description</title>
+<para>RadioacTV does *NOT* detect a radioactivity. It detects a difference
+from previous frame and blurs it.</para>
+<para>RadioacTV has 4 mode, normal, strobe1, strobe2 and trigger.
+In trigger mode, effect appears only when the trigger property is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+<para>strobe1 and strobe2 mode drops some frames. strobe1 mode uses the difference between
+current frame and previous frame dropped, while strobe2 mode uses the difference from
+previous frame displayed. The effect of strobe2 is stronger than strobe1.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc ! radioactv ! videoconvert ! autovideosink
+]]></programlisting></informalexample> This pipeline shows the effect of radioactv on a test stream.
+</refsect2>
+
+<include href="element-radioactv-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-radioactv.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-radioactv.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRadioacTV-struct" role="struct">
+<title>struct GstRadioacTV</title>
+<indexterm zone="GstRadioacTV-struct"><primary>GstRadioacTV</primary></indexterm>
+<programlisting language="C">struct GstRadioacTV;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-radioactv.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRadioacTV--color" role="property"><title>The <literal>“color”</literal> property</title>
+<indexterm zone="GstRadioacTV--color"><primary>GstRadioacTV:color</primary></indexterm>
+<programlisting>  “color”                    <link linkend="GstRadioacTVColor"><type>GstRadioacTVColor</type></link></programlisting>
+<para>Color.</para><para>Flags: Read / Write</para>
+<para>Default value: White</para>
+</refsect2>
+<refsect2 id="GstRadioacTV--interval" role="property"><title>The <literal>“interval”</literal> property</title>
+<indexterm zone="GstRadioacTV--interval"><primary>GstRadioacTV:interval</primary></indexterm>
+<programlisting>  “interval”                 <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Snapshot interval (in strobe mode).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= G_MAXINT</para>
+<para>Default value: 3</para>
+</refsect2>
+<refsect2 id="GstRadioacTV--mode" role="property"><title>The <literal>“mode”</literal> property</title>
+<indexterm zone="GstRadioacTV--mode"><primary>GstRadioacTV:mode</primary></indexterm>
+<programlisting>  “mode”                     <link linkend="GstRadioacTVMode"><type>GstRadioacTVMode</type></link></programlisting>
+<para>Mode.</para><para>Flags: Read / Write</para>
+<para>Default value: Normal</para>
+</refsect2>
+<refsect2 id="GstRadioacTV--trigger" role="property"><title>The <literal>“trigger”</literal> property</title>
+<indexterm zone="GstRadioacTV--trigger"><primary>GstRadioacTV:trigger</primary></indexterm>
+<programlisting>  “trigger”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Trigger (in trigger mode).</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,562 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtspsrc">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtspsrc.top_of_page" role="top_of_page">rtspsrc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtspsrc</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtspsrc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--debug">debug</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--protocols">protocols</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--retry">retry</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--timeout">timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--latency">latency</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--tcp-timeout">tcp-timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--connection-speed">connection-speed</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPNatMethod"><type>GstRTSPNatMethod</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--nat-method">nat-method</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--do-rtcp">do-rtcp</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--proxy">proxy</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--rtp-blocksize">rtp-blocksize</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--user-id">user-id</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--user-pw">user-pw</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPSrcBufferMode"><type>GstRTSPSrcBufferMode</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--buffer-mode">buffer-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--port-range">port-range</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--udp-buffer-size">udp-buffer-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--short-header">short-header</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--do-rtsp-keep-alive">do-rtsp-keep-alive</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--drop-on-latency">drop-on-latency</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--probation">probation</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--udp-reconnect">udp-reconnect</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--proxy-id">proxy-id</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--proxy-pw">proxy-pw</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--multicast-iface">multicast-iface</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--ntp-sync">ntp-sync</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--use-pipeline-clock">use-pipeline-clock</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--sdes">sdes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GTlsDatabase"><type>GTlsDatabase</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--tls-database">tls-database</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GTlsCertificateFlags"><type>GTlsCertificateFlags</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--tls-validation-flags">tls-validation-flags</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--do-retransmission">do-retransmission</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GTlsInteraction"><type>GTlsInteraction</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--tls-interaction">tls-interaction</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPSrcNtpTimeSource"><type>GstRTSPSrcNtpTimeSource</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--ntp-time-source">ntp-time-source</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstRTSPSrc--user-agent">user-agent</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--max-rtcp-rtp-time-diff">max-rtcp-rtp-time-diff</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSrc--rfc7273-sync">rfc7273-sync</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtspsrc.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPSrc-handle-request">handle-request</link></entry><entry role="signal_flags"/></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPSrc-on-sdp">on-sdp</link></entry><entry role="signal_flags"/></row>
+<row><entry role="signal_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPSrc-select-stream">select-stream</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPSrc-new-manager">new-manager</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+<row><entry role="signal_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*</entry><entry role="signal_name"><link linkend="GstRTSPSrc-request-rtcp-key">request-rtcp-key</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRTSPSrc"/><refsect1 id="gst-plugins-good-plugins-rtspsrc.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPSrc-struct">GstRTSPSrc</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtspsrc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBin">GstBin</link>
+                    <phrase role="lineart">╰──</phrase> GstRTSPSrc
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtspsrc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstRTSPSrc implements
+ <link linkend="GstChildProxy">GstChildProxy</link> and  <link linkend="GstURIHandler">GstURIHandler</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtspsrc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Makes a connection to an RTSP server and read the data.
+rtspsrc strictly follows RFC 2326 and therefore does not (yet) support
+RealMedia/Quicktime/Microsoft extensions.</para>
+<para>RTSP supports transport over TCP or UDP in unicast or multicast mode. By
+default rtspsrc will negotiate a connection in the following order:
+UDP unicast/UDP multicast/TCP. The order cannot be changed but the allowed
+protocols can be controlled with the <link linkend="GstRTSPSrc--protocols"><type>“protocols”</type></link> property.</para>
+<para>rtspsrc currently understands SDP as the format of the session description.
+For each stream listed in the SDP a new rtp_stream%d pad will be created
+with caps derived from the SDP media description. This is a caps of mime type
+&quot;application/x-rtp&quot; that can be connected to any available RTP depayloader
+element.</para>
+<para>rtspsrc will internally instantiate an RTP session manager element
+that will handle the RTCP messages to and from the server, jitter removal,
+packet reordering along with providing a clock for the pipeline.
+This feature is implemented using the gstrtpbin element.</para>
+<para>rtspsrc acts like a live source and will therefore only generate data in the
+PLAYING state.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 rtspsrc location=rtsp://some.server/url ! fakesink
+]]></programlisting></informalexample> Establish a connection to an RTSP server and send the raw RTP packets to a
+fakesink.
+</refsect2>
+
+<include href="element-rtspsrc-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtspsrc.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtspsrc.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPSrc-struct" role="struct">
+<title>struct GstRTSPSrc</title>
+<indexterm zone="GstRTSPSrc-struct"><primary>GstRTSPSrc</primary></indexterm>
+<programlisting language="C">struct GstRTSPSrc;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtspsrc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTSPSrc--debug" role="property"><title>The <literal>“debug”</literal> property</title>
+<indexterm zone="GstRTSPSrc--debug"><primary>GstRTSPSrc:debug</primary></indexterm>
+<programlisting>  “debug”                    <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Dump request and response messages to stdout.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstRTSPSrc--location"><primary>GstRTSPSrc:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location of the RTSP url to read.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--protocols" role="property"><title>The <literal>“protocols”</literal> property</title>
+<indexterm zone="GstRTSPSrc--protocols"><primary>GstRTSPSrc:protocols</primary></indexterm>
+<programlisting>  “protocols”                <link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link></programlisting>
+<para>Allowed lower transport protocols.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_RTSP_LOWER_TRANS_UDP|GST_RTSP_LOWER_TRANS_UDP_MCAST|GST_RTSP_LOWER_TRANS_TCP</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--retry" role="property"><title>The <literal>“retry”</literal> property</title>
+<indexterm zone="GstRTSPSrc--retry"><primary>GstRTSPSrc:retry</primary></indexterm>
+<programlisting>  “retry”                    <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Max number of retries when allocating RTP ports.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 65535</para>
+<para>Default value: 20</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--timeout" role="property"><title>The <literal>“timeout”</literal> property</title>
+<indexterm zone="GstRTSPSrc--timeout"><primary>GstRTSPSrc:timeout</primary></indexterm>
+<programlisting>  “timeout”                  <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Retry TCP transport after UDP timeout microseconds (0 = disabled).</para><para>Flags: Read / Write</para>
+<para>Default value: 5000000</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--latency" role="property"><title>The <literal>“latency”</literal> property</title>
+<indexterm zone="GstRTSPSrc--latency"><primary>GstRTSPSrc:latency</primary></indexterm>
+<programlisting>  “latency”                  <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Amount of ms to buffer.</para><para>Flags: Read / Write</para>
+<para>Default value: 2000</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--tcp-timeout" role="property"><title>The <literal>“tcp-timeout”</literal> property</title>
+<indexterm zone="GstRTSPSrc--tcp-timeout"><primary>GstRTSPSrc:tcp-timeout</primary></indexterm>
+<programlisting>  “tcp-timeout”              <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Fail after timeout microseconds on TCP connections (0 = disabled).</para><para>Flags: Read / Write</para>
+<para>Default value: 20000000</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--connection-speed" role="property"><title>The <literal>“connection-speed”</literal> property</title>
+<indexterm zone="GstRTSPSrc--connection-speed"><primary>GstRTSPSrc:connection-speed</primary></indexterm>
+<programlisting>  “connection-speed”         <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Network connection speed in kbps (0 = unknown).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 18446744073709551</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--nat-method" role="property"><title>The <literal>“nat-method”</literal> property</title>
+<indexterm zone="GstRTSPSrc--nat-method"><primary>GstRTSPSrc:nat-method</primary></indexterm>
+<programlisting>  “nat-method”               <link linkend="GstRTSPNatMethod"><type>GstRTSPNatMethod</type></link></programlisting>
+<para>Method to use for traversing firewalls and NAT.</para><para>Flags: Read / Write</para>
+<para>Default value: Send Dummy packets</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--do-rtcp" role="property"><title>The <literal>“do-rtcp”</literal> property</title>
+<indexterm zone="GstRTSPSrc--do-rtcp"><primary>GstRTSPSrc:do-rtcp</primary></indexterm>
+<programlisting>  “do-rtcp”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable RTCP support. Some old server don't like RTCP and then this property
+needs to be set to FALSE.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--proxy" role="property"><title>The <literal>“proxy”</literal> property</title>
+<indexterm zone="GstRTSPSrc--proxy"><primary>GstRTSPSrc:proxy</primary></indexterm>
+<programlisting>  “proxy”                    <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Set the proxy parameters. This has to be a string of the format
+<link linkend="user:passwd@">http://</link>host[:port].</para>
+<para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--rtp-blocksize" role="property"><title>The <literal>“rtp-blocksize”</literal> property</title>
+<indexterm zone="GstRTSPSrc--rtp-blocksize"><primary>GstRTSPSrc:rtp-blocksize</primary></indexterm>
+<programlisting>  “rtp-blocksize”            <link linkend="guint"><type>guint</type></link></programlisting>
+<para>RTP package size to suggest to server.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 65536</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--user-id" role="property"><title>The <literal>“user-id”</literal> property</title>
+<indexterm zone="GstRTSPSrc--user-id"><primary>GstRTSPSrc:user-id</primary></indexterm>
+<programlisting>  “user-id”                  <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>RTSP location URI user id for authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--user-pw" role="property"><title>The <literal>“user-pw”</literal> property</title>
+<indexterm zone="GstRTSPSrc--user-pw"><primary>GstRTSPSrc:user-pw</primary></indexterm>
+<programlisting>  “user-pw”                  <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>RTSP location URI user password for authentication.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--buffer-mode" role="property"><title>The <literal>“buffer-mode”</literal> property</title>
+<indexterm zone="GstRTSPSrc--buffer-mode"><primary>GstRTSPSrc:buffer-mode</primary></indexterm>
+<programlisting>  “buffer-mode”              <link linkend="GstRTSPSrcBufferMode"><type>GstRTSPSrcBufferMode</type></link></programlisting>
+<para>Control the buffering and timestamping mode used by the jitterbuffer.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: Choose mode depending on stream live</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--port-range" role="property"><title>The <literal>“port-range”</literal> property</title>
+<indexterm zone="GstRTSPSrc--port-range"><primary>GstRTSPSrc:port-range</primary></indexterm>
+<programlisting>  “port-range”               <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Configure the client port numbers that can be used to recieve RTP and
+RTCP.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--udp-buffer-size" role="property"><title>The <literal>“udp-buffer-size”</literal> property</title>
+<indexterm zone="GstRTSPSrc--udp-buffer-size"><primary>GstRTSPSrc:udp-buffer-size</primary></indexterm>
+<programlisting>  “udp-buffer-size”          <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Size of the kernel UDP receive buffer in bytes.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 524288</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--short-header" role="property"><title>The <literal>“short-header”</literal> property</title>
+<indexterm zone="GstRTSPSrc--short-header"><primary>GstRTSPSrc:short-header</primary></indexterm>
+<programlisting>  “short-header”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Only send the basic RTSP headers for broken encoders.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--do-rtsp-keep-alive" role="property"><title>The <literal>“do-rtsp-keep-alive”</literal> property</title>
+<indexterm zone="GstRTSPSrc--do-rtsp-keep-alive"><primary>GstRTSPSrc:do-rtsp-keep-alive</primary></indexterm>
+<programlisting>  “do-rtsp-keep-alive”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enable RTSP keep alive support. Some old server don't like RTSP
+keep alive and then this property needs to be set to FALSE.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--drop-on-latency" role="property"><title>The <literal>“drop-on-latency”</literal> property</title>
+<indexterm zone="GstRTSPSrc--drop-on-latency"><primary>GstRTSPSrc:drop-on-latency</primary></indexterm>
+<programlisting>  “drop-on-latency”          <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Tells the jitterbuffer to never exceed the given latency in size.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--probation" role="property"><title>The <literal>“probation”</literal> property</title>
+<indexterm zone="GstRTSPSrc--probation"><primary>GstRTSPSrc:probation</primary></indexterm>
+<programlisting>  “probation”                <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Consecutive packet sequence numbers to accept the source.</para><para>Flags: Read / Write</para>
+<para>Default value: 2</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--udp-reconnect" role="property"><title>The <literal>“udp-reconnect”</literal> property</title>
+<indexterm zone="GstRTSPSrc--udp-reconnect"><primary>GstRTSPSrc:udp-reconnect</primary></indexterm>
+<programlisting>  “udp-reconnect”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Reconnect to the server if RTSP connection is closed when doing UDP.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--proxy-id" role="property"><title>The <literal>“proxy-id”</literal> property</title>
+<indexterm role="1.2" zone="GstRTSPSrc--proxy-id"><primary>GstRTSPSrc:proxy-id</primary></indexterm>
+<programlisting>  “proxy-id”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Sets the proxy URI user id for authentication. If the URI set via the
+&quot;proxy&quot; property contains a user-id already, that will take precedence.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstRTSPSrc--proxy-pw" role="property"><title>The <literal>“proxy-pw”</literal> property</title>
+<indexterm role="1.2" zone="GstRTSPSrc--proxy-pw"><primary>GstRTSPSrc:proxy-pw</primary></indexterm>
+<programlisting>  “proxy-pw”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Sets the proxy URI password for authentication. If the URI set via the
+&quot;proxy&quot; property contains a password already, that will take precedence.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2>
+<refsect2 id="GstRTSPSrc--multicast-iface" role="property"><title>The <literal>“multicast-iface”</literal> property</title>
+<indexterm zone="GstRTSPSrc--multicast-iface"><primary>GstRTSPSrc:multicast-iface</primary></indexterm>
+<programlisting>  “multicast-iface”          <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The network interface on which to join the multicast group.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--ntp-sync" role="property"><title>The <literal>“ntp-sync”</literal> property</title>
+<indexterm zone="GstRTSPSrc--ntp-sync"><primary>GstRTSPSrc:ntp-sync</primary></indexterm>
+<programlisting>  “ntp-sync”                 <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Synchronize received streams to the NTP clock.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--use-pipeline-clock" role="property"><title>The <literal>“use-pipeline-clock”</literal> property</title>
+<indexterm zone="GstRTSPSrc--use-pipeline-clock"><primary>GstRTSPSrc:use-pipeline-clock</primary></indexterm>
+<programlisting>  “use-pipeline-clock”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use the pipeline running-time to set the NTP time in the RTCP SR messages(DEPRECATED: Use ntp-time-source property).</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--sdes" role="property"><title>The <literal>“sdes”</literal> property</title>
+<indexterm zone="GstRTSPSrc--sdes"><primary>GstRTSPSrc:sdes</primary></indexterm>
+<programlisting>  “sdes”                     <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>The SDES items of this session.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--tls-database" role="property"><title>The <literal>“tls-database”</literal> property</title>
+<indexterm zone="GstRTSPSrc--tls-database"><primary>GstRTSPSrc:tls-database</primary></indexterm>
+<programlisting>  “tls-database”             <link linkend="GTlsDatabase"><type>GTlsDatabase</type></link> *</programlisting>
+<para>TLS database with anchor certificate authorities used to validate the server certificate.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--tls-validation-flags" role="property"><title>The <literal>“tls-validation-flags”</literal> property</title>
+<indexterm zone="GstRTSPSrc--tls-validation-flags"><primary>GstRTSPSrc:tls-validation-flags</primary></indexterm>
+<programlisting>  “tls-validation-flags”     <link linkend="GTlsCertificateFlags"><type>GTlsCertificateFlags</type></link></programlisting>
+<para>TLS certificate validation flags used to validate the server certificate.</para><para>Flags: Read / Write</para>
+<para>Default value: G_TLS_CERTIFICATE_UNKNOWN_CA|G_TLS_CERTIFICATE_BAD_IDENTITY|G_TLS_CERTIFICATE_NOT_ACTIVATED|G_TLS_CERTIFICATE_EXPIRED|G_TLS_CERTIFICATE_REVOKED|G_TLS_CERTIFICATE_INSECURE|G_TLS_CERTIFICATE_GENERIC_ERROR</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--do-retransmission" role="property"><title>The <literal>“do-retransmission”</literal> property</title>
+<indexterm zone="GstRTSPSrc--do-retransmission"><primary>GstRTSPSrc:do-retransmission</primary></indexterm>
+<programlisting>  “do-retransmission”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Ask the server to retransmit lost packets.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--tls-interaction" role="property"><title>The <literal>“tls-interaction”</literal> property</title>
+<indexterm zone="GstRTSPSrc--tls-interaction"><primary>GstRTSPSrc:tls-interaction</primary></indexterm>
+<programlisting>  “tls-interaction”          <link linkend="GTlsInteraction"><type>GTlsInteraction</type></link> *</programlisting>
+<para>A GTlsInteraction object to promt the user for password or certificate.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--ntp-time-source" role="property"><title>The <literal>“ntp-time-source”</literal> property</title>
+<indexterm zone="GstRTSPSrc--ntp-time-source"><primary>GstRTSPSrc:ntp-time-source</primary></indexterm>
+<programlisting>  “ntp-time-source”          <link linkend="GstRTSPSrcNtpTimeSource"><type>GstRTSPSrcNtpTimeSource</type></link></programlisting>
+<para>NTP time source for RTCP packets.</para><para>Flags: Read / Write</para>
+<para>Default value: NTP time based on realtime clock</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--user-agent" role="property"><title>The <literal>“user-agent”</literal> property</title>
+<indexterm zone="GstRTSPSrc--user-agent"><primary>GstRTSPSrc:user-agent</primary></indexterm>
+<programlisting>  “user-agent”               <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>The User-Agent string to send to the server.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;GStreamer/1.12.2&quot;</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--max-rtcp-rtp-time-diff" role="property"><title>The <literal>“max-rtcp-rtp-time-diff”</literal> property</title>
+<indexterm zone="GstRTSPSrc--max-rtcp-rtp-time-diff"><primary>GstRTSPSrc:max-rtcp-rtp-time-diff</primary></indexterm>
+<programlisting>  “max-rtcp-rtp-time-diff”   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Maximum amount of time in ms that the RTP time in RTCP SRs is allowed to be ahead (-1 disabled).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 1000</para>
+</refsect2>
+<refsect2 id="GstRTSPSrc--rfc7273-sync" role="property"><title>The <literal>“rfc7273-sync”</literal> property</title>
+<indexterm zone="GstRTSPSrc--rfc7273-sync"><primary>GstRTSPSrc:rfc7273-sync</primary></indexterm>
+<programlisting>  “rfc7273-sync”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Synchronize received streams to the RFC7273 clock (requires clock and offset to be provided).</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtspsrc.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRTSPSrc-handle-request" role="signal"><title>The <literal>“handle-request”</literal> signal</title>
+<indexterm role="1.2" zone="GstRTSPSrc-handle-request"><primary>GstRTSPSrc::handle-request</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link> *rtspsrc,
+               <link linkend="gpointer"><type>gpointer</type></link>    request,
+               <link linkend="gpointer"><type>gpointer</type></link>    response,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>Handle a server request in <parameter>request</parameter>
+ and prepare <parameter>response</parameter>
+.</para>
+<para>This signal is called from the streaming thread, you should therefore not
+do any state changes on <parameter>rtspsrc</parameter>
+ because this might deadlock. If you want
+to modify the state as a result of this signal, post a
+<link linkend="GST-MESSAGE-REQUEST-STATE:CAPS"><type>GST_MESSAGE_REQUEST_STATE</type></link> message on the bus or signal the main thread
+in some other way.</para>
+<refsect3 id="GstRTSPSrc-handle-request.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtspsrc</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>request</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMessage"><type>GstRTSPMessage</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>response</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMessage"><type>GstRTSPMessage</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2><refsect2 id="GstRTSPSrc-on-sdp" role="signal"><title>The <literal>“on-sdp”</literal> signal</title>
+<indexterm role="1.2" zone="GstRTSPSrc-on-sdp"><primary>GstRTSPSrc::on-sdp</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link>    *rtspsrc,
+               <link linkend="GstSDPMessage"><type>GstSDPMessage</type></link> *sdp,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Emited when the client has retrieved the SDP and before it configures the
+streams in the SDP. <parameter>sdp</parameter>
+ can be inspected and modified.</para>
+<para>This signal is called from the streaming thread, you should therefore not
+do any state changes on <parameter>rtspsrc</parameter>
+ because this might deadlock. If you want
+to modify the state as a result of this signal, post a
+<link linkend="GST-MESSAGE-REQUEST-STATE:CAPS"><type>GST_MESSAGE_REQUEST_STATE</type></link> message on the bus or signal the main thread
+in some other way.</para>
+<refsect3 id="GstRTSPSrc-on-sdp.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtspsrc</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>sdp</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSDPMessage"><type>GstSDPMessage</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2><refsect2 id="GstRTSPSrc-select-stream" role="signal"><title>The <literal>“select-stream”</literal> signal</title>
+<indexterm role="1.2" zone="GstRTSPSrc-select-stream"><primary>GstRTSPSrc::select-stream</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+user_function (<link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link> *rtspsrc,
+               <link linkend="guint"><type>guint</type></link>       num,
+               <link linkend="GstCaps"><type>GstCaps</type></link>    *caps,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>Emited before the client decides to configure the stream <parameter>num</parameter>
+ with
+<parameter>caps</parameter>
+.</para>
+<refsect3 id="GstRTSPSrc-select-stream.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtspsrc</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>the stream number</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>the stream caps</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstRTSPSrc-select-stream.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> when the stream should be selected, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> when the stream
+is to be ignored.</para>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+<para role="since">Since: <link linkend="api-index-1.2">1.2</link></para></refsect2><refsect2 id="GstRTSPSrc-new-manager" role="signal"><title>The <literal>“new-manager”</literal> signal</title>
+<indexterm role="1.4" zone="GstRTSPSrc-new-manager"><primary>GstRTSPSrc::new-manager</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link> *rtspsrc,
+               <link linkend="GstElement"><type>GstElement</type></link> *manager,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>Emited after a new manager (like rtpbin) was created and the default
+properties were configured.</para>
+<refsect3 id="GstRTSPSrc-new-manager.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtspsrc</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>manager</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElement"><type>GstElement</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2><refsect2 id="GstRTSPSrc-request-rtcp-key" role="signal"><title>The <literal>“request-rtcp-key”</literal> signal</title>
+<indexterm role="1.4" zone="GstRTSPSrc-request-rtcp-key"><primary>GstRTSPSrc::request-rtcp-key</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*
+user_function (<link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link> *rtspsrc,
+               <link linkend="guint"><type>guint</type></link>       num,
+               <link linkend="gpointer"><type>gpointer</type></link>    user_data)</programlisting>
+<para>Signal emited to get the crypto parameters relevant to the RTCP
+stream. User should provide the key and the RTCP encryption ciphers
+and authentication, and return them wrapped in a GstCaps.</para>
+<refsect3 id="GstRTSPSrc-request-rtcp-key.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtspsrc</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSrc"><type>GstRTSPSrc</type></link></para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>num</para></entry>
+<entry role="parameter_description"><para>the stream number</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+<para role="since">Since: <link linkend="api-index-1.4">1.4</link></para></refsect2>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,70 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-wavpackdec">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-wavpackdec.top_of_page" role="top_of_page">wavpackdec</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>wavpackdec</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstWavpackDec"/><refsect1 id="gst-plugins-good-plugins-wavpackdec.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstWavpackDec-struct">GstWavpackDec</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-wavpackdec.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstAudioDecoder">GstAudioDecoder</link>
+                    <phrase role="lineart">╰──</phrase> GstWavpackDec
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-wavpackdec.description" role="desc">
+<title role="desc.title">Description</title>
+<para>WavpackDec decodes framed (for example by the WavpackParse element)
+Wavpack streams and decodes them to raw audio.</para>
+<ulink url="http://www.wavpack.com/">Wavpack</ulink> is an open-source
+<para>audio codec that features both lossless and lossy encoding.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=test.wv ! wavpackparse ! wavpackdec ! audioconvert ! audioresample ! autoaudiosink
+]]></programlisting></informalexample> This pipeline decodes the Wavpack file test.wv into raw audio buffers and
+tries to play it back using an automatically found audio sink.
+</refsect2>
+
+<include href="element-wavpackdec-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-wavpackdec.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-wavpackdec.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstWavpackDec-struct" role="struct">
+<title>struct GstWavpackDec</title>
+<indexterm zone="GstWavpackDec-struct"><primary>GstWavpackDec</primary></indexterm>
+<programlisting language="C">struct GstWavpackDec;</programlisting>
+</refsect2>
+
+</refsect1>
+
+</refentry>

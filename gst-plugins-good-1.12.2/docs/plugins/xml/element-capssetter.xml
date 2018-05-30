@@ -1,0 +1,111 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-capssetter">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-capssetter.top_of_page" role="top_of_page">capssetter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>capssetter</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-capssetter.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstCaps"><type>GstCaps</type></link> *</entry><entry role="property_name"><link linkend="GstCapsSetter--caps">caps</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstCapsSetter--join">join</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstCapsSetter--replace">replace</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstCapsSetter"/><refsect1 id="gst-plugins-good-plugins-capssetter.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstCapsSetter-struct">GstCapsSetter</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-capssetter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> GstCapsSetter
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-capssetter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Sets or merges caps on a stream's buffers. That is, a buffer's caps are
+updated using (fields of) <link linkend="GstCapsSetter--caps"><type>“caps”</type></link>. Note that this may contain
+multiple structures (though not likely recommended), but each of these must
+be fixed (or will otherwise be rejected).</para>
+<para>If <link linkend="GstCapsSetter--join"><type>“join”</type></link> is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, then the incoming caps' mime-type is
+compared to the mime-type(s) of provided caps and only matching structure(s)
+are considered for updating.</para>
+<para>If <link linkend="GstCapsSetter--replace"><type>“replace”</type></link> is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, then any caps update is preceded by
+clearing existing fields, making provided fields (as a whole) replace
+incoming ones. Otherwise, no clearing is performed, in which case provided
+fields are added/merged onto incoming caps</para>
+<para>Although this element might mainly serve as debug helper,
+it can also practically be used to correct a faulty pixel-aspect-ratio,
+or to modify a yuv fourcc value to effectively swap chroma components or such
+alike.</para>
+
+<include href="element-capssetter-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-capssetter.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-capssetter.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstCapsSetter-struct" role="struct">
+<title>struct GstCapsSetter</title>
+<indexterm zone="GstCapsSetter-struct"><primary>GstCapsSetter</primary></indexterm>
+<programlisting language="C">struct GstCapsSetter;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-capssetter.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstCapsSetter--caps" role="property"><title>The <literal>“caps”</literal> property</title>
+<indexterm zone="GstCapsSetter--caps"><primary>GstCapsSetter:caps</primary></indexterm>
+<programlisting>  “caps”                     <link linkend="GstCaps"><type>GstCaps</type></link> *</programlisting>
+<para>Merge these caps (thereby overwriting) in the stream.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstCapsSetter--join" role="property"><title>The <literal>“join”</literal> property</title>
+<indexterm zone="GstCapsSetter--join"><primary>GstCapsSetter:join</primary></indexterm>
+<programlisting>  “join”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Match incoming caps' mime-type to mime-type of provided caps.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstCapsSetter--replace" role="property"><title>The <literal>“replace”</literal> property</title>
+<indexterm zone="GstCapsSetter--replace"><primary>GstCapsSetter:replace</primary></indexterm>
+<programlisting>  “replace”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Drop fields of incoming caps.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

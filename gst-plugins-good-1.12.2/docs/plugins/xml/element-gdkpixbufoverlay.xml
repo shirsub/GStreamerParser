@@ -1,0 +1,202 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-gdkpixbufoverlay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-gdkpixbufoverlay.top_of_page" role="top_of_page">gdkpixbufoverlay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>gdkpixbufoverlay</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufoverlay.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--offset-x">offset-x</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--offset-y">offset-y</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--overlay-height">overlay-height</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--overlay-width">overlay-width</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--relative-x">relative-x</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--relative-y">relative-y</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--alpha">alpha</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> *</entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--pixbuf">pixbuf</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstGdkPixbufPositioningMode"><type>GstGdkPixbufPositioningMode</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--positioning-mode">positioning-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--coef-x">coef-x</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstGdkPixbufOverlay--coef-y">coef-y</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstGdkPixbufOverlay"/><refsect1 id="gst-plugins-good-plugins-gdkpixbufoverlay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstGdkPixbufOverlay-struct">GstGdkPixbufOverlay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufoverlay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstGdkPixbufOverlay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufoverlay.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The gdkpixbufoverlay element overlays an image loaded from file onto
+a video stream.</para>
+<para>Changing the positioning or overlay width and height properties at runtime
+is supported, but it might be prudent to to protect the property setting
+code with GST_BASE_TRANSFORM_LOCK and GST_BASE_TRANSFORM_UNLOCK, as
+<link linkend="g-object-set"><function>g_object_set()</function></link> is not atomic for multiple properties passed in one go.</para>
+<para>Changing the image at runtime is currently not supported.</para>
+<para>Negative offsets are also not yet supported.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc ! gdkpixbufoverlay location=image.png ! autovideosink
+]]></programlisting></informalexample>
+Overlays the image in image.png onto the test video picture produced by
+videotestsrc.
+</refsect2>
+
+<include href="element-gdkpixbufoverlay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufoverlay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufoverlay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstGdkPixbufOverlay-struct" role="struct">
+<title>struct GstGdkPixbufOverlay</title>
+<indexterm zone="GstGdkPixbufOverlay-struct"><primary>GstGdkPixbufOverlay</primary></indexterm>
+<programlisting language="C">struct GstGdkPixbufOverlay;</programlisting>
+<para>The opaque element instance structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-gdkpixbufoverlay.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstGdkPixbufOverlay--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstGdkPixbufOverlay--location"><primary>GstGdkPixbufOverlay:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location of image file to overlay.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstGdkPixbufOverlay--offset-x" role="property"><title>The <literal>“offset-x”</literal> property</title>
+<indexterm zone="GstGdkPixbufOverlay--offset-x"><primary>GstGdkPixbufOverlay:offset-x</primary></indexterm>
+<programlisting>  “offset-x”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>For positive value, horizontal offset of overlay image in pixels from left of video image. For negative value, horizontal offset of overlay image in pixels from right of video image.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstGdkPixbufOverlay--offset-y" role="property"><title>The <literal>“offset-y”</literal> property</title>
+<indexterm zone="GstGdkPixbufOverlay--offset-y"><primary>GstGdkPixbufOverlay:offset-y</primary></indexterm>
+<programlisting>  “offset-y”                 <link linkend="gint"><type>gint</type></link></programlisting>
+<para>For positive value, vertical offset of overlay image in pixels from top of video image. For negative value, vertical offset of overlay image in pixels from bottom of video image.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstGdkPixbufOverlay--overlay-height" role="property"><title>The <literal>“overlay-height”</literal> property</title>
+<indexterm zone="GstGdkPixbufOverlay--overlay-height"><primary>GstGdkPixbufOverlay:overlay-height</primary></indexterm>
+<programlisting>  “overlay-height”           <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Height of overlay image in pixels (0 = same as overlay image).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstGdkPixbufOverlay--overlay-width" role="property"><title>The <literal>“overlay-width”</literal> property</title>
+<indexterm zone="GstGdkPixbufOverlay--overlay-width"><primary>GstGdkPixbufOverlay:overlay-width</primary></indexterm>
+<programlisting>  “overlay-width”            <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Width of overlay image in pixels (0 = same as overlay image).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstGdkPixbufOverlay--relative-x" role="property"><title>The <literal>“relative-x”</literal> property</title>
+<indexterm zone="GstGdkPixbufOverlay--relative-x"><primary>GstGdkPixbufOverlay:relative-x</primary></indexterm>
+<programlisting>  “relative-x”               <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Horizontal offset of overlay image in fractions of video image width, from top-left corner of video image (in relative positioning).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [-1,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstGdkPixbufOverlay--relative-y" role="property"><title>The <literal>“relative-y”</literal> property</title>
+<indexterm zone="GstGdkPixbufOverlay--relative-y"><primary>GstGdkPixbufOverlay:relative-y</primary></indexterm>
+<programlisting>  “relative-y”               <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Vertical offset of overlay image in fractions of video image height, from top-left corner of video image (in relative positioning).</para><para>Flags: Read / Write</para>
+<para>Allowed values: [-1,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstGdkPixbufOverlay--alpha" role="property"><title>The <literal>“alpha”</literal> property</title>
+<indexterm zone="GstGdkPixbufOverlay--alpha"><primary>GstGdkPixbufOverlay:alpha</primary></indexterm>
+<programlisting>  “alpha”                    <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Global alpha of overlay image.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [0,1]</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GstGdkPixbufOverlay--pixbuf" role="property"><title>The <literal>“pixbuf”</literal> property</title>
+<indexterm role="1.6" zone="GstGdkPixbufOverlay--pixbuf"><primary>GstGdkPixbufOverlay:pixbuf</primary></indexterm>
+<programlisting>  “pixbuf”                   <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> *</programlisting>
+<para>GdkPixbuf object to render.</para>
+<para>Flags: Read / Write</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GstGdkPixbufOverlay--positioning-mode" role="property"><title>The <literal>“positioning-mode”</literal> property</title>
+<indexterm role="1.6" zone="GstGdkPixbufOverlay--positioning-mode"><primary>GstGdkPixbufOverlay:positioning-mode</primary></indexterm>
+<programlisting>  “positioning-mode”         <link linkend="GstGdkPixbufPositioningMode"><type>GstGdkPixbufPositioningMode</type></link></programlisting>
+<para>Positioning mode of offset-x and offset-y properties. Determines how
+negative x/y offsets will be interpreted. By default negative values
+are for positioning relative to the right/bottom edge of the video
+image, but you can use this property to select absolute positioning
+relative to a (0, 0) origin in the top-left corner. That way negative
+offsets will be to the left/above the video image, which allows you to
+smoothly slide logos into and out of the frame if desired.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: pixels-relative-to-edges</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GstGdkPixbufOverlay--coef-x" role="property"><title>The <literal>“coef-x”</literal> property</title>
+<indexterm role="1.12" zone="GstGdkPixbufOverlay--coef-x"><primary>GstGdkPixbufOverlay:coef-x</primary></indexterm>
+<programlisting>  “coef-x”                   <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>In absolute positioning mode, the x coordinate of overlay image's
+top-left corner is now given by
+offset-x + (relative-x * overlay_width) + (coef-x * video_width).
+This allows to align the image absolutely and relatively
+to any edge or center position.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: [-1,1]</para>
+<para>Default value: 0</para>
+<para role="since">Since: <link linkend="api-index-1.12">1.12</link></para></refsect2>
+<refsect2 id="GstGdkPixbufOverlay--coef-y" role="property"><title>The <literal>“coef-y”</literal> property</title>
+<indexterm role="1.12" zone="GstGdkPixbufOverlay--coef-y"><primary>GstGdkPixbufOverlay:coef-y</primary></indexterm>
+<programlisting>  “coef-y”                   <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>In absolute positioning mode, the y coordinate of overlay image's
+top-left corner is now given by
+offset-y + (relative-y * overlay_height) + (coef-y * video_height).
+This allows to align the image absolutely and relatively
+to any edge or center position.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: [-1,1]</para>
+<para>Default value: 0</para>
+<para role="since">Since: <link linkend="api-index-1.12">1.12</link></para></refsect2>
+
+</refsect1>
+
+</refentry>

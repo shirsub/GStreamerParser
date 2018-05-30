@@ -1,0 +1,208 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rganalysis">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rganalysis.top_of_page" role="top_of_page">rganalysis</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rganalysis</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rganalysis.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRgAnalysis--forced">forced</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRgAnalysis--num-tracks">num-tracks</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstRgAnalysis--reference-level">reference-level</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRgAnalysis--message">message</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRgAnalysis"/><refsect1 id="gst-plugins-good-plugins-rganalysis.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRgAnalysis-struct">GstRgAnalysis</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rganalysis.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> GstRgAnalysis
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rganalysis.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element analyzes raw audio sample data in accordance with the proposed</para>
+<ulink url="http://replaygain.org">ReplayGain standard</ulink> for
+<para>calculating the ideal replay gain for music tracks and albums.  The element
+is designed as a pass-through filter that never modifies any data.  As it
+receives an EOS event, it finalizes the ongoing analysis and generates a tag
+list containing the results.  It is sent downstream with a tag event and
+posted on the message bus with a tag message.  The EOS event is forwarded as
+normal afterwards.  Result tag lists at least contain the tags
+<link linkend="GST-TAG-TRACK-GAIN:CAPS"><type>GST_TAG_TRACK_GAIN</type></link>, <link linkend="GST-TAG-TRACK-PEAK:CAPS"><type>GST_TAG_TRACK_PEAK</type></link> and <link linkend="GST-TAG-REFERENCE-LEVEL:CAPS"><type>GST_TAG_REFERENCE_LEVEL</type></link>.</para>
+<para>Because the generated metadata tags become available at the end of streams,
+downstream muxer and encoder elements are normally unable to save them in
+their output since they generally save metadata in the file header.
+Therefore, it is often necessary that applications read the results in a bus
+event handler for the tag message.  Obtaining the values this way is always
+needed for album processing (see <link linkend="GstRgAnalysis--num-tracks"><type>“num-tracks”</type></link> property) since
+the album gain and peak values need to be associated with all tracks of an
+album, not just the last one.</para>
+<refsect2>
+<title>Example launch lines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -t audiotestsrc wave=sine num-buffers=512 ! rganalysis ! fakesink
+]]></programlisting></informalexample> Analyze a simple test waveform
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -t filesrc location=filename.ext ! decodebin \
+    ! audioconvert ! audioresample ! rganalysis ! fakesink
+]]></programlisting></informalexample> Analyze a given file
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -t gnomevfssrc location=http://replaygain.hydrogenaudio.org/ref_pink.wav \
+    ! wavparse ! rganalysis ! fakesink
+]]></programlisting></informalexample> Analyze the pink noise reference file
+<para>
+The above launch line yields a result gain of +6 dB (instead of the expected
++0 dB).  This is not in error, refer to the <link linkend="GstRgAnalysis--reference-level"><type>“reference-level”</type></link>
+property documentation for more information.
+</para>
+</refsect2>
+<refsect2>
+<title>Acknowledgements</title>
+<para>
+This element is based on code used in the <ulink url="http://sjeng.org/vorbisgain.html">vorbisgain</ulink> program and many
+others.  The relevant parts are copyrighted by David Robinson, Glen Sawyer
+and Frank Klemm.
+</para>
+</refsect2>
+
+<include href="element-rganalysis-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rganalysis.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rganalysis.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRgAnalysis-struct" role="struct">
+<title>struct GstRgAnalysis</title>
+<indexterm zone="GstRgAnalysis-struct"><primary>GstRgAnalysis</primary></indexterm>
+<programlisting language="C">struct GstRgAnalysis;</programlisting>
+<para>Opaque data structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rganalysis.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRgAnalysis--forced" role="property"><title>The <literal>“forced”</literal> property</title>
+<indexterm zone="GstRgAnalysis--forced"><primary>GstRgAnalysis:forced</primary></indexterm>
+<programlisting>  “forced”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether to analyze streams even when ReplayGain tags exist.</para>
+<para>For assisting transcoder/converter applications, the element can silently
+skip the processing of streams that already contain the necessary tags.
+Data will flow as usual but the element will not consume CPU time and will
+not generate result tags.  To enable possible skipping, set this property
+to <link linkend="FALSE:CAPS"><type>FALSE</type></link>.</para>
+<para>If used in conjunction with <link linkend="GstRgAnalysis--num-tracks">album
+processing</link>, the element will skip the number of remaining album
+tracks if a full set of tags is found for the first track.  If a subsequent
+track of the album is missing tags, processing cannot start again.  If this
+is undesired, the application has to scan all files beforehand and enable
+forcing of processing if needed.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstRgAnalysis--num-tracks" role="property"><title>The <literal>“num-tracks”</literal> property</title>
+<indexterm zone="GstRgAnalysis--num-tracks"><primary>GstRgAnalysis:num-tracks</primary></indexterm>
+<programlisting>  “num-tracks”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Number of remaining album tracks.</para>
+<para>Analyzing several streams sequentially and assigning them a common result
+gain is known as &quot;album processing&quot;.  If this gain is used during playback
+(by switching to &quot;album mode&quot;), all tracks of an album receive the same
+amplification.  This keeps the relative volume levels between the tracks
+intact.  To enable this, set this property to the number of streams that
+will be processed as album tracks.</para>
+<para>Every time an EOS event is received, the value of this property is
+decremented by one.  As it reaches zero, it is assumed that the last track
+of the album finished.  The tag list for the final stream will contain the
+additional tags <link linkend="GST-TAG-ALBUM-GAIN:CAPS"><type>GST_TAG_ALBUM_GAIN</type></link> and <link linkend="GST-TAG-ALBUM-PEAK:CAPS"><type>GST_TAG_ALBUM_PEAK</type></link>.  All other
+streams just get the two track tags posted because the values for the album
+tags are not known before all tracks are analyzed.  Applications need to
+ensure that the album gain and peak values are also associated with the
+other tracks when storing the results.</para>
+<para>If the total number of album tracks is unknown beforehand, just ensure that
+the value is greater than 1 before each track starts.  Then before the end
+of the last track, set it to the value 1.</para>
+<para>To perform album processing, the element has to preserve data between
+streams.  This cannot survive a state change to the NULL or READY state.
+If you change your pipeline's state to NULL or READY between tracks, lock
+the element's state using <link linkend="gst-element-set-locked-state"><function>gst_element_set_locked_state()</function></link> when it is in
+PAUSED or PLAYING.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRgAnalysis--reference-level" role="property"><title>The <literal>“reference-level”</literal> property</title>
+<indexterm zone="GstRgAnalysis--reference-level"><primary>GstRgAnalysis:reference-level</primary></indexterm>
+<programlisting>  “reference-level”          <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Reference level [dB].</para>
+<para>Analyzing the ReplayGain pink noise reference waveform computes a result of
++6 dB instead of the expected 0 dB.  This is because the default reference
+level is 89 dB.  To obtain values as lined out in the original proposal of
+ReplayGain, set this property to 83.</para>
+<para>Almost all software uses 89 dB as a reference however, and this value has
+become the new official value.  That is to say, while the change has been
+acclaimed by the author of the ReplayGain proposal, the <ulink url="http://replaygain.org">webpage</ulink> is still outdated at the time
+of this writing.</para>
+<para>The value was changed because the original proposal recommends a default
+pre-amp value of +6 dB for playback.  This seemed a bit odd, as it means
+that the algorithm has the general tendency to produce adjustment values
+that are 6 dB too low.  Bumping the reference level by 6 dB compensated for
+this.</para>
+<para>The problem of the reference level being ambiguous for lack of concise
+standardization is to be solved by adopting the <link linkend="GST-TAG-REFERENCE-LEVEL:CAPS"><type>GST_TAG_REFERENCE_LEVEL</type></link>
+tag, which allows to store the used value alongside the gain values.</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: [0,150]</para>
+<para>Default value: 89</para>
+</refsect2>
+<refsect2 id="GstRgAnalysis--message" role="property"><title>The <literal>“message”</literal> property</title>
+<indexterm zone="GstRgAnalysis--message"><primary>GstRgAnalysis:message</primary></indexterm>
+<programlisting>  “message”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Post statics messages.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rganalysis.see-also">
+<title>See Also</title>
+<para><link linkend="GstRgVolume"><type>GstRgVolume</type></link></para>
+
+</refsect1>
+
+</refentry>

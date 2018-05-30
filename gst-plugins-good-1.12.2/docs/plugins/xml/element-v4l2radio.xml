@@ -1,0 +1,109 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-v4l2radio">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-v4l2radio.top_of_page" role="top_of_page">v4l2radio</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>v4l2radio</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-v4l2radio.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstV4l2Radio--device">device</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstV4l2Radio--frequency">frequency</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstV4l2Radio"/><refsect1 id="gst-plugins-good-plugins-v4l2radio.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstV4l2Radio-struct">GstV4l2Radio</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2radio.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstV4l2Radio
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2radio.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstV4l2Radio implements
+ <link linkend="GstURIHandler">GstURIHandler</link> and  <link linkend="GstTuner">GstTuner</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-v4l2radio.description" role="desc">
+<title role="desc.title">Description</title>
+<para>v4l2radio can be used to control radio device
+and to tune it to different radiostations.</para>
+<refsect2>
+<title>Example launch lines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 v4l2radio device=/dev/radio0 frequency=101200000
+gst-launch-1.0 alsasrc device=hw:1 ! audioconvert ! audioresample ! alsasink
+]]></programlisting></informalexample>
+First pipeline tunes the radio device /dev/radio0 to station 101.2 MHz,
+second pipeline connects digital audio out (hw:1) to default sound card.
+</refsect2>
+
+<include href="element-v4l2radio-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2radio.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2radio.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstV4l2Radio-struct" role="struct">
+<title>struct GstV4l2Radio</title>
+<indexterm zone="GstV4l2Radio-struct"><primary>GstV4l2Radio</primary></indexterm>
+<programlisting language="C">struct GstV4l2Radio;</programlisting>
+<para>Opaque video4linux2 radio tuner element</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-v4l2radio.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstV4l2Radio--device" role="property"><title>The <literal>“device”</literal> property</title>
+<indexterm zone="GstV4l2Radio--device"><primary>GstV4l2Radio:device</primary></indexterm>
+<programlisting>  “device”                   <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Video4Linux2 radio device location.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;/dev/radio0&quot;</para>
+</refsect2>
+<refsect2 id="GstV4l2Radio--frequency" role="property"><title>The <literal>“frequency”</literal> property</title>
+<indexterm zone="GstV4l2Radio--frequency"><primary>GstV4l2Radio:frequency</primary></indexterm>
+<programlisting>  “frequency”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Station frequency in Hz.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [87500000,108000000]</para>
+<para>Default value: 100000000</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<indexdiv id="api-index-1.6">
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="GstGdkPixbufOverlay--pixbuf"><link linkend="GstGdkPixbufOverlay--pixbuf">GstGdkPixbufOverlay:pixbuf</link>, object property in <link linkend="gst-plugins-good-plugins-gdkpixbufoverlay">gdkpixbufoverlay</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstGdkPixbufOverlay--positioning-mode"><link linkend="GstGdkPixbufOverlay--positioning-mode">GstGdkPixbufOverlay:positioning-mode</link>, object property in <link linkend="gst-plugins-good-plugins-gdkpixbufoverlay">gdkpixbufoverlay</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstJackAudioSink--port-pattern"><link linkend="GstJackAudioSink--port-pattern">GstJackAudioSink:port-pattern</link>, object property in <link linkend="gst-plugins-good-plugins-jackaudiosink">jackaudiosink</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstJackAudioSrc--port-pattern"><link linkend="GstJackAudioSrc--port-pattern">GstJackAudioSrc:port-pattern</link>, object property in <link linkend="gst-plugins-good-plugins-jackaudiosrc">jackaudiosrc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstMultiFileSink--aggregate-gops"><link linkend="GstMultiFileSink--aggregate-gops">GstMultiFileSink:aggregate-gops</link>, object property in <link linkend="gst-plugins-good-plugins-multifilesink">multifilesink</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpJitterBuffer--rtx-max-retries"><link linkend="GstRtpJitterBuffer--rtx-max-retries">GstRtpJitterBuffer:rtx-max-retries</link>, object property in <link linkend="gst-plugins-good-plugins-rtpjitterbuffer">rtpjitterbuffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpJitterBuffer--rtx-min-delay"><link linkend="GstRtpJitterBuffer--rtx-min-delay">GstRtpJitterBuffer:rtx-min-delay</link>, object property in <link linkend="gst-plugins-good-plugins-rtpjitterbuffer">rtpjitterbuffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpJitterBuffer--rtx-next-seqnum"><link linkend="GstRtpJitterBuffer--rtx-next-seqnum">GstRtpJitterBuffer:rtx-next-seqnum</link>, object property in <link linkend="gst-plugins-good-plugins-rtpjitterbuffer">rtpjitterbuffer</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

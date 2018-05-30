@@ -1,0 +1,199 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-spectrum">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-spectrum.top_of_page" role="top_of_page">spectrum</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>spectrum</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-spectrum.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstSpectrum--bands">bands</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstSpectrum--interval">interval</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstSpectrum--threshold">threshold</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSpectrum--message-magnitude">message-magnitude</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSpectrum--message-phase">message-phase</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSpectrum--post-messages">post-messages</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstSpectrum--multi-channel">multi-channel</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstSpectrum"/><refsect1 id="gst-plugins-good-plugins-spectrum.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstSpectrum-struct">GstSpectrum</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-spectrum.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAudioFilter">GstAudioFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstSpectrum
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-spectrum.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The Spectrum element analyzes the frequency spectrum of an audio signal.
+If the <link linkend="GstSpectrum--post-messages"><type>“post-messages”</type></link> property is <link linkend="TRUE:CAPS"><type>TRUE</type></link>, it sends analysis results
+as element messages named</para>
+<classname>&quot;spectrum&quot;</classname> after each interval of time given
+<para>by the <link linkend="GstSpectrum--interval"><type>“interval”</type></link> property.</para>
+<para>The message's structure contains some combination of these fields:</para>
+<itemizedlist>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;timestamp&quot;</classname>:
+  the timestamp of the buffer that triggered the message.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;stream-time&quot;</classname>:
+  the stream time of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;running-time&quot;</classname>:
+  the running_time of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;duration&quot;</classname>:
+  the duration of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;endtime&quot;</classname>:
+  the end time of the buffer that triggered the message as stream time (this
+  is deprecated, as it can be calculated from stream-time + duration)
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstValueList"><type>GstValueList</type></link> of <link linkend="gfloat"><type>gfloat</type></link>
+  <classname>&quot;magnitude&quot;</classname>:
+  the level for each frequency band in dB. All values below the value of the
+  <link linkend="GstSpectrum--threshold"><type>“threshold”</type></link> property will be set to the threshold. Only present
+  if the <link linkend="GstSpectrum--message-magnitude"><type>“message-magnitude”</type></link> property is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstValueList"><type>GstValueList</type></link> of <link linkend="gfloat"><type>gfloat</type></link>
+  <classname>&quot;phase&quot;</classname>:
+  The phase for each frequency band. The value is between -pi and pi. Only
+  present if the <link linkend="GstSpectrum--message-phase"><type>“message-phase”</type></link> property is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.
+  </para>
+</listitem>
+</itemizedlist>
+<para>If <link linkend="GstSpectrum--multi-channel"><type>“multi-channel”</type></link> property is set to true. magnitude and phase
+fields will be each a nested <link linkend="GstValueArray"><type>GstValueArray</type></link>. The first dimension are the
+channels and the second dimension are the values.</para>
+<refsect2>
+<title>Example application</title>
+<informalexample><programlisting language="C">
+<xi:include href="../../../../tests/examples/spectrum/spectrum-example.c" parse="text" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+</programlisting></informalexample>
+</refsect2>
+
+<include href="element-spectrum-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-spectrum.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-spectrum.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstSpectrum-struct" role="struct">
+<title>struct GstSpectrum</title>
+<indexterm zone="GstSpectrum-struct"><primary>GstSpectrum</primary></indexterm>
+<programlisting language="C">struct GstSpectrum;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-spectrum.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstSpectrum--bands" role="property"><title>The <literal>“bands”</literal> property</title>
+<indexterm zone="GstSpectrum--bands"><primary>GstSpectrum:bands</primary></indexterm>
+<programlisting>  “bands”                    <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Number of frequency bands.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [2,1073741824]</para>
+<para>Default value: 128</para>
+</refsect2>
+<refsect2 id="GstSpectrum--interval" role="property"><title>The <literal>“interval”</literal> property</title>
+<indexterm zone="GstSpectrum--interval"><primary>GstSpectrum:interval</primary></indexterm>
+<programlisting>  “interval”                 <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Interval of time between message posts (in nanoseconds).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 1</para>
+<para>Default value: 100000000</para>
+</refsect2>
+<refsect2 id="GstSpectrum--threshold" role="property"><title>The <literal>“threshold”</literal> property</title>
+<indexterm zone="GstSpectrum--threshold"><primary>GstSpectrum:threshold</primary></indexterm>
+<programlisting>  “threshold”                <link linkend="gint"><type>gint</type></link></programlisting>
+<para>dB threshold for result. All lower values will be set to this.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 0</para>
+<para>Default value: -60</para>
+</refsect2>
+<refsect2 id="GstSpectrum--message-magnitude" role="property"><title>The <literal>“message-magnitude”</literal> property</title>
+<indexterm zone="GstSpectrum--message-magnitude"><primary>GstSpectrum:message-magnitude</primary></indexterm>
+<programlisting>  “message-magnitude”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether to add a 'magnitude' field to the structure of any 'spectrum' element messages posted on the bus.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstSpectrum--message-phase" role="property"><title>The <literal>“message-phase”</literal> property</title>
+<indexterm zone="GstSpectrum--message-phase"><primary>GstSpectrum:message-phase</primary></indexterm>
+<programlisting>  “message-phase”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether to add a 'phase' field to the structure of any 'spectrum' element messages posted on the bus.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstSpectrum--post-messages" role="property"><title>The <literal>“post-messages”</literal> property</title>
+<indexterm zone="GstSpectrum--post-messages"><primary>GstSpectrum:post-messages</primary></indexterm>
+<programlisting>  “post-messages”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether to post a 'spectrum' element message on the bus for each passed interval.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstSpectrum--multi-channel" role="property"><title>The <literal>“multi-channel”</literal> property</title>
+<indexterm zone="GstSpectrum--multi-channel"><primary>GstSpectrum:multi-channel</primary></indexterm>
+<programlisting>  “multi-channel”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Send separate results for each channel.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

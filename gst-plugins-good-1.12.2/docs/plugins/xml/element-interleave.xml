@@ -1,0 +1,127 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-interleave">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-interleave.top_of_page" role="top_of_page">interleave</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>interleave</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-interleave.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GValueArray"><type>GValueArray</type></link> *</entry><entry role="property_name"><link linkend="GstInterleave--channel-positions">channel-positions</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstInterleave--channel-positions-from-input">channel-positions-from-input</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstInterleave"/><refsect1 id="gst-plugins-good-plugins-interleave.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstInterleave-struct">GstInterleave</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-interleave.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstInterleave
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-interleave.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Merges separate mono inputs into one interleaved stream.</para>
+<para>This element handles all raw floating point sample formats and all signed integer sample formats. The first
+caps on one of the sinkpads will set the caps of the output so usually an audioconvert element should be
+placed before every sinkpad of interleave.</para>
+<para>It's possible to change the number of channels while the pipeline is running by adding or removing
+some of the request pads but this will change the caps of the output buffers. Changing the input
+caps is _not_ supported yet.</para>
+<para>The channel number of every sinkpad in the out can be retrieved from the &quot;channel&quot; property of the pad.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 filesrc location=file.mp3 ! decodebin ! audioconvert ! "audio/x-raw,channels=2" ! deinterleave name=d  interleave name=i ! audioconvert ! wavenc ! filesink location=test.wav    d.src_0 ! queue ! audioconvert ! i.sink_1    d.src_1 ! queue ! audioconvert ! i.sink_0
+]]></programlisting></informalexample> Decodes and deinterleaves a Stereo MP3 file into separate channels and
+then interleaves the channels again to a WAV file with the channels
+exchanged.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 interleave name=i ! audioconvert ! wavenc ! filesink location=file.wav  filesrc location=file1.wav ! decodebin ! audioconvert ! "audio/x-raw,channels=1,channel-mask=(bitmask)0x1" ! queue ! i.sink_0   filesrc location=file2.wav ! decodebin ! audioconvert ! "audio/x-raw,channels=1,channel-mask=(bitmask)0x2" ! queue ! i.sink_1
+]]></programlisting></informalexample> Interleaves two Mono WAV files to a single Stereo WAV file. Having
+channel-masks defined in the sink pads ensures a sane mapping of the mono
+streams into the stereo stream. NOTE: the proper way to map channels in
+code is by using the channel-positions property of the interleave element.
+</refsect2>
+
+<include href="element-interleave-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-interleave.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-interleave.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstInterleave-struct" role="struct">
+<title>struct GstInterleave</title>
+<indexterm zone="GstInterleave-struct"><primary>GstInterleave</primary></indexterm>
+<programlisting language="C">struct GstInterleave;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-interleave.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstInterleave--channel-positions" role="property"><title>The <literal>“channel-positions”</literal> property</title>
+<indexterm zone="GstInterleave--channel-positions"><primary>GstInterleave:channel-positions</primary></indexterm>
+<programlisting>  “channel-positions”        <link linkend="GValueArray"><type>GValueArray</type></link> *</programlisting>
+<para>Channel positions: This property controls the channel positions
+that are used on the src caps. The number of elements should be
+the same as the number of sink pads and the array should contain
+a valid list of channel positions. The n-th element of the array
+is the position of the n-th sink pad.</para>
+<para>These channel positions will only be used if they're valid and the
+number of elements is the same as the number of channels. If this
+is not given a NONE layout will be used.</para>
+<para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstInterleave--channel-positions-from-input" role="property"><title>The <literal>“channel-positions-from-input”</literal> property</title>
+<indexterm zone="GstInterleave--channel-positions-from-input"><primary>GstInterleave:channel-positions-from-input</primary></indexterm>
+<programlisting>  “channel-positions-from-input” <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Channel positions from input: If this property is set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> the channel
+positions will be taken from the input caps if valid channel positions for
+the output can be constructed from them. If this is set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> setting the
+channel-positions property overwrites this property again.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-interleave.see-also">
+<title>See Also</title>
+<para>deinterleave</para>
+
+</refsect1>
+
+</refentry>

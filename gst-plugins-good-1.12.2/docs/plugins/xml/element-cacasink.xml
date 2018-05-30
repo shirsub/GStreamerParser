@@ -1,0 +1,122 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-cacasink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-cacasink.top_of_page" role="top_of_page">cacasink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>cacasink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-cacasink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstCACASink--anti-aliasing">anti-aliasing</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstCACASinkDithering"><type>GstCACASinkDithering</type></link></entry><entry role="property_name"><link linkend="GstCACASink--dither">dither</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstCACASink--screen-height">screen-height</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstCACASink--screen-width">screen-width</link></entry><entry role="property_flags">Read</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstCACASink"/><refsect1 id="gst-plugins-good-plugins-cacasink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstCACASink-struct">GstCACASink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cacasink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> GstCACASink
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-cacasink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Displays video as color ascii art.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+CACA_GEOMETRY=160x60 CACA_FONT=5x7 gst-launch-1.0 filesrc location=test.avi ! decodebin ! videoconvert ! cacasink
+]]></programlisting></informalexample> This pipeline renders a video to ascii art into a separate window using a
+small font and specifying the ascii resolution.
+<informalexample><programlisting><![CDATA[
+CACA_DRIVER=ncurses gst-launch-1.0 filesrc location=test.avi ! decodebin ! videoconvert ! cacasink
+]]></programlisting></informalexample> This pipeline renders a video to ascii art into the current terminal.
+</refsect2>
+
+<include href="element-cacasink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-cacasink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cacasink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstCACASink-struct" role="struct">
+<title>struct GstCACASink</title>
+<indexterm zone="GstCACASink-struct"><primary>GstCACASink</primary></indexterm>
+<programlisting language="C">struct GstCACASink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cacasink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstCACASink--anti-aliasing" role="property"><title>The <literal>“anti-aliasing”</literal> property</title>
+<indexterm zone="GstCACASink--anti-aliasing"><primary>GstCACASink:anti-aliasing</primary></indexterm>
+<programlisting>  “anti-aliasing”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Enables Anti-Aliasing.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstCACASink--dither" role="property"><title>The <literal>“dither”</literal> property</title>
+<indexterm zone="GstCACASink--dither"><primary>GstCACASink:dither</primary></indexterm>
+<programlisting>  “dither”                   <link linkend="GstCACASinkDithering"><type>GstCACASinkDithering</type></link></programlisting>
+<para>Set type of Dither.</para><para>Flags: Read / Write</para>
+<para>Default value: No dithering</para>
+</refsect2>
+<refsect2 id="GstCACASink--screen-height" role="property"><title>The <literal>“screen-height”</literal> property</title>
+<indexterm zone="GstCACASink--screen-height"><primary>GstCACASink:screen-height</primary></indexterm>
+<programlisting>  “screen-height”            <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The height of the screen.</para><para>Flags: Read</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 25</para>
+</refsect2>
+<refsect2 id="GstCACASink--screen-width" role="property"><title>The <literal>“screen-width”</literal> property</title>
+<indexterm zone="GstCACASink--screen-width"><primary>GstCACASink:screen-width</primary></indexterm>
+<programlisting>  “screen-width”             <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The width of the screen.</para><para>Flags: Read</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 80</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cacasink.see-also">
+<title>See Also</title>
+<para><link linkend="GstAASink"><type>GstAASink</type></link></para>
+
+</refsect1>
+
+</refentry>

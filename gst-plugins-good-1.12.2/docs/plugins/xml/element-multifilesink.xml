@@ -1,0 +1,277 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-multifilesink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-multifilesink.top_of_page" role="top_of_page">multifilesink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>multifilesink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-multifilesink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstMultiFileSink--location">location</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSink--index">index</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstMultiFileSinkNext"><type>GstMultiFileSinkNext</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSink--next-file">next-file</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSink--post-messages">post-messages</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSink--max-files">max-files</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSink--max-file-size">max-file-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSink--aggregate-gops">aggregate-gops</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstMultiFileSink--max-file-duration">max-file-duration</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstMultiFileSink"/><refsect1 id="gst-plugins-good-plugins-multifilesink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstMultiFileSink-struct">GstMultiFileSink</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstMultiFileSinkNext">GstMultiFileSinkNext</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> GstMultiFileSink
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-multifilesink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Write incoming data to a series of sequentially-named files.</para>
+<para>This element is usually used with data where each buffer is an
+independent unit of data in its own right (e.g. raw video buffers or
+encoded JPEG or PNG images) or with streamable container formats such
+as MPEG-TS or MPEG-PS.</para>
+<para>It is not possible to use this element to create independently playable
+mp4 files, use the splitmuxsink element for that instead.</para>
+<para>The filename property should contain a string with a %d placeholder that will
+be substituted with the index for each filename.</para>
+<para>If the <link linkend="GstMultiFileSink--post-messages"><type>“post-messages”</type></link> property is <link linkend="TRUE:CAPS"><type>TRUE</type></link>, it sends an application
+message named</para>
+<classname>&quot;GstMultiFileSink&quot;</classname> after writing each
+<para>buffer.</para>
+<para>The message's structure contains these fields:</para>
+<itemizedlist>
+<listitem>
+  <para>
+  <link linkend="gchar"><type>gchar</type></link> *
+  <classname>&quot;filename&quot;</classname>:
+  the filename where the buffer was written.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="gint"><type>gint</type></link>
+  <classname>&quot;index&quot;</classname>:
+  the index of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;timestamp&quot;</classname>:
+  the timestamp of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;stream-time&quot;</classname>:
+  the stream time of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;running-time&quot;</classname>:
+  the running_time of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;duration&quot;</classname>:
+  the duration of the buffer.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;offset&quot;</classname>:
+  the offset of the buffer that triggered the message.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  <link linkend="guint64"><type>guint64</type></link>
+  <classname>&quot;offset-end&quot;</classname>:
+  the offset-end of the buffer that triggered the message.
+  </para>
+</listitem>
+</itemizedlist>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 audiotestsrc ! multifilesink
+gst-launch-1.0 videotestsrc ! multifilesink post-messages=true filename="frame%d"
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-multifilesink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstMultiFileSink-struct" role="struct">
+<title>struct GstMultiFileSink</title>
+<indexterm zone="GstMultiFileSink-struct"><primary>GstMultiFileSink</primary></indexterm>
+<programlisting language="C">struct GstMultiFileSink;</programlisting>
+</refsect2>
+<refsect2 id="GstMultiFileSinkNext" role="enum">
+<title>enum GstMultiFileSinkNext</title>
+<indexterm zone="GstMultiFileSinkNext"><primary>GstMultiFileSinkNext</primary></indexterm>
+<para>File splitting modes.</para>
+<refsect3 id="GstMultiFileSinkNext.members" role="enum_members">
+<title>Members</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MULTI-FILE-SINK-NEXT-BUFFER:CAPS">GST_MULTI_FILE_SINK_NEXT_BUFFER</para></entry>
+<entry role="enum_member_description"><para>New file for each buffer</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MULTI-FILE-SINK-NEXT-DISCONT:CAPS">GST_MULTI_FILE_SINK_NEXT_DISCONT</para></entry>
+<entry role="enum_member_description"><para>New file after each discontinuity</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MULTI-FILE-SINK-NEXT-KEY-FRAME:CAPS">GST_MULTI_FILE_SINK_NEXT_KEY_FRAME</para></entry>
+<entry role="enum_member_description"><para>New file at each key frame
+ (Useful for MPEG-TS segmenting)</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MULTI-FILE-SINK-NEXT-KEY-UNIT-EVENT:CAPS">GST_MULTI_FILE_SINK_NEXT_KEY_UNIT_EVENT</para></entry>
+<entry role="enum_member_description"><para>New file after a force key unit
+ event</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MULTI-FILE-SINK-NEXT-MAX-SIZE:CAPS">GST_MULTI_FILE_SINK_NEXT_MAX_SIZE</para></entry>
+<entry role="enum_member_description"><para>New file when the configured maximum file
+ size would be exceeded with the next buffer or buffer list</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-MULTI-FILE-SINK-NEXT-MAX-DURATION:CAPS">GST_MULTI_FILE_SINK_NEXT_MAX_DURATION</para></entry>
+<entry role="enum_member_description"><para>New file when the configured maximum duration
+ would be exceeded with the next buffer or buffer list</para>
+</entry>
+<entry role="enum_member_annotations"/>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstMultiFileSink--location" role="property"><title>The <literal>“location”</literal> property</title>
+<indexterm zone="GstMultiFileSink--location"><primary>GstMultiFileSink:location</primary></indexterm>
+<programlisting>  “location”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>Location of the file to write.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstMultiFileSink--index" role="property"><title>The <literal>“index”</literal> property</title>
+<indexterm zone="GstMultiFileSink--index"><primary>GstMultiFileSink:index</primary></indexterm>
+<programlisting>  “index”                    <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Index to use with location property to create file names.  The index is incremented by one for each buffer written.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstMultiFileSink--next-file" role="property"><title>The <literal>“next-file”</literal> property</title>
+<indexterm zone="GstMultiFileSink--next-file"><primary>GstMultiFileSink:next-file</primary></indexterm>
+<programlisting>  “next-file”                <link linkend="GstMultiFileSinkNext"><type>GstMultiFileSinkNext</type></link></programlisting>
+<para>When to start a new file.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: New file for each buffer</para>
+</refsect2>
+<refsect2 id="GstMultiFileSink--post-messages" role="property"><title>The <literal>“post-messages”</literal> property</title>
+<indexterm zone="GstMultiFileSink--post-messages"><primary>GstMultiFileSink:post-messages</primary></indexterm>
+<programlisting>  “post-messages”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Post a message on the GstBus for each file.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstMultiFileSink--max-files" role="property"><title>The <literal>“max-files”</literal> property</title>
+<indexterm zone="GstMultiFileSink--max-files"><primary>GstMultiFileSink:max-files</primary></indexterm>
+<programlisting>  “max-files”                <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Maximum number of files to keep on disk. Once the maximum is reached, old
+files start to be deleted to make room for new ones.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstMultiFileSink--max-file-size" role="property"><title>The <literal>“max-file-size”</literal> property</title>
+<indexterm zone="GstMultiFileSink--max-file-size"><primary>GstMultiFileSink:max-file-size</primary></indexterm>
+<programlisting>  “max-file-size”            <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Maximum file size before starting a new file in max-size mode.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 2147483648</para>
+</refsect2>
+<refsect2 id="GstMultiFileSink--aggregate-gops" role="property"><title>The <literal>“aggregate-gops”</literal> property</title>
+<indexterm role="1.6" zone="GstMultiFileSink--aggregate-gops"><primary>GstMultiFileSink:aggregate-gops</primary></indexterm>
+<programlisting>  “aggregate-gops”           <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether to aggregate complete GOPs before doing any processing. Set this
+to TRUE to make sure each new file starts with a keyframe. This requires
+the upstream element to flag buffers containing key units and delta
+units correctly. At least the MPEG-PS and MPEG-TS muxers should be doing
+this.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+<para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="GstMultiFileSink--max-file-duration" role="property"><title>The <literal>“max-file-duration”</literal> property</title>
+<indexterm zone="GstMultiFileSink--max-file-duration"><primary>GstMultiFileSink:max-file-duration</primary></indexterm>
+<programlisting>  “max-file-duration”        <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Maximum file size before starting a new file in max-size mode.</para>
+<para>Flags: Read / Write</para>
+<para>Default value: 18446744073709551615</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-multifilesink.see-also">
+<title>See Also</title>
+<para><link linkend="GstFileSrc"><type>GstFileSrc</type></link></para>
+
+</refsect1>
+
+</refentry>

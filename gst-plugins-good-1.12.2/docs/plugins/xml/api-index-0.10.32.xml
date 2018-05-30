@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<indexdiv id="api-index-0.10.32">
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="GstV4l2Src-prepare-format"><link linkend="GstV4l2Src-prepare-format">GstV4l2Src::prepare-format</link>, object signal in <link linkend="gst-plugins-good-plugins-v4l2src">v4l2src</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

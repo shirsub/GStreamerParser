@@ -1,0 +1,606 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpsession">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpsession.top_of_page" role="top_of_page">rtpsession</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpsession</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtpsession.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--bandwidth">bandwidth</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="RTPSession"><type>RTPSession</type></link> *</entry><entry role="property_name"><link linkend="GstRtpSession--internal-session">internal-session</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--num-active-sources">num-active-sources</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--num-sources">num-sources</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--rtcp-fraction">rtcp-fraction</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstRtpSession--sdes">sdes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--rtcp-rr-bandwidth">rtcp-rr-bandwidth</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--rtcp-rs-bandwidth">rtcp-rs-bandwidth</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--use-pipeline-clock">use-pipeline-clock</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--rtcp-min-interval">rtcp-min-interval</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--probation">probation</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstRtpSession--stats">stats</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstRTPProfile"><type>GstRTPProfile</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--rtp-profile">rtp-profile</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRtpNtpTimeSource"><type>GstRtpNtpTimeSource</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--ntp-time-source">ntp-time-source</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--max-dropout-time">max-dropout-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--max-misorder-time">max-misorder-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRtpSession--rtcp-sync-send-time">rtcp-sync-send-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpsession.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-clear-pt-map">clear-pt-map</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-bye-ssrc">on-bye-ssrc</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-bye-timeout">on-bye-timeout</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-new-ssrc">on-new-ssrc</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-sender-timeout">on-sender-timeout</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-ssrc-active">on-ssrc-active</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-ssrc-collision">on-ssrc-collision</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-ssrc-sdes">on-ssrc-sdes</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-ssrc-validated">on-ssrc-validated</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-timeout">on-timeout</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*</entry><entry role="signal_name"><link linkend="GstRtpSession-request-pt-map">request-pt-map</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-new-sender-ssrc">on-new-sender-ssrc</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpSession-on-sender-ssrc-active">on-sender-ssrc-active</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRtpSession"/><refsect1 id="gst-plugins-good-plugins-rtpsession.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpSession-struct">GstRtpSession</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpsession.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstRtpSession
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpsession.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The RTP session manager models participants with unique SSRC in an RTP
+session. This session can be used to send and receive RTP and RTCP packets.
+Based on what REQUEST pads are requested from the session manager, specific
+functionality can be activated.</para>
+<para>The session manager currently implements RFC 3550 including:</para>
+<itemizedlist>
+  <listitem>
+    <para>RTP packet validation based on consecutive sequence numbers.</para>
+  </listitem>
+  <listitem>
+    <para>Maintainance of the SSRC participant database.</para>
+  </listitem>
+  <listitem>
+    <para>Keeping per participant statistics based on received RTCP packets.</para>
+  </listitem>
+  <listitem>
+    <para>Scheduling of RR/SR RTCP packets.</para>
+  </listitem>
+  <listitem>
+    <para>Support for multiple sender SSRC.</para>
+  </listitem>
+</itemizedlist>
+<para>The rtpsession will not demux packets based on SSRC or payload type, nor will
+it correct for packet reordering and jitter. Use <link linkend="GstRtpsSrcDemux"><type>GstRtpsSrcDemux</type></link>,
+<link linkend="GstRtpPtDemux"><type>GstRtpPtDemux</type></link> and GstRtpJitterBuffer in addition to <link linkend="GstRtpSession"><type>GstRtpSession</type></link> to
+perform these tasks. It is usually a good idea to use <link linkend="GstRtpBin"><type>GstRtpBin</type></link>, which
+combines all these features in one element.</para>
+<para>To use <link linkend="GstRtpSession"><type>GstRtpSession</type></link> as an RTP receiver, request a recv_rtp_sink pad, which will
+automatically create recv_rtp_src pad. Data received on the recv_rtp_sink pad
+will be processed in the session and after being validated forwarded on the
+recv_rtp_src pad.</para>
+<para>To also use <link linkend="GstRtpSession"><type>GstRtpSession</type></link> as an RTCP receiver, request a recv_rtcp_sink pad,
+which will automatically create a sync_src pad. Packets received on the RTCP
+pad will be used by the session manager to update the stats and database of
+the other participants. SR packets will be forwarded on the sync_src pad
+so that they can be used to perform inter-stream synchronisation when needed.</para>
+<para>If you want the session manager to generate and send RTCP packets, request
+the send_rtcp_src pad. Packet pushed on this pad contain SR/RR RTCP reports
+that should be sent to all participants in the session.</para>
+<para>To use <link linkend="GstRtpSession"><type>GstRtpSession</type></link> as a sender, request a send_rtp_sink pad, which will
+automatically create a send_rtp_src pad. The session manager will
+forward the packets on the send_rtp_src pad after updating its internal state.</para>
+<para>The session manager needs the clock-rate of the payload types it is handling
+and will signal the <link linkend="GstRtpSession-request-pt-map"><type>“request-pt-map”</type></link> signal when it needs such a
+mapping. One can clear the cached values with the <link linkend="GstRtpSession-clear-pt-map"><type>“clear-pt-map”</type></link>
+signal.</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 udpsrc port=5000 caps="application/x-rtp, ..." ! .recv_rtp_sink rtpsession .recv_rtp_src ! rtptheoradepay ! theoradec ! xvimagesink
+]]></programlisting></informalexample> Receive theora RTP packets from port 5000 and send them to the depayloader,
+decoder and display. Note that the application/x-rtp caps on udpsrc should be
+configured based on some negotiation process such as RTSP for this pipeline
+to work correctly.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 udpsrc port=5000 caps="application/x-rtp, ..." ! .recv_rtp_sink rtpsession name=session \
+       .recv_rtp_src ! rtptheoradepay ! theoradec ! xvimagesink \
+    udpsrc port=5001 caps="application/x-rtcp" ! session.recv_rtcp_sink
+]]></programlisting></informalexample> Receive theora RTP packets from port 5000 and send them to the depayloader,
+decoder and display. Receive RTCP packets from port 5001 and process them in
+the session manager.
+Note that the application/x-rtp caps on udpsrc should be
+configured based on some negotiation process such as RTSP for this pipeline
+to work correctly.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc ! theoraenc ! rtptheorapay ! .send_rtp_sink rtpsession .send_rtp_src ! udpsink port=5000
+]]></programlisting></informalexample> Send theora RTP packets through the session manager and out on UDP port
+5000.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc ! theoraenc ! rtptheorapay ! .send_rtp_sink rtpsession name=session .send_rtp_src \
+    ! udpsink port=5000  session.send_rtcp_src ! udpsink port=5001
+]]></programlisting></informalexample> Send theora RTP packets through the session manager and out on UDP port
+5000. Send RTCP packets on port 5001. Note that this pipeline will not preroll
+correctly because the second udpsink will not preroll correctly (no RTCP
+packets are sent in the PAUSED state). Applications should manually set and
+keep (see <link linkend="gst-element-set-locked-state"><function>gst_element_set_locked_state()</function></link>) the RTCP udpsink to the PLAYING state.
+</refsect2>
+
+<include href="element-rtpsession-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpsession.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpsession.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpSession-struct" role="struct">
+<title>struct GstRtpSession</title>
+<indexterm zone="GstRtpSession-struct"><primary>GstRtpSession</primary></indexterm>
+<programlisting language="C">struct GstRtpSession;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpsession.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRtpSession--bandwidth" role="property"><title>The <literal>“bandwidth”</literal> property</title>
+<indexterm zone="GstRtpSession--bandwidth"><primary>GstRtpSession:bandwidth</primary></indexterm>
+<programlisting>  “bandwidth”                <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>The bandwidth of the session in bytes per second (0 for auto-discover).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpSession--internal-session" role="property"><title>The <literal>“internal-session”</literal> property</title>
+<indexterm zone="GstRtpSession--internal-session"><primary>GstRtpSession:internal-session</primary></indexterm>
+<programlisting>  “internal-session”         <link linkend="RTPSession"><type>RTPSession</type></link> *</programlisting>
+<para>The internal RTPSession object.</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstRtpSession--num-active-sources" role="property"><title>The <literal>“num-active-sources”</literal> property</title>
+<indexterm zone="GstRtpSession--num-active-sources"><primary>GstRtpSession:num-active-sources</primary></indexterm>
+<programlisting>  “num-active-sources”       <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The number of active sources in the session.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpSession--num-sources" role="property"><title>The <literal>“num-sources”</literal> property</title>
+<indexterm zone="GstRtpSession--num-sources"><primary>GstRtpSession:num-sources</primary></indexterm>
+<programlisting>  “num-sources”              <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The number of sources in the session.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpSession--rtcp-fraction" role="property"><title>The <literal>“rtcp-fraction”</literal> property</title>
+<indexterm zone="GstRtpSession--rtcp-fraction"><primary>GstRtpSession:rtcp-fraction</primary></indexterm>
+<programlisting>  “rtcp-fraction”            <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>The RTCP bandwidth of the session in bytes per second (or as a real fraction of the RTP bandwidth if &lt; 1.0).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 0.05</para>
+</refsect2>
+<refsect2 id="GstRtpSession--sdes" role="property"><title>The <literal>“sdes”</literal> property</title>
+<indexterm zone="GstRtpSession--sdes"><primary>GstRtpSession:sdes</primary></indexterm>
+<programlisting>  “sdes”                     <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>The SDES items of this session.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstRtpSession--rtcp-rr-bandwidth" role="property"><title>The <literal>“rtcp-rr-bandwidth”</literal> property</title>
+<indexterm zone="GstRtpSession--rtcp-rr-bandwidth"><primary>GstRtpSession:rtcp-rr-bandwidth</primary></indexterm>
+<programlisting>  “rtcp-rr-bandwidth”        <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The RTCP bandwidth used for receivers in bytes per second (-1 = default).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstRtpSession--rtcp-rs-bandwidth" role="property"><title>The <literal>“rtcp-rs-bandwidth”</literal> property</title>
+<indexterm zone="GstRtpSession--rtcp-rs-bandwidth"><primary>GstRtpSession:rtcp-rs-bandwidth</primary></indexterm>
+<programlisting>  “rtcp-rs-bandwidth”        <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The RTCP bandwidth used for senders in bytes per second (-1 = default).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstRtpSession--use-pipeline-clock" role="property"><title>The <literal>“use-pipeline-clock”</literal> property</title>
+<indexterm zone="GstRtpSession--use-pipeline-clock"><primary>GstRtpSession:use-pipeline-clock</primary></indexterm>
+<programlisting>  “use-pipeline-clock”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use the pipeline running-time to set the NTP time in the RTCP SR messages (DEPRECATED: Use ntp-time-source property).</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRtpSession--rtcp-min-interval" role="property"><title>The <literal>“rtcp-min-interval”</literal> property</title>
+<indexterm zone="GstRtpSession--rtcp-min-interval"><primary>GstRtpSession:rtcp-min-interval</primary></indexterm>
+<programlisting>  “rtcp-min-interval”        <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Minimum interval between Regular RTCP packet (in ns).</para><para>Flags: Read / Write</para>
+<para>Default value: 5000000000</para>
+</refsect2>
+<refsect2 id="GstRtpSession--probation" role="property"><title>The <literal>“probation”</literal> property</title>
+<indexterm zone="GstRtpSession--probation"><primary>GstRtpSession:probation</primary></indexterm>
+<programlisting>  “probation”                <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Consecutive packet sequence numbers to accept the source.</para><para>Flags: Read / Write</para>
+<para>Default value: 2</para>
+</refsect2>
+<refsect2 id="GstRtpSession--stats" role="property"><title>The <literal>“stats”</literal> property</title>
+<indexterm zone="GstRtpSession--stats"><primary>GstRtpSession:stats</primary></indexterm>
+<programlisting>  “stats”                    <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>Various statistics.</para><para>Flags: Read</para>
+</refsect2>
+<refsect2 id="GstRtpSession--rtp-profile" role="property"><title>The <literal>“rtp-profile”</literal> property</title>
+<indexterm zone="GstRtpSession--rtp-profile"><primary>GstRtpSession:rtp-profile</primary></indexterm>
+<programlisting>  “rtp-profile”              <link linkend="GstRTPProfile"><type>GstRTPProfile</type></link></programlisting>
+<para>RTP profile to use.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_RTP_PROFILE_AVP</para>
+</refsect2>
+<refsect2 id="GstRtpSession--ntp-time-source" role="property"><title>The <literal>“ntp-time-source”</literal> property</title>
+<indexterm zone="GstRtpSession--ntp-time-source"><primary>GstRtpSession:ntp-time-source</primary></indexterm>
+<programlisting>  “ntp-time-source”          <link linkend="GstRtpNtpTimeSource"><type>GstRtpNtpTimeSource</type></link></programlisting>
+<para>NTP time source for RTCP packets.</para><para>Flags: Read / Write</para>
+<para>Default value: NTP time based on realtime clock</para>
+</refsect2>
+<refsect2 id="GstRtpSession--max-dropout-time" role="property"><title>The <literal>“max-dropout-time”</literal> property</title>
+<indexterm zone="GstRtpSession--max-dropout-time"><primary>GstRtpSession:max-dropout-time</primary></indexterm>
+<programlisting>  “max-dropout-time”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The maximum time (milliseconds) of missing packets tolerated.</para><para>Flags: Read / Write</para>
+<para>Default value: 60000</para>
+</refsect2>
+<refsect2 id="GstRtpSession--max-misorder-time" role="property"><title>The <literal>“max-misorder-time”</literal> property</title>
+<indexterm zone="GstRtpSession--max-misorder-time"><primary>GstRtpSession:max-misorder-time</primary></indexterm>
+<programlisting>  “max-misorder-time”        <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The maximum time (milliseconds) of misordered packets tolerated.</para><para>Flags: Read / Write</para>
+<para>Default value: 2000</para>
+</refsect2>
+<refsect2 id="GstRtpSession--rtcp-sync-send-time" role="property"><title>The <literal>“rtcp-sync-send-time”</literal> property</title>
+<indexterm zone="GstRtpSession--rtcp-sync-send-time"><primary>GstRtpSession:rtcp-sync-send-time</primary></indexterm>
+<programlisting>  “rtcp-sync-send-time”      <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use send time or capture time for RTCP sync (TRUE = send time, FALSE = capture time).</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpsession.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRtpSession-clear-pt-map" role="signal"><title>The <literal>“clear-pt-map”</literal> signal</title>
+<indexterm zone="GstRtpSession-clear-pt-map"><primary>GstRtpSession::clear-pt-map</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Clear the cached pt-maps requested with <link linkend="GstRtpSession-request-pt-map"><type>“request-pt-map”</type></link>.</para>
+<refsect3 id="GstRtpSession-clear-pt-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-bye-ssrc" role="signal"><title>The <literal>“on-bye-ssrc”</literal> signal</title>
+<indexterm zone="GstRtpSession-on-bye-ssrc"><primary>GstRtpSession::on-bye-ssrc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="guint"><type>guint</type></link>          ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Notify of an SSRC that became inactive because of a BYE packet.</para>
+<refsect3 id="GstRtpSession-on-bye-ssrc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-bye-timeout" role="signal"><title>The <literal>“on-bye-timeout”</literal> signal</title>
+<indexterm zone="GstRtpSession-on-bye-timeout"><primary>GstRtpSession::on-bye-timeout</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="guint"><type>guint</type></link>          ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Notify of an SSRC that has timed out because of BYE</para>
+<refsect3 id="GstRtpSession-on-bye-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-new-ssrc" role="signal"><title>The <literal>“on-new-ssrc”</literal> signal</title>
+<indexterm zone="GstRtpSession-on-new-ssrc"><primary>GstRtpSession::on-new-ssrc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="guint"><type>guint</type></link>          ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Notify of a new SSRC that entered <parameter>session</parameter>
+.</para>
+<refsect3 id="GstRtpSession-on-new-ssrc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-sender-timeout" role="signal"><title>The <literal>“on-sender-timeout”</literal> signal</title>
+<indexterm zone="GstRtpSession-on-sender-timeout"><primary>GstRtpSession::on-sender-timeout</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="guint"><type>guint</type></link>          ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Notify of a sender SSRC that has timed out and became a receiver</para>
+<refsect3 id="GstRtpSession-on-sender-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-ssrc-active" role="signal"><title>The <literal>“on-ssrc-active”</literal> signal</title>
+<indexterm zone="GstRtpSession-on-ssrc-active"><primary>GstRtpSession::on-ssrc-active</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="guint"><type>guint</type></link>          ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Notify of a SSRC that is active, i.e., sending RTCP.</para>
+<refsect3 id="GstRtpSession-on-ssrc-active.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-ssrc-collision" role="signal"><title>The <literal>“on-ssrc-collision”</literal> signal</title>
+<indexterm zone="GstRtpSession-on-ssrc-collision"><primary>GstRtpSession::on-ssrc-collision</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *gstrtpsession,
+               <link linkend="guint"><type>guint</type></link>          arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-ssrc-sdes" role="signal"><title>The <literal>“on-ssrc-sdes”</literal> signal</title>
+<indexterm zone="GstRtpSession-on-ssrc-sdes"><primary>GstRtpSession::on-ssrc-sdes</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *session,
+               <link linkend="guint"><type>guint</type></link>          src,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Notify that a new SDES was received for SSRC.</para>
+<refsect3 id="GstRtpSession-on-ssrc-sdes.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>src</para></entry>
+<entry role="parameter_description"><para>the SSRC</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-ssrc-validated" role="signal"><title>The <literal>“on-ssrc-validated”</literal> signal</title>
+<indexterm zone="GstRtpSession-on-ssrc-validated"><primary>GstRtpSession::on-ssrc-validated</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *gstrtpsession,
+               <link linkend="guint"><type>guint</type></link>          arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-timeout" role="signal"><title>The <literal>“on-timeout”</literal> signal</title>
+<indexterm zone="GstRtpSession-on-timeout"><primary>GstRtpSession::on-timeout</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="guint"><type>guint</type></link>          ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Notify of an SSRC that has timed out</para>
+<refsect3 id="GstRtpSession-on-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-request-pt-map" role="signal"><title>The <literal>“request-pt-map”</literal> signal</title>
+<indexterm zone="GstRtpSession-request-pt-map"><primary>GstRtpSession::request-pt-map</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="guint"><type>guint</type></link>          pt,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Request the payload type as <link linkend="GstCaps"><type>GstCaps</type></link> for <parameter>pt</parameter>
+.</para>
+<refsect3 id="GstRtpSession-request-pt-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pt</para></entry>
+<entry role="parameter_description"><para>the pt</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpSession-on-new-sender-ssrc" role="signal"><title>The <literal>“on-new-sender-ssrc”</literal> signal</title>
+<indexterm role="1.8" zone="GstRtpSession-on-new-sender-ssrc"><primary>GstRtpSession::on-new-sender-ssrc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="guint"><type>guint</type></link>          ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Notify of a new sender SSRC that entered <parameter>session</parameter>
+.</para>
+<refsect3 id="GstRtpSession-on-new-sender-ssrc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the sender SSRC</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+<para role="since">Since: <link linkend="api-index-1.8">1.8</link></para></refsect2><refsect2 id="GstRtpSession-on-sender-ssrc-active" role="signal"><title>The <literal>“on-sender-ssrc-active”</literal> signal</title>
+<indexterm role="1.8" zone="GstRtpSession-on-sender-ssrc-active"><primary>GstRtpSession::on-sender-ssrc-active</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpSession"><type>GstRtpSession</type></link> *sess,
+               <link linkend="guint"><type>guint</type></link>          ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Notify of a sender SSRC that is active, i.e., sending RTCP.</para>
+<refsect3 id="GstRtpSession-on-sender-ssrc-active.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the sender SSRC</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+<para role="since">Since: <link linkend="api-index-1.8">1.8</link></para></refsect2>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpsession.see-also">
+<title>See Also</title>
+<para>rtpjitterbuffer, rtpbin, rtpptdemux, rtpssrcdemux</para>
+
+</refsect1>
+
+</refentry>

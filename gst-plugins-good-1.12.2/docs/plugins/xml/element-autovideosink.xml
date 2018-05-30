@@ -1,0 +1,113 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-autovideosink">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-autovideosink.top_of_page" role="top_of_page">autovideosink</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>autovideosink</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-autovideosink.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint64"><type>gint64</type></link></entry><entry role="property_name"><link linkend="GstAutoVideoSink--ts-offset">ts-offset</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstAutoVideoSink--sync">sync</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAutoVideoSink"/><refsect1 id="gst-plugins-good-plugins-autovideosink.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"/><entry role="function_name"><link linkend="GstAutoVideoSink-struct">GstAutoVideoSink</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-autovideosink.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBin">GstBin</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstAutoDetect">GstAutoDetect</link>
+                        <phrase role="lineart">╰──</phrase> GstAutoVideoSink
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-autovideosink.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstAutoVideoSink implements
+ <link linkend="GstChildProxy">GstChildProxy</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-autovideosink.description" role="desc">
+<title role="desc.title">Description</title>
+<para>autovideosink is a video sink that automatically detects an appropriate
+video sink to use.  It does so by scanning the registry for all elements
+that have <quote>Sink</quote> and <quote>Video</quote> in the class field
+of their element information, and also have a non-zero autoplugging rank.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v -m videotestsrc ! autovideosink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-autovideosink-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-autovideosink.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-autovideosink.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAutoVideoSink-struct" role="struct">
+<title>GstAutoVideoSink</title>
+<indexterm zone="GstAutoVideoSink-struct"><primary>GstAutoVideoSink</primary></indexterm>
+<programlisting language="C">typedef struct _GstAutoVideoSink GstAutoVideoSink;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-autovideosink.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAutoVideoSink--ts-offset" role="property"><title>The <literal>“ts-offset”</literal> property</title>
+<indexterm zone="GstAutoVideoSink--ts-offset"><primary>GstAutoVideoSink:ts-offset</primary></indexterm>
+<programlisting>  “ts-offset”                <link linkend="gint64"><type>gint64</type></link></programlisting>
+<para>Timestamp offset in nanoseconds.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstAutoVideoSink--sync" role="property"><title>The <literal>“sync”</literal> property</title>
+<indexterm zone="GstAutoVideoSink--sync"><primary>GstAutoVideoSink:sync</primary></indexterm>
+<programlisting>  “sync”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Sync on the clock.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-autovideosink.see-also">
+<title>See Also</title>
+<para>autoaudiosink, ximagesink, xvimagesink, sdlvideosink</para>
+
+</refsect1>
+
+</refentry>

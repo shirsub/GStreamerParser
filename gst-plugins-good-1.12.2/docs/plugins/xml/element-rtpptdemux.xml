@@ -1,0 +1,203 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpptdemux">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpptdemux.top_of_page" role="top_of_page">rtpptdemux</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpptdemux</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtpptdemux.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpPtDemux-clear-pt-map">clear-pt-map</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-ACTION:CAPS">Action</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpPtDemux-new-payload-type">new-payload-type</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRtpPtDemux-payload-type-change">payload-type-change</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*</entry><entry role="signal_name"><link linkend="GstRtpPtDemux-request-pt-map">request-pt-map</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRtpPtDemux"/><refsect1 id="gst-plugins-good-plugins-rtpptdemux.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpPtDemux-struct">GstRtpPtDemux</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpptdemux.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstRtpPtDemux
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpptdemux.description" role="desc">
+<title role="desc.title">Description</title>
+<para>rtpptdemux acts as a demuxer for RTP packets based on the payload type of
+the packets. Its main purpose is to allow an application to easily receive
+and decode an RTP stream with multiple payload types.</para>
+<para>For each payload type that is detected, a new pad will be created and the
+<link linkend="GstRtpPtDemux-new-payload-type"><type>“new-payload-type”</type></link> signal will be emitted. When the payload for
+the RTP stream changes, the <link linkend="GstRtpPtDemux-payload-type-change"><type>“payload-type-change”</type></link> signal will be
+emitted.</para>
+<para>The element will try to set complete and unique application/x-rtp caps
+on the output pads based on the result of the <link linkend="GstRtpPtDemux-request-pt-map"><type>“request-pt-map”</type></link>
+signal.</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 udpsrc caps="application/x-rtp" ! rtpptdemux ! fakesink
+]]></programlisting></informalexample> Takes an RTP stream and send the RTP packets with the first detected
+payload type to fakesink, discarding the other payload types.
+</refsect2>
+
+<include href="element-rtpptdemux-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpptdemux.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpptdemux.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpPtDemux-struct" role="struct">
+<title>struct GstRtpPtDemux</title>
+<indexterm zone="GstRtpPtDemux-struct"><primary>GstRtpPtDemux</primary></indexterm>
+<programlisting language="C">struct GstRtpPtDemux;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpptdemux.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRtpPtDemux-clear-pt-map" role="signal"><title>The <literal>“clear-pt-map”</literal> signal</title>
+<indexterm zone="GstRtpPtDemux-clear-pt-map"><primary>GstRtpPtDemux::clear-pt-map</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpPtDemux"><type>GstRtpPtDemux</type></link> *demux,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>The application can call this signal to instruct the element to discard the
+currently cached payload type map.</para>
+<refsect3 id="GstRtpPtDemux-clear-pt-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>demux</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-ACTION:CAPS">Action</link></para>
+</refsect2><refsect2 id="GstRtpPtDemux-new-payload-type" role="signal"><title>The <literal>“new-payload-type”</literal> signal</title>
+<indexterm zone="GstRtpPtDemux-new-payload-type"><primary>GstRtpPtDemux::new-payload-type</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpPtDemux"><type>GstRtpPtDemux</type></link> *demux,
+               <link linkend="guint"><type>guint</type></link>          pt,
+               <link linkend="GstPad"><type>GstPad</type></link>        *pad,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Emited when a new payload type pad has been created in <parameter>demux</parameter>
+.</para>
+<refsect3 id="GstRtpPtDemux-new-payload-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>demux</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pt</para></entry>
+<entry role="parameter_description"><para>the payload type</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>the pad with the new payload</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpPtDemux-payload-type-change" role="signal"><title>The <literal>“payload-type-change”</literal> signal</title>
+<indexterm zone="GstRtpPtDemux-payload-type-change"><primary>GstRtpPtDemux::payload-type-change</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRtpPtDemux"><type>GstRtpPtDemux</type></link> *demux,
+               <link linkend="guint"><type>guint</type></link>          pt,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Emited when the payload type changed.</para>
+<refsect3 id="GstRtpPtDemux-payload-type-change.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>demux</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pt</para></entry>
+<entry role="parameter_description"><para>the new payload type</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRtpPtDemux-request-pt-map" role="signal"><title>The <literal>“request-pt-map”</literal> signal</title>
+<indexterm zone="GstRtpPtDemux-request-pt-map"><primary>GstRtpPtDemux::request-pt-map</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*
+user_function (<link linkend="GstRtpPtDemux"><type>GstRtpPtDemux</type></link> *demux,
+               <link linkend="guint"><type>guint</type></link>          pt,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Request the payload type as <link linkend="GstCaps"><type>GstCaps</type></link> for <parameter>pt</parameter>
+.</para>
+<refsect3 id="GstRtpPtDemux-request-pt-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>demux</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pt</para></entry>
+<entry role="parameter_description"><para>the payload type</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,196 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-shout2send">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-shout2send.top_of_page" role="top_of_page">shout2send</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>shout2send</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-shout2send.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstShout2send--description">description</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstShout2send--genre">genre</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstShout2send--ip">ip</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstShout2send--mount">mount</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstShout2send--password">password</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstShout2send--port">port</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstShout2SendProtocol"><type>GstShout2SendProtocol</type></link></entry><entry role="property_name"><link linkend="GstShout2send--protocol">protocol</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstShout2send--streamname">streamname</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstShout2send--url">url</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="GstShout2send--username">username</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstShout2send--public">public</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-shout2send.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstShout2send-connection-problem">connection-problem</link></entry><entry role="signal_flags">Cleanup</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstShout2send"/><refsect1 id="gst-plugins-good-plugins-shout2send.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstShout2send-struct">GstShout2send</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-shout2send.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseSink">GstBaseSink</link>
+                    <phrase role="lineart">╰──</phrase> GstShout2send
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-shout2send.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstShout2send implements
+ <link linkend="GstTagSetter">GstTagSetter</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-shout2send.description" role="desc">
+<title role="desc.title">Description</title>
+<para>shout2send pushes a media stream to an Icecast server</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 uridecodebin uri=file:///path/to/audiofile ! audioconvert ! vorbisenc ! oggmux ! shout2send mount=/stream.ogg port=8000 username=source password=somepassword ip=server_IP_address_or_hostname
+]]></programlisting></informalexample> This pipeline demuxes, decodes, re-encodes and re-muxes an audio
+media file into oggvorbis and sends the resulting stream to an Icecast
+server. Properties mount, port, username and password are all server-config
+dependent.
+</refsect2>
+
+<include href="element-shout2send-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-shout2send.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-shout2send.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstShout2send-struct" role="struct">
+<title>struct GstShout2send</title>
+<indexterm zone="GstShout2send-struct"><primary>GstShout2send</primary></indexterm>
+<programlisting language="C">struct GstShout2send;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-shout2send.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstShout2send--description" role="property"><title>The <literal>“description”</literal> property</title>
+<indexterm zone="GstShout2send--description"><primary>GstShout2send:description</primary></indexterm>
+<programlisting>  “description”              <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>description.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstShout2send--genre" role="property"><title>The <literal>“genre”</literal> property</title>
+<indexterm zone="GstShout2send--genre"><primary>GstShout2send:genre</primary></indexterm>
+<programlisting>  “genre”                    <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>genre.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstShout2send--ip" role="property"><title>The <literal>“ip”</literal> property</title>
+<indexterm zone="GstShout2send--ip"><primary>GstShout2send:ip</primary></indexterm>
+<programlisting>  “ip”                       <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>IP address or hostname.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;127.0.0.1&quot;</para>
+</refsect2>
+<refsect2 id="GstShout2send--mount" role="property"><title>The <literal>“mount”</literal> property</title>
+<indexterm zone="GstShout2send--mount"><primary>GstShout2send:mount</primary></indexterm>
+<programlisting>  “mount”                    <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>mount.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstShout2send--password" role="property"><title>The <literal>“password”</literal> property</title>
+<indexterm zone="GstShout2send--password"><primary>GstShout2send:password</primary></indexterm>
+<programlisting>  “password”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>password.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;hackme&quot;</para>
+</refsect2>
+<refsect2 id="GstShout2send--port" role="property"><title>The <literal>“port”</literal> property</title>
+<indexterm zone="GstShout2send--port"><primary>GstShout2send:port</primary></indexterm>
+<programlisting>  “port”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>port.</para><para>Flags: Read / Write</para>
+<para>Allowed values: [1,65535]</para>
+<para>Default value: 8000</para>
+</refsect2>
+<refsect2 id="GstShout2send--protocol" role="property"><title>The <literal>“protocol”</literal> property</title>
+<indexterm zone="GstShout2send--protocol"><primary>GstShout2send:protocol</primary></indexterm>
+<programlisting>  “protocol”                 <link linkend="GstShout2SendProtocol"><type>GstShout2SendProtocol</type></link></programlisting>
+<para>Connection Protocol to use.</para><para>Flags: Read / Write</para>
+<para>Default value: Http Protocol (icecast 2.x)</para>
+</refsect2>
+<refsect2 id="GstShout2send--streamname" role="property"><title>The <literal>“streamname”</literal> property</title>
+<indexterm zone="GstShout2send--streamname"><primary>GstShout2send:streamname</primary></indexterm>
+<programlisting>  “streamname”               <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>name of the stream.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstShout2send--url" role="property"><title>The <literal>“url”</literal> property</title>
+<indexterm zone="GstShout2send--url"><primary>GstShout2send:url</primary></indexterm>
+<programlisting>  “url”                      <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>the stream's homepage URL.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;&quot;</para>
+</refsect2>
+<refsect2 id="GstShout2send--username" role="property"><title>The <literal>“username”</literal> property</title>
+<indexterm zone="GstShout2send--username"><primary>GstShout2send:username</primary></indexterm>
+<programlisting>  “username”                 <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>username.</para><para>Flags: Read / Write</para>
+<para>Default value: &quot;source&quot;</para>
+</refsect2>
+<refsect2 id="GstShout2send--public" role="property"><title>The <literal>“public”</literal> property</title>
+<indexterm zone="GstShout2send--public"><primary>GstShout2send:public</primary></indexterm>
+<programlisting>  “public”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If the stream should be listed on the server's stream directory.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-shout2send.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstShout2send-connection-problem" role="signal"><title>The <literal>“connection-problem”</literal> signal</title>
+<indexterm zone="GstShout2send-connection-problem"><primary>GstShout2send::connection-problem</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstShout2send"><type>GstShout2send</type></link> *gstshout2send,
+               <link linkend="gint"><type>gint</type></link>           arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Flags: Cleanup</para>
+</refsect2>
+</refsect1>
+
+</refentry>

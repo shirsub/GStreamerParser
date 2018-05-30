@@ -1,0 +1,73 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpamrdepay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpamrdepay.top_of_page" role="top_of_page">rtpamrdepay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpamrdepay</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstRtpAMRDepay"/><refsect1 id="gst-plugins-good-plugins-rtpamrdepay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpAMRDepay-struct">GstRtpAMRDepay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpamrdepay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstRTPBaseDepayload">GstRTPBaseDepayload</link>
+                    <phrase role="lineart">╰──</phrase> GstRtpAMRDepay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpamrdepay.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Extract AMR audio from RTP packets according to RFC 3267.
+For detailed information see: http://www.rfc-editor.org/rfc/rfc3267.txt</para>
+<refsect2>
+<title>Example pipeline</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 udpsrc caps='application/x-rtp, media=(string)audio, clock-rate=(int)8000, encoding-name=(string)AMR, encoding-params=(string)1, octet-align=(string)1, payload=(int)96' ! rtpamrdepay ! amrnbdec ! pulsesink
+]]></programlisting></informalexample> This example pipeline will depayload and decode an RTP AMR stream. Refer to
+the rtpamrpay example to create the RTP stream.
+</refsect2>
+
+<include href="element-rtpamrdepay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpamrdepay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpamrdepay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpAMRDepay-struct" role="struct">
+<title>struct GstRtpAMRDepay</title>
+<indexterm zone="GstRtpAMRDepay-struct"><primary>GstRtpAMRDepay</primary></indexterm>
+<programlisting language="C">struct GstRtpAMRDepay;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpamrdepay.see-also">
+<title>See Also</title>
+<para>rtpamrpay</para>
+
+</refsect1>
+
+</refentry>

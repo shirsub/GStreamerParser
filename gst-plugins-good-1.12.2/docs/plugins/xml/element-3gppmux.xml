@@ -1,0 +1,224 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-3gppmux">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-3gppmux.top_of_page" role="top_of_page">3gppmux</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>3gppmux</refname>
+<refpurpose>Muxer for 3GPP (.3gp) files</refpurpose>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-3gppmux.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="GstQTMuxDtsMethods"><type>GstQTMuxDtsMethods</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--dts-method">dts-method</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--faststart">faststart</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="Gst3GPPMux--faststart-file">faststart-file</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--fragment-duration">fragment-duration</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link> *</entry><entry role="property_name"><link linkend="Gst3GPPMux--moov-recovery-file">moov-recovery-file</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--movie-timescale">movie-timescale</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--presentation-time">presentation-time</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--streamable">streamable</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--trak-timescale">trak-timescale</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--reserved-bytes-per-sec">reserved-bytes-per-sec</link></entry><entry role="property_flags">Read / Write / Construct</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--reserved-duration-remaining">reserved-duration-remaining</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--reserved-max-duration">reserved-max-duration</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--reserved-moov-update-period">reserved-moov-update-period</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--interleave-bytes">interleave-bytes</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="Gst3GPPMux--interleave-time">interleave-time</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="Gst3GPPMux"/><refsect1 id="gst-plugins-good-plugins-3gppmux.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword"/><entry role="function_name"><link linkend="Gst3GPPMux-struct">Gst3GPPMux</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-3gppmux.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> Gst3GPPMux
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-3gppmux.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+Gst3GPPMux implements
+ <link linkend="GstTagSetter">GstTagSetter</link>,  <link linkend="GstTagXmpWriter">GstTagXmpWriter</link> and  <link linkend="GstPreset">GstPreset</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-3gppmux.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element merges streams (audio and video) into 3GPP (.3gp) files.</para>
+<para>The following background intends to explain why various similar muxers
+are present in this plugin.</para>
+<para>The <ulink url="http://www.apple.com/quicktime/resources/qtfileformat.pdf">
+QuickTime file format specification</ulink> served as basis for the MP4 file
+format specification (mp4mux), and as such the QuickTime file structure is
+nearly identical to the so-called ISO Base Media file format defined in
+ISO 14496-12 (except for some media specific parts).
+In turn, the latter ISO Base Media format was further specialized as a
+Motion JPEG-2000 file format in ISO 15444-3 (mj2mux)
+and in various 3GPP(2) specs (3gppmux).
+The fragmented file features defined (only) in ISO Base Media are used by
+ISMV files making up (a.o.) Smooth Streaming (ismlmux).</para>
+<para>A few properties (<link linkend="Gst3GPPMux--movie-timescale"><type>“movie-timescale”</type></link>, <link linkend="Gst3GPPMux--trak-timescale"><type>“trak-timescale”</type></link>)
+allow adjusting some technical parameters, which might be useful in (rare)
+cases to resolve compatibility issues in some situations.</para>
+<para>Some other properties influence the result more fundamentally.
+A typical mov/mp4 file's metadata (aka moov) is located at the end of the file,
+somewhat contrary to this usually being called &quot;the header&quot;. However, a
+<link linkend="Gst3GPPMux--faststart"><type>“faststart”</type></link> file will (with some effort) arrange this to be located
+near start of the file, which then allows it e.g. to be played while
+downloading. Alternatively, rather than having one chunk of metadata at start
+(or end), there can be some metadata at start and most of the other data can
+be spread out into fragments of <link linkend="Gst3GPPMux--fragment-duration"><type>“fragment-duration”</type></link>. If such
+fragmented layout is intended for streaming purposes, then
+<link linkend="Gst3GPPMux--streamable"><type>“streamable”</type></link> allows foregoing to add index metadata (at the end of
+file).</para>
+<refsect2>
+<title>Example pipelines</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 v4l2src num-buffers=50 ! queue ! ffenc_h263 ! 3gppmux ! filesink location=video.3gp
+]]></programlisting></informalexample>
+Records a video stream captured from a v4l2 device, encodes it into H.263
+and muxes it into an 3gp file.
+</refsect2>
+<para>Documentation last reviewed on 2011-04-21</para>
+
+<include href="element-3gppmux-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-3gppmux.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-3gppmux.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="Gst3GPPMux-struct" role="struct">
+<title>Gst3GPPMux</title>
+<indexterm zone="Gst3GPPMux-struct"><primary>Gst3GPPMux</primary></indexterm>
+<programlisting language="C">typedef struct _Gst3GPPMux Gst3GPPMux;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-3gppmux.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="Gst3GPPMux--dts-method" role="property"><title>The <literal>“dts-method”</literal> property</title>
+<indexterm zone="Gst3GPPMux--dts-method"><primary>Gst3GPPMux:dts-method</primary></indexterm>
+<programlisting>  “dts-method”               <link linkend="GstQTMuxDtsMethods"><type>GstQTMuxDtsMethods</type></link></programlisting>
+<para>Method to determine DTS time (DEPRECATED).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: reorder</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--faststart" role="property"><title>The <literal>“faststart”</literal> property</title>
+<indexterm zone="Gst3GPPMux--faststart"><primary>Gst3GPPMux:faststart</primary></indexterm>
+<programlisting>  “faststart”                <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If the file should be formatted for faststart (headers first).</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--faststart-file" role="property"><title>The <literal>“faststart-file”</literal> property</title>
+<indexterm zone="Gst3GPPMux--faststart-file"><primary>Gst3GPPMux:faststart-file</primary></indexterm>
+<programlisting>  “faststart-file”           <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>File that will be used temporarily to store data from the stream when creating a faststart file. If null a filepath will be created automatically.</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--fragment-duration" role="property"><title>The <literal>“fragment-duration”</literal> property</title>
+<indexterm zone="Gst3GPPMux--fragment-duration"><primary>Gst3GPPMux:fragment-duration</primary></indexterm>
+<programlisting>  “fragment-duration”        <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Fragment durations in ms (produce a fragmented file if &gt; 0).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--moov-recovery-file" role="property"><title>The <literal>“moov-recovery-file”</literal> property</title>
+<indexterm zone="Gst3GPPMux--moov-recovery-file"><primary>Gst3GPPMux:moov-recovery-file</primary></indexterm>
+<programlisting>  “moov-recovery-file”       <link linkend="gchar"><type>gchar</type></link> *</programlisting>
+<para>File to be used to store data for moov atom making movie file recovery possible in case of a crash during muxing. Null for disabled. (Experimental).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--movie-timescale" role="property"><title>The <literal>“movie-timescale”</literal> property</title>
+<indexterm zone="Gst3GPPMux--movie-timescale"><primary>Gst3GPPMux:movie-timescale</primary></indexterm>
+<programlisting>  “movie-timescale”          <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Timescale to use in the movie (units per second, 0 == default).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--presentation-time" role="property"><title>The <literal>“presentation-time”</literal> property</title>
+<indexterm zone="Gst3GPPMux--presentation-time"><primary>Gst3GPPMux:presentation-time</primary></indexterm>
+<programlisting>  “presentation-time”        <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Calculate and include presentation/composition time (in addition to decoding time).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--streamable" role="property"><title>The <literal>“streamable”</literal> property</title>
+<indexterm zone="Gst3GPPMux--streamable"><primary>Gst3GPPMux:streamable</primary></indexterm>
+<programlisting>  “streamable”               <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If set to true, the output should be as if it is to be streamed and hence no indexes written or duration written. (DEPRECATED, only valid for fragmented MP4).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--trak-timescale" role="property"><title>The <literal>“trak-timescale”</literal> property</title>
+<indexterm zone="Gst3GPPMux--trak-timescale"><primary>Gst3GPPMux:trak-timescale</primary></indexterm>
+<programlisting>  “trak-timescale”           <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Timescale to use for the tracks (units per second, 0 is automatic).</para><para>Flags: Read / Write / Construct</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--reserved-bytes-per-sec" role="property"><title>The <literal>“reserved-bytes-per-sec”</literal> property</title>
+<indexterm zone="Gst3GPPMux--reserved-bytes-per-sec"><primary>Gst3GPPMux:reserved-bytes-per-sec</primary></indexterm>
+<programlisting>  “reserved-bytes-per-sec”   <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Multiplier for converting reserved-max-duration into bytes of header to reserve, per second, per track.</para><para>Flags: Read / Write / Construct</para>
+<para>Allowed values: &lt;= 10000</para>
+<para>Default value: 550</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--reserved-duration-remaining" role="property"><title>The <literal>“reserved-duration-remaining”</literal> property</title>
+<indexterm zone="Gst3GPPMux--reserved-duration-remaining"><primary>Gst3GPPMux:reserved-duration-remaining</primary></indexterm>
+<programlisting>  “reserved-duration-remaining” <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Reports the approximate amount of remaining moov header space reserved using reserved-max-duration.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--reserved-max-duration" role="property"><title>The <literal>“reserved-max-duration”</literal> property</title>
+<indexterm zone="Gst3GPPMux--reserved-max-duration"><primary>Gst3GPPMux:reserved-max-duration</primary></indexterm>
+<programlisting>  “reserved-max-duration”    <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>When set to a value &gt; 0, reserves space for index tables at the beginning of the file.</para><para>Flags: Read / Write</para>
+<para>Default value: 18446744073709551615</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--reserved-moov-update-period" role="property"><title>The <literal>“reserved-moov-update-period”</literal> property</title>
+<indexterm zone="Gst3GPPMux--reserved-moov-update-period"><primary>Gst3GPPMux:reserved-moov-update-period</primary></indexterm>
+<programlisting>  “reserved-moov-update-period” <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>When used with reserved-max-duration, periodically updates the index tables with information muxed so far.</para><para>Flags: Read / Write</para>
+<para>Default value: 18446744073709551615</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--interleave-bytes" role="property"><title>The <literal>“interleave-bytes”</literal> property</title>
+<indexterm zone="Gst3GPPMux--interleave-bytes"><primary>Gst3GPPMux:interleave-bytes</primary></indexterm>
+<programlisting>  “interleave-bytes”         <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Interleave between streams in bytes.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="Gst3GPPMux--interleave-time" role="property"><title>The <literal>“interleave-time”</literal> property</title>
+<indexterm zone="Gst3GPPMux--interleave-time"><primary>Gst3GPPMux:interleave-time</primary></indexterm>
+<programlisting>  “interleave-time”          <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Interleave between streams in nanoseconds.</para><para>Flags: Read / Write</para>
+<para>Default value: 250000000</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

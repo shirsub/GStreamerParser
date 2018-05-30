@@ -1,0 +1,136 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-cutter">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-cutter.top_of_page" role="top_of_page">cutter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>cutter</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-cutter.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstCutter--leaky">leaky</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstCutter--pre-length">pre-length</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="GstCutter--run-length">run-length</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstCutter--threshold">threshold</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gdouble"><type>gdouble</type></link></entry><entry role="property_name"><link linkend="GstCutter--threshold-dB">threshold-dB</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstCutter"/><refsect1 id="gst-plugins-good-plugins-cutter.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstCutter-struct">GstCutter</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cutter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstCutter
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-cutter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Analyses the audio signal for periods of silence. The start and end of
+silence is signalled by bus messages named</para>
+<classname>&quot;cutter&quot;</classname>.
+<para>The message's structure contains two fields:</para>
+<itemizedlist>
+<listitem>
+  <para>
+  <link linkend="GstClockTime"><type>GstClockTime</type></link>
+  <classname>&quot;timestamp&quot;</classname>:
+  the timestamp of the buffer that triggered the message.
+  </para>
+</listitem>
+<listitem>
+  <para>
+  gboolean
+  <classname>&quot;above&quot;</classname>:
+  <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for begin of silence and <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> for end of silence.
+  </para>
+</listitem>
+</itemizedlist>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -m filesrc location=foo.ogg ! decodebin ! audioconvert ! cutter ! autoaudiosink
+]]></programlisting></informalexample> Show cut messages.
+</refsect2>
+
+<include href="element-cutter-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-cutter.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cutter.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstCutter-struct" role="struct">
+<title>struct GstCutter</title>
+<indexterm zone="GstCutter-struct"><primary>GstCutter</primary></indexterm>
+<programlisting language="C">struct GstCutter;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-cutter.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstCutter--leaky" role="property"><title>The <literal>“leaky”</literal> property</title>
+<indexterm zone="GstCutter--leaky"><primary>GstCutter:leaky</primary></indexterm>
+<programlisting>  “leaky”                    <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>do we leak buffers when below threshold ?.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstCutter--pre-length" role="property"><title>The <literal>“pre-length”</literal> property</title>
+<indexterm zone="GstCutter--pre-length"><primary>GstCutter:pre-length</primary></indexterm>
+<programlisting>  “pre-length”               <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Length of pre-recording buffer (in nanoseconds).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstCutter--run-length" role="property"><title>The <literal>“run-length”</literal> property</title>
+<indexterm zone="GstCutter--run-length"><primary>GstCutter:run-length</primary></indexterm>
+<programlisting>  “run-length”               <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Length of drop below threshold before cut_stop (in nanoseconds).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstCutter--threshold" role="property"><title>The <literal>“threshold”</literal> property</title>
+<indexterm zone="GstCutter--threshold"><primary>GstCutter:threshold</primary></indexterm>
+<programlisting>  “threshold”                <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Volume threshold before trigger.</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstCutter--threshold-dB" role="property"><title>The <literal>“threshold-dB”</literal> property</title>
+<indexterm zone="GstCutter--threshold-dB"><primary>GstCutter:threshold-dB</primary></indexterm>
+<programlisting>  “threshold-dB”             <link linkend="gdouble"><type>gdouble</type></link></programlisting>
+<para>Volume threshold before trigger (in dB).</para><para>Flags: Read / Write</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,283 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtpdec">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtpdec.top_of_page" role="top_of_page">rtpdec</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtpdec</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtpdec.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTPDec--latency">latency</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdec.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTPDec-clear-pt-map">clear-pt-map</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*</entry><entry role="signal_name"><link linkend="GstRTPDec-request-pt-map">request-pt-map</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTPDec-on-bye-ssrc">on-bye-ssrc</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTPDec-on-bye-timeout">on-bye-timeout</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTPDec-on-new-ssrc">on-new-ssrc</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTPDec-on-ssrc-collision">on-ssrc-collision</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTPDec-on-ssrc-validated">on-ssrc-validated</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTPDec-on-timeout">on-timeout</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRTPDec"/><refsect1 id="gst-plugins-good-plugins-rtpdec.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTPDec-struct">GstRTPDec</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdec.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstRTPDec
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtpdec.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A simple RTP session manager used internally by rtspsrc.</para>
+
+<include href="element-rtpdec-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdec.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdec.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTPDec-struct" role="struct">
+<title>struct GstRTPDec</title>
+<indexterm zone="GstRTPDec-struct"><primary>GstRTPDec</primary></indexterm>
+<programlisting language="C">struct GstRTPDec;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdec.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTPDec--latency" role="property"><title>The <literal>“latency”</literal> property</title>
+<indexterm zone="GstRTPDec--latency"><primary>GstRTPDec:latency</primary></indexterm>
+<programlisting>  “latency”                  <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Amount of ms to buffer.</para><para>Flags: Read / Write</para>
+<para>Default value: 200</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtpdec.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRTPDec-clear-pt-map" role="signal"><title>The <literal>“clear-pt-map”</literal> signal</title>
+<indexterm zone="GstRTPDec-clear-pt-map"><primary>GstRTPDec::clear-pt-map</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTPDec"><type>GstRTPDec</type></link> *gstrtpdec,
+               <link linkend="gpointer"><type>gpointer</type></link>   user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTPDec-request-pt-map" role="signal"><title>The <literal>“request-pt-map”</literal> signal</title>
+<indexterm zone="GstRTPDec-request-pt-map"><primary>GstRTPDec::request-pt-map</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>*
+user_function (<link linkend="GstRTPDec"><type>GstRTPDec</type></link> *rtpdec,
+               <link linkend="guint"><type>guint</type></link>      session,
+               <link linkend="guint"><type>guint</type></link>      pt,
+               <link linkend="gpointer"><type>gpointer</type></link>   user_data)</programlisting>
+<para>Request the payload type as <link linkend="GstCaps"><type>GstCaps</type></link> for <parameter>pt</parameter>
+ in <parameter>session</parameter>
+.</para>
+<refsect3 id="GstRTPDec-request-pt-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtpdec</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>the session</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>pt</para></entry>
+<entry role="parameter_description"><para>the pt</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTPDec-on-bye-ssrc" role="signal"><title>The <literal>“on-bye-ssrc”</literal> signal</title>
+<indexterm zone="GstRTPDec-on-bye-ssrc"><primary>GstRTPDec::on-bye-ssrc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTPDec"><type>GstRTPDec</type></link> *rtpbin,
+               <link linkend="guint"><type>guint</type></link>      session,
+               <link linkend="guint"><type>guint</type></link>      ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>   user_data)</programlisting>
+<para>Notify of an SSRC that became inactive because of a BYE packet.</para>
+<refsect3 id="GstRTPDec-on-bye-ssrc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtpbin</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>the session</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC </para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTPDec-on-bye-timeout" role="signal"><title>The <literal>“on-bye-timeout”</literal> signal</title>
+<indexterm zone="GstRTPDec-on-bye-timeout"><primary>GstRTPDec::on-bye-timeout</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTPDec"><type>GstRTPDec</type></link> *rtpbin,
+               <link linkend="guint"><type>guint</type></link>      session,
+               <link linkend="guint"><type>guint</type></link>      ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>   user_data)</programlisting>
+<para>Notify of an SSRC that has timed out because of BYE</para>
+<refsect3 id="GstRTPDec-on-bye-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtpbin</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>the session</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC </para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTPDec-on-new-ssrc" role="signal"><title>The <literal>“on-new-ssrc”</literal> signal</title>
+<indexterm zone="GstRTPDec-on-new-ssrc"><primary>GstRTPDec::on-new-ssrc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTPDec"><type>GstRTPDec</type></link> *rtpbin,
+               <link linkend="guint"><type>guint</type></link>      session,
+               <link linkend="guint"><type>guint</type></link>      ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>   user_data)</programlisting>
+<para>Notify of a new SSRC that entered <parameter>session</parameter>
+.</para>
+<refsect3 id="GstRTPDec-on-new-ssrc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtpbin</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>the session</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC </para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTPDec-on-ssrc-collision" role="signal"><title>The <literal>“on-ssrc-collision”</literal> signal</title>
+<indexterm zone="GstRTPDec-on-ssrc-collision"><primary>GstRTPDec::on-ssrc-collision</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTPDec"><type>GstRTPDec</type></link> *gstrtpdec,
+               <link linkend="guint"><type>guint</type></link>      arg1,
+               <link linkend="guint"><type>guint</type></link>      arg2,
+               <link linkend="gpointer"><type>gpointer</type></link>   user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTPDec-on-ssrc-validated" role="signal"><title>The <literal>“on-ssrc-validated”</literal> signal</title>
+<indexterm zone="GstRTPDec-on-ssrc-validated"><primary>GstRTPDec::on-ssrc-validated</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTPDec"><type>GstRTPDec</type></link> *gstrtpdec,
+               <link linkend="guint"><type>guint</type></link>      arg1,
+               <link linkend="guint"><type>guint</type></link>      arg2,
+               <link linkend="gpointer"><type>gpointer</type></link>   user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTPDec-on-timeout" role="signal"><title>The <literal>“on-timeout”</literal> signal</title>
+<indexterm zone="GstRTPDec-on-timeout"><primary>GstRTPDec::on-timeout</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTPDec"><type>GstRTPDec</type></link> *rtpbin,
+               <link linkend="guint"><type>guint</type></link>      session,
+               <link linkend="guint"><type>guint</type></link>      ssrc,
+               <link linkend="gpointer"><type>gpointer</type></link>   user_data)</programlisting>
+<para>Notify of an SSRC that has timed out</para>
+<refsect3 id="GstRTPDec-on-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable frame="none" pgwide="1" role="parameters_table">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>rtpbin</para></entry>
+<entry role="parameter_description"><para>the object which received the signal</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>the session</para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC </para></entry>
+<entry role="parameter_annotations"/></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"/></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

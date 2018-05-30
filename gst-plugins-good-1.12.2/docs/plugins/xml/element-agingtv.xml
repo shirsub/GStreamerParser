@@ -1,0 +1,114 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-agingtv">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-agingtv.top_of_page" role="top_of_page">agingtv</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>agingtv</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-agingtv.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstAgingTV--color-aging">color-aging</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstAgingTV--dusts">dusts</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstAgingTV--pits">pits</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstAgingTV--scratch-lines">scratch-lines</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAgingTV"/><refsect1 id="gst-plugins-good-plugins-agingtv.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAgingTV-struct">GstAgingTV</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-agingtv.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstAgingTV
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-agingtv.description" role="desc">
+<title role="desc.title">Description</title>
+<para>AgingTV ages a video stream in realtime, changes the colors and adds
+scratches and dust.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc ! agingtv ! videoconvert ! autovideosink
+]]></programlisting></informalexample> This pipeline shows the effect of agingtv on a test stream.
+</refsect2>
+
+<include href="element-agingtv-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-agingtv.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-agingtv.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAgingTV-struct" role="struct">
+<title>struct GstAgingTV</title>
+<indexterm zone="GstAgingTV-struct"><primary>GstAgingTV</primary></indexterm>
+<programlisting language="C">struct GstAgingTV;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-agingtv.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAgingTV--color-aging" role="property"><title>The <literal>“color-aging”</literal> property</title>
+<indexterm zone="GstAgingTV--color-aging"><primary>GstAgingTV:color-aging</primary></indexterm>
+<programlisting>  “color-aging”              <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Color Aging.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstAgingTV--dusts" role="property"><title>The <literal>“dusts”</literal> property</title>
+<indexterm zone="GstAgingTV--dusts"><primary>GstAgingTV:dusts</primary></indexterm>
+<programlisting>  “dusts”                    <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Dusts.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstAgingTV--pits" role="property"><title>The <literal>“pits”</literal> property</title>
+<indexterm zone="GstAgingTV--pits"><primary>GstAgingTV:pits</primary></indexterm>
+<programlisting>  “pits”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Pits.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstAgingTV--scratch-lines" role="property"><title>The <literal>“scratch-lines”</literal> property</title>
+<indexterm zone="GstAgingTV--scratch-lines"><primary>GstAgingTV:scratch-lines</primary></indexterm>
+<programlisting>  “scratch-lines”            <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Number of scratch lines.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &lt;= 20</para>
+<para>Default value: 7</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

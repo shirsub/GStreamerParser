@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+
+<indexdiv id="api-index-1.8">
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="GstRtpBin-get-session"><link linkend="GstRtpBin-get-session">GstRtpBin::get-session</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpBin-on-new-sender-ssrc"><link linkend="GstRtpBin-on-new-sender-ssrc">GstRtpBin::on-new-sender-ssrc</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpBin-on-sender-ssrc-active"><link linkend="GstRtpBin-on-sender-ssrc-active">GstRtpBin::on-sender-ssrc-active</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpbin">rtpbin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpJitterBuffer--max-rtcp-rtp-time-diff"><link linkend="GstRtpJitterBuffer--max-rtcp-rtp-time-diff">GstRtpJitterBuffer:max-rtcp-rtp-time-diff</link>, object property in <link linkend="gst-plugins-good-plugins-rtpjitterbuffer">rtpjitterbuffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpSession-on-new-sender-ssrc"><link linkend="GstRtpSession-on-new-sender-ssrc">GstRtpSession::on-new-sender-ssrc</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpsession">rtpsession</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRtpSession-on-sender-ssrc-active"><link linkend="GstRtpSession-on-sender-ssrc-active">GstRtpSession::on-sender-ssrc-active</link>, object signal in <link linkend="gst-plugins-good-plugins-rtpsession">rtpsession</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstSplitMuxSrc-format-location"><link linkend="GstSplitMuxSrc-format-location">GstSplitMuxSrc::format-location</link>, object signal in <link linkend="gst-plugins-good-plugins-splitmuxsrc">splitmuxsrc</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

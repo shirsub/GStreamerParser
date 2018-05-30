@@ -1,0 +1,134 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-videocrop">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-videocrop.top_of_page" role="top_of_page">videocrop</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>videocrop</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-videocrop.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVideoCrop--bottom">bottom</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVideoCrop--left">left</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVideoCrop--right">right</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstVideoCrop--top">top</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstVideoCrop"/><refsect1 id="gst-plugins-good-plugins-videocrop.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstVideoCrop-struct">GstVideoCrop</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videocrop.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstBaseTransform">GstBaseTransform</link>
+                    <phrase role="lineart">╰──</phrase> <link linkend="GstVideoFilter">GstVideoFilter</link>
+                        <phrase role="lineart">╰──</phrase> GstVideoCrop
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-videocrop.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This element crops video frames, meaning it can remove parts of the
+picture on the left, right, top or bottom of the picture and output
+a smaller picture than the input picture, with the unwanted parts at the
+border removed.</para>
+<para>The videocrop element is similar to the videobox element, but its main
+goal is to support a multitude of formats as efficiently as possible.
+Unlike videbox, it cannot add borders to the picture and unlike videbox
+it will always output images in exactly the same format as the input image.</para>
+<para>If there is nothing to crop, the element will operate in pass-through mode.</para>
+<para>Note that no special efforts are made to handle chroma-subsampled formats
+in the case of odd-valued cropping and compensate for sub-unit chroma plane
+shifts for such formats in the case where the <link linkend="GstVideoCrop--left"><type>“left”</type></link> or
+<link linkend="GstVideoCrop--top"><type>“top”</type></link> property is set to an odd number. This doesn't matter for 
+most use cases, but it might matter for yours.</para>
+<refsect2>
+<title>Example launch line</title>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 -v videotestsrc ! videocrop top=42 left=1 right=4 bottom=0 ! ximagesink
+]]></programlisting></informalexample>
+</refsect2>
+
+<include href="element-videocrop-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-videocrop.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videocrop.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstVideoCrop-struct" role="struct">
+<title>struct GstVideoCrop</title>
+<indexterm zone="GstVideoCrop-struct"><primary>GstVideoCrop</primary></indexterm>
+<programlisting language="C">struct GstVideoCrop;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videocrop.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstVideoCrop--bottom" role="property"><title>The <literal>“bottom”</literal> property</title>
+<indexterm zone="GstVideoCrop--bottom"><primary>GstVideoCrop:bottom</primary></indexterm>
+<programlisting>  “bottom”                   <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Pixels to crop at bottom (-1 to auto-crop).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVideoCrop--left" role="property"><title>The <literal>“left”</literal> property</title>
+<indexterm zone="GstVideoCrop--left"><primary>GstVideoCrop:left</primary></indexterm>
+<programlisting>  “left”                     <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Pixels to crop at left (-1 to auto-crop).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVideoCrop--right" role="property"><title>The <literal>“right”</literal> property</title>
+<indexterm zone="GstVideoCrop--right"><primary>GstVideoCrop:right</primary></indexterm>
+<programlisting>  “right”                    <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Pixels to crop at right (-1 to auto-crop).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstVideoCrop--top" role="property"><title>The <literal>“top”</literal> property</title>
+<indexterm zone="GstVideoCrop--top"><primary>GstVideoCrop:top</primary></indexterm>
+<programlisting>  “top”                      <link linkend="gint"><type>gint</type></link></programlisting>
+<para>Pixels to crop at top (-1 to auto-crop).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-videocrop.see-also">
+<title>See Also</title>
+<para><link linkend="GstVideoBox"><type>GstVideoBox</type></link></para>
+
+</refsect1>
+
+</refentry>

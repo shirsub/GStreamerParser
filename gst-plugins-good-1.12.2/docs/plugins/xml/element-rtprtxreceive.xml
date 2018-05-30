@@ -1,0 +1,209 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtprtxreceive">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtprtxreceive.top_of_page" role="top_of_page">rtprtxreceive</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtprtxreceive</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-rtprtxreceive.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpRtxReceive--num-rtx-requests">num-rtx-requests</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpRtxReceive--num-rtx-packets">num-rtx-packets</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRtpRtxReceive--num-rtx-assoc-packets">num-rtx-assoc-packets</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstStructure"><type>GstStructure</type></link> *</entry><entry role="property_name"><link linkend="GstRtpRtxReceive--payload-type-map">payload-type-map</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstRtpRtxReceive"/><refsect1 id="gst-plugins-good-plugins-rtprtxreceive.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpRtxReceive-struct">GstRtpRtxReceive</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxreceive.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstRtpRtxReceive
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtprtxreceive.description" role="desc">
+<title role="desc.title">Description</title>
+<para>rtprtxreceive listens to the retransmission events from the
+downstream rtpjitterbuffer and remembers the SSRC (ssrc1) of the stream and
+the sequence number that was requested. When it receives a packet with
+a sequence number equal to one of the ones stored and with a different SSRC,
+it identifies the new SSRC (ssrc2) as the retransmission stream of ssrc1.
+From this point on, it replaces ssrc2 with ssrc1 in all packets of the
+ssrc2 stream and flags them as retransmissions, so that rtpjitterbuffer
+can reconstruct the original stream.</para>
+<para>This algorithm is implemented as specified in RFC 4588.</para>
+<para>This element is meant to be used with rtprtxsend on the sender side.
+See <link linkend="GstRtpRtxSend"><type>GstRtpRtxSend</type></link></para>
+<para>Below you can see some examples that illustrate how rtprtxreceive and
+rtprtxsend fit among the other rtp elements and how they work internally.
+Normally, hoewever, you should avoid using such pipelines and use
+rtpbin instead, with its <link linkend="GstRtpBin-request-aux-sender"><type>“request-aux-sender”</type></link> and
+<link linkend="GstRtpBin-request-aux-receiver"><type>“request-aux-receiver”</type></link> signals. See <link linkend="GstRtpBin"><type>GstRtpBin</type></link>.</para>
+<refsect2><title>Example pipelines</title><informalexample><programlisting><![CDATA[
+gst-launch-1.0 rtpsession name=rtpsession rtp-profile=avpf \
+    audiotestsrc is-live=true ! opusenc ! rtpopuspay pt=96 ! \
+        rtprtxsend payload-type-map="application/x-rtp-pt-map,96=(uint)97" ! \
+        rtpsession.send_rtp_sink \
+    rtpsession.send_rtp_src ! identity drop-probability=0.01 ! \
+        udpsink host="127.0.0.1" port=5000 \
+    udpsrc port=5001 ! rtpsession.recv_rtcp_sink \
+    rtpsession.send_rtcp_src ! udpsink host="127.0.0.1" port=5002 \
+        sync=false async=false
+]]></programlisting></informalexample>
+<para> Send audio stream through port 5000 (5001 and 5002 are just the rtcp
+link with the receiver)</para>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 rtpsession name=rtpsession rtp-profile=avpf \
+    udpsrc port=5000 caps="application/x-rtp,media=(string)audio,clock-rate=(int)48000,encoding-name=(string)OPUS,payload=(int)96" ! \
+        rtpsession.recv_rtp_sink \
+    rtpsession.recv_rtp_src ! \
+        rtprtxreceive payload-type-map="application/x-rtp-pt-map,96=(uint)97" ! \
+        rtpssrcdemux ! rtpjitterbuffer do-retransmission=true ! \
+        rtpopusdepay ! opusdec ! audioconvert ! audioresample ! autoaudiosink \
+    rtpsession.send_rtcp_src ! \
+        udpsink host="127.0.0.1" port=5001 sync=false async=false \
+    udpsrc port=5002 ! rtpsession.recv_rtcp_sink
+]]></programlisting></informalexample>
+<para> Receive audio stream from port 5000 (5001 and 5002 are just the rtcp
+link with the sender)</para>
+<para>In this example we can see a simple streaming of an OPUS stream with some
+of the packets being artificially dropped by the identity element.
+Thanks to retransmission, you should still hear a clear sound when setting
+drop-probability to something greater than 0.</para>
+<para>Internally, the rtpjitterbuffer will generate a custom upstream event,
+GstRTPRetransmissionRequest, when it detects that one packet is missing.
+Then this request is translated to a FB NACK in the rtcp link by rtpsession.
+Finally the rtpsession of the sender side will re-convert it in a
+GstRTPRetransmissionRequest that will be handled by rtprtxsend. rtprtxsend
+will then re-send the missing packet with a new srrc and a different payload
+type (here, 97), but with the same original sequence number. On the receiver
+side, rtprtxreceive will associate this new stream with the original and
+forward the retransmission packets to rtpjitterbuffer with the original
+ssrc and payload type.</para>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 rtpsession name=rtpsession rtp-profile=avpf \
+    audiotestsrc is-live=true ! opusenc ! rtpopuspay pt=97 seqnum-offset=1 ! \
+        rtprtxsend payload-type-map="application/x-rtp-pt-map,97=(uint)99" ! \
+        funnel name=f ! rtpsession.send_rtp_sink \
+    audiotestsrc freq=660.0 is-live=true ! opusenc ! \
+        rtpopuspay pt=97 seqnum-offset=100 ! \
+        rtprtxsend payload-type-map="application/x-rtp-pt-map,97=(uint)99" ! \
+        f. \
+    rtpsession.send_rtp_src ! identity drop-probability=0.01 ! \
+        udpsink host="127.0.0.1" port=5000 \
+    udpsrc port=5001 ! rtpsession.recv_rtcp_sink \
+    rtpsession.send_rtcp_src ! udpsink host="127.0.0.1" port=5002 \
+        sync=false async=false
+]]></programlisting></informalexample>
+<para> Send two audio streams to port 5000.</para>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 rtpsession name=rtpsession rtp-profile=avpf \
+    udpsrc port=5000 caps="application/x-rtp,media=(string)audio,clock-rate=(int)48000,encoding-name=(string)OPUS,payload=(int)97" ! \
+        rtpsession.recv_rtp_sink \
+    rtpsession.recv_rtp_src ! \
+        rtprtxreceive payload-type-map="application/x-rtp-pt-map,97=(uint)99" ! \
+        rtpssrcdemux name=demux \
+    demux. ! queue ! rtpjitterbuffer do-retransmission=true ! rtpopusdepay ! \
+        opusdec ! audioconvert ! autoaudiosink \
+    demux. ! queue ! rtpjitterbuffer do-retransmission=true ! rtpopusdepay ! \
+        opusdec ! audioconvert ! autoaudiosink \
+    udpsrc port=5002 ! rtpsession.recv_rtcp_sink \
+    rtpsession.send_rtcp_src ! udpsink host="127.0.0.1" port=5001 \
+        sync=false async=false
+]]></programlisting></informalexample>
+<para> Receive two audio streams from port 5000.</para>
+<para>In this example we are streaming two streams of the same type through the
+same port. They, however, are using a different SSRC (ssrc is randomly
+generated on each payloader - rtpopuspay in this example), so they can be
+identified and demultiplexed by rtpssrcdemux on the receiver side. This is
+an example of SSRC-multiplexing.</para>
+<para>It is important here to use a different starting sequence number
+(seqnum-offset), since this is the only means of identification that
+rtprtxreceive uses the very first time to identify retransmission streams.
+It is an error, according to RFC4588 to have two retransmission requests for
+packets belonging to two different streams but with the same sequence number.
+Note that the default seqnum-offset value (-1, which means random) would
+work just fine, but it is overriden here for illustration purposes.</para>
+</refsect2>
+
+<include href="element-rtprtxreceive-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxreceive.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxreceive.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpRtxReceive-struct" role="struct">
+<title>struct GstRtpRtxReceive</title>
+<indexterm zone="GstRtpRtxReceive-struct"><primary>GstRtpRtxReceive</primary></indexterm>
+<programlisting language="C">struct GstRtpRtxReceive;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxreceive.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRtpRtxReceive--num-rtx-requests" role="property"><title>The <literal>“num-rtx-requests”</literal> property</title>
+<indexterm zone="GstRtpRtxReceive--num-rtx-requests"><primary>GstRtpRtxReceive:num-rtx-requests</primary></indexterm>
+<programlisting>  “num-rtx-requests”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Number of retransmission events received.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpRtxReceive--num-rtx-packets" role="property"><title>The <literal>“num-rtx-packets”</literal> property</title>
+<indexterm zone="GstRtpRtxReceive--num-rtx-packets"><primary>GstRtpRtxReceive:num-rtx-packets</primary></indexterm>
+<programlisting>  “num-rtx-packets”          <link linkend="guint"><type>guint</type></link></programlisting>
+<para> Number of retransmission packets received.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpRtxReceive--num-rtx-assoc-packets" role="property"><title>The <literal>“num-rtx-assoc-packets”</literal> property</title>
+<indexterm zone="GstRtpRtxReceive--num-rtx-assoc-packets"><primary>GstRtpRtxReceive:num-rtx-assoc-packets</primary></indexterm>
+<programlisting>  “num-rtx-assoc-packets”    <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Number of retransmission packets correctly associated with retransmission requests.</para><para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GstRtpRtxReceive--payload-type-map" role="property"><title>The <literal>“payload-type-map”</literal> property</title>
+<indexterm zone="GstRtpRtxReceive--payload-type-map"><primary>GstRtpRtxReceive:payload-type-map</primary></indexterm>
+<programlisting>  “payload-type-map”         <link linkend="GstStructure"><type>GstStructure</type></link> *</programlisting>
+<para>Map of original payload types to their retransmission payload types.</para><para>Flags: Read / Write</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtprtxreceive.see-also">
+<title>See Also</title>
+<para>rtprtxsend, rtpsession, rtpjitterbuffer</para>
+
+</refsect1>
+
+</refentry>

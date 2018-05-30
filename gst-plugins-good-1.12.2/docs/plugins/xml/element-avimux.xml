@@ -1,0 +1,114 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-avimux">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-avimux.top_of_page" role="top_of_page">avimux</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>avimux</refname>
+<refpurpose/>
+</refnamediv>
+
+<refsect1 id="gst-plugins-good-plugins-avimux.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstAviMux--bigfile">bigfile</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="GstAviMux"/><refsect1 id="gst-plugins-good-plugins-avimux.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstAviMux-struct">GstAviMux</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-avimux.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> GstAviMux
+</screen>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-avimux.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GstAviMux implements
+ <link linkend="GstTagSetter">GstTagSetter</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-avimux.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Muxes raw or compressed audio and/or video streams into an AVI file.</para>
+<refsect2>
+<title>Example launch lines</title>
+<para>(write everything in one line, without the backslash characters)</para>
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc num-buffers=250 \
+! 'video/x-raw,format=(string)I420,width=320,height=240,framerate=(fraction)25/1' \
+! queue ! mux. \
+audiotestsrc num-buffers=440 ! audioconvert \
+! 'audio/x-raw,rate=44100,channels=2' ! queue ! mux. \
+avimux name=mux ! filesink location=test.avi
+]]></programlisting></informalexample> This will create an .AVI file containing an uncompressed video stream
+with a test picture and an uncompressed audio stream containing a
+test sound.
+<informalexample><programlisting><![CDATA[
+gst-launch-1.0 videotestsrc num-buffers=250 \
+! 'video/x-raw,format=(string)I420,width=320,height=240,framerate=(fraction)25/1' \
+! xvidenc ! queue ! mux. \
+audiotestsrc num-buffers=440 ! audioconvert ! 'audio/x-raw,rate=44100,channels=2' \
+! lame ! queue ! mux. \
+avimux name=mux ! filesink location=test.avi
+]]></programlisting></informalexample> This will create an .AVI file containing the same test video and sound
+as above, only that both streams will be compressed this time. This will
+only work if you have the necessary encoder elements installed of course.
+</refsect2>
+
+<include href="element-avimux-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-avimux.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-avimux.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstAviMux-struct" role="struct">
+<title>struct GstAviMux</title>
+<indexterm zone="GstAviMux-struct"><primary>GstAviMux</primary></indexterm>
+<programlisting language="C">struct GstAviMux;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-avimux.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstAviMux--bigfile" role="property"><title>The <literal>“bigfile”</literal> property</title>
+<indexterm zone="GstAviMux--bigfile"><primary>GstAviMux:bigfile</primary></indexterm>
+<programlisting>  “bigfile”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Support for openDML-2.0 (big) AVI files.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

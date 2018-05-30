@@ -1,0 +1,59 @@
+<?xml version="1.0" ?><!DOCTYPE refentry  PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN'  'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]><refentry id="gst-plugins-good-plugins-rtph264depay">
+<refmeta>
+<refentrytitle id="gst-plugins-good-plugins-rtph264depay.top_of_page" role="top_of_page">rtph264depay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-PLUGINS-GOOD-PLUGINS Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rtph264depay</refname>
+<refpurpose/>
+</refnamediv>
+
+<anchor id="GstRtpH264Depay"/><refsect1 id="gst-plugins-good-plugins-rtph264depay.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable frame="none" pgwide="1" role="enum_members_table">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRtpH264Depay-struct">GstRtpH264Depay</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph264depay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">╰──</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">╰──</phrase> <link linkend="GstObject">GstObject</link>
+            <phrase role="lineart">╰──</phrase> <link linkend="GstElement">GstElement</link>
+                <phrase role="lineart">╰──</phrase> <link linkend="GstRTPBaseDepayload">GstRTPBaseDepayload</link>
+                    <phrase role="lineart">╰──</phrase> GstRtpH264Depay
+</screen>
+</refsect1>
+
+
+<refsect1 id="gst-plugins-good-plugins-rtph264depay.description" role="desc">
+<title role="desc.title">Description</title>
+
+<include href="element-rtph264depay-details.xml" xmlns="http://www.w3.org/2003/XInclude"><fallback xmlns="http://www.w3.org/2003/XInclude"/></include></refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph264depay.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para/>
+</refsect1>
+<refsect1 id="gst-plugins-good-plugins-rtph264depay.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRtpH264Depay-struct" role="struct">
+<title>struct GstRtpH264Depay</title>
+<indexterm zone="GstRtpH264Depay-struct"><primary>GstRtpH264Depay</primary></indexterm>
+<programlisting language="C">struct GstRtpH264Depay;</programlisting>
+</refsect2>
+
+</refsect1>
+
+</refentry>
